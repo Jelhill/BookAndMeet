@@ -1,14 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
+import Landing from './landing'
 import './App.css';
+import SignUp from './Sign up';
+import Login from './login';
+import Landing2 from './Landing2';
 
 function App() {
   return (
-    <div className="App">
-        <h1>BookAndMeetApp</h1>
-        <input type="text" className="form-control f "/>
-        <button className="btn btn-primary">Submit</button>
-    </div>
+     <Landing2/>
+      //<SignUp/>
+      //<Login/>
   );
 }
 

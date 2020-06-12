@@ -7,7 +7,88 @@
   --placeHolderGray: rgba(102, 86, 135, 0.4);
   --mainWhite: #FFFFFF;
 }
+.modal-content{
+  width:60%;
+  height:472px;
+  box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35);
+  border-radius: 9px;
+  position: absolute;
+  background-color: var(--mainWhite);
+}
+#modallabel{
+  position: absolute;
+width: 132px;
+height: 20px;
+left: 35px;
+top: 35px;
+}
 
 .f{
   width: 50%;
+}
+.forgetpassword{
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 20px;
+letter-spacing: -0.24px;
+color: #665687;
+margin:10px;
+}
+.submit{
+  width:260px;
+  height: 40px;
+  background: #665687;
+  border-radius: 8px;
+  color:#ffff;
+}
+.alternatesignup{
+  
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 20px;
+letter-spacing: -0.24px;
+color: #665687;
+}
+.googlesignup{
+width: 260px;
+height: 40px;
+margin:10px;
+text-align: center;
+background: #FFFFFF;
+box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35);
+}
+.facebooksignup{
+width: 260px;
+height: 40px;
+margin:10px;
+text-align: center;
+background: #FFFFFF;
+box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35);
+}
+/* landing search bar */
+#search{
+  position:absolute;
+  width:650px;
+  height: 60px;
+  left: 395px;
+  top:420px;
+  box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+.googlesignuptext, .facebooksignuptext{
+height: 20px;
+padding-top:10px;
+font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 20px;
+/* identical to box height, or 125% */
+
+color: #665687;
+
 }
