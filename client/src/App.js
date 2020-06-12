@@ -1,12 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
+import Landing from './landing'
 import './App.css';
+import SignUp from './Sign up';
+import Login from './login';
+import Landing2 from './Landing2';
 
 function App() {
   return (
-    <div className="App">
-        <h1>BookAndMeetApp</h1>
-    </div>
+     <Landing2/>
+      //<SignUp/>
+      //<Login/>
   );
 }
 
