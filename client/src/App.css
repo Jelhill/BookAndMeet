@@ -4,7 +4,7 @@
 
 :root{
   --mainPurple: #665687;
-  --placeHolderGray: rgba(102, 86, 135, 0.4);
+  --mainGray: rgba(102, 86, 135, 0.4);
   --mainWhite: #FFFFFF;
 }
 .modal-content{
@@ -13,7 +13,7 @@
   box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35);
   border-radius: 9px;
   position: absolute;
-  background-color: var(--mainWhite);
+  background-color: var(--mainWhite) !important;
 }
 #modallabel{
   position: absolute;
@@ -27,7 +27,7 @@ top: 35px;
   width: 50%;
 }
 .forgetpassword{
-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-family: Roboto, sans-serif;
 font-style: normal;
 font-weight: normal;
 font-size: 14px;
