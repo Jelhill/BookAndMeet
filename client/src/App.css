@@ -1,11 +1,15 @@
 /* To use the color variable,  follow the below example
  background-color: var(--mainWhite) !important;
 */
-
+p, h1, h2, h3, h4, h5, h6, button{
+  padding: 0px;
+  margin: 0px;
+}
 :root{
   --mainPurple: #665687;
-  --mainGray: rgba(102, 86, 135, 0.4);
+  --mainGray: #F6F6FA;;
   --mainWhite: #FFFFFF;
+  --Roboto: Roboto, sans-serif;
 }
 .modal-content{
   width:60%;
@@ -13,7 +17,7 @@
   box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35);
   border-radius: 9px;
   position: absolute;
-  background-color: var(--mainWhite) !important;
+  background-color: var(--mainWhite);
 }
 #modallabel{
   position: absolute;
@@ -91,4 +95,216 @@ line-height: 20px;
 
 color: #665687;
 
+}
+
+/* Jelili CSS */
+.headerPurpleDiv {
+  height: 16vh;
+  background-color: var(--mainPurple) !important;
+  box-sizing: border-box;
+  margin-top: -1px;
+  padding-top: 1px;
+  position: relative;
+}
+
+.headerIconDiv{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.leftIconDiv{
+  display: flex;
+  justify-content: space-between;
+  font-size: 25px;
+  color: var(--mainWhite);
+  margin-left: 1%;
+  font-family: var(--Roboto);
+}
+
+.rightIconDiv {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.6rem;
+  color: var(--mainWhite);
+  font-family: var(--Roboto);
+  margin-right: 7%;
+  width: 30%;
+}
+
+.rightIconDiv i, .leftIconDiv i {
+  color: var(--mainWhite);
+}
+
+.rightIconDiv i:hover,
+ .leftIconDiv i:hover {
+  color: lightseagreen;
+}
+.mgTop10 {
+  margin-top: 10px;
+}
+.font15{
+  font-size: 15px;
+}
+.leftIconDiv span{
+  margin-left: 10px
+}
+
+.innerPurpleDiv{
+  width: 86%;
+  margin: auto;
+  background-color: var(--mainGray);;
+  height: 65%;
+  color: var(--mainWhite);
+  position: absolute;
+  bottom: 0;
+  margin-left: 7%;
+  
+}
+
+.inputSpecial{
+  width: 30%;
+  height: 35px;
+  background-color: #FBFBFB;
+  border: 1px solid #D6DBDF ;
+  box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  margin-top: 3%; 
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+.inputButtonDiv{
+  width: 83%;
+  margin-left: 10%;
+}
+.buttonSpecial{
+  width: 30%;
+  height: 35px;
+  background-color: var(--mainPurple);
+  color: var(--mainWhite);
+  box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  font-size: 20px;
+  font-family: Roboto, sans-serif;
+  margin-left: 15px;
+  border: 1px solid var(--mainPurple);
+}
+
+.buttonSpecial2 {
+  width: 30%;
+  height: 35px;
+  background-color: var(--mainWhite);
+  color: var(--mainPurple);
+  box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  font-size: 20px;
+  font-family: Roboto, sans-serif;
+  margin-left: 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.inputButtonDiv i{
+  font-size: 40px;
+  color: gray;
+  margin-left: 10px;
+  padding: 0px;
+}
+
+.bodyWhiteDiv{
+  width: 86%;
+  margin: auto;
+  padding-top: 25px;
+}
+
+.title-conf{
+  display: flex;
+  font-family: var(--Roboto);
+}
+
+.title-conf p{
+  font-size: 20px;
+  margin-left: 15px;
+}
+
+.title-conf h4{
+  font-weight: bold;
+  text-decoration: underline;
+  color: var(--mainPurple);
+}
+
+.bodyWhiteDiv img{
+  margin-top: 20px;
+  width: 100%;
+  height: 70vh;
+}
+
+.roomInfoDiv{
+  background-color: var(--mainGray);
+  height: 55vh;
+  color: gray;
+}
+
+.roomInfoDiv i{
+  font-size: 60px;
+}
+.roomInfoSpanDiv {
+  margin-left: 10%;
+  margin-right: 10%;
+  float: left;
+  margin-top: 60px;
+}
+.roomInfoDiv p{
+ font-size: 17px; 
+ font-family: Roboto, sans-serif;  
+ text-align: center;
+ margin-top: 5px;
+}
+
+.roomInfoBtnDIv {
+  height: 10vh;
+  width: 100%;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+.roomInfoBtnDIv button {
+  width: 20%;
+  height: 50px;
+  border-radius: 2px;
+  color: var(--mainWhite);
+  background-color: var(--mainPurple);
+  font-size: 1.7vw;
+  font-family: Roboto, sans-serif;
+  margin-left: 40%;
+  border: none;
+} 
+
+.bodyWhiteDiv button:hover {
+  opacity: 0.9;
+} 
+
+.footer-div{
+  height: 30vh;
+  background-color: var(--mainGray);
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-left: 7%;
+  padding-right: 7%;
+}
+
+
+
+.listCategory{
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--mainPurple);
+}
+
+.footer-div ul{
+  list-style: none;
+  font-size: 18px;
+  font-family: var(--Roboto);
+  color: var(--mainPurple);
 }
