@@ -3,13 +3,18 @@ import './App.css';
 import SignUp from './Sign up';
 import Landing2 from './Landing2';
 import AboutRoom from './Components/RoomInformation/AboutRoom';
+import BookingForm from './Components/BookingPage/BookingForm';
+import { Fragment } from 'react';
+import UserProfilePage from './Components/ProfilePage/UserProfilePage';
+
 
 function App() {
   return (
-    <AboutRoom />
-    //  <Landing2/>
-      //<SignUp/>
-      //<Login/>
+    <Fragment>
+      {/* <AboutRoom /> */}
+      <BookingForm /> 
+      {/* <UserProfilePage /> */}
+    </Fragment>
   )
 }
 

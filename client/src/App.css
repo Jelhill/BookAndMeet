@@ -9,6 +9,7 @@ p, h1, h2, h3, h4, h5, h6, button{
   --mainPurple: #665687;
   --mainGray: #F6F6FA;;
   --mainWhite: #FFFFFF;
+  --mainRed: #FA1C1C;
   --Roboto: Roboto, sans-serif;
 }
 .modal-content{
@@ -229,9 +230,14 @@ color: #665687;
 }
 
 .title-conf h4{
+  font-family: var(--Roboto);
+  font-family: Roboto;
+  font-style: normal;
   font-weight: bold;
-  text-decoration: underline;
-  color: var(--mainPurple);
+  font-size: 24px;
+  line-height: 20px;
+  letter-spacing: -0.24px;
+  text-decoration-line: underline;
 }
 
 .bodyWhiteDiv img{
@@ -307,4 +313,273 @@ color: #665687;
   font-size: 18px;
   font-family: var(--Roboto);
   color: var(--mainPurple);
+}
+
+/* Booking Form */
+
+.bookingPageBody{
+  display: flex;
+  justify-content: space-between;
+  width: 86%;
+  margin: auto;
+  box-sizing: border-box;
+  margin-top: 50px;
+  margin-bottom: 60px;
+}
+
+.bookingPageLeftSide{
+  width: 35%;
+}
+
+.bookingPageRightSide{
+  width: 63%;
+  margin-left: 2%;
+  background-color: var(--mainGray);
+  padding: 35px;
+  box-sizing: border-box;
+}
+
+.bookingPageLeftSide p{
+  margin-bottom: 10px;
+  font-family: var(--Roboto);
+  font-size: 14px;
+  color: var(--mainPurple);
+}
+
+.bookingPageLeftSide img{
+  width: 100%;
+  height: 270px;
+}
+
+.bookingPageLeftSide h3{
+  font-family: var(--Roboto);
+  font-family: Roboto;
+  font-style: normal; 
+  font-weight: bold;
+  font-size: 24px;
+  /* line-height: 20px;
+  /* letter-spacing: -0.24px; */
+  text-decoration-line: underline;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.formMessage{
+  width: 100%;
+  background-color: var(--mainGray);
+  height: 100px;
+  font-size: 14px;
+  padding: 20px;
+  color: var(--mainPurple);
+  font-family: var(--Roboto);
+}
+
+.bookingPageRightSide h5 {
+  font-family: var(--Roboto);
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: -0.24px;
+  margin-bottom: 10px;
+}
+
+.bookingPageRightSide p {
+  font-family: var(--Roboto);
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.24px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.checkInDiv{
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkInDiv label{
+  font-size: 18px;
+  margin-right: 10px;
+  font-family: var(--Roboto);
+}
+
+.checkInDiv input[type="datetime-local"]{
+  height: 40px;
+  width: 220px;
+  border: 1px solid var(--mainGray);
+  padding-left: 10px;
+}
+
+.checkInDiv input[type="text"]{
+  height: 45px;
+  width: 350px;
+  margin-top: 10px;
+  border: 1px solid var(--mainGray);
+  padding-left: 15px;
+  margin-bottom: 10px;
+  box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.1);
+  font-size: 20px;
+}
+
+.checkInDiv2 input{
+  width: 100%;
+  height: 45px;
+  margin-top: 15px;
+  border: 1px solid var(--mainGray);
+  padding-left: 15px;
+  margin-bottom: 10px;
+  box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.1);
+  font-size: 20px;
+}
+
+.bookingPageRightSide span{
+  width: 30px;
+  height: 20px;
+  background: var(--mainWhite);
+  padding: 0 5px;
+  margin-right: 5px;
+}
+
+.button1{
+  width: 150px;
+  height: 35px;
+  border: 2px solid var(--mainPurple);
+  color: var(--mainPurple);
+  font-family: var(--Roboto);  
+}
+
+.button2{
+  width: 150px;
+  height: 35px;
+  border: 1px solid var(--mainPurple);
+  color: var(--mainWhite);
+  background-color: var(--mainPurple);
+  font-family: var(--Roboto);  
+}
+
+.button1:hover, .button2:hover {
+  opacity: 0.8;
+}
+
+.bookingFormBtnDiv{
+  width: 325px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.spaceDiv{
+  height: 100px;
+}
+
+.bookingItemsInRoomDiv {
+  width: 86%;
+  margin-left: 7%;
+}
+
+.userProfileBody {
+  display: flex;
+  justify-content: space-between;
+}
+
+.userProfileLeft {
+  width: 20%;
+  box-sizing: border-box;
+  border-right: 1px solid #D5DBDB;
+  box-sizing: border-box;
+  padding-top: 100px;
+}
+
+.userProfileRight{
+  width: 80%; 
+  box-sizing: border-box;
+  padding-left: 10%;
+  padding-top: 4%;
+}
+
+.userProfileLeft h5{
+  font-style: normal;
+  font-weight: bold;
+  line-height: 20px;
+  letter-spacing: -0.24px;
+  /* color: #665687; */
+  text-align: center;
+  font-family: var(--Roboto);
+}
+
+.userProfileLeft ul{
+    text-align: center;
+    list-style: inside;
+    width: 100px;
+    margin: auto;
+    padding: 0px;
+    margin-top: 40px;
+}
+.userProfileLeft ul li{
+  list-style: none; 
+  text-align: justify;
+  margin-top: 15px;
+  font-family: var(--Roboto); 
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 20px;
+/* identical to box height, or 143% */
+
+letter-spacing: -0.24px;
+}
+
+.userProfileRight img{
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  margin-right: 25px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.avatarDiv {
+  display: flex;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.avatarDiv h4{
+  margin-top: 20%;
+}
+
+.avatarDiv input{
+  width: 85%;
+  height: 45px;
+  margin-right: 50px;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 18px;
+  background: #FBFBFB;
+  box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.1);
+  border: none ;
+  font-family: var(--Roboto);
+}
+
+.avatarInput {
+  width: 50%;
+}
+.profileButton{
+  width: 150px;
+  height: 40px;
+  background-color: var(--mainRed);
+  color: var(--mainWhite);
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  margin-left: 33%;
+  margin-top: 40px;
+  margin-bottom: 120px;
+}
+
+.userProfileLogout{
+  text-align: center;
+  color: var(--mainRed);
+  margin-top: 50%;
+  font-family: var(--Roboto);
+  font-weight: bold;
 }
