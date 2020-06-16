@@ -14,9 +14,9 @@ function App() {
   
   return (
     <Fragment>    
-      <BookingForm /> 
+      <Search />
       
-      {/* <UserProfilePage /> */}
+
     </Fragment>
    
   );

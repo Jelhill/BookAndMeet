@@ -3,6 +3,7 @@ import { addList } from "../core copy/actions/catAction";
 import { addRange } from "../core copy/actions/catAction";
 import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
+import ImageRoom5 from "../../Images/room5.jpg"
 import initialState from '../core copy/Data/data';
 import RangeList from '../core copy/Data/data2';
 import Main from '../HomePage/Main';
@@ -58,12 +59,12 @@ class Search extends Component {
         )
 
         return (
-            <div>
+            <div className="homeWrapper">
                 <Header />
             <div className="searchResult">
-            <div>  <p id="result1">Search Result:</p> </div>
-            <div> <p id="result2">Conference not found</p>  </div>
-        </div>
+                <div>  <p id="result1">Search Result:</p> </div>
+                <div> <p id="result2">Conference not found</p> </div>
+            </div>
             <div className="homePageBody">
                 <div className="homePageBodyLeft">
                     <div>
@@ -106,19 +107,14 @@ class Search extends Component {
                         <button onClick={handleSubmit}>{this.state.search}</button>
                     </div>
                 </div>
-                <div className="homePageBodyRight">
-                    
-                    <div className="roomImages">
-
-                    </div>
-                  
+                <div className="homePageBodyRight">                    
+                    <img src={ImageRoom5} alt="Room 5" className="roomImages"/>                  
                     <div className="roomList">
-
                         <div className="content1">
                             <div className="roomName"><Link>Conference Room</Link></div>
                             <div> <p className="address1">Room 301, Third floor, Main building.</p>
                                 <p className="address2">Zemat Company Oojo, Ibadan</p> </div>
-                            <div>    <span className="stars-active">
+                            <div><span className="stars-active">
                                 <i className="fa fa-star" aria-hidden="true"></i>
                                 <i className="fa fa-star" aria-hidden="true"></i>
                                 <i className="fa fa-star" aria-hidden="true"></i>
@@ -128,9 +124,10 @@ class Search extends Component {
                         </div>
 
                         <div className="content2">
-                            <div className="capacity"> <p>Capacity</p> </div>
-                            <div className="seats"> <p> 22 seats</p> </div>
-                            <div><button className="button-book">Book now</button> </div>
+                            <div className="capacity"> <p>Capacity</p> 
+                                <p className="seats"> 22 seats</p>
+                            </div>
+                            <Link><span className="button-book">Book now</span></Link>
                         </div>
                     </div>
                 </div>

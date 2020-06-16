@@ -11,7 +11,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import catReducer from './Components/core copy/reducers/catReducer';
 import RangeReducer from './Components/core copy/reducers/RangeReducer';
 import store from './Components/core copy/store';
-import 'tachyons';
+// import 'tachyons';
 
 
 // const rootReducer = combineReducers({bookingReducer, roomReducer, catReducer, RangeReducer})
