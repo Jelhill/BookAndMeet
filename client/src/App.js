@@ -17,7 +17,7 @@ function App() {
     
     <Fragment>
     <Landing2/>
-    
+    <Search />
       <BookingForm /> 
       {/* <UserProfilePage /> */}
     </Fragment>

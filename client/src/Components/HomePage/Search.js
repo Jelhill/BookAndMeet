@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import initialState from '../core copy/Data/data';
 import RangeList from '../core copy/Data/data2';
 import Main from '../HomePage/Main';
+import Header from "../Header";
 
 
 
@@ -58,6 +59,7 @@ class Search extends Component {
 
         return (
             <div>
+                <Header />
             <div className="searchResult">
             <div>  <p id="result1">Search Result:</p> </div>
             <div> <p id="result2">Conference not found</p>  </div>
