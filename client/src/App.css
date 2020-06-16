@@ -724,16 +724,16 @@ body{
 }
 
 .button-book{
-  color: white;
-  background-color: red;
+  color:var(--mainWhite);
+  background-color: var(--mainRed);
   border-radius: 3px;
   font-family: Roboto, sans-serif;
-font-style: normal;
-font-weight: bold;
-font-size: 12px;
-line-height: 20px;
-
-letter-spacing: -0.24px;
+  font-style: normal;
+  /* font-weight: bold; */
+  /* font-size: 12px; */
+  /* line-height: 20px; */
+  /* letter-spacing: -0.24px; */
+  padding: 0 10px;
 }
 
 .conf{
@@ -750,13 +750,13 @@ letter-spacing: -0.24px;
 
 .filter{
   margin-top: 1%; 
-  width: 66%;
+  width: 95%;
   height: 35px;
   background-color: var(--mainGray);
   color: var(--mainPurple);
   box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
-  font-size: 20px;
+  font-size: 19px;
   font-family: Roboto, sans-serif;
  
   border: none;
@@ -776,7 +776,7 @@ color: var(--mainPurple);
 
 .search-list{
   margin-top: 2.5%;
-  width: 66%;
+  width: 95%;
   height: 35px;
   padding-left: 3%;
   background-color: var(--mainGray);
@@ -803,8 +803,8 @@ letter-spacing: -0.24px;
   box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35);
 }
 .Search-button button {
-  margin-top: 2%; 
-  width: 66%;
+  margin-top: 7%; 
+  width: 95%;
   height: 35px;
   color: var(--mainWhite);
   background-color: var(--mainPurple);
@@ -816,47 +816,55 @@ letter-spacing: -0.24px;
   cursor: pointer;
   border: 1px solid var(--mainPurple);
 }
+.homeWrapper{
+  background-color: #FAFAFA;;
+}
 
 .homePageBody{
-  width: 86%;
- 
+  width: 86%; 
   margin: auto;
   display: flex;
+  background-color: #FAFAFA;
 
 }
 
 .homePageBodyRight{
-  width: 60%;
+  width: 73%;
   display: flex;
   justify-content: space-evenly;
-
-  
+ 
 }
 
 .homePageBodyLeft{
-  width: 40%;
+  width: 27%;
 }
 /* .homePageRooms{
   display: flex;
   background-color: blue;
 } */
 .roomImages{
-  width: 6%;
+  width: 140px;
   margin-top: 1%;
-  height: 120px;
+  height: 110px;
 }
+
 .roomList{
-  width: 100%;
+  width: 82%;
   background: var(--mainWhite);
   box-shadow: 3px 1px 9px rgba(0, 0, 0, 0.1);
-height: 120px;
-margin-top: 1%;
-
+  height: 110px;
+  margin-top: 1%;
 }
+
+/* .roomImageRight {
+  height: 120px;
+  width: ;
+} */
  .content1{
   display: flex;
   justify-content: space-between;
   margin-top: 1%;
+  padding: 0 10px;
  }
 
 /* Booking Form */
@@ -1030,7 +1038,11 @@ margin-top: 1%;
 .content2{
   display: flex;
   justify-content: space-between;
-  margin-top: 5%;
+  box-sizing: border-box;
+  margin-top: 15px;
+  padding: 10px 10px ;
+
+
 }
 /* .content2 :nth-child(2){
   margin-right: 30%;
@@ -1043,9 +1055,10 @@ font-size: 12px;
 line-height: 20px;
 letter-spacing: -0.24px;
 color: #373F41;
-margin-right: 75%;
+margin-left: 15px;
 }
 .capacity{
+  display: flex;
   font-family: Roboto,sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -1110,6 +1123,7 @@ color: #665687;
 .searchResult{
 padding-left: 44.4%;
 display: flex;
+background-color: #FAFAFA;;
 }
 .userProfileLeft {
   width: 20%;
