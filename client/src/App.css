@@ -700,6 +700,144 @@ body{
   color: var(--mainPurple);
 }
 
+
+.stars-active{
+  display:flex;
+  color: #F24D06;;
+
+}
+
+.button-book{
+  color: white;
+  background-color: red;
+  border-radius: 3px;
+  font-family: Roboto, sans-serif;
+font-style: normal;
+font-weight: bold;
+font-size: 12px;
+line-height: 20px;
+
+letter-spacing: -0.24px;
+}
+
+.conf{
+  font-family: var(--Roboto);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+ 
+  letter-spacing: -0.24px;
+ 
+ color:var(--mainPurple);
+}
+
+.filter{
+  margin-top: 1%; 
+  width: 66%;
+  height: 35px;
+  background-color: var(--mainGray);
+  color: var(--mainPurple);
+  box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  font-size: 20px;
+  font-family: Roboto, sans-serif;
+ 
+  border: none;
+  cursor: pointer;
+}
+
+.cat{
+  margin-top: 3%; 
+padding-left: 110px;
+font-family: var(--mainPurple);
+font-style: normal;
+font-weight: normal;
+font-size: 23px;
+line-height: 20px;
+color: var(--mainPurple);
+}
+
+.search-list{
+  margin-top: 2.5%;
+  width: 66%;
+  height: 35px;
+  padding-left: 3%;
+  background-color: var(--mainGray);
+  color: var(--mainPurple);
+  box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  font-family: Roboto, sans-serif;
+  border: none;
+  cursor: pointer;   
+
+}
+.search-list label{
+font-size: 0.95vw;
+font-family: var(--Roboto);
+margin-left: 8%;
+font-weight: bold;
+line-height: 35px;
+letter-spacing: -0.24px;
+}
+.search-list span{
+  padding: 2px 5px;
+  border: 1px solid var(--mainGray);
+  background-color: var(--mainWhite);
+  box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35);
+}
+.Search-button button {
+  margin-top: 2%; 
+  width: 66%;
+  height: 35px;
+  color: var(--mainWhite);
+  background-color: var(--mainPurple);
+  box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  font-size: 20px; 
+  font-family: Roboto, sans-serif;
+  
+  cursor: pointer;
+  border: 1px solid var(--mainPurple);
+}
+
+.homePageBody{
+  width: 86%;
+ 
+  margin: auto;
+  display: flex;
+
+}
+
+.homePageBodyRight{
+  width: 60%;
+  display: flex;
+  justify-content: space-evenly;
+
+  
+}
+
+.homePageBodyLeft{
+  width: 40%;
+}
+/* .homePageRooms{
+  display: flex;
+  background-color: blue;
+} */
+.roomImages{
+  width: 6%;
+  margin-top: 1%;
+  height: 120px;
+}
+.roomList{
+  width: 100%;
+  background: var(--mainWhite);
+  box-shadow: 3px 1px 9px rgba(0, 0, 0, 0.1);
+height: 120px;
+margin-top: 1%;
+
+}
+.content1{
 /* Booking Form */
 
 .bookingPageBody{
@@ -867,6 +1005,90 @@ body{
   justify-content: space-between;
 }
 
+.content2{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+/* .content2 :nth-child(2){
+  margin-right: 30%;
+} */
+.seats{
+  font-family: Roboto,sans-serif;
+font-style: normal;
+font-weight: bold;
+font-size: 12px;
+line-height: 20px;
+letter-spacing: -0.24px;
+color: #373F41;
+margin-right: 75%;
+}
+.capacity{
+  font-family: Roboto,sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: -0.24px;
+  color: #373F41;
+}
+.address1{
+  font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 20px;
+letter-spacing: -0.24px;
+
+color: #373F41;
+}
+.address2{
+  font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 10px;
+line-height: 20px;
+letter-spacing: -0.24px;
+
+color: #373F41;
+}
+.roomName{
+  font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 20px;
+letter-spacing: -0.24px;
+text-decoration-line: underline;
+color: #373F41;
+}
+#result1{
+  margin-top: 2%;
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 20px;
+letter-spacing: -0.54px;
+
+color: #665687;
+}
+#result2{
+  margin-top:2%;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.24px;
+ margin-left: 10px;
+  color: #665687;
+}
+
+.searchResult{
+padding-left: 44.4%;
+display: flex;
+}
 .userProfileLeft {
   width: 20%;
   box-sizing: border-box;
