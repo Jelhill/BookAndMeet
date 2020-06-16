@@ -853,9 +853,14 @@ height: 120px;
 margin-top: 1%;
 
 }
-.content1{
+ .content1{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1%;
+ }
+
 /* Booking Form */
-}
+ 
 
 .bookingPageBody{
   display: flex;
