@@ -16,17 +16,25 @@ p, h1, h2, h3, h4, h5, h6, button{
     width:100%;
     height:170px;
     background-color: var(--mainPurple);
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding-top: 15px;
+    padding-left: 15px;
 }
 .logoWrapper{
-  position:absolute;
+  /* position:absolute; */
   left:30px;
   top:30px;
-  width:93px;
+  width:10%;
   height: 30px;
-  background-color: var(--mainWhite);
+  /* background-color: var(--mainWhite); */
+}
+.logoWrapper h2{
+  color: var(--mainGray);
 }
 .logo{
-  position: absolute;
+  /* position: absolute; */
   width: 64px;
 height: 20px;
 left: 10px;
@@ -36,6 +44,7 @@ font-style: normal;
 font-weight: bold;
 font-size: 24px;
 line-height: 20px;
+color: var(--mainWhite);
 /* identical to box height, or 83% */
 
 letter-spacing: -0.24px;
@@ -123,43 +132,42 @@ box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35);
   height:14px;
 }
 #login{
-  position:relative;
-  width:64px;
+  /* position:relative; */
+  /* width:64px; */
   height:20px;
-  left:1150px;
-  top:27px;
-
-
-font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 24px;
-line-height: 20px;
-letter-spacing: -0.24px;
-color: var(--mainWhite);
-background-color:var(--mainPurple);
-border:none;
+  /* left:1150px; */
+  /* top:27px; */
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 20px;
+  letter-spacing: -0.24px;
+  color: var(--mainWhite);
+  background-color:var(--mainPurple);
+  border:none;
 
 }
 #signup{
-  position: absolute;
+  /* position: absolute; */
   height: 20px;
   right: 0px;
   top: 30px;
-
   font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 24px;
-line-height: 20px;
-letter-spacing: -0.24px;
-color: var(--mainWhite);
-background-color:var(--mainPurple);
-border:none;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 20px;
+  letter-spacing: -0.24px;
+  color: var(--mainWhite);
+  background-color:var(--mainPurple);
+  border:none;
 }
 .loginmodal{
   position:absolute;
-  left:500px;
+  /* margin-left:38%; */
+  left: 45%;
+  padding-left: 5px;
   top:60px;
   width: 350px;
   height:472px;
@@ -169,7 +177,8 @@ border:none;
   filter: blur(0);
   transform: scale(1);
   opacity: 1;
-  z-index:2
+  z-index:2;
+  border-radius: 10px;
   /* visibility: visible; */
 }
   .signupmodal{
@@ -302,11 +311,12 @@ box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35);
 }
 /* landing search bar */
 #search{
-  position:relative;
-  width:650px;
+  width: 50%;
+  margin-left: 25%;
   height: 60px;
-  left: 395px;
-  top:420px;
+  padding: 20px;
+  font-size: 20px;
+  margin-top: 15%;
   box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.25);
   border:none;
   border-radius: 10px;
@@ -439,6 +449,12 @@ body{
     height: 20px;
     left: 5px;
     top: 8px;
+  }
+
+  .loginSignupWrapper {
+    width: 50%;
+    display: flex;
+    background-color: yellow;
   }
   #login{
   position:relative;
@@ -844,6 +860,7 @@ margin-top: 1%;
  }
 
 /* Booking Form */
+ 
 
 .bookingPageBody{
   display: flex;

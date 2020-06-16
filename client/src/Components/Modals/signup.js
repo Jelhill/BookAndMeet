@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '../App.css';
+
 
 class SignUp extends Component{
     onClose = e=>{
