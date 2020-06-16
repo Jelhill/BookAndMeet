@@ -3,23 +3,30 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {Provider} from "react-redux";
-import {createStore, combineReducers} from "redux"
+import { Provider } from "react-redux";
+import { createStore } from "redux"
 import bookingReducer from "./Reducers/bookingReducer"
 import roomReducer from "./Reducers/bookingReducer"
 import { BrowserRouter as Router } from 'react-router-dom';
+import catReducer from './Components/core copy/reducers/catReducer';
+import RangeReducer from './Components/core copy/reducers/RangeReducer';
+import store from './Components/core copy/store';
+import 'tachyons';
 
-const rootReducer = combineReducers({bookingReducer, roomReducer})
-const store = createStore(rootReducer)
+
+// const rootReducer = combineReducers({bookingReducer, roomReducer, catReducer, RangeReducer})
+// const store = createStore(rootReducer)
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Router>
-      <Provider store={store}>
-          <App />
-      </Provider>
-    </Router>
-  </React.StrictMode>,
+  <Provider store={store}>
+    <React.StrictMode>
+      <Router>
+
+        <App />
+
+      </Router>
+    </React.StrictMode>
+  </Provider>,
   document.getElementById('root')
 );
 
