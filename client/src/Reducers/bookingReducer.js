@@ -1,10 +1,10 @@
 const iniialState = {
-
+    
 }
 
 const bookingReducer = (state = iniialState, action) => {
     const newState = {...state}
-    return newState;
+    return newState
 }
 
-export default bookingReducer;
+export default bookingReducer
