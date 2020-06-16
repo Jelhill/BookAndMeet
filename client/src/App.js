@@ -13,11 +13,7 @@ import UserProfilePage from './Components/ProfilePage/UserProfilePage';
 function App() {
   
   return (
-    
-    
-    <Fragment>
-    <Landing2/>
-    
+    <Fragment>    
       <BookingForm /> 
       {/* <UserProfilePage /> */}
     </Fragment>

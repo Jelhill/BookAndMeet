@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Login from "./modals/login";
-import SignUp from "./modals/signup";
+import Login from "./Components/Modals/login";
+import SignUp from "./Components/Modals/signup";
 import './App.css';
 
 
@@ -30,10 +30,7 @@ class Landing2 extends Component {
               <h2 className="logo">LOGO</h2>
             </div>
 
-
-
-
-            <div className="loginSignupWrapper" style={{ width: '100%' }}>
+            <div className="loginSignupWrapper" >
               <button type="button" className="btn btn-primary" id="login" onClick={e => {
                 this.showLogin(e)
               }}>Login</button>
@@ -52,8 +49,6 @@ class Landing2 extends Component {
                   <p className="otherlogin">Login with <a href="#">Facebook</a></p>
                 </div>
               </Login>
-
-
 
 
               <button type="button" id="signup" className="btn btn-primary" onClick={e => {
