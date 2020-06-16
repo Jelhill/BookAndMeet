@@ -2,6 +2,11 @@ const iniialState = {
 
 }
 
-export const roomReducer = (state = iniialState, action) => {
+const roomReducer = (state = iniialState, action) => {
+
     const newState = {...state}
+    return newState;
+
 }
+
+export default roomReducer;
