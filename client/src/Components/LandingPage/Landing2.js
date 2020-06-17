@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Login from "./Components/Modals/login";
-import SignUp from "./Components/Modals/signup";
-import './App.css';
+import Login from "../Modals/login";
+import SignUp from "../Modals/signup";
+
 
 
 
