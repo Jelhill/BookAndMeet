@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Landing2 from './Landing2';
+import Landing2 from './Components/LandingPage/Landing2';
 import AboutRoom from './Components/RoomInformation/AboutRoom';
 import Search from './Components/HomePage/Search';
 import Main from './Components/HomePage/Main';
@@ -19,6 +19,11 @@ function App() {
       <Search />
       {/* <Header /> */}
 <Footer />
+      {/* <Search /> */}
+      {/* <AboutRoom /> */}
+      <Landing2 />
+      
+
     </Fragment>
    
   );

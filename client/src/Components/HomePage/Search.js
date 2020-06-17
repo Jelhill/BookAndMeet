@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { addList } from "../core copy/actions/catAction";
-import { addRange } from "../core copy/actions/catAction";
+import { addList } from "../../Actions/catAction";
+import { addRange } from "../../Actions/catAction";
 import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
 import ImageRoom5 from "../../Images/room5.jpg"
-import initialState from '../core copy/Data/data';
-import RangeList from '../core copy/Data/data2';
+// import initialState from '../core copy/Data/data';
+// import RangeList from '../core copy/Data/data2';
+import RangeList from "../../Data/data"
+import initialState from "../../Data/data"
 import Main from '../HomePage/Main';
 import Header from "../Header";
 
