@@ -133,6 +133,17 @@ class Search extends Component {
                 </div>
 
             </div>
+                            <div className="prevNext">
+                                <h5 className="prevNextResult">Showing results 1 - 8 of 25</h5>
+                                <button className="prevButton">Previous</button>
+                                <button className="but1">1</button>
+                                <button className="but2">2</button>
+                                <button className="but3">3</button>
+                                <button className="but4">4</button>
+                                <button className="but5">5</button>
+                                <button className="nextButton">Next</button>
+                            </div>
+
             </div>
         )
     }

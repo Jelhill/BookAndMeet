@@ -8,6 +8,8 @@ import Header from './Components/Header';
 import BookingForm from './Components/BookingPage/BookingForm';
 import { Fragment } from 'react';
 import UserProfilePage from './Components/ProfilePage/UserProfilePage';
+import Footer from './Components/Footer';
+
 
 
 function App() {
@@ -15,8 +17,8 @@ function App() {
   return (
     <Fragment>    
       <Search />
-      
-
+      {/* <Header /> */}
+<Footer />
     </Fragment>
    
   );
