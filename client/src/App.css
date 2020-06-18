@@ -632,6 +632,20 @@ body {
   bottom: 0;
   margin-left: 7%;
 }
+.navigations{
+  color: var(--mainPurple);
+  margin: auto;
+  display: flex;
+  padding-left: 20px;
+  margin-top: 1%; 
+  background-color: var(--mainGray);
+  font-family: var(--Roboto);
+  font-size: 15px;
+}
+.navigations :nth-child(2){
+  padding: 0px 7px;
+}
+
 
 .inputSpecial {
   width: 30%;
@@ -640,7 +654,7 @@ body {
   border: 1px solid #d6dbdf;
   box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
-  margin-top: 3%;
+  margin-top: 1%; 
   font-size: 20px;
   padding-left: 20px;
 }
@@ -1184,6 +1198,114 @@ body {
   padding-left: 44.4%;
   display: flex;
   background-color: #fafafa;
+}
+.prevNext{
+  display: flex;
+  justify-content: center;
+  margin-left: 300px;
+
+}
+.prevNext button{
+  margin-left: 20px;
+  
+}
+.prevNextResult{
+  font-family: Roboto, sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 20px;
+/* identical to box height, or 83% */
+letter-spacing: -0.24px;
+color: var(--mainPurple);
+margin-top: 10px;
+}
+.prevButton {
+  width: 120px;
+  height:40px;
+  color: var(--mainPurple);
+  font-size: 22px;
+  font-family: var(--Roboto);
+align-items: center;
+background: #FAFAFA;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border: 1px solid var(--mainPurple);
+letter-spacing: -0.24px;
+line-height: 20px;
+}
+.but1{
+  width: 40px;
+  height:40px;
+  color: var(--mainPurple);
+  font-size: 22px;
+  font-family: var(--Roboto);
+align-items: center;
+background: #FAFAFA;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border: 1px solid var(--mainPurple);
+line-height: 20px;
+}
+
+.but2{
+  width: 40px;
+  height:40px;
+  color: var(--mainPurple);
+  font-size: 22px;
+  font-family: var(--Roboto);
+align-items: center;
+background: #FAFAFA;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border: 1px solid var(--mainPurple);
+line-height: 20px;
+}
+.but3{
+  width: 40px;
+  height:40px;
+  color: var(--mainPurple);
+  font-size: 22px;
+  font-family: var(--Roboto);
+align-items: center;
+background: #FAFAFA;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border: 1px solid var(--mainPurple);
+line-height: 20px;
+}
+.but4{
+  width: 40px;
+  height:40px;
+  color: var(--mainPurple);
+  font-size: 22px;
+  font-family: var(--Roboto);
+align-items: center;
+background: #FAFAFA;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border: 1px solid var(--mainPurple);
+line-height: 20px;
+}
+.but5{
+  width: 40px;
+  height:40px;
+  color: var(--mainPurple);
+  font-size: 22px;
+  font-family: var(--Roboto);
+align-items: center;
+background: #FAFAFA;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border: 1px solid var(--mainPurple);
+line-height: 20px;
+}
+.nextButton {
+  width: 120px;
+  height:40px;
+  color: var(--mainPurple);
+  font-size: 22px;
+  font-family: var(--Roboto);
+align-items: center;
+background: #FAFAFA;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border: 1px solid var(--mainPurple);
+letter-spacing: -0.24px;
+line-height: 20px;
 }
 .userProfileLeft {
   width: 20%;

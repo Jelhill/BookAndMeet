@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { addList } from "../core copy/actions/catAction";
-import { addRange } from "../core copy/actions/catAction";
+import { addList } from "../../Actions/catAction";
+import { addRange } from "../../Actions/catAction";
 import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
 import ImageRoom5 from "../../Images/room5.jpg"
-import initialState from '../core copy/Data/data';
-import RangeList from '../core copy/Data/data2';
+// import initialState from '../core copy/Data/data';
+// import RangeList from '../core copy/Data/data2';
+import RangeList from "../../Data/data"
+import initialState from "../../Data/data"
 import Main from '../HomePage/Main';
 import Header from "../Header";
 
@@ -133,6 +135,17 @@ class Search extends Component {
                 </div>
 
             </div>
+                            <div className="prevNext">
+                                <h5 className="prevNextResult">Showing results 1 - 8 of 25</h5>
+                                <button className="prevButton">Previous</button>
+                                <button className="but1">1</button>
+                                <button className="but2">2</button>
+                                <button className="but3">3</button>
+                                <button className="but4">4</button>
+                                <button className="but5">5</button>
+                                <button className="nextButton">Next</button>
+                            </div>
+
             </div>
         )
     }
