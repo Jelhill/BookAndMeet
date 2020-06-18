@@ -14,7 +14,8 @@ function App() {
   
   return (
     <Fragment>    
-      <Search />
+      {/* <Search /> */}
+      <UserProfilePage/>
       
 
     </Fragment>

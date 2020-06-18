@@ -3,8 +3,26 @@ import Header from "../Header"
 import { Link } from "react-router-dom"
 import avatar from "../../Images/avatar.png"
 import Footer from '../Footer'
+import Logout from '../Modals/logout'
 
 export default class UserProfilePage extends Component {
+    state = {
+        show3 : false
+    }
+
+    showLogout = e =>{
+        this.setState({
+            show3:!this.state.show3
+        });
+    };
+
+    onClose= e=>{
+        this.setState({
+            show3:false
+        })
+    };
+
+
     render() {
         return (
             <div>
@@ -19,7 +37,15 @@ export default class UserProfilePage extends Component {
                             <Link><li>Edit Profile</li></Link>
                             <Link><li>Notification</li></Link>
                         </ul>
-                        <Link><p className="userProfileLogout">Logout</p></Link>
+                        <Link onClick={e=>{this.showLogout(e);}}><p className="userProfileLogout" >Logout</p></Link>
+                    <Logout show3={this.state.show3}>
+                    <h2 className="logoutheader">Log Out</h2>
+                    <p className="logoutparagraph">Do you wish to log out?</p>
+                    <div className='logoutlink'>
+                        <Link> <p className="logoutlink1">Yes</p> </Link>
+                        <Link onClick={e=>{this.onClose(e)}} ><p className="logoutlink2">No</p></Link>
+                    </div>
+                    </Logout>
                     </div>
                     <div className="userProfileRight">
                         <div className="avatarDiv">
