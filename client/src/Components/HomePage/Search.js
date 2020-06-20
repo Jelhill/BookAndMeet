@@ -4,16 +4,9 @@ import { addRange } from "../../Actions/catAction";
 import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
 import ImageRoom5 from "../../Images/room5.jpg"
-// import initialState from '../core copy/Data/data';
-// import RangeList from '../core copy/Data/data2';
 import RangeList from "../../Data/data"
 import initialState from "../../Data/data"
-import Main from '../HomePage/Main';
 import Header from "../Header";
-
-
-
-
 
 
 class Search extends Component {
@@ -21,19 +14,11 @@ class Search extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
             search: "Search",
             categorys: [],
             range: []
         }
     }
-    // componentWillMount() {
-    //     this.setState({
-    //         categorys: initialState,
-    //         range: RangeList
-    //     })
-    // }
-
 
     updateSearch(event) {
         this.setState({ search: event.target.value })
