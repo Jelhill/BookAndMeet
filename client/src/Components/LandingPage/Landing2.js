@@ -58,13 +58,24 @@ class Landing2 extends Component {
                 <div className="signupContent">
                   <form>
                     <div className="form-group">
-                      <input type="text" className="form-control inputsignup" placeholder="First Name" />
-                      <input type="text" className="form-control inputsignup" placeholder="Last Name" />
-                      <input type="text" className="form-control inputsignup" placeholder="Other Name" />
+                      <input type="text" className="form-control inputsignup" placeholder="Surname" />
+                      <input type="text" className="form-control inputsignup" placeholder="Firstname" />
+                      <input type="text" className="form-control inputsignup" placeholder="OtherName" />
                       <input type="email" className="form-control inputsignup" placeholder="email" />
+                      <input type="text" className="form-control inputsignup" placeholder="username" />
                       <input type="password" className="form-control inputsignup" placeholder="password" />
+                      
+                      <div>
+                      <input type="radio" name="gender" className="" placeholder="gender" />
+                      <label>Male</label>
+                      <input type="radio" name="gender" className=""  placeholder="gender" />
+                      <label>Female</label>
+                      </div>
+                      <input type="file" className="form-control inputsignup" placeholder="Image" />
                       <input type="submit" value="Create Account" className="form-control signupsubmit " />
+                      
                     </div>
+                   
                   </form>
                   <p className="loginparagraph">Already have an account ? <a href="#">Login</a></p>
                   <p className="otherlogin">Sign up with <a href="#">Facebook</a></p>

@@ -16,12 +16,13 @@ function App() {
   
   return (
     <Fragment>    
-      <Search />
-      {/* <Header /> */}
+       <Landing2 />
+       <Header />
+      <Search /> 
 <Footer />
       {/* <Search /> */}
-      {/* <AboutRoom /> */}
-      <Landing2 />
+       <AboutRoom />
+      
       
 
     </Fragment>
