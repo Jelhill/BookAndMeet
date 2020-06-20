@@ -18,7 +18,16 @@ export default class Header extends Component {
                         <span className="font15 mgTop10">+2348025992525</span>                            
                     </div>
                 </div>
+          
+                    <div>
                 <div className="innerPurpleDiv">
+                 <div className="navigations">
+                    <div>Home</div>
+                    <div id="vector">
+                        <i className="fa fa-angle-right"></i>
+                    </div>
+                    <div>Search</div>
+            </div> 
                     <div className="inputButtonDiv">
                         <input type="text" className="inputSpecial" placeholder="Search Room"/>
                         <button className="buttonSpecial">Today: June 8, 2020</button>
@@ -27,6 +36,7 @@ export default class Header extends Component {
                     </div>                        
                 </div>
             </div> 
+            </div>
         )
     }
 }
