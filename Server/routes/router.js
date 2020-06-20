@@ -16,6 +16,7 @@ router.post("/signUp", async (req, res, next) => {
         const result = await db.query("INSERT into users (surname,firstName,otherName,email,username,password,gender,imageUrl) VALUES($1,$2,$3,$4,$5,$6,$7,$8) returning *",[
             surname,firstName,otherName,email,username,password,gender,imageUrl
         ]);
+        console.log('>>>>>>',result)
         res.json(result.rows[0])
     }
     catch(e){
