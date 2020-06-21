@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import Login from "../Modals/login";
 import SignUp from "../Modals/signup";
+import { connect } from "react-redux"
+import { getSignupInputs } from "../../Actions/userActions"
 import '../../App.css';
-
-
-
 
 class Landing2 extends Component {
   state = {
@@ -22,7 +21,28 @@ class Landing2 extends Component {
     });
   };
 
+
+  getUserInput = (e) => {
+    this.props.getSignupInputs({[e.target.name]: e.target.value})
+  }
+
+  handleSignup = async (e) => {
+    e.preventDefault()
+    // const body =  this.props.signUpFormDetails
+    // console.log(body)
+    try {
+      const api = await fetch("http://localhost:3001/signUp", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(this.props.signUpFormDetails)
+      })
+      console.log(api)
+    } catch (error) {
+      console.error(error)
+    }
+  }
   render() {
+    console.log(this.props.signUpFormDetails)
     return (
         <div className="LandingWrapper">
           <div className="header">
@@ -58,21 +78,23 @@ class Landing2 extends Component {
                 <div className="signupContent">
                   <form>
                     <div className="form-group">
-                      <input type="text" className="form-control inputsignup" placeholder="Surname" />
-                      <input type="text" className="form-control inputsignup" placeholder="Firstname" />
-                      <input type="text" className="form-control inputsignup" placeholder="OtherName" />
-                      <input type="email" className="form-control inputsignup" placeholder="email" />
-                      <input type="text" className="form-control inputsignup" placeholder="username" />
-                      <input type="password" className="form-control inputsignup" placeholder="password" />
-                      
+                      <input type="text" name="surname" className="form-control inputsignup" placeholder="Surname" onChange={this.getUserInput} />
+                      <input type="text" name="firstname" className="form-control inputsignup" placeholder="Firstname" onChange={this.getUserInput}/>
+                      <input type="text" name="othername" className="form-control inputsignup" placeholder="OtherName" onChange={this.getUserInput}/>
+                      <input type="email" name="email" className="form-control inputsignup" placeholder="email" onChange={this.getUserInput}/>
+                      <input type="text" name="phoneNumber" className="form-control inputsignup" placeholder="phoneNumber" onChange={this.getUserInput}/>
+                      <input type="text" name="username" className="form-control inputsignup" placeholder="username" onChange={this.getUserInput}/>
+                      <input type="password" name="password" className="form-control inputsignup" placeholder="password" onChange={this.getUserInput}/>
+                      <input type="password" name="confirmPassword" className="form-control inputsignup" placeholder="password" onChange={this.getUserInput}/>
+                   
                       <div>
-                      <input type="radio" name="gender" className="" placeholder="gender" />
+                      <input type="radio" name="gender" value="male" className="" placeholder="gender" onChange={this.getUserInput}/>
                       <label>Male</label>
-                      <input type="radio" name="gender" className=""  placeholder="gender" />
+                      <input type="radio" name="gender" value="male" className=""  placeholder="gender" onChange={this.getUserInput}/>
                       <label>Female</label>
                       </div>
-                      <input type="file" className="form-control inputsignup" placeholder="Image" />
-                      <input type="submit" value="Create Account" className="form-control signupsubmit " />
+                      <input type="file" name="imageUrl" className="form-control inputsignup" placeholder="Image" onChange={this.getUserInput} />
+                      <input type="submit" value="Create Account" className="form-control signupsubmit" onClick={this.handleSignup} />
                       
                     </div>
                    
@@ -94,7 +116,18 @@ class Landing2 extends Component {
         </div>
     );
   }
-
 }
 
-export default Landing2;
+const mapStateToProps = (state) => {
+  const { userReducer } = state
+  return {
+    signUpFormDetails: userReducer.signUpFormDetails
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getSignupInputs: (values) => dispatch(getSignupInputs(values))
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Landing2);
