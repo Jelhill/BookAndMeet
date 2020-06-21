@@ -18,7 +18,7 @@ app.use(morgan("tiny"))
 if (app.get("env") === "development"){
     app.use((err, req, res, next) => {
         res.status(err.status || 500);
-        return res.json({
+        return res.json({   
             message: err.messAge,
             error: err
         })
