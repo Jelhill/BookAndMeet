@@ -1,5 +1,6 @@
 const express = require("express")
 const cors = require("cors")
+
 const morgan = require("morgan")
 const router = require("./routes/router")
 
@@ -11,6 +12,7 @@ app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
 app.use(morgan("tiny"))
+
 
 
 if (app.get("env") === "development"){
