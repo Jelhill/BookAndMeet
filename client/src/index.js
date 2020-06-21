@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import { createStore, combineReducers } from "redux"
 import bookingReducer from "./Reducers/bookingReducer"
 import roomReducer from "./Reducers/bookingReducer"
+import userReducer from "./Reducers/userReducer"
 import { BrowserRouter as Router } from 'react-router-dom';
 import catReducer from './Reducers/catReducer';
 import RangeReducer from './Reducers/RangeReducer';
@@ -18,7 +19,8 @@ const rootReducer = combineReducers({
   bookingReducer, 
   roomReducer, 
   categories: catReducer,
-  ranges: RangeReducer
+  ranges: RangeReducer,
+  userReducer
 })
 const store = createStore(rootReducer)
 
