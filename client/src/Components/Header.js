@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom"
+import avatar from "../Images/avatar.png"
 
 export default class Header extends Component {
     render() {
@@ -10,17 +11,15 @@ export default class Header extends Component {
                         <h3>Logo</h3>
                         <span><Link><i className="fa fa-home"></i></Link></span>
                     </div>
-                    <div className="rightIconDiv"> 
-                        <span className="font15 mgTop10">Welcome Jelhill</span>                             
-                        <Link><span><i className="fa fa-whatsapp"></i></span></Link>
-                        <Link><span><i className="fa fa-bars"></i></span></Link>
-                        <Link><span><i className="fa fa-phone-alt"></i></span></Link>
-                        <span className="font15 mgTop10">+2348025992525</span>                            
+                    <div className="rightIconDiv">                         
+                        <Link><span><i className="fa fa-bars"></i></span></Link> 
+                        <img src={avatar} alt="user Image"/>
+                        <span className="font15 mgTop10">Jelhill</span>                                                  
                     </div>
                 </div>
           
                     <div>
-                <div className="innerPurpleDiv">
+                {/* <div className="innerPurpleDiv">
                  <div className="navigations">
                     <div>Home</div>
                     <div id="vector">
@@ -34,7 +33,7 @@ export default class Header extends Component {
                         <button className="buttonSpecial2">Today: June 8, 2020</button>
                         <i class="fa fa-calendar form-control-feedback"></i>
                     </div>                        
-                </div>
+                </div> */}
             </div> 
             </div>
         )
