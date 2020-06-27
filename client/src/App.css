@@ -1625,3 +1625,110 @@ line-height: 20px;
     display: none;
   }
 }
+.bookingRoomSearch{
+  width: 100%;
+  padding: 0 100px 0 100px;
+}
+.roomsSearched{
+  width: 100%;
+
+}
+
+.roomImages {
+  width: 310px;
+  margin-top: 1%;
+  height: 250px;
+}
+.room1{
+  width: 100%;
+  display: flex;
+  margin-top: 2%;
+  justify-content: space-between;
+}
+/* .room2{
+  width: 100%;
+  display: flex;
+  margin-top: 2%;
+  justify-content: space-between;
+} */
+.searchName{
+  font-family: Roboto, sans-serif;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 20px;
+letter-spacing: -0.24px;
+
+color:var(--mainPurple);
+}
+.searchButton{
+  margin-top: 3%;
+  width: 25%;
+  height: 35px;
+  font-size: 14px;
+  color: var(--mainWhite);
+  background-color: var(--mainWhite);
+  border: 1px solid rgba(102, 86, 135, 0.5);
+  box-sizing: border-box;
+  box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: Roboto, sans-serif;
+}
+.boardRoomFeatures{
+display: flex;
+justify-content: space-between; 
+align-items: center;
+
+
+}
+ /* .boardRoomFeatures :nth-child(1){
+  display: flex;
+  font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 12px;
+line-height: 20px;
+letter-spacing: -0.24px;
+color: #665687;
+}  */
+.searchFeatures{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3%;
+}
+.board{
+  letter-spacing: -0.24px;
+  font-size: 14px;
+  color: var(--mainPurple);
+
+}
+.building{
+  font-size: 9px;
+  display: flex;
+}
+.features{
+  font-family: Roboto, sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 20px;
+letter-spacing: -0.24px;
+
+color:var(--mainPurple);
+}
+.accessories{
+  padding-right: 164px;
+}
+.accessories :nth-child(2){
+  padding: 0 10px 0 10px;
+}
+.filterIcon{
+  background: #FFFFFF;
+border: 1px solid #665687;
+box-sizing: border-box;
+border-radius: 7px;
+margin-left: 20px;
+font-size: 20px;
+}
