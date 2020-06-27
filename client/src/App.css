@@ -21,7 +21,7 @@ button {
 }
 .header {
   width: 100%;
-  height: 170px;
+  height: 70px;
   background-color: var(--mainPurple);
   display: flex;
   justify-content: space-between;
@@ -58,17 +58,18 @@ button {
   color: var(--mainPurple);
 }
 .welcome {
-  position: absolute;
-  margin-bottom: 20px;
-  width: 132px;
+  /* position: absolute; */
+  /* margin-bottom: 20px; */
+  margin-left: 5px;
+  width: 74px;
   height: 20px;
-  left: 35px;
-  top: 35px;
+  /* left: 35px; */
+  /* top: 35px; */
 
   font-family: roboto, sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 32px;
+  font-size: 18px;
   line-height: 20px;
   color: var(--mainPurple);
   /* identical to box height, or 62% */
@@ -105,6 +106,7 @@ button {
   background-color: var(--mainPurple);
   border-bottom: 8px;
   box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35);
+  border-radius:8px;
 }
 .loginparagraph {
   margin-left: 40px;
@@ -120,8 +122,8 @@ button {
   text-align: center;
   margin-left: 40px;
 
-  background: #ffffff;
-  box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35);
+  /* background: #ffffff;
+  box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35); */
 }
 .closeWrapper {
   position: relative;
@@ -168,14 +170,13 @@ button {
   border: none;
 }
 .loginmodal {
-  position: absolute;
-  /* margin-left:38%; */
-  left: 45%;
+   position: absolute;
+  display: flex;
+  left: 20%;
   padding-left: 5px;
-  top: 60px;
-  width: 350px;
+  top: 120px; 
+  width: 50vw;
   height: 472px;
-  background: white;
   transition: 1.1s ease-out;
   box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35);
   filter: blur(0);
@@ -185,12 +186,38 @@ button {
   border-radius: 10px;
   /* visibility: visible; */
 }
+.LoginLeft{
+background-color: var(--mainPurple);
+width:50vw;
+}
+.boardRoom{
+  font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 32px;
+line-height: 20px;
+/* identical to box height, or 62% */
+
+letter-spacing: -0.24px;
+color:var(--mainWhite);
+text-align:center;
+padding:220px 0px;
+}
+.checkBoxDiv{
+  display:flex;
+  text-align: center;
+}
+.LoginRight{
+  width:50vw;
+  background-color: var(--mainWhite);
+}
 .signupmodal {
   position: absolute;
-  left: 500px;
-  top: 60px;
-  width: 350px;
-  height: 650px;
+  display:flex;
+  left: 300px;
+  top: 120px;
+  width: 50vw;
+  height: 472px;
   background: white;
   transition: 1.1s ease-out;
   box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35);
@@ -198,6 +225,16 @@ button {
   transform: scale(1);
   opacity: 1;
   z-index: 2;
+}
+.signUpLeft{
+  background-color:var(--mainPurple);
+  width:50vw;
+}
+.signUpRight{
+  width:50vw;
+}
+.checkbox{
+  margin-left:40px;
 }
 .logoutmodal {
   background-color: var(--mainRed);
@@ -310,7 +347,9 @@ button {
     border-bottom: 8px;
     box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35);
   } */
-
+.signUpWrapper{
+  background-color: var(--mainRed);
+}
 .modal-content {
   width: 60%;
   height: 472px;
@@ -365,6 +404,11 @@ button {
   background: #ffffff;
   box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35);
 }
+.forgetPassword{
+  color:var(--mainRed);
+  font-size:"10px";
+  margin-left:"60px";
+}
 .facebooksignup {
   width: 260px;
   height: 40px;
@@ -410,8 +454,12 @@ body {
   max-width: 100%;
   height: 100%;
 }
+.forgetPassword{
+  font-size: 10px;
+  margin-left: 40px;
+}
 
-@media screen and (min-width: 360px) and (max-width: 414px) {
+/* @media screen and (min-width: 360px) and (max-width: 414px) {
   .logoWrapper {
     position: absolute;
     left: 30px;
@@ -447,14 +495,14 @@ body {
     left: 40px;
     top: 210px;
   }
-  .loginmodal {
+  /* .loginmodal {
     position: absolute;
     left: 40px;
     top: 100px;
     width: 280px;
     height: 472px;
-  }
-  .signupmodal {
+  } */
+  /* .signupmodal {
     position: absolute;
     left: 40px;
     top: 100px;
@@ -469,41 +517,69 @@ body {
   .signupsubmit {
     width: 200px;
   }
-}
-@media (min-width: 768px) and (max-width: 1024px) {
+}  */
+@media screen and  (min-width: 601px) and (max-width: 768px) {
+  .header{
+    width:100vw;
+  }
   #login {
     position: relative;
     width: 64px;
     height: 20px;
-    left: 540px;
-    top: 30px;
+    left: 0px;
+    top: 0px;
+    font-size: 18px;
+    /* z-index:1; */
+  }
+  .LoginLeft,.signUpLeft{
+    width:50vw;
+  }
+  .LoginRight,.signUpRight{
+    width:50vw;
   }
   #signup {
     position: relative;
     width: 140px;
-    left: 560px;
+    left: 0px;
+    top:0px;
     background-color: none;
+    font-size: 18px;
   }
   #search {
     position: relative;
-    width: 550px;
+    width: 500px;
     height: 60px;
-    left: 120px;
+    left: 0px;
     top: 210px;
   }
   .signupmodal {
     position: absolute;
-    left: 300px;
+    left: 100px;
     top: 100px;
+    width:80vw;
   }
   .loginmodal {
     position: absolute;
-    left: 300px;
+    left: 100px;
     top: 100px;
+    width:80vw;
+  }
+  .inputusername,
+  .inputpassword,
+  .inputsubmit,
+  .otherlogin,
+  .inputsignup,
+  .signupsubmit {
+    width: 220px;
+  }
+  .forgetPassword{
+    margin-left: 25px;
+    margin-bottom:10px;
+    color:var(--mainRed);
+    font-size:10px;
   }
 }
-
-@media screen and (width: 320px) {
+@media screen and (min-width: 320px) and (max-width:600px) {
   .logoWrapper {
     position: absolute;
     left: 30px;
@@ -517,47 +593,59 @@ body {
     left: 5px;
     top: 8px;
   }
-
+  .header{
+    width:100vw;
+  }
+  .signUpLeft,.LoginLeft{
+    width:0vw;
+  }
+  .signUpRight,.LoginRight{
+    width:80vw;
+  }
   .loginSignupWrapper {
     width: 50%;
     display: flex;
-    background-color: yellow;
+    /* background-color: yellow; */
   }
   #login {
     position: relative;
     width: 50px;
     height: 10px;
-    left: 120px;
+    left: 178px;
     z-index: 1;
     background-color: none;
+    font-size: 12px;
   }
   #signup {
-    width: 130px;
+    width: 85px;
     position: relative;
-    left: 130px;
+    left: 170px;
+    top:0px;
     height: 10px;
     background-color: none;
+    /* margin: 0px; */
+    font-size: 12px;
   }
   #search {
     position: relative;
-    width: 280px;
+    width: 200px;
     height: 60px;
-    left: 20px;
+    left: 00px;
     top: 210px;
   }
   .loginmodal {
     position: absolute;
-    left: 20px;
+    left: 40px;
     top: 100px;
-    width: 280px;
+    width: 80vw;
     height: 472px;
   }
   .signupmodal {
     position: absolute;
-    left: 20px;
+    left: 40px;
     top: 100px;
-    width: 280px;
-    height: 650px;
+    width: 80vw;
+    height: 550px;
   }
   .inputusername,
   .inputpassword,
@@ -566,6 +654,12 @@ body {
   .inputsignup,
   .signupsubmit {
     width: 200px;
+  }
+  .forgetPassword{
+    margin-left: 40px;
+    margin-bottom:10px;
+    display:block;
+    color:var(--mainRed)
   }
 }
 
