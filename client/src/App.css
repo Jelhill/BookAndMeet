@@ -1725,7 +1725,7 @@ color:var(--mainPurple);
   padding: 0 10px 0 10px;
 }
 .filterIcon{
-  background: #FFFFFF;
+background: #FFFFFF;
 border: 1px solid #665687;
 box-sizing: border-box;
 border-radius: 7px;
