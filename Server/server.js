@@ -2,8 +2,10 @@ const express = require("express")
 const cors = require("cors")
 const morgan = require("morgan")
 const router = require("./routes/router")
-
-
+const multer = require("multer");
+const cloudinary = require("cloudinary");
+const cloudinaryStorage = require("multer-storage-cloudinary");
+// const fileupload = require("express-fileupload")
 const app = express()
 
 
@@ -11,6 +13,7 @@ app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
 app.use(morgan("tiny"))
+app.use("/uploads", express.static("uploads"))
 
 
 if (app.get("env") === "development"){
