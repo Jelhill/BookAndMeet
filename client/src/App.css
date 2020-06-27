@@ -1,6 +1,11 @@
 /* /* /* To use the color variable,  follow the below example
  background-color: var(--mainWhite) !important;
 */
+body{
+  width: 100%;
+  background: #FFFFFF;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+} 
 p,
 h1,
 h2,
@@ -571,7 +576,7 @@ body {
 
 /* Jelili CSS */
 .headerPurpleDiv {
-  height: 16vh;
+  height: 50px;
   background-color: var(--mainPurple) !important;
   box-sizing: border-box;
   margin-top: -1px;
@@ -599,13 +604,25 @@ body {
   font-size: 1.6rem;
   color: var(--mainWhite);
   font-family: var(--Roboto);
-  margin-right: 7%;
-  width: 30%;
+  padding-right: 1%;
+  /* margin-right: 7%; */
+  /* width: 10%; */
+}
+
+.rightIconDiv img {
+  height: 30px;
+  width: 30px;
+  background-color: yellow;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 .rightIconDiv i,
 .leftIconDiv i {
   color: var(--mainWhite);
+  margin-top: 10px;
 }
 
 .rightIconDiv i:hover,
@@ -784,6 +801,8 @@ body {
   padding-right: 7%;
 }
 
+
+
 .listCategory {
   font-size: 18px;
   font-weight: bold;
@@ -795,6 +814,38 @@ body {
   font-size: 18px;
   font-family: var(--Roboto);
   color: var(--mainPurple);
+}
+
+.footer2Div{
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--mainPurple);
+  height: 50px;
+  box-sizing: border-box;
+}
+
+.footer2Div i{
+  color: var(--mainWhite);
+  font-size: 15px;
+  margin-right: 20px;
+  margin-top: 15px;  
+}
+
+.footer2Div span{
+  color: var(--mainWhite);
+  font-size: 13px;
+  margin-right: 25px;
+  font-family: var(--Roboto);
+  /* margin-top: 25px;   */
+}
+
+.footerDiv1{
+  padding-top: 10px;
+  padding-left: 40px;
+}
+
+.footerDiv2{
+  padding-right: 20px;
 }
 
 .stars-active {
@@ -1408,3 +1459,112 @@ line-height: 20px;
   font-family: var(--Roboto);
   font-weight: bold;
 }
+.bookingRoomSearch{
+  width: 100%;
+  padding: 0 100px 0 100px;
+}
+.roomsSearched{
+  width: 100%;
+ 
+}
+
+.roomImages {
+  width: 310px;
+  margin-top: 1%;
+  height: 250px;
+}
+.room1{
+  width: 100%;
+  display: flex;
+  margin-top: 2%;
+  justify-content: space-between;
+}
+/* .room2{
+  width: 100%;
+  display: flex;
+  margin-top: 2%;
+  justify-content: space-between;
+} */
+.searchName{
+  font-family: Roboto, sans-serif;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 20px;
+letter-spacing: -0.24px;
+
+color:var(--mainPurple);
+}
+.searchButton{
+  margin-top: 3%;
+  width: 25%;
+  height: 35px;
+  font-size: 14px;
+  color: var(--mainWhite);
+  background-color: var(--mainWhite);
+  border: 1px solid rgba(102, 86, 135, 0.5);
+  box-sizing: border-box;
+  box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: Roboto, sans-serif;
+}
+.boardRoomFeatures{
+display: flex;
+justify-content: space-between; 
+align-items: center;
+  
+  
+}
+ /* .boardRoomFeatures :nth-child(1){
+  display: flex;
+  font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 12px;
+line-height: 20px;
+letter-spacing: -0.24px;
+color: #665687;
+}  */
+.searchFeatures{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3%;
+}
+.board{
+  letter-spacing: -0.24px;
+  font-size: 14px;
+  color: var(--mainPurple);
+  
+}
+.building{
+  font-size: 9px;
+  display: flex;
+}
+.features{
+  font-family: Roboto, sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 20px;
+letter-spacing: -0.24px;
+
+color:var(--mainPurple);
+}
+.accessories{
+  padding-right: 164px;
+}
+.accessories :nth-child(2){
+  padding: 0 10px 0 10px;
+}
+.filterIcon{
+  background: #FFFFFF;
+border: 1px solid #665687;
+box-sizing: border-box;
+border-radius: 7px;
+margin-left: 20px;
+font-size: 20px;
+
+}
+

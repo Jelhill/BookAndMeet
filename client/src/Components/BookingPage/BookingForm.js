@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Header from "../Header"
-import Footer from "../Footer"
+import Footer2 from "../Footer2"
 
 import ItemsInRoom from '../RoomInformation/ItemsInRoom'
 import BookingPageLeftSide from "./BookingPageLeftSide"
@@ -19,7 +19,7 @@ export default class BookingForm extends Component {
                     <ItemsInRoom />
                 </div>       
                 <div className="spaceDiv"></div>         
-                <Footer />
+                <Footer2 />
             </div>
         )
     }
