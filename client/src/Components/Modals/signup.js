@@ -11,14 +11,18 @@ class SignUp extends Component{
         }
         return(
             <div className="signupmodal">
-                <div className="signupheader">
-                    <button className="closeWrapper"><span className="close" onClick={this.onClose} >&times;</span></button>
-                    <h3 className="signuptitle">Sign up to continue</h3>
+                <div className="signUpLeft">
+                    <h1 className="boardRoom">BoardRoom</h1>
                 </div>
-                <div>
-                    {this.props.children}
+                <div className="signUpRight">
+                    <div className="signupheader">
+                        <button className="closeWrapper"><span className="close" onClick={this.onClose} >&times;</span></button>
+                        <h3 className="welcome">Welcome</h3>
+                    </div>
+                    <div>
+                        {this.props.children}
+                    </div>
                 </div>
-
             </div>
         )
     }

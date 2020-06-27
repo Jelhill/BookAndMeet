@@ -8,7 +8,6 @@ const client = new Client({
     password: process.env.PASSWORD,
     port: process.env.PORT
 })
-console.log(process.env.PORT)
 client.connect()
 
 module.exports = client

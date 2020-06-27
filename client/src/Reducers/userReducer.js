@@ -1,7 +1,8 @@
-import { GET_SIGNUP_INPUTS } from "../Actions/userActions"
+import { GET_SIGNUP_INPUTS, GET_IMAGE_INPUTS } from "../Actions/userActions"
 
 const initialState = {
-    signUpFormDetails: {}
+    signUpFormDetails: {},
+    imageInputs: {}
 }
 
 const userReducer = (state = initialState, action) => {
@@ -11,6 +12,9 @@ const userReducer = (state = initialState, action) => {
         Object.assign(newState.signUpFormDetails, action.values)
     }
 
+    if(action.type === GET_IMAGE_INPUTS) {
+        Object.assign(newState.imageInputs, action.values)
+    }
     return newState
 }
 
