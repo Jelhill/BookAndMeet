@@ -5,7 +5,7 @@ import { connect } from "react-redux"
 import {Link} from 'react-router-dom'
 import { getSignupInputs } from "../../Actions/userActions"
 import '../../App.css';
-import Footer from "./Roominformation/Footer"
+// import Footer from "./Roominformation/Footer"
 
 class Landing2 extends Component {
   state = {

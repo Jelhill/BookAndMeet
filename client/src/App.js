@@ -13,7 +13,7 @@ import imageLoader from './Components/imageLoader';
 
 
 function App() {
-  
+ 
   return (
     <Fragment>    
       <Switch>
