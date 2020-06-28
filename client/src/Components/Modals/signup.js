@@ -10,6 +10,7 @@ class SignUp extends Component{
             return null;
         }
         return(
+            <div className="signUpBackground">
             <div className="signupmodal">
                 <div className="signUpLeft">
                     <h1 className="boardRoom">BoardRoom</h1>
@@ -23,6 +24,7 @@ class SignUp extends Component{
                         {this.props.children}
                     </div>
                 </div>
+            </div>
             </div>
         )
     }
