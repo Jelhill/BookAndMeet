@@ -11,7 +11,7 @@ class Login extends Component{
             return null;
         }
         return(
-            <div className="loginBackground">
+            <div className="loginBackground" onClick={this.onClose}>
                 <div className="loginmodal">
                     <div className="LoginLeft">
                         <h1 className="boardRoom">BoardRoom</h1>

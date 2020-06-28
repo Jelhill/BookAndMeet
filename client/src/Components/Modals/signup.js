@@ -10,7 +10,7 @@ class SignUp extends Component{
             return null;
         }
         return(
-            <div className="signUpBackground">
+            <div className="signUpBackground" onClick={this.onClose}>
             <div className="signupmodal">
                 <div className="signUpLeft">
                     <h1 className="boardRoom">BoardRoom</h1>
