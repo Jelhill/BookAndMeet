@@ -6,14 +6,14 @@ import Search from './Components/HomePage/Search';
 import Header from './Components/Header';
 import BookingForm from './Components/BookingPage/BookingForm';
 import { Fragment } from 'react';
-
 import UserProfilePage from './Components/ProfilePage/UserProfilePage';
 import Footer from './Components/Footer';
+import imageLoader from './Components/imageLoader';
 
 
 
 function App() {
-  
+ 
   return (
     <Fragment>    
       <Switch>
@@ -22,6 +22,7 @@ function App() {
         <Route exact path="/booking" component={BookingForm} />
         <Route exact path="/aboutRoom" component={AboutRoom} />
         <Route exact path="/user/profile" component={UserProfilePage} />
+        <Route exact path="/imageLoader" component={imageLoader} />
       </Switch>
     </Fragment> 
   );

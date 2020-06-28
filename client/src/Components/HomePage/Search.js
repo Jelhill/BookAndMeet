@@ -5,136 +5,160 @@ import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
 import ImageRoom5 from "../../Images/room5.jpg"
 import RangeList from "../../Data/data"
-import initialState from "../../Data/data"
+import roomList from "../../Data/data"
 import Header from "../Header";
 
 
+
 class Search extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            search: "Search",
-            categorys: [],
-            range: []
-        }
-    }
-
-    updateSearch(event) {
-        this.setState({ search: event.target.value })
-    }
-
-
+    
     render() {
-        const handleSubmit = () => {
-
-
-        }
-
-        console.log(this.state.search)
-
-        let filteredItems = this.props.rooms.filter(
-            (items) => {
-                return items.name.indexOf(this.state.search) !== 1
-            }
-        )
-        console.log(filteredItems)
-        let filteredItem = this.props.ranges.filter(
-            (items) => {
-                return items.name.indexOf(this.state.search) !== 1
-            }
-        )
-
+       
         return (
-            <div className="homeWrapper">
+            <div>
                 <Header />
-            <div className="searchResult">
-                <div>  <p id="result1">Search Result:</p> </div>
-                <div> <p id="result2">Conference not found</p> </div>
-            </div>
-            <div className="homePageBody">
-                <div className="homePageBodyLeft">
-                    <div>
-                        <button className="filter">Search Filter</button>
-                    </div>
-                    <div className="cat">
-                        <p>Categories</p>
-                    </div>
-
-
-                    {filteredItems.map((items) => (
-                        <div className="search-list">
-                            <span>
-                                <input className="radio-cat" type="radio" name="category"
-                                    value={items.name} key={items.id} />
-                            </span>
-                            <label>{items.name}</label>
-                        </div>
-                    )
-                    )}
-
-
-                    <div>
-                        <div className="cat">
-                            <p>Capacity Range</p>
-                        </div>
-
-                        {filteredItem.map((items) => (
-                            <div className="search-list">
-                                <span>
-                                    <input className="radio-cat" type="radio" name="category"
-                                        value={items.name} key={items.id} />
-                                </span>
-                                <label>{items.name}</label>
-                            </div>
-                        )
-                        )}
-                    </div>
-                    <div className="Search-button">
-                        <button onClick={handleSubmit}>{this.state.search}</button>
-                    </div>
+            <div className="bookingRoomSearch">
+                <div className="searchName">
+                    <h5>Search Result</h5>
                 </div>
-                <div className="homePageBodyRight">                    
-                    <img src={ImageRoom5} alt="Room 5" className="roomImages"/>                  
-                    <div className="roomList">
-                        <div className="content1">
-                            <div className="roomName"><Link>Conference Room</Link></div>
-                            <div> <p className="address1">Room 301, Third floor, Main building.</p>
-                                <p className="address2">Zemat Company Oojo, Ibadan</p> </div>
-                            <div><span className="stars-active">
-                                <i className="fa fa-star" aria-hidden="true"></i>
-                                <i className="fa fa-star" aria-hidden="true"></i>
-                                <i className="fa fa-star" aria-hidden="true"></i>
-                                <i className="fa fa-star" aria-hidden="true"></i>
-                                <i className="fa fa-star" aria-hidden="true"></i>
-                            </span></div>
-                        </div>
+                <div>
+                    <input className="searchButton" type="search" placeholder="search by room" />
+                    <span className="filterIcon"><Link><i className="fa fa-filter"></i></Link></span>
+                </div>
+                <div className="roomsSearched">
 
-                        <div className="content2">
-                            <div className="capacity"> <p>Capacity</p> 
-                                <p className="seats"> 22 seats</p>
+                    <div className="room1">
+                        <div>
+                            <div className="roomroom">
+                                <img src={ImageRoom5} alt="Room 5" className="roomImages" />
+
+                                <div className="boardRoomFeatures">
+
+                                    <div className="board">
+
+                                        <p>Board room</p>
+                                    </div>
+                                    <div className="building">
+                                        <p>Room 001,Ground floor, main building</p>
+                                    </div>
+                                    <span><Link><i className="fa fa-user-friends"></i></Link></span>
+                                </div>
                             </div>
-                            <Link><span className="button-book">Book now</span></Link>
+
+                             <div className="searchFeatures">
+                                 <div className="features">
+                                 <p>Features:</p>
+                                 </div>
+                         <div className="accessories">
+                          <span><Link><i className="fa fa-chair"></i></Link></span>  
+                          <span><Link><i className="fa fa-chair"></i></Link></span>
+                          </div>
+                          <p>20</p>  
+                          </div> 
                         </div>
+                        <div>
+                        <div className="roomroom">
+                                <img src={ImageRoom5} alt="Room 5" className="roomImages" />
+
+                                <div className="boardRoomFeatures">
+
+                                    <div className="board">
+
+                                        <p>Board room</p>
+                                    </div>
+                                    <div className="building">
+                                        <p>Room 001,Ground floor, main building</p>
+                                    </div>
+                                    <span><Link><i className="fa fa-user-friends"></i></Link></span>
+                                </div>
+                            </div>
+
+                             <div className="searchFeatures">
+                                 <div className="features">
+                                 <p>Features:</p>
+                                 </div>
+                         <div className="accessories">
+                          <span><Link><i className="fa fa-chair"></i></Link></span>  
+                          <span><Link><i className="fa fa-chair"></i></Link></span>
+                          </div>
+                          <p>20</p>  
+                          </div> 
+                        </div>
+                        <div>
+                        <div className="roomroom">
+                                <img src={ImageRoom5} alt="Room 5" className="roomImages" />
+
+                                <div className="boardRoomFeatures">
+
+                                    <div className="board">
+
+                                        <p>Board room</p>
+                                    </div>
+                                    <div className="building">
+                                        <p>Room 001,Ground floor, main building</p>
+                                    </div>
+                                    <span><Link><i className="fa fa-user-friends"></i></Link></span>
+                                </div>
+                            </div>
+
+                             <div className="searchFeatures">
+                                 <div className="features">
+                                 <p>Features:</p>
+                                 </div>
+                         <div className="accessories">
+                          <span><Link><i className="fa fa-chair"></i></Link></span>  
+                          <span><Link><i className="fa fa-chair"></i></Link></span>
+                          </div>
+                          <p>20</p>  
+                          </div> 
+                        </div>
+                       
+                        <div>
+                        <div className="roomroom">
+                                <img src={ImageRoom5} alt="Room 5" className="roomImages" />
+
+                                <div className="boardRoomFeatures">
+
+                                    <div className="board">
+
+                                        <p>Board room</p>
+                                    </div>
+                                    <div className="building">
+                                        <p>Room 001,Ground floor, main building</p>
+                                    </div>
+                                    <span><Link><i className="fa fa-user-friends"></i></Link></span>
+                                </div>
+                            </div>
+
+                             <div className="searchFeatures">
+                                 <div className="features">
+                                 <p>Features:</p>
+                                 </div>
+                         <div className="accessories">
+                          <span><Link><i className="fa fa-chair"></i></Link></span>  
+                          <span><Link><i className="fa fa-chair"></i></Link></span>
+                          </div>
+                          <p>20</p>  
+                          </div> 
+                        </div>
+                        
+                       
+                       
+                        
                     </div>
+
                 </div>
 
             </div>
-                            <div className="prevNext">
-                                <h5 className="prevNextResult">Showing results 1 - 8 of 25</h5>
-                                <button className="prevButton">Previous</button>
-                                <button className="but1">1</button>
-                                <button className="but2">2</button>
-                                <button className="but3">3</button>
-                                <button className="but4">4</button>
-                                <button className="but5">5</button>
-                                <button className="nextButton">Next</button>
-                            </div>
-
             </div>
+
         )
     }
 }
+
+
+
+
 
 const mapStateToProps = (state) => ({
     rooms: state.categories.rooms,
