@@ -1,4 +1,4 @@
-export const roomList = {
+ export const roomList = {
   rooms: [
     {
       id: 1,
@@ -43,3 +43,5 @@ export const RangeList = {
       }
   ]
 }
+
+export default roomList

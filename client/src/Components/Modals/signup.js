@@ -12,6 +12,7 @@ class SignUp extends Component{
             return null;
         }
         return(
+            <div className="signUpBackground" onClick={this.onClose}>
             <div className="signupmodal">
                 <div className="leftModal">
                     <h1 className="boardRoom">BorardRoom</h1>

@@ -52,15 +52,14 @@ class Landing2 extends Component {
               <h2 className="logo">LOGO</h2>
             </div>
 
-            <div className="loginSignupWrapper" >
-             
-            <button type="button" className="btn btn-primary" id="login" onClick={e => {
-                this.showLogin(e)
-              }}>Login</button>
+          <div className="loginSignupWrapper" >
+            <Link id="login" onClick={e => {
+              this.showLogin(e)
+            }}>Login</Link>
 
-                <button type="button" id="signup" className="btn btn-primary" onClick={e => {
-                this.showSignUp(e)
-              }}>Sign up</button>
+            <Link id="signup"  onClick={e => {
+              this.showSignUp(e)
+            }}>Sign up</Link>
 
 
               <Login onClose={this.showLogin} show={this.state.show} />            
