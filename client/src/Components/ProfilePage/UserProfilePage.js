@@ -3,7 +3,7 @@ import Header from "../Header"
 import { Link } from "react-router-dom"
 import avatar from "../../Images/avatar.png"
 import Footer from '../Footer'
-import Logout from '../Modals/logout'
+import Logout from '../Modals/Logout'
 
 export default class UserProfilePage extends Component {
     state = {
