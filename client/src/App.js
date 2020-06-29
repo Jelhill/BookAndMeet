@@ -11,6 +11,9 @@ import Footer from './Components/Footer';
 import imageLoader from './Components/imageLoader';
 import SignUpContd from './Components/Modals/signUpContd';
 import ForgotPassword from './Components/Modals/forgotPassword';
+import Login from './Components/Modals/Login';
+import SignUp from './Components/Modals/Signup';
+import Logout from './Components/Modals/Logout';
 
 
 
@@ -25,6 +28,9 @@ function App() {
         <Route exact path="/aboutRoom" component={AboutRoom} />
         <Route exact path="/user/profile" component={UserProfilePage} />
         <Route exact path="/imageLoader" component={imageLoader} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/signup" component={SignUp} />
+        <Route exact path="/logout" component={Logout} />
       </Switch>
     </Fragment> 
   );
