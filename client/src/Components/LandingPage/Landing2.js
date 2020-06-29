@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Login from "../Modals/login";
-import SignUp from "../Modals/signup";
+import Login from "../Modals/Login";
+import SignUp from "../Modals/Signup";
 import { connect } from "react-redux"
 import {Link} from 'react-router-dom'
 import { getSignupInputs } from "../../Actions/userActions"
@@ -52,73 +52,18 @@ class Landing2 extends Component {
               <h2 className="logo">LOGO</h2>
             </div>
 
-            <div className="loginSignupWrapper" >
-              <button type="button" className="btn btn-primary" id="login" onClick={e => {
-                this.showLogin(e)
-              }}>Login</button>
+          <div className="loginSignupWrapper" >
+            <Link id="login" onClick={e => {
+              this.showLogin(e)
+            }}>Login</Link>
 
-<button type="button" id="signup" className="btn btn-primary" onClick={e => {
-                this.showSignUp(e)
-              }}>Sign up</button>
+            <Link id="signup"  onClick={e => {
+              this.showSignUp(e)
+            }}>Sign up</Link>
 
 
-              <Login onClose={this.showLogin} show={this.state.show}>
-
-                  <div className="LoginContent">
-                    <form>
-                      <div className="form-group">
-                        <input type="text" className="form-control inputusername" placeholder="Username" />
-                        <input type="password" className="form-control inputpassword" placeholder="password" />
-                          <input type="checkbox" name="rememberme" value="" className="checkbox" style={{marginLeft:"40px"}}></input>
-                          <label for="rememberme" style={{marginLeft:"10px"}}>Remember me</label>
-                          <span><Link className="forgetPassword">forget password ?</Link></span>
-                        <input type="submit" value="Login" className="form-control inputsubmit" />
-                      </div>
-                    </form>
-                    <p className="otherlogin"> Login with
-                    <Link><i className="fa fa-google"></i></Link>
-                      <Link><i className="fa fa-facebook"></i></Link>
-                      <Link><i className="fa fa-twitter"></i></Link>
-                    </p>
-                    <p className="loginparagraph">Don't have an account ? <a href="#">Sign up</a></p>
-                  </div>
-            </Login>
-              <SignUp onClose={this.showSignUp} show2={this.state.show2}>
-                    <div className="signupContent">
-                  <form>
-                    <div className="form-group">
-                      {/* <input type="text" name="surname" className="form-control inputsignup" placeholder="Surname" onChange={this.getUserInput} />
-                      <input type="text" name="firstname" className="form-control inputsignup" placeholder="Firstname" onChange={this.getUserInput}/>
-                      <input type="text" name="othername" className="form-control inputsignup" placeholder="OtherName" onChange={this.getUserInput}/>
-                      <input type="email" name="email" className="form-control inputsignup" placeholder="email" onChange={this.getUserInput}/>
-                      <input type="text" name="phoneNumber" className="form-control inputsignup" placeholder="phoneNumber" onChange={this.getUserInput}/> */}
-                      <input type="text" name="username" className="form-control inputsignup" placeholder="username" onChange={this.getUserInput}/>
-                      <input type="email" name="email" className="form-control inputsignup" placeholder="email" onChange={this.getUserInput}/>
-                      <input type="password" name="password" className="form-control inputsignup" placeholder="password" onChange={this.getUserInput}/>
-                      <input type="password" name="confirmPassword" className="form-control inputsignup" placeholder="confirm password" onChange={this.getUserInput}/>
-                      <input type = "checkbox" name ="rememberme" value="" className="checkbox"></input>
-                      <label for ="rememberme" style={{marginLeft:"10px"}}>Remember me</label>
-                      {/* <div>
-                      <input type="radio" name="gender" value="male" className="" placeholder="gender" onChange={this.getUserInput}/>
-                      <label>Male</label>
-                      <input type="radio" name="gender" value="male" className=""  placeholder="gender" onChange={this.getUserInput}/>
-                      <label>Female</label>
-                      </div>
-                      <input type="file" name="imageUrl" className="form-control inputsignup" placeholder="Image" onChange={this.getUserInput} /> */}
-                      <input type="submit" value="Sign Up" className="form-control signupsubmit" onClick={this.handleSignup} />
-                      
-                    </div>
-                   
-                  </form>
-                  <p className="otherlogin">Sign up with  
-                    <Link><i className="fa fa-google"></i></Link>
-                    <Link><i className="fa fa-facebook"></i></Link>
-                    <Link><i className="fa fa-twitter"></i></Link></p>
-                  <p className="loginparagraph">Already have an account ? <Link>Login</Link></p>
-                  {/* <p className="otherlogin">Sign up with <a href="#">Facebook</a></p>
-                  <p className="otherlogin">Sign up with <a href="#">Google</a></p> */}
-                </div>
-              </SignUp>
+              <Login onClose={this.showLogin} show={this.state.show} />            
+              <SignUp onClose={this.showSignUp} show2={this.state.show2} />
             </div>
           </div>
 

@@ -4,7 +4,6 @@
 body{
   width: 100%;
   background: #FFFFFF;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 } 
 p,
 h1,
@@ -17,6 +16,23 @@ button {
   padding: 0px;
   margin: 0px;
 }
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #d0d3d4;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #d0d3d4;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #d0d3d4;
+}
+
 :root {
   --mainPurple: #665687;
   --mainGray: #f6f6fa;
@@ -24,6 +40,7 @@ button {
   --mainRed: #fa1c1c;
   --Roboto: Roboto, sans-serif;
 }
+
 .header {
   width: 100%;
   height: 70px;
@@ -34,6 +51,7 @@ button {
   padding-top: 15px;
   padding-left: 15px;
 }
+
 .logoWrapper {
   /* position:absolute; */
   left: 30px;
@@ -65,7 +83,7 @@ button {
 .welcome {
   /* position: absolute; */
   /* margin-bottom: 20px; */
-  margin-left: 5px;
+  /* margin-left: 5px; */
   width: 74px;
   height: 20px;
   /* left: 35px; */
@@ -81,28 +99,52 @@ button {
 
   letter-spacing: -0.24px;
 }
-.inputusername {
-  margin: 70px 0px 20px 40px;
-  width: 260px;
-  height: 40px;
-  right: 39px;
-  top: 78px;
 
-  background-color: var(--mainWhite);
-  box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35);
+.welcomeSignIn {
+  margin-bottom: 50px;
+  margin-left: 5px;
+  width: 74px;
+  height: 20px;
+  font-family: roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 20px;
+  color: var(--mainPurple);
+  letter-spacing: -0.24px;
 }
-.inputpassword {
-  margin: 0px 0px 20px 40px;
-  width: 260px;
-  height: 40px;
-  right: 39px;
-  top: 78px;
 
+.formDiv label{
+  margin-left: 5px;
+}
+
+.loginWithDiv{
+  display: flex;
+  padding: 10px 0 0 0;
+  width: 45%;
+  margin: auto;
+}
+
+.formSocialIconsDiv{
+  width: 50%;
+}
+
+.formSocialIconsDiv i {
+  margin-left: 10px;
+  font-size: 1.2rem;
+}
+
+.input{
+  margin: auto;
+  margin-bottom: 15px;  
+  width: 80%;
+  height: 40px;
   background-color: var(--mainWhite);
   box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35);
 }
 .inputsubmit {
-  margin: 0px 0px 20px 40px;
+  margin: auto;
+  /* margin: 0px 0px 20px 40px; */
   width: 260px;
   height: 40px;
   right: 39px;
@@ -114,7 +156,7 @@ button {
   border-radius:8px;
 }
 .loginparagraph {
-  margin-left: 40px;
+  text-align: center;
   color: var(--mainPurple);
   background-color: var(--mainWhite);
 }
@@ -143,6 +185,8 @@ button {
   width: 14px;
   height: 14px;
 }
+
+
 #login {
   /* position:relative; */
   /* width:64px; */
@@ -152,7 +196,8 @@ button {
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 18px;
+  text-decoration: none;
   line-height: 20px;
   letter-spacing: -0.24px;
   color: var(--mainWhite);
@@ -164,16 +209,19 @@ button {
   height: 20px;
   right: 0px;
   top: 30px;
+  margin:10px;
+  text-decoration: none;
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 20px;
   letter-spacing: -0.24px;
   color: var(--mainWhite);
   background-color: var(--mainPurple);
   border: none;
 }
+
 .loginmodal {
    position: absolute;
   display: flex;
@@ -190,6 +238,18 @@ button {
   z-index: 2;
   border-radius: 10px;
   /* visibility: visible; */
+}
+.loginBackground, .signUpBackground{
+  /* display: none; Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 .LoginLeft{
 background-color: var(--mainPurple);
@@ -216,10 +276,10 @@ padding:220px 0px;
   width:50vw;
   background-color: var(--mainWhite);
 }
-.signupmodal {
+.signupmodal, .loginmodal {
   position: absolute;
   display:flex;
-  left: 300px;
+  left: 25%;
   top: 120px;
   width: 50vw;
   height: 472px;
@@ -229,13 +289,14 @@ padding:220px 0px;
   filter: blur(0);
   transform: scale(1);
   opacity: 1;
-  z-index: 2;
+  z-index: 1;
 }
-.signUpLeft{
+
+.leftModal{
   background-color:var(--mainPurple);
   width:50vw;
 }
-.signUpRight{
+.rightModal{
   width:50vw;
 }
 .checkbox{
@@ -330,11 +391,12 @@ padding:220px 0px;
   background-color: var(--mainWhite);
   box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35);
 }
-.signupsubmit {
-  margin: 0px 0px 20px 40px;
-  width: 260px;
+.signupsubmit, .inputsubmit {
+  /* margin: 0px 0px 20px 40px; */
+  margin: auto;
+  width: 80%;
   height: 40px;
-  right: 39px;
+  /* right: 39px; */
   top: 78px;
   color: var(--mainWhite);
   background-color: var(--mainPurple);
@@ -450,6 +512,7 @@ padding:220px 0px;
 }
 
 .landingBody {
+  position: relative;
   width: 100%;
   height: 730px;
   background-image: url("https://i.ibb.co/kmw7V0q/Whats-App-Image-2020-06-12-at-12-54-39.jpg");
@@ -575,7 +638,7 @@ body {
   .otherlogin,
   .inputsignup,
   .signupsubmit {
-    width: 220px;
+    width: 100%;
   }
   .forgetPassword{
     margin-left: 25px;
@@ -596,7 +659,7 @@ body {
     position: absolute;
     height: 20px;
     left: 5px;
-    top: 8px;
+    top: -5px;
   }
   .header{
     width:100vw;
@@ -614,17 +677,17 @@ body {
   }
   #login {
     position: relative;
-    width: 50px;
+    width: 20px;
     height: 10px;
-    left: 178px;
-    z-index: 1;
+    left: 200px;
+    top:10px;
     background-color: none;
     font-size: 12px;
   }
   #signup {
-    width: 85px;
+    width: 60px;
     position: relative;
-    left: 170px;
+    left: 220px;
     top:0px;
     height: 10px;
     background-color: none;
@@ -640,7 +703,7 @@ body {
   }
   .loginmodal {
     position: absolute;
-    left: 40px;
+    left: 30px;
     top: 100px;
     width: 80vw;
     height: 472px;
@@ -658,7 +721,7 @@ body {
   .otherlogin,
   .inputsignup,
   .signupsubmit {
-    width: 200px;
+    width: 180px;
   }
   .forgetPassword{
     margin-left: 40px;
@@ -1622,30 +1685,57 @@ line-height: 20px;
     padding-top: 10px;
     padding-left: 20px;
   }
+
   .footerDiv2{
     display: none;
   }
 
 }
-.bookingRoomSearch{
-  width: 100%;
-  padding: 0 100px 0 100px;
+
+  .leftModal{
+    display: none;
+  }
+
+  .rightModal {
+    width: 90vw;
+    margin: auto;
+  }
+
+  #search {
+    width: 80%;
+    margin-left: 10%;
+    height: 60px;
+    padding: 20px;
+    font-size: 20px;
+    margin-top: 15%;
+    box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.25);
+    border: none;
+    border-radius: 10px;
+  }
+
+.bookingRoomSearchWrapper{
+  box-sizing: border-box;
+  width: 100vw;
+  padding: 1% 3% 0 3%;
+  /* height: 100vh; */
+
 }
 .roomsSearched{
   width: 100%;
-
+  float: left;
 }
 
-.roomImages {
-  width: 310px;
-  margin-top: 1%;
-  height: 250px;
-}
 .room1{
-  width: 100%;
-  display: flex;
+  width: 330px;
+  height: 320px;
   margin-top: 2%;
-  justify-content: space-between;
+  float: left;
+  margin-right: 25px;
+}
+
+.room1 img {
+  width: 100%;
+  height: 250px;
 }
 /* .room2{
   width: 100%;
@@ -1653,18 +1743,14 @@ line-height: 20px;
   margin-top: 2%;
   justify-content: space-between;
 } */
-.searchName{
+.searchLabel{
   font-family: Roboto, sans-serif;
-font-style: normal;
-font-weight: bold;
-font-size: 14px;
-line-height: 20px;
-letter-spacing: -0.24px;
-
-color:var(--mainPurple);
+  font-size: 17px;
+  color:var(--mainPurple);
 }
-.searchButton{
-  margin-top: 3%;
+
+.searchInput{
+  margin-top: 1%;
   width: 25%;
   height: 35px;
   font-size: 14px;
@@ -1676,13 +1762,28 @@ color:var(--mainPurple);
   border-radius: 10px;
   font-size: 20px;
   font-family: Roboto, sans-serif;
+  padding-left: 15px;
 }
 .boardRoomFeatures{
 display: flex;
 justify-content: space-between; 
 align-items: center;
+padding: -1;
+margin: 1;
+}
+.boardRoomFeatures span{
+  font-family: var(--Roboto);  
+  font-size: 17px;
+}
 
+.boardRoomFeatures label{
+  font-size: 11px;
+  margin-top: 7px;
+}
 
+.boardRoomFeatures i{
+  font-size: 20px;
+  color: #000000;
 }
  /* .boardRoomFeatures :nth-child(1){
   display: flex;
@@ -1697,8 +1798,7 @@ color: #665687;
 .searchFeatures{
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-top: 3%;
+  font-family: var(--Roboto);
 }
 .board{
   letter-spacing: -0.24px;
