@@ -4,7 +4,6 @@
 body{
   width: 100%;
   background: #FFFFFF;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 } 
 p,
 h1,
@@ -16,6 +15,22 @@ h6,
 button {
   padding: 0px;
   margin: 0px;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #d0d3d4;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #d0d3d4;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #d0d3d4;
 }
 
 :root {
@@ -1675,7 +1690,8 @@ line-height: 20px;
   .footerDiv2{
     display: none;
   }
-<<<<<<< HEAD
+
+}
 
   .leftModal{
     display: none;
@@ -1697,27 +1713,30 @@ line-height: 20px;
     border: none;
     border-radius: 10px;
   }
-=======
-}
-.bookingRoomSearch{
-  width: 100%;
-  padding: 0 100px 0 100px;
+
+.bookingRoomSearchWrapper{
+  box-sizing: border-box;
+  width: 100vw;
+  padding: 1% 3% 0 3%;
+  /* height: 100vh; */
+
 }
 .roomsSearched{
   width: 100%;
-
+  float: left;
 }
 
-.roomImages {
-  width: 310px;
-  margin-top: 1%;
-  height: 250px;
-}
 .room1{
-  width: 100%;
-  display: flex;
+  width: 330px;
+  height: 320px;
   margin-top: 2%;
-  justify-content: space-between;
+  float: left;
+  margin-right: 25px;
+}
+
+.room1 img {
+  width: 100%;
+  height: 250px;
 }
 /* .room2{
   width: 100%;
@@ -1725,18 +1744,14 @@ line-height: 20px;
   margin-top: 2%;
   justify-content: space-between;
 } */
-.searchName{
+.searchLabel{
   font-family: Roboto, sans-serif;
-font-style: normal;
-font-weight: bold;
-font-size: 14px;
-line-height: 20px;
-letter-spacing: -0.24px;
-
-color:var(--mainPurple);
+  font-size: 17px;
+  color:var(--mainPurple);
 }
-.searchButton{
-  margin-top: 3%;
+
+.searchInput{
+  margin-top: 1%;
   width: 25%;
   height: 35px;
   font-size: 14px;
@@ -1748,13 +1763,28 @@ color:var(--mainPurple);
   border-radius: 10px;
   font-size: 20px;
   font-family: Roboto, sans-serif;
+  padding-left: 15px;
 }
 .boardRoomFeatures{
 display: flex;
 justify-content: space-between; 
 align-items: center;
+padding: -1;
+margin: 1;
+}
+.boardRoomFeatures span{
+  font-family: var(--Roboto);  
+  font-size: 17px;
+}
 
+.boardRoomFeatures label{
+  font-size: 11px;
+  margin-top: 7px;
+}
 
+.boardRoomFeatures i{
+  font-size: 20px;
+  color: #000000;
 }
  /* .boardRoomFeatures :nth-child(1){
   display: flex;
@@ -1769,8 +1799,7 @@ color: #665687;
 .searchFeatures{
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-top: 3%;
+  font-family: var(--Roboto);
 }
 .board{
   letter-spacing: -0.24px;
@@ -1805,5 +1834,4 @@ box-sizing: border-box;
 border-radius: 7px;
 margin-left: 20px;
 font-size: 20px;
->>>>>>> development
 }
