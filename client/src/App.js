@@ -9,6 +9,8 @@ import { Fragment } from 'react';
 import UserProfilePage from './Components/ProfilePage/UserProfilePage';
 import Footer from './Components/Footer';
 import imageLoader from './Components/imageLoader';
+import SignUpContd from './Components/Modals/signUpContd';
+import ForgotPassword from './Components/Modals/forgotPassword';
 
 
 
@@ -17,7 +19,7 @@ function App() {
   return (
     <Fragment>    
       <Switch>
-        <Route exact path="/" component={Landing2} />
+        <Route exact path="/" component={SignUpContd} />
         <Route exact path="/home" component={Search} />
         <Route exact path="/booking" component={BookingForm} />
         <Route exact path="/aboutRoom" component={AboutRoom} />
