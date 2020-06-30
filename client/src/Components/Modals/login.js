@@ -11,13 +11,14 @@ class Login extends Component{
             return null;
         }
         return(
+          <div className="loginBackground" onClick={this.onClose}>
             <div className="loginmodal">
                 <div className="leftModal">
                     <h1 className="boardRoom">BoardRoom</h1>
                 </div>
                 <div className="rightModal">                
                     <button className="closeWrapper"><span className="close" onClick={this.onClose} >&times;</span></button>
-                    <h3 className="welcomeSignIn">Sign In</h3>
+                    <h3 className="welcomeSignIn">Welcome</h3>
   
                     <div className="modalContent">
                     <form>
@@ -42,6 +43,7 @@ class Login extends Component{
                   </div>
                 </div>
 
+                </div>
                 </div>
         )
     }
