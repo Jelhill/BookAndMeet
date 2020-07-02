@@ -9,6 +9,8 @@ import { Fragment } from 'react';
 import UserProfilePage from './Components/ProfilePage/UserProfilePage';
 import Footer from './Components/Footer';
 import imageLoader from './Components/imageLoader';
+import SignUpContd from './Components/Modals/signUpContd';
+import ForgotPassword from './Components/Modals/forgotPassword';
 import Login from './Components/Modals/Login';
 import SignUp from './Components/Modals/SignUp';
 import Logout from './Components/Modals/Logout';

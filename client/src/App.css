@@ -1,10 +1,11 @@
 /* /* /* To use the color variable,  follow the below example
  background-color: var(--mainWhite) !important;
 */
-body{
+/* body {
   width: 100%;
-  background: #FFFFFF;
-} 
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+} */
 p,
 h1,
 h2,
@@ -157,7 +158,7 @@ button {
 .input{
   margin: auto;
   margin-bottom: 15px;  
-  width: 80%;
+  width: 50%;
   height: 40px;
   background-color: var(--mainWhite);
   box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35);
@@ -173,7 +174,7 @@ button {
   background-color: var(--mainPurple);
   border-bottom: 8px;
   box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35);
-  border-radius:8px;
+  border-radius: 8px;
 }
 .loginparagraph {
   text-align: center;
@@ -207,7 +208,7 @@ button {
 }
 
 .modalContent{
-  /* padding-left: 10%; */
+  padding-left: 10%;
 }
 #login, #signup {
   /* position:relative; */
@@ -230,7 +231,7 @@ button {
   height: 20px;
   right: 0px;
   top: 30px;
-  margin:10px;
+  margin: 10px;
   text-decoration: none;
   font-family: Roboto;
   font-style: normal;
@@ -244,11 +245,11 @@ button {
 } */
 
 .loginmodal {
-   position: absolute;
+  position: absolute;
   display: flex;
   left: 20%;
   padding-left: 5px;
-  top: 120px; 
+  top: 120px;
   width: 50vw;
   height: 472px;
   transition: 1.1s ease-out;
@@ -271,29 +272,29 @@ button {
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
 }
-.LoginLeft{
-background-color: var(--mainPurple);
-width:50vw;
+.LoginLeft {
+  background-color: var(--mainPurple);
+  width: 50vw;
 }
-.boardRoom{
+.boardRoom {
   font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 32px;
-line-height: 20px;
-/* identical to box height, or 62% */
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 20px;
+  /* identical to box height, or 62% */
 
-letter-spacing: -0.24px;
-color:var(--mainWhite);
-text-align:center;
-padding:220px 0px;
+  letter-spacing: -0.24px;
+  color: var(--mainWhite);
+  text-align: center;
+  padding: 220px 0px;
 }
-.checkBoxDiv{
-  display:flex;
+.checkBoxDiv {
+  display: flex;
   text-align: center;
 }
-.LoginRight{
-  width:50vw;
+.LoginRight {
+  width: 50vw;
   background-color: var(--mainWhite);
 }
 .signupmodal, .loginmodal {
@@ -311,6 +312,29 @@ padding:220px 0px;
   z-index: 1;
   /* border-radius: 5px; */
 }
+.signUpInput2 {
+  width: 128px;
+  height: 25px;
+  padding:5px;
+  margin:10px;
+  border:20px;
+  background-color:#ffffff;
+  box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.1);
+}
+.signUpContdWrapper{
+  text-align:center;
+}
+.forgotPassword{
+  margin:30px;
+}
+.forgotPasswordHeader{
+  margin:0px 0px 20px 10px;
+}
+.signUpContdParagraph{
+width: 200px;
+height: 40px;
+margin:20px 0px 40px 20px;
+padding:5px;
 
 .leftModal{
   background-color:var(--mainPurple);
@@ -319,14 +343,14 @@ padding:220px 0px;
 .rightModal{
   width:50%;
 }
-.checkbox{
-  margin-left:40px;
+.checkbox {
+  margin-left: 40px;
 }
 .logoutmodal {
   background-color: var(--mainRed);
   height: 252px;
   width: 334px;
-  background-color:var(--mainWhite);
+  background-color: var(--mainWhite);
   border: 1px solid #f6f6fa;
   box-sizing: border-box;
   box-shadow: 3px 4px 16px rgba(0, 0, 0, 0.1);
@@ -340,15 +364,15 @@ padding:220px 0px;
   margin-left: 20px;
   padding-top: 10px;
   color: var(--mainPurple);
-  font-family:var(--Roboto);
-  font-weight:bold;
+  font-family: var(--Roboto);
+  font-weight: bold;
   font-size: 32px;
 }
 .logoutparagraph {
   text-align: center;
   margin: 30px;
-  font-family:var(--Roboto);
-  font-size:24px;
+  font-family: var(--Roboto);
+  font-size: 24px;
 }
 .logoutlink {
   display: flex;
@@ -411,12 +435,35 @@ padding:220px 0px;
   background-color: var(--mainWhite);
   box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35);
 }
-.signupsubmit, .inputsubmit {
-  /* margin: 0px 0px 20px 40px; */
-  margin: auto;
-  width: 80%;
+.forgotEmail{
+  margin: 0px 0px 20px 1px;
+  width: 260px;
+  height: 40px;
+  right: 39px;
+  top: 78px;
+  background-color: var(--mainWhite);
+  box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35);
+}
+.forgotPasswordText{
+  color:var(--mainPurple);
+  margin-bottom: 20px;
+}
+.signupsubmit {
+  margin: 0px 0px 20px 40px;
+  width: 260px;
   height: 40px;
   /* right: 39px; */
+  top: 78px;
+  color: var(--mainWhite);
+  background-color: var(--mainPurple);
+  border-bottom: 8px;
+  box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35);
+}
+.forgetSubmit{
+  margin: 0px 0px 20px 1px;
+  width: 260px;
+  height: 40px;
+  right: 39px;
   top: 78px;
   color: var(--mainWhite);
   background-color: var(--mainPurple);
@@ -434,7 +481,7 @@ padding:220px 0px;
     border-bottom: 8px;
     box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35);
   } */
-.signUpWrapper{
+.signUpWrapper {
   background-color: var(--mainRed);
 }
 .modal-content {
@@ -491,10 +538,10 @@ padding:220px 0px;
   background: #ffffff;
   box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35);
 }
-.forgetPassword{
-  color:var(--mainRed);
-  font-size:"10px";
-  margin-left:"60px";
+.forgetPassword {
+  color: var(--mainRed);
+  font-size: "10px";
+  margin-left: "60px";
 }
 .facebooksignup {
   width: 260px;
@@ -548,7 +595,7 @@ body {
   max-width: 100%;
   height: 100%;
 }
-.forgetPassword{
+.forgetPassword {
   font-size: 10px;
   margin-left: 40px;
 }
@@ -596,7 +643,7 @@ body {
     width: 280px;
     height: 472px;
   } */
-  /* .signupmodal {
+/* .signupmodal {
     position: absolute;
     left: 40px;
     top: 100px;
@@ -612,9 +659,9 @@ body {
     width: 200px;
   }
 }  */
-@media screen and  (min-width: 601px) and (max-width: 768px) {
-  .header{
-    width:100vw;
+@media screen and (min-width: 601px) and (max-width: 768px) {
+  .header {
+    width: 100vw;
   }
   #login {
     position: relative;
@@ -625,17 +672,19 @@ body {
     font-size: 18px;
     /* z-index:1; */
   }
-  .LoginLeft,.signUpLeft{
-    width:50vw;
+  .LoginLeft,
+  .signUpLeft {
+    width: 50vw;
   }
-  .LoginRight,.signUpRight{
-    width:50vw;
+  .LoginRight,
+  .signUpRight {
+    width: 50vw;
   }
   #signup {
     position: relative;
     width: 140px;
     left: 0px;
-    top:0px;
+    top: 0px;
     background-color: none;
     font-size: 18px;
   }
@@ -650,13 +699,13 @@ body {
     position: absolute;
     left: 100px;
     top: 100px;
-    width:80vw;
+    width: 80vw;
   }
   .loginmodal {
     position: absolute;
     left: 100px;
     top: 100px;
-    width:80vw;
+    width: 80vw;
   }
   .inputusername,
   .inputpassword,
@@ -666,14 +715,14 @@ body {
   .signupsubmit {
     width: 100%;
   }
-  .forgetPassword{
+  .forgetPassword {
     margin-left: 25px;
     margin-bottom:10px;
     color:var(--mainRed);
     font-size:10px;
   } */
 }
-@media screen and (min-width: 320px) and (max-width:600px) {
+@media screen and (min-width: 320px) and (max-width: 600px) {
   .logoWrapper {
     position: absolute;
     left: 30px;
@@ -687,14 +736,16 @@ body {
     left: 5px;
     top: -5px;
   }
-  .header{
-    width:100vw;
+  .header {
+    width: 100vw;
   }
-  .signUpLeft,.LoginLeft{
-    width:0vw;
+  .signUpLeft,
+  .LoginLeft {
+    display:none;
   }
-  .signUpRight,.LoginRight{
-    width:80vw;
+  .signUpRight,
+  .LoginRight {
+    width: 80vw;
   }
   .loginSignupWrapper {
     width: 50%;
@@ -706,15 +757,15 @@ body {
     width: 20px;
     height: 10px;
     left: 200px;
-    top:10px;
+    top: 10px;
     background-color: none;
     font-size: 12px;
   }
   #signup {
     width: 60px;
     position: relative;
-    left: 220px;
-    top:0px;
+    left: 210px;
+    top: 0px;
     height: 10px;
     background-color: none;
     /* margin: 0px; */
@@ -746,14 +797,67 @@ body {
   .inputsubmit,
   .otherlogin,
   .inputsignup,
-  .signupsubmit {
+  .signupsubmit,
+  .forgotEmail,
+  .forgetSubmit,
+  .forgetPasswordParagraph{
     width: 180px;
   }
-  .forgetPassword{
+  .forgetPassword {
     margin-left: 40px;
-    margin-bottom:10px;
-    display:block;
-    color:var(--mainRed)
+    margin-bottom: 10px;
+    display: block;
+    color: var(--mainRed);
+  }
+  .signUpInput2{
+    width:100px;
+  }
+  .signUp2modal{
+    position:relative;
+    left:30px;
+    top:30px;
+  }
+  .signUp2paragraph{
+      font-size: 2x;
+      width:150px;
+      margin-bottom:10px;
+      text-align: center;
+  }
+}
+@media screen and (width: 1024px){
+    .LoginLeft,
+  .signUpLeft {
+    width: 50vw;
+  }
+  .LoginRight,
+  .signUpRight {
+    width: 50vw;
+  }
+  .signupmodal {
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    width: 80vw;
+  }
+  .loginmodal {
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    width: 80vw;
+  }
+  .inputusername,
+  .inputpassword,
+  .inputsubmit,
+  .otherlogin,
+  .inputsignup,
+  .signupsubmit {
+    width: 300px;
+  }
+  .forgetPassword {
+    margin-left: 25px;
+    margin-bottom: 10px;
+    color: var(--mainRed);
+    font-size: 10px;
   }
 }
 
@@ -832,20 +936,19 @@ body {
   bottom: 0;
   margin-left: 7%;
 }
-.navigations{
+.navigations {
   color: var(--mainPurple);
   margin: auto;
   display: flex;
   padding-left: 20px;
-  margin-top: 1%; 
+  margin-top: 1%;
   background-color: var(--mainGray);
   font-family: var(--Roboto);
   font-size: 15px;
 }
-.navigations :nth-child(2){
+.navigations :nth-child(2) {
   padding: 0px 7px;
 }
-
 
 .inputSpecial {
   width: 30%;
@@ -854,7 +957,7 @@ body {
   border: 1px solid #d6dbdf;
   box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
-  margin-top: 1%; 
+  margin-top: 1%;
   font-size: 20px;
   padding-left: 20px;
 }
@@ -985,8 +1088,6 @@ body {
   padding-right: 7%;
 }
 
-
-
 .listCategory {
   font-size: 18px;
   font-weight: bold;
@@ -1000,7 +1101,7 @@ body {
   color: var(--mainPurple);
 }
 
-.footer2Div{
+.footer2Div {
   display: flex;
   justify-content: space-between;
   background-color: var(--mainPurple);
@@ -1008,14 +1109,14 @@ body {
   box-sizing: border-box;
 }
 
-.footer2Div i{
+.footer2Div i {
   color: var(--mainWhite);
   font-size: 15px;
   margin-right: 20px;
-  margin-top: 15px;  
+  margin-top: 15px;
 }
 
-.footer2Div span{
+.footer2Div span {
   color: var(--mainWhite);
   font-size: 13px;
   margin-right: 25px;
@@ -1023,12 +1124,12 @@ body {
   /* margin-top: 25px;   */
 }
 
-.footerDiv1{
+.footerDiv1 {
   padding-top: 10px;
   padding-left: 40px;
 }
 
-.footerDiv2{
+.footerDiv2 {
   padding-right: 20px;
 }
 
@@ -1341,7 +1442,7 @@ body {
   margin-left: 7%;
 }
 
-.imageAndItems{
+.imageAndItems {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -1440,113 +1541,111 @@ body {
   display: flex;
   background-color: #fafafa;
 }
-.prevNext{
+.prevNext {
   display: flex;
   justify-content: center;
   margin-left: 300px;
-
 }
-.prevNext button{
+.prevNext button {
   margin-left: 20px;
-  
 }
-.prevNextResult{
+.prevNextResult {
   font-family: Roboto, sans-serif;
-font-style: normal;
-font-weight: normal;
-font-size: 24px;
-line-height: 20px;
-/* identical to box height, or 83% */
-letter-spacing: -0.24px;
-color: var(--mainPurple);
-margin-top: 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 20px;
+  /* identical to box height, or 83% */
+  letter-spacing: -0.24px;
+  color: var(--mainPurple);
+  margin-top: 10px;
 }
 .prevButton {
   width: 120px;
-  height:40px;
+  height: 40px;
   color: var(--mainPurple);
   font-size: 22px;
   font-family: var(--Roboto);
-align-items: center;
-background: #FAFAFA;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border: 1px solid var(--mainPurple);
-letter-spacing: -0.24px;
-line-height: 20px;
+  align-items: center;
+  background: #fafafa;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--mainPurple);
+  letter-spacing: -0.24px;
+  line-height: 20px;
 }
-.but1{
+.but1 {
   width: 40px;
-  height:40px;
+  height: 40px;
   color: var(--mainPurple);
   font-size: 22px;
   font-family: var(--Roboto);
-align-items: center;
-background: #FAFAFA;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border: 1px solid var(--mainPurple);
-line-height: 20px;
+  align-items: center;
+  background: #fafafa;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--mainPurple);
+  line-height: 20px;
 }
 
-.but2{
+.but2 {
   width: 40px;
-  height:40px;
+  height: 40px;
   color: var(--mainPurple);
   font-size: 22px;
   font-family: var(--Roboto);
-align-items: center;
-background: #FAFAFA;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border: 1px solid var(--mainPurple);
-line-height: 20px;
+  align-items: center;
+  background: #fafafa;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--mainPurple);
+  line-height: 20px;
 }
-.but3{
+.but3 {
   width: 40px;
-  height:40px;
+  height: 40px;
   color: var(--mainPurple);
   font-size: 22px;
   font-family: var(--Roboto);
-align-items: center;
-background: #FAFAFA;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border: 1px solid var(--mainPurple);
-line-height: 20px;
+  align-items: center;
+  background: #fafafa;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--mainPurple);
+  line-height: 20px;
 }
-.but4{
+.but4 {
   width: 40px;
-  height:40px;
+  height: 40px;
   color: var(--mainPurple);
   font-size: 22px;
   font-family: var(--Roboto);
-align-items: center;
-background: #FAFAFA;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border: 1px solid var(--mainPurple);
-line-height: 20px;
+  align-items: center;
+  background: #fafafa;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--mainPurple);
+  line-height: 20px;
 }
-.but5{
+.but5 {
   width: 40px;
-  height:40px;
+  height: 40px;
   color: var(--mainPurple);
   font-size: 22px;
   font-family: var(--Roboto);
-align-items: center;
-background: #FAFAFA;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border: 1px solid var(--mainPurple);
-line-height: 20px;
+  align-items: center;
+  background: #fafafa;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--mainPurple);
+  line-height: 20px;
 }
 .nextButton {
   width: 120px;
-  height:40px;
+  height: 40px;
   color: var(--mainPurple);
   font-size: 22px;
   font-family: var(--Roboto);
-align-items: center;
-background: #FAFAFA;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border: 1px solid var(--mainPurple);
-letter-spacing: -0.24px;
-line-height: 20px;
+  align-items: center;
+  background: #fafafa;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--mainPurple);
+  letter-spacing: -0.24px;
+  line-height: 20px;
 }
 .userProfileLeft {
   width: 20%;
@@ -1650,13 +1749,12 @@ line-height: 20px;
   font-weight: bold;
 }
 
-
 /* Media Queries */
 @media (min-width: 320px) and (max-width: 768px) {
   .imageAndItems {
     display: block;
   }
-  .imageAndItems img{
+  .imageAndItems img {
     width: 100%;
     height: 40%;
   }
@@ -1670,11 +1768,11 @@ line-height: 20px;
     display: inline-table;
     margin-top: 10px;
   }
-  
+
   .title-conf p {
     font-size: 15px;
   }
-  
+
   .title-conf h4 {
     font-family: var(--Roboto);
     font-size: 18px;
@@ -1705,8 +1803,8 @@ line-height: 20px;
     margin-left: 25%;
     border: none;
   }
-  
-  .footerDiv1{
+
+  .footerDiv1 {
     padding-top: 10px;
     padding-left: 20px;
   }
@@ -1738,7 +1836,7 @@ line-height: 20px;
   
 
 }
-.roomsSearched{
+.roomsSearched {
   width: 100%;
   float: left;
 }
@@ -1803,7 +1901,7 @@ margin: 1;
   font-size: 20px;
   color: #000000;
 }
- /* .boardRoomFeatures :nth-child(1){
+/* .boardRoomFeatures :nth-child(1){
   display: flex;
   font-family: Roboto;
 font-style: normal;
@@ -1813,35 +1911,34 @@ line-height: 20px;
 letter-spacing: -0.24px;
 color: #665687;
 }  */
-.searchFeatures{
+.searchFeatures {
   display: flex;
   justify-content: space-between;
   font-family: var(--Roboto);
 }
-.board{
+.board {
   letter-spacing: -0.24px;
   font-size: 14px;
   color: var(--mainPurple);
-
 }
-.building{
+.building {
   font-size: 9px;
   display: flex;
 }
-.features{
+.features {
   font-family: Roboto, sans-serif;
-font-style: normal;
-font-weight: normal;
-font-size: 14px;
-line-height: 20px;
-letter-spacing: -0.24px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.24px;
 
-color:var(--mainPurple);
+  color: var(--mainPurple);
 }
-.accessories{
+.accessories {
   padding-right: 164px;
 }
-.accessories :nth-child(2){
+.accessories :nth-child(2) {
   padding: 0 10px 0 10px;
 }
 .filterIcon{
