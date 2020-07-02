@@ -1,33 +1,36 @@
 import React, {Component} from 'react';
 import { Link } from "react-router-dom"
-import CompleteSignUp from './CompleteSignUp';
 import { connect } from 'react-redux';
-import { showSignup, getSignupInputs, saveInitialUserDetails } from "../../Actions/userActions"
+import { showSignup, saveInitialUserDetails, getSignupInputs } from "../../Actions/userActions"
 
-class SignUp extends Component{
 
-  state = {
-    show3: false,
-  };
+
+
+class CompleteSignUp extends Component{
 
     onClose = (e) => {
       e.preventDefault()
       this.props.showSignup(false)
-    }
-
-    onSignUp = e => {
-      e.preventDefault();
-      this.setState({
-        show3: !this.state.show3
-      }) 
-    };
+    } 
 
     getUserInput = (e) => {
       this.props.getSignupInputs({[e.target.name]: e.target.value})
     }
-  
+
+    handleSignup = async (e) => {
+      e.preventDefault()
+      await fetch("http://localhost:3001/signUp", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(this.props.signUpFormDetails)
+      })
+      .then((response) => response.json())
+      .then((jsonResponse) => {console.log(jsonResponse)})
+      .catch((err) => console.log(err))
+    }
+
     render(){
-        if(this.props.showSignUp === false){
+        if(!this.props.show3){
             return null;
         }
         return(
@@ -39,42 +42,42 @@ class SignUp extends Component{
                   <div className="rightModal">
                       <div className="signupheader">
                           <button className="closeWrapper"><span className="close" onClick={this.onClose} >&times;</span></button>
-                          <h3 className="welcome">Sign up</h3>
+                          <h3 className="welcome">Complete registration</h3>
                       </div>
                   
                       <div className="modalContent">
                     <form>
                       <div className="formDiv">
-                        <input type="text" name="username" className="form-control input" placeholder="username" onChange={this.getUserInput}/>
-                        <input type="email" name="email" className="form-control input" placeholder="email" onChange={this.getUserInput}/>
-                        <input type="password" name="password" className="form-control input" placeholder="password" autoComplete="off" onChange={this.getUserInput}/>
-                        <input type="password" name="confirmPassword" className="form-control input" placeholder="confirm password" autoComplete="off" onChange={this.getUserInput}/>
+                        <input type="text" name="firstname" className="form-control input" placeholder="FirstName" onChange={this.getUserInput}/>
+                        <input type="text" name="surname" className="form-control input" placeholder="LastName" onChange={this.getUserInput}/>
+                        <input type="text" name="phone" className="form-control input" placeholder="Phone Number" onChange={this.getUserInput}/>
+                        <div className="genderDiv">
+                          <div>
+                            <input type="radio" name="gender" value="Male" onChange={this.getUserInput} /> 
+                            <label>Male</label>
+                          </div>
+                          <div>
+                            <input type="radio" name="gender" value="Female" onChange={this.getUserInput} />
+                            <label>Female</label>
+                          </div>                          
+                        </div>
                         <input type = "checkbox" name ="rememberme" value="" className="checkbox"></input>
                         <label htmlFor ="rememberme" >Remember me</label>
-                        <button className="form-control signupsubmit" onClick={this.onSignUp}>Sign Up</button>
+                        <button className="form-control signupsubmit" onClick={this.handleSignup}>Complete</button>
                       </div>                   
                     </form>
-                    <div className="loginWithDiv">
-                        <label className=""> Login with</label>
-                        <Link to=""><i className="fa fa-google"></i></Link>
-                        <Link to=""><i className="fa fa-facebook"></i></Link>
-                        <Link to=""><i className="fa fa-twitter"></i></Link>
-                    </div>
                       <p className="loginparagraph">Already Registered? <Link to="#">Sign in</Link></p>
-
                   </div>
                       </div>
                   </div>
-                  <CompleteSignUp onClose={this.onSignUp} show3={this.state.show3} />
             </div>
+        
         )
     }
 }
 
-
 const mapStateToProps = (state) => {
   const { userReducer } = state
-  console.log(userReducer.signUpFormDetails)
   return {
     signUpFormDetails: userReducer.signUpFormDetails,
     showSignUp: userReducer.showSignUp
@@ -89,4 +92,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
+  export default connect(mapStateToProps, mapDispatchToProps)(CompleteSignUp);

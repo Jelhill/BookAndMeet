@@ -43,7 +43,7 @@ button {
 
 .header {
   width: 100%;
-  height: 70px;
+  height: 10%;
   background-color: var(--mainPurple);
   display: flex;
   justify-content: space-between;
@@ -84,8 +84,8 @@ button {
   /* position: absolute; */
   /* margin-bottom: 20px; */
   /* margin-left: 5px; */
-  width: 74px;
-  height: 20px;
+  /* width: 74px;
+  height: 20px; */
   /* left: 35px; */
   /* top: 35px; */
 
@@ -95,6 +95,7 @@ button {
   font-size: 18px;
   line-height: 20px;
   color: var(--mainPurple);
+  text-align: center;
   /* identical to box height, or 62% */
 
   letter-spacing: -0.24px;
@@ -118,11 +119,30 @@ button {
   margin-left: 5px;
 }
 
-.loginWithDiv{
+.genderDiv {
   display: flex;
-  padding: 10px 0 0 0;
-  width: 45%;
+  width: 80%;
   margin: auto;
+}
+.genderDiv input{
+  margin-left: 15px;
+  font-family: var(--Roboto);
+}
+
+.loginWithDiv{
+  float: right;
+  padding: 10px 0 0 0;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+}
+
+.loginWithDiv label {
+  margin-right: 15px;
+}
+
+.loginWithDiv i {
+  margin-right: 10px;
 }
 
 .formSocialIconsDiv{
@@ -189,7 +209,7 @@ button {
 .modalContent{
   /* padding-left: 10%; */
 }
-#login {
+#login, #signup {
   /* position:relative; */
   /* width:64px; */
   height: 20px;
@@ -204,10 +224,9 @@ button {
   letter-spacing: -0.24px;
   color: var(--mainWhite);
   background-color: var(--mainPurple);
-  border: none;
+  margin-right: 20px;
 }
-#signup {
-  /* position: absolute; */
+/* #signup {
   height: 20px;
   right: 0px;
   top: 30px;
@@ -222,7 +241,7 @@ button {
   color: var(--mainWhite);
   background-color: var(--mainPurple);
   border: none;
-}
+} */
 
 .loginmodal {
    position: absolute;
@@ -241,8 +260,7 @@ button {
   border-radius: 10px;
   /* visibility: visible; */
 }
-.loginBackground, .signUpBackground{
-  /* display: none; Hidden by default */
+.modalDiv{
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
@@ -251,7 +269,7 @@ button {
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
 }
 .LoginLeft{
 background-color: var(--mainPurple);
@@ -279,27 +297,27 @@ padding:220px 0px;
   background-color: var(--mainWhite);
 }
 .signupmodal, .loginmodal {
-  position: absolute;
+  margin: auto;
   display:flex;
-  left: 25%;
-  top: 120px;
-  width: 50vw;
+  margin-top: 100px; 
+  width: 760px;
   height: 472px;
   background: white;
-  transition: 1.1s ease-out;
+  /* transition: 1.1s ease-out; */
   box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35);
   filter: blur(0);
-  transform: scale(1);
+  /* transform: scale(1); */
   opacity: 1;
   z-index: 1;
+  /* border-radius: 5px; */
 }
 
 .leftModal{
   background-color:var(--mainPurple);
-  width:50vw;
+  width:50%;
 }
 .rightModal{
-  width:50vw;
+  width:50%;
 }
 .checkbox{
   margin-left:40px;
@@ -487,6 +505,12 @@ padding:220px 0px;
   box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35);
 }
 /* landing search bar */
+
+.landingWrapper{
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+}
 #search {
   width: 50%;
   margin-left: 25%;
@@ -514,12 +538,12 @@ padding:220px 0px;
 }
 
 .landingBody {
-  position: relative;
   width: 100%;
-  height: 730px;
+  height: 90%;
   background-image: url("https://i.ibb.co/kmw7V0q/Whats-App-Image-2020-06-12-at-12-54-39.jpg");
   background-size: cover;
 }
+
 body {
   max-width: 100%;
   height: 100%;
@@ -616,13 +640,13 @@ body {
     font-size: 18px;
   }
   #search {
-    position: relative;
-    width: 500px;
+    /* position: relative; */
+    /* width: 500px; */
     height: 60px;
-    left: 0px;
+    /* left: 0px; */
     top: 210px;
   }
-  .signupmodal {
+  /* .signupmodal {
     position: absolute;
     left: 100px;
     top: 100px;
@@ -647,7 +671,7 @@ body {
     margin-bottom:10px;
     color:var(--mainRed);
     font-size:10px;
-  }
+  } */
 }
 @media screen and (min-width: 320px) and (max-width:600px) {
   .logoWrapper {
@@ -675,8 +699,8 @@ body {
   .loginSignupWrapper {
     width: 50%;
     display: flex;
-    /* background-color: yellow; */
   }
+
   #login {
     position: relative;
     width: 20px;
@@ -697,11 +721,11 @@ body {
     font-size: 12px;
   }
   #search {
-    position: relative;
+    /* position: relative; */
     width: 200px;
     height: 60px;
-    left: 00px;
-    top: 210px;
+    /* left: 00px; */
+    /* top: 210px; */
   }
   .loginmodal {
     position: absolute;
@@ -710,13 +734,13 @@ body {
     width: 80vw;
     height: 472px;
   }
-  .signupmodal {
+  /* .signupmodal {
     position: absolute;
     left: 40px;
     top: 100px;
     width: 80vw;
     height: 550px;
-  }
+  } */
   .inputusername,
   .inputpassword,
   .inputsubmit,
@@ -1690,19 +1714,11 @@ line-height: 20px;
   .footerDiv2{
     display: none;
   }
-
 }
 
-  .leftModal{
-    display: none;
-  }
 
-  .rightModal {
-    width: 90vw;
-    margin: auto;
-  }
 
-  #search {
+  /* #search {
     width: 80%;
     margin-left: 10%;
     height: 60px;
@@ -1712,13 +1728,14 @@ line-height: 20px;
     box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.25);
     border: none;
     border-radius: 10px;
-  }
+  } */
 
 .bookingRoomSearchWrapper{
   box-sizing: border-box;
   width: 100vw;
-  padding: 1% 3% 0 3%;
-  /* height: 100vh; */
+  padding: 1% 2% 0 2%;
+  height: 200vh;
+  
 
 }
 .roomsSearched{
@@ -1727,16 +1744,16 @@ line-height: 20px;
 }
 
 .room1{
-  width: 330px;
-  height: 320px;
+  width: 309px;
+  height: 290px;
   margin-top: 2%;
   float: left;
-  margin-right: 25px;
+  margin-right: 15px;
 }
 
 .room1 img {
   width: 100%;
-  height: 250px;
+  height: 220px;
 }
 /* .room2{
   width: 100%;
@@ -1774,7 +1791,7 @@ margin: 1;
 }
 .boardRoomFeatures span{
   font-family: var(--Roboto);  
-  font-size: 17px;
+  font-size: 15px;
 }
 
 .boardRoomFeatures label{
@@ -1834,4 +1851,52 @@ box-sizing: border-box;
 border-radius: 7px;
 margin-left: 20px;
 font-size: 20px;
+}
+
+@media (min-width: 616px) and (max-width: 900px) {
+
+  .signupmodal, .loginmodal {
+    width: 600px;
+  }
+  
+}
+
+@media (min-width: 500px) and (max-width: 616px) {
+  .signupmodal, .loginmodal {
+    width: 90%;
+  }  
+}
+
+@media (min-width: 320px) and (max-width: 500px) {
+  .signupmodal, .loginmodal {
+    width: 90%;
+  }  
+
+  .leftModal{
+    display: none;
+  }
+
+  .rightModal {
+    width: 100vw;
+    margin: auto;
+  }
+}
+
+@media (max-width: 320px) {
+  .signupmodal, .loginmodal {
+    width: 90%;
+  }  
+
+  .leftModal{
+    display: none;
+  }
+
+  .rightModal {
+    width: 320px;
+    margin: auto;
+  }
+
+  .modalDiv {
+    width: 300px;
+  }
 }
