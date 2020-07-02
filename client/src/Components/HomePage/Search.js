@@ -17,7 +17,7 @@ class Search extends Component {
     render() {
        
         return (
-            <Fragment>
+            <div className="homePageWrapper">
                 <Header />
                 <div className="bookingRoomSearchWrapper">
                     <p className="searchLabel">Search Result</p>
@@ -187,9 +187,9 @@ class Search extends Component {
                             <p>20</p>  
                         </div> 
                     </div>
-                </div>
-                {/* <Footer2 /> */}
-            </Fragment>
+                </div><br/>
+                <Footer2 />
+            </div>
         )
     }
 }

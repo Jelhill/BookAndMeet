@@ -10,7 +10,7 @@
             "surname": "surname",
             "firstname": "firstname",
             "gender": "male",
-            "phoneNumber": "08025245454",
+            "phone": "08025245454",
             "email": "example@gmail.com",
             "password": "mypassword"
         }
@@ -19,7 +19,7 @@
         "surname",
         "firstname",
         "gender",
-        "phoneNumber",
+        "phone",
         "email",
         "password"
     ],
@@ -64,7 +64,7 @@
                 "male"
             ]
         },
-        "phoneNumber": {
+        "phone": {
             "$id": "#/properties/department",
             "type": "string",
             "minLength": 5,
