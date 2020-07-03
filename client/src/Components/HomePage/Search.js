@@ -4,10 +4,10 @@ import { addRange } from "../../Actions/catAction";
 import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
 import ImageRoom5 from "../../Images/room5.jpg"
-import RangeList from "../../Data/data"
 import roomList from "../../Data/data"
 import Header from "../Header";
 import Footer2 from "../Footer2";
+import ItemsInRoom from '../RoomInformation/ItemsInRoom';
 
 
 
@@ -15,6 +15,7 @@ import Footer2 from "../Footer2";
 class Search extends Component {
     
     render() {
+console.log(this.props.rooms)
        
         return (
             <Fragment>
@@ -23,7 +24,24 @@ class Search extends Component {
                     <p className="searchLabel">Search Result</p>
                     <div>
                         <input className="searchInput" type="search" placeholder="search by room" />
+                        <div>
                         <span className="filterIcon"><Link><i className="fa fa-filter"></i></Link></span>
+                        
+
+
+          {
+            this.props.rooms.map((items) => (
+                 
+              <select key={items.id}>
+               <option value={this.props.rooms} name={items.name}/>
+               <label>{items.name}</label>
+              </select>
+            ))
+          }
+
+  
+
+                        </div>
                     </div>
                     <div className="room1">                        
                         <img src={ImageRoom5} alt="Room 5" />
