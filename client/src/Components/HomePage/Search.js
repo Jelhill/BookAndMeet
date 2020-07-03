@@ -18,7 +18,7 @@ class Search extends Component {
 console.log(this.props.rooms)
        
         return (
-            <Fragment>
+            <div className="homePageWrapper">
                 <Header />
                 <div className="bookingRoomSearchWrapper">
                     <p className="searchLabel">Search Result</p>
@@ -205,9 +205,9 @@ console.log(this.props.rooms)
                             <p>20</p>  
                         </div> 
                     </div>
-                </div>
-                {/* <Footer2 /> */}
-            </Fragment>
+                </div><br/>
+                <Footer2 />
+            </div>
         )
     }
 }
