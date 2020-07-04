@@ -1,11 +1,9 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { addList } from "../../Actions/catAction";
 import { addRange } from "../../Actions/catAction";
 import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
 import ImageRoom5 from "../../Images/room5.jpg"
-import RangeList from "../../Data/data"
-import roomList from "../../Data/data"
 import Header from "../Header";
 import Footer2 from "../Footer2";
 

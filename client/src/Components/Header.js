@@ -13,7 +13,7 @@ export default class Header extends Component {
                     </div>
                     <div className="rightIconDiv">                         
                         <Link><span><i className="fa fa-bars"></i></span></Link> 
-                        <img src={avatar} alt="user Image"/>
+                        <img src={avatar} alt="userImage"/>
                         <span className="font15 mgTop10">Jelhill</span>                                                  
                     </div>
                 </div>

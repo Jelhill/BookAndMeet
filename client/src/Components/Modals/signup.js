@@ -74,7 +74,6 @@ class SignUp extends Component{
 
 const mapStateToProps = (state) => {
   const { userReducer } = state
-  console.log(userReducer.signUpFormDetails)
   return {
     signUpFormDetails: userReducer.signUpFormDetails,
     showSignUp: userReducer.showSignUp

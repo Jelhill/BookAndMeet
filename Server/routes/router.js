@@ -8,5 +8,6 @@ router.get("/home", (req, res) => {
 }) 
 
 router.post("/signUp", userController.userSignUp);
+router.post("/login", userController.login)
 
 module.exports = router
