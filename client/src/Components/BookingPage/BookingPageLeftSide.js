@@ -5,7 +5,7 @@ export default class BookingPageLeftSide extends Component {
     render() {
         return (
             <div className="bookingPageLeftSide">
-                <img src={Room14} alt="Image Room 14"/>
+                <img src={Room14} alt="ImageRoom14"/>
                 <h3>Conference Room</h3>
                 <p>Room 301, Third Floor, Main Building</p>
                 <div className="formMessage">

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Link } from "react-router-dom"
+import { Link, withRouter } from "react-router-dom"
 import { connect } from 'react-redux';
 import { showSignup, saveInitialUserDetails, getSignupInputs } from "../../Actions/userActions"
 
@@ -11,6 +11,7 @@ class CompleteSignUp extends Component{
     onClose = (e) => {
       e.preventDefault()
       this.props.showSignup(false)
+      window.location = "/"
     } 
 
     getUserInput = (e) => {
@@ -19,12 +20,12 @@ class CompleteSignUp extends Component{
 
     handleSignup = async (e) => {
       e.preventDefault()
-      await fetch("http://localhost:3001/signUp", {
+      fetch("http://localhost:3001/signUp", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(this.props.signUpFormDetails)
       })
-      .then((response) => response.json())
+      .then(response => response.json())
       .then((jsonResponse) => {console.log(jsonResponse)})
       .catch((err) => console.log(err))
     }
@@ -34,7 +35,7 @@ class CompleteSignUp extends Component{
             return null;
         }
         return(
-            <div className="modalDiv">
+            <div className="modalDiv2">
               <div className="signupmodal">
                   <div className="leftModal">
                       <h1 className="boardRoom">BoardRoom</h1>
@@ -92,4 +93,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-  export default connect(mapStateToProps, mapDispatchToProps)(CompleteSignUp);
+  export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CompleteSignUp));
