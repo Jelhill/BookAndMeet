@@ -158,7 +158,7 @@ button {
 .input{
   margin: auto;
   margin-bottom: 15px;  
-  width: 50%;
+  width: 80%;
   height: 40px;
   background-color: var(--mainWhite);
   box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35);
@@ -207,9 +207,6 @@ button {
   height: 14px;
 }
 
-.modalContent{
-  padding-left: 10%;
-}
 #login, #signup {
   /* position:relative; */
   /* width:64px; */
@@ -269,9 +266,19 @@ button {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
 }
+
+.modalDiv2{
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+}
+
 .LoginLeft {
   background-color: var(--mainPurple);
   width: 50vw;
@@ -450,7 +457,7 @@ padding:5px;
 }
 .signupsubmit {
   margin: 0px 0px 20px 40px;
-  width: 260px;
+  width: 80%;
   height: 40px;
   /* right: 39px; */
   top: 78px;
@@ -1982,7 +1989,7 @@ font-size: 20px;
 @media (max-width: 320px) {
   .signupmodal, .loginmodal {
     width: 90%;
-  }  
+}  
 
   .leftModal{
     display: none;
