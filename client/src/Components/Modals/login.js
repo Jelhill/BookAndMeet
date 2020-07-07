@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Link } from "react-router-dom"
+import { Link, withRouter } from "react-router-dom"
 import { connect } from 'react-redux';
 import { showSignIn, getSignupInputs } from "../../Actions/userActions"
 
@@ -23,7 +23,13 @@ class Login extends Component{
         body: JSON.stringify(this.props.signUpFormDetails)
       })
       .then(response => response.json())
-      .then((jsonResponse) => {console.log(jsonResponse)})
+      .then((jsonResponse) => {
+        console.log(jsonResponse)
+        if(jsonResponse.message === "success" && jsonResponse.token !== null){
+          window.localStorage.setItem("token", jsonResponse.token)
+          this.props.history.push("/home")
+        }       
+      })
       .catch((err) => console.log(err))
     }
 
@@ -111,5 +117,5 @@ const mapStateToProps = (state) => {
     }
   }
   
-  export default connect(mapStateToProps, mapDispatchToProps)(Login);
+  export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));
   

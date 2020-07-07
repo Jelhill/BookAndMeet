@@ -26,7 +26,10 @@ class CompleteSignUp extends Component{
         body: JSON.stringify(this.props.signUpFormDetails)
       })
       .then(response => response.json())
-      .then((jsonResponse) => {console.log(jsonResponse)})
+      .then((jsonResponse) => {
+        console.log(jsonResponse)
+        
+      })
       .catch((err) => console.log(err))
     }
 
