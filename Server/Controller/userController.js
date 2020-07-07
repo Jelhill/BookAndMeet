@@ -17,12 +17,17 @@ exports.login = (req, res) => {
         const payload = {
             username: response.result.rows[0].username
         }
-        jwt.sign(payload, SECRET, {expiresIn: "60s"}, (err, token) => {
+        jwt.sign(payload, SECRET, {expiresIn: "120s"}, (err, token) => {
             if(err) res.send({message: "Failed"})
-            res.send({message: "Success", token})
+            res.send({message: "success", token})
         })
 
     }).catch((err) => {
         res.send({message: err})
     })
+}
+
+
+exports.booking = (req, res) => {
+    res.send({message: true})
 }
