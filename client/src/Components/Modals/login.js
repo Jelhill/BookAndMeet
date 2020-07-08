@@ -10,7 +10,6 @@ class Login extends Component{
         e.preventDefault()
         this.props.showSignin(false) 
     }
-
     render(){
         if(!this.props.showSignIn){
             return null;
