@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import { Link } from "react-router-dom"
+import { Link, withRouter } from "react-router-dom"
 import { connect } from 'react-redux';
-import { showSignIn } from "../../Actions/userActions"
+import { showSignIn, getSignupInputs } from "../../Actions/userActions"
 
 
 class Login extends Component{
@@ -10,6 +10,29 @@ class Login extends Component{
         e.preventDefault()
         this.props.showSignin(false) 
     }
+
+    getUserInput = (e) => {
+      this.props.getSignupInputs({[e.target.name]: e.target.value})
+    }
+
+    handleLogin = async (e) => {
+      e.preventDefault()
+      fetch("http://localhost:3001/login", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(this.props.signUpFormDetails)
+      })
+      .then(response => response.json())
+      .then((jsonResponse) => {
+        console.log(jsonResponse)
+        if(jsonResponse.message === "success" && jsonResponse.token !== null){
+          window.localStorage.setItem("token", jsonResponse.token)
+          this.props.history.push("/home")
+        }       
+      })
+      .catch((err) => console.log(err))
+    }
+
     render(){
         if(!this.props.showSignIn){
             return null;
@@ -29,12 +52,34 @@ class Login extends Component{
                       <div className="modalContent">
                       <form>
                        <div className="formDiv">
-                         <input type="text" className="form-control input" placeholder="Username" />
-                         <input type="password" className="form-control input" placeholder="password" autoComplete="off" />
-                           <input type="checkbox" name="rememberme" className="checkbox"></input>
-                           <label htmlFor="rememberme">Remember me</label>
+                         <input 
+                            type="text" 
+                            name="username" 
+                            className="form-control input" 
+                            placeholder="Username" 
+                            onChange={this.getUserInput}
+                          />
+                         <input 
+                            type="password" 
+                            name="password" 
+                            className="form-control input" 
+                            placeholder="password" 
+                            autoComplete="off" 
+                            onChange={this.getUserInput}
+                          />
+                           <input 
+                            type="checkbox" 
+                            name="rememberme" 
+                            className="checkbox">
+                            </input>
+                           <label 
+                            htmlFor="rememberme">Remember me</label>
                            <span><Link className="forgetPassword">forget password ?</Link></span>
-                         <button className="form-control signupsubmit">Login</button>
+                         <button 
+                            onClick={this.handleLogin}
+                            className="form-control signupsubmit">
+                            Login
+                          </button>
                        </div>
                        </form>
                     <div className="loginWithDiv">
@@ -58,16 +103,19 @@ class Login extends Component{
 
 const mapStateToProps = (state) => {
     const { userReducer } = state
+    console.log(userReducer.signUpFormDetails)
     return {
-      showSignIn: userReducer.showSignIn
+      showSignIn: userReducer.showSignIn,
+      signUpFormDetails: userReducer.signUpFormDetails,
     }
 }
   
   const mapDispatchToProps = (dispatch) => {
     return {
-      showSignin: (values) => dispatch(showSignIn(values))
+      showSignin: (values) => dispatch(showSignIn(values)),
+      getSignupInputs: (values) => dispatch(getSignupInputs(values)),
     }
   }
   
-  export default connect(mapStateToProps, mapDispatchToProps)(Login);
+  export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));
   

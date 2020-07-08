@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Room1 from "../../Images/room18.jpg"
-import { Link } from "react-router-dom"
 import Footer2 from '../Footer2'
 import ItemsInRoom from './ItemsInRoom'
 import Header from '../Header'
@@ -15,7 +14,7 @@ export default class AboutRoom extends Component {
                         <p>Room 301</p>
                     </div>
                     <div className="imageAndItems">
-                        <img src={Room1} alt="Room Image"/>
+                        <img src={Room1} alt="RoomImage"/>
                         <ItemsInRoom />
                     </div>
                     <div className="title-conf">

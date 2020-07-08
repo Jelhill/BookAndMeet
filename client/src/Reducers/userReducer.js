@@ -3,7 +3,8 @@ import {
     GET_IMAGE_INPUTS, 
     SHOW_SIGNUP,
     SHOW_LOGIN,
-    SAVE_INITIAL_USER_DETAILS
+    SAVE_INITIAL_USER_DETAILS,
+    UPDATE_STATE_WITH_API
  } from "../Actions/userActions"
 
 const initialState = {
@@ -11,6 +12,7 @@ const initialState = {
     imageInputs: {},
     showSignUp: false,
     showSignIn: false,
+    renderPage: false
 }   
 
 const userReducer = (state = initialState, action) => {
@@ -33,8 +35,11 @@ const userReducer = (state = initialState, action) => {
     }
 
     if(action.type === SAVE_INITIAL_USER_DETAILS) {
-        console.log(action.values)
         Object.assign(newState.signUpFormDetails, action.values)
+    }
+
+    if(action.type === UPDATE_STATE_WITH_API) {
+        newState.renderPage = action.value
     }
 
     return newState

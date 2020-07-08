@@ -49,7 +49,7 @@ export default class UserProfilePage extends Component {
                     </div>
                     <div className="userProfileRight">
                         <div className="avatarDiv">
-                            <img src={avatar} alt="Image Photo"/>
+                            <img src={avatar} alt="ImagePhoto"/>
                             <div>
                                 <h4>Jelhill Umaru</h4>
                                 <p>Lagos Nigeria</p>

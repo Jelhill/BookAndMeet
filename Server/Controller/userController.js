@@ -1,12 +1,33 @@
 const User = require("../Model/User")
+const jwt = require("jsonwebtoken")
+const SECRET = process.env.SECRET
+
 
 exports.userSignUp = (req, res) => {
     const user = new User(req.body)
-    console.log("Body", req.body)
-    user.signUp().then((result) => {
-        console.log(result)
-    }).catch((error) => {
-        console.log(error)
+    user.signUp()
+    .then((result) => {res.json({message: "Registered Successfully"})})
+    .catch((error) => {res.json({message: error})})
+}
+
+exports.login = (req, res) => {
+    const user = new User(req.body)
+    user.authenticateUser().then((response) => {
+        console.log(response.result.rows[0])
+        const payload = {
+            username: response.result.rows[0].username
+        }
+        jwt.sign(payload, SECRET, {expiresIn: "120s"}, (err, token) => {
+            if(err) res.send({message: "Failed"})
+            res.send({message: "success", token})
+        })
+
+    }).catch((err) => {
+        res.send({message: err})
     })
-    res.send("Helloo")
+}
+
+
+exports.booking = (req, res) => {
+    res.send({message: true})
 }
