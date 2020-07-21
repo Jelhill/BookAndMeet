@@ -31,7 +31,6 @@ class BookingForm extends Component {
     }
 
     render() {   
-
         return (      
             this.props.renderPage !== true ?
             this.props.renderPage :               

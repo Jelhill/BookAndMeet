@@ -18,6 +18,9 @@ button {
   margin: 0px;
 }
 
+*{
+  box-sizing: border-box;
+}
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #d0d3d4;
@@ -38,31 +41,36 @@ button {
   --mainPurple: #665687;
   --mainGray: #f6f6fa;
   --mainWhite: #ffffff;
-  --mainRed: #fa1c1c;
+  --mainRed: #d6a0a0;
   --Roboto: Roboto, sans-serif;
+  --mainGreen: #1AC63F;
 }
 
 .header {
   width: 100%;
   height: 10%;
-  background-color: var(--mainPurple);
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
-  padding-top: 15px;
-  padding-left: 15px;
+  padding: 0px 30px 0 30px;
 }
 
 .logoWrapper {
-  /* position:absolute; */
-  left: 30px;
-  top: 30px;
-  width: 10%;
-  height: 30px;
-  /* background-color: var(--mainWhite); */
+  display: flex;
+  /* left: 30px;
+  top: 30px; */
+  width: 30%;
+  height: 70px;
+}
+
+.logoWrapper img {
+  width: 80px;
+  height: 80px;
+
 }
 .logoWrapper h2 {
   color: var(--mainGray);
+  line-height: 70px;
 }
 .logo {
   /* position: absolute; */
@@ -210,40 +218,37 @@ button {
 .modalContent{
   /* padding-left: 10%; */
 }
-#login, #signup {
-  /* position:relative; */
-  /* width:64px; */
-  height: 20px;
-  /* left:1150px; */
-  /* top:27px; */
+#login{
+  display: inline-block;
+  background-color: var(--mainWhite);
+  text-align: center;
+  width:80px;
+  height: 32px;
+  padding-top: 7px;
   font-family: Roboto;
   font-style: normal;
-  font-weight: bold;
   font-size: 18px;
   text-decoration: none;
+  margin-top: 20px;
   line-height: 20px;
   letter-spacing: -0.24px;
+  color: navy;
+  margin-right: 20px;
+  border-radius: 5px;
+  
+}
+
+#signup {
+  display: inline-block;
+  text-align: center;
+  width:80px;
+  height: 32px;
+  padding-top: 7px;
+  font-family: Roboto;
+  font-size: 18px;
   color: var(--mainWhite);
-  background-color: var(--mainPurple);
   margin-right: 20px;
 }
-/* #signup {
-  height: 20px;
-  right: 0px;
-  top: 30px;
-  margin: 10px;
-  text-decoration: none;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 20px;
-  letter-spacing: -0.24px;
-  color: var(--mainWhite);
-  background-color: var(--mainPurple);
-  border: none;
-} */
-
 .loginmodal {
   position: absolute;
   display: flex;
@@ -565,21 +570,108 @@ padding:5px;
 /* landing search bar */
 
 .landingWrapper{
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
   width: 100vw;
   height: 100vh;
 }
+.landingFooter {
+  display: flex;
+  padding: 0 0 30px 50px;
+}
+
+.landingFooter span{
+  color: #FFF;
+  margin-right: 25px;
+  font-size: 13px;
+  font-family: var(--Roboto);
+  letter-spacing: 1px;
+  
+}
+
+.landingBody {
+  width: 680px;
+  margin: auto;
+  margin-top: 150px;
+}
+
+.landingBody h3 {
+  color: var(--mainWhite);
+  font-family: var(--Roboto);
+}
 #search {
-  width: 50%;
-  margin-left: 25%;
-  height: 60px;
+  width: 100%;
+  height: 45px;
   padding: 20px;
   font-size: 20px;
-  margin-top: 15%;
   box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.25);
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
 }
+
+flexDisplay {
+  display: flex;
+  justify-content: space-between;
+}
+.filterSelect{
+  height: 45px;
+  border-radius: 5px;
+  border: none;
+  margin-right: 5px;
+  width: 130px;
+  padding-left: 10px;
+  font-size: 18px;
+  color: gray;
+  font-weight: bold;
+}
+
+.filterCapacity{
+  height: 45px;
+  border-radius: 5px;
+  border: none;
+  margin-right: 5px;
+  width: 140px;
+  padding-left: 10px;
+  color: gray;
+  font-weight: bold;
+}
+
+#datePicker::before {
+  color: gray;
+}
+#timePicker::before {
+  color: gray;
+}
+
+.filterButton{
+  width: 99px;
+  height: 45px;
+  top: 339px;
+  background: var(--mainGreen);
+  border-radius: 4px;
+  border: none;
+  color: #FFF;
+  width: 130px;
+  font-size: 18px;
+}
+
+.filterButton:hover{
+background-color: green;
+}
+.backgroundImage {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("./Images/room0.jfif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(0.4);
+  position: absolute;
+  z-index: -1;
+}
+
+
 .googlesignuptext,
 .facebooksignuptext {
   height: 20px;
@@ -595,12 +687,7 @@ padding:5px;
   color: #665687;
 }
 
-.landingBody {
-  width: 100%;
-  height: 90%;
-  background-image: url("https://i.ibb.co/kmw7V0q/Whats-App-Image-2020-06-12-at-12-54-39.jpg");
-  background-size: cover;
-}
+
 
 body {
   max-width: 100%;
@@ -761,7 +848,10 @@ body {
   .loginSignupWrapper {
     width: 50%;
     display: flex;
-  }
+    background-color: greenyellow;
+
+  } 
+
 
   #login {
     position: relative;
