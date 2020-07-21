@@ -90,8 +90,6 @@ class Login extends Component{
                       </div>
                       <p className="loginparagraph">Don't have an account ? <Link to="#">Sign up</Link></p>
 
-                    {/* <p className="otherlogin">Sign up with <a href="#">Facebook</a></p>
-                    <p className="otherlogin">Sign up with <a href="#">Google</a></p> */}
                   </div>
                       </div>
                   </div>
