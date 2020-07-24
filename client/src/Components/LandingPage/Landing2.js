@@ -33,7 +33,7 @@ class Landing2 extends Component {
             </div>
 
           <div className="loginSignupWrapper" >
-            {/* <Link id="login" to="" onClick={this.handleSignIn}>Login</Link>   */}
+          
             <Link id="login" to="" onClick={this.handleSignIn}>Login</Link>
             <Link id="signup" to="" onClick={this.openSignUpModal}>Sign up</Link>
 
