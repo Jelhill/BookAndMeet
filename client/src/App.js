@@ -10,6 +10,7 @@ import Login from './Components/Modals/Login';
 import SignUp from './Components/Modals/signup';
 import Logout from './Components/Modals/Logout';
 import CompleteSignUp from "./Components/Modals/CompleteSignUp"
+import Error404 from "./Components/404"
 
 
 
@@ -27,6 +28,7 @@ function App() {
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/logout" component={Logout} />
         <Route exact path="/completeSignUp" component={CompleteSignUp} />
+        <Route exact path="/404" component={Error404} />
       </Switch>
     </Fragment> 
   );

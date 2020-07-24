@@ -1,11 +1,11 @@
 /* /* /* To use the color variable,  follow the below example
  background-color: var(--mainWhite) !important;
 */
-/* body {
+body {
   width: 100%;
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-} */
+} 
 p,
 h1,
 h2,
@@ -1836,10 +1836,12 @@ body {
   } */
 
 .bookingRoomSearchWrapper{
+  margin-top: 3%;
   box-sizing: border-box;
   width: 100vw;
-  padding: 1% 2% 0 2%;
+  padding-left: 100px;
   height: 200vh;
+  
   
 
 }
@@ -1849,23 +1851,71 @@ body {
 }
 
 .room1{
-  width: 309px;
-  height: 290px;
+  width: 269px;
+  height: 410px;
   margin-top: 2%;
   float: left;
-  margin-right: 15px;
+  margin: 0px 25px 10px 8px ;
+  padding: 0px 49px 10px 10px ;
+  border: 1px solid var(--mainPurple);
+  background-color: var(--mainGray);
+  background: #F3F3F3;
+  box-sizing: border-box;
+  border-radius: 5px;
 }
 
 .room1 img {
-  width: 100%;
-  height: 220px;
+  margin: 10px 10px 10px 9px;
+  width: 110%;
+  height: 140px;
 }
-/* .room2{
-  width: 100%;
+.roomFeatures{
+  background: #FFFFFF;
+box-shadow: 0px 0px 3px #E5E5E5;
+  margin: 0px 10px 10px 9px;
+  width: 110%;
+  height: 239px;
+  padding: 0 10px 0 10px;
+}
+.features1{
+  font-size: 11px;
+  margin-top: 3.2%;
   display: flex;
-  margin-top: 2%;
   justify-content: space-between;
-} */
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  font-family: var(--Roboto) sans-serif;
+}
+.features1 i{
+background: #FFFFFF;
+font-size: 17px;
+/* border: 1px solid rgba(55, 63, 65, 0.84);
+box-sizing: border-box; */
+}
+.roomNumber{
+font-size: 9px;
+}
+.bookNow{
+color: #20B541;
+font-family: var(--Roboto) sans-serif;
+padding-left: 72px;
+margin-top: 3%;
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 10px;
+line-height: 20px;
+letter-spacing: -0.24px;
+
+color: #FFFFFF;
+} 
+.bookNow button{
+  background-color: #20B541;
+  color: var(--mainGray);
+  font-weight: var(--Roboto);
+  border-radius: 4px;
+  border: none;
+  
+}
 .searchLabel{
   font-family: Roboto, sans-serif;
   font-size: 17px;
@@ -1893,15 +1943,27 @@ justify-content: space-between;
 align-items: center;
 padding: -1;
 margin: 1;
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 20px;
+letter-spacing: -0.24px;
 }
 .boardRoomFeatures span{
   font-family: var(--Roboto);  
-  font-size: 15px;
+  font-size: 14px;
+  color: var(--mainPurple);
 }
 
 .boardRoomFeatures label{
-  font-size: 11px;
-  margin-top: 7px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 9px;
+  line-height: 20px;
+  letter-spacing: -0.24px;
+  color: #20B541;
 }
 
 .boardRoomFeatures i{
@@ -1918,11 +1980,11 @@ line-height: 20px;
 letter-spacing: -0.24px;
 color: #665687;
 }  */
-.searchFeatures {
+/* .searchFeatures {
   display: flex;
   justify-content: space-between;
   font-family: var(--Roboto);
-}
+} */
 .board {
   letter-spacing: -0.24px;
   font-size: 14px;
@@ -1936,11 +1998,9 @@ color: #665687;
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 20px;
   letter-spacing: -0.24px;
-
-  color: var(--mainPurple);
 }
 .accessories {
   padding-right: 164px;
