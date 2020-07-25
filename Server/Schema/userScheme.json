@@ -9,8 +9,6 @@
         {
             "surname": "surname",
             "firstname": "firstname",
-            "gender": "male",
-            "phone": "08025245454",
             "email": "example@gmail.com",
             "password": "mypassword"
         }
@@ -18,8 +16,6 @@
     "required": [
         "surname",
         "firstname",
-        "gender",
-        "phone",
         "email",
         "password"
     ],
@@ -49,31 +45,6 @@
             "default": "",
             "examples": [
                 "firstname"
-            ]
-        },
-        "gender": {
-            "$id": "#/properties/gender",
-            "type": "string",
-            "minLength": 2,
-            "maxLength": 6,
-            "pattern": "[A-Za-z0-9 -]",
-            "title": "The gender schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": "",
-            "examples": [
-                "male"
-            ]
-        },
-        "phone": {
-            "$id": "#/properties/department",
-            "type": "string",
-            "minLength": 5,
-            "maxLength": 15,
-            "title": "The department schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": "",
-            "examples": [
-                "Science"
             ]
         },
         "email": {

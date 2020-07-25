@@ -15,15 +15,30 @@ class SignUp extends Component{
       this.props.showSignup(false)
     }
 
-    onSignUp = e => {
-      e.preventDefault();
-      this.setState({
-        show3: !this.state.show3
-      }) 
-    };
+    // onSignUp = e => {
+    //   e.preventDefault();
+    //   this.setState({
+    //     show3: !this.state.show3
+    //   }) 
+    // };
 
     getUserInput = (e) => {
       this.props.getSignupInputs({[e.target.name]: e.target.value})
+    }
+
+    handleSignup = async (e) => {
+      e.preventDefault()
+      fetch("http://localhost:3001/signUp", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(this.props.signUpFormDetails)
+      })
+      .then(response => response.json())
+      .then((jsonResponse) => {
+        console.log(jsonResponse)
+        
+      })
+      .catch((err) => console.log(err))
     }
   
     render(){
@@ -39,28 +54,25 @@ class SignUp extends Component{
                   <div className="rightModal">
                       <div className="signupheader">
                           <button className="closeWrapper"><span className="close" onClick={this.onClose} >&times;</span></button>
-                          <h3 className="welcome">Sign up</h3>
+                          <h3 className="modalTitle">Sign up</h3>
                       </div>
                   
                       <div className="modalContent">
                     <form>
                       <div className="formDiv">
-                        <input type="text" name="username" className="form-control input" placeholder="username" onChange={this.getUserInput}/>
-                        <input type="email" name="email" className="form-control input" placeholder="email" onChange={this.getUserInput}/>
-                        <input type="password" name="password" className="form-control input" placeholder="password" autoComplete="off" onChange={this.getUserInput}/>
-                        <input type="password" name="confirmPassword" className="form-control input" placeholder="confirm password" autoComplete="off" onChange={this.getUserInput}/>
+                        <div className="doubleInputDiv">
+                          <input type="text" name="surname" placeholder="Surname" onChange={this.getUserInput}/>
+                          <input type="text" name="firstname" placeholder="First Name" onChange={this.getUserInput}/>  
+                        </div>
+                        <input type="email" name="email" className="input" placeholder="email" onChange={this.getUserInput}/>
+                        <input type="password" name="password" className="input" placeholder="password" autoComplete="off" onChange={this.getUserInput}/>
+                        <input type="password" name="confirmPassword" className="input" placeholder="confirm password" autoComplete="off" onChange={this.getUserInput}/>
                         <input type = "checkbox" name ="rememberme" value="" className="checkbox"></input>
                         <label htmlFor ="rememberme" >Remember me</label>
-                        <button className="form-control signupsubmit" onClick={this.onSignUp}>Sign Up</button>
+                        <button className="signupsubmit" onClick={this.handleSignup}>Sign Up</button>
                       </div>                   
                     </form>
-                    <div className="loginWithDiv">
-                        <label className=""> Login with</label>
-                        <Link to=""><i className="fa fa-google"></i></Link>
-                        <Link to=""><i className="fa fa-facebook"></i></Link>
-                        <Link to=""><i className="fa fa-twitter"></i></Link>
-                    </div>
-                      <p className="loginparagraph">Already Registered? <Link to="#">Sign in</Link></p>
+                      <p className="loginparagraph">Already have an account? <Link to="#"><span>Sign in</span></Link></p>
 
                   </div>
                       </div>

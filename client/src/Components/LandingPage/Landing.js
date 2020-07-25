@@ -28,7 +28,7 @@ class Landing extends Component {
         <div className="landingWrapper">
           <div className="backgroundImage"></div>
           <LandingPageHeader />
-          <div className="landingBody">
+          <div className="landingBody">i
               <h3>Search and book a meeting room</h3>
               <input type="text" placeholder="Conference room" id="search"></input><br/>
               <div className="flexDisplay">
