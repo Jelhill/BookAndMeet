@@ -1993,9 +1993,9 @@ font-size: 20px;
 }
 
 @media (max-width: 320px)  {
-    .landingBody {
+    /* .landingBody {
   
-    }
+    } */
 
     #search {
       width: 300px;
@@ -2041,4 +2041,303 @@ font-size: 20px;
   .modalDiv {
     width: 300px;
   }
+}
+/* ADMIN CSS */
+.notifier{
+        background-color: #fdfdfdfd;
+        margin:25px;
+}
+h7{
+  
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 10px;
+line-height: 20px;
+letter-spacing: -0.24px;
+color: #373F41;
+
+}
+.view-details{
+  font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 8px;
+line-height: 20px;
+letter-spacing: -0.24px;
+color: #181717;
+}
+table{
+  font-family:var(--Roboto);
+  border-collapse: collapse;
+  width:100%;
+}
+td,th{
+  font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 15px;
+line-height: 20px;
+letter-spacing: -0.24px;
+color: rgba(0, 0, 0, 0.58);
+border-bottom: 4px solid #E5E5E5;
+padding:10px;
+
+}
+.adminLink{
+  font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 20px;
+letter-spacing: -0.24px;
+color: #665687;
+margin:10px;
+}
+
+/* Booking Rooms */
+.roomCards{
+  /* width:210px; */
+  height: 230px;
+  margin:20px;
+  background: #F3F3F3;
+border: 1px solid #46258A;
+box-sizing: border-box;
+border-radius: 5px;
+}
+.roomImg{
+  width:200px;
+  height: 113px;
+  margin-bottom:5px;
+}
+.boardRoomTag{
+  font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 20px;
+letter-spacing: -0.24px;
+color: #665687;
+}
+.available{
+  font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 10px;
+line-height: 20px;
+letter-spacing: -0.24px;
+color: #1AC63F;
+}
+.roomLocation{
+  font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 10px;
+text-align:center;
+line-height: 20px;
+letter-spacing: -0.24px;
+color: rgba(55, 63, 65, 0.84);
+
+}
+.deleteButton{
+  font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 10px;
+line-height: 20px;
+/* identical to box height, or 200% */
+
+letter-spacing: -0.24px;
+text-align: center;
+color:  #46258A;;
+margin-left:-10px;
+width:60px;
+border:1px solid black;
+border-radius:4px;
+padding:5px 20px 5px 20px;
+margin-left:-30px;
+background: #FFFFFF;
+}
+.editButton{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 20px; 
+  letter-spacing: -0.24px;
+  color: #FFFFFF;
+  background: #46258A;
+border: 1px solid #46258A;
+border-radius: 4px;
+width:60px;
+padding:5px 20px 5px 20px;
+margin: 0px 0px 60px 50px;
+
+}
+.buttonContainer{
+  margin: 20px 0px 0px 40px;
+}
+.boardRoomTag{
+  margin:5px;
+}
+.available{
+  margin-left:50px;
+}
+.selectRoom{
+  background: #FFFFFF;
+border: 1px solid #665687;
+box-sizing: border-box;
+border-radius: 3px;
+width:103px;
+height: 30px;
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 20px;
+/* identical to box height, or 143% */
+
+letter-spacing: -0.24px;
+
+color: #373F41;
+}
+.searchButton{
+  background: #46258A;
+border-radius: 3px;
+width:90px;
+height: 30px;
+margin:20px;
+text-align:center;
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 20px;
+/* identical to box height, or 143% */
+
+letter-spacing: -0.24px;
+
+color: #FFFFFF;
+
+}
+.addRoom{
+  
+background: #46258A;
+border-radius: 4px;
+width:103px;
+height: 30px;
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 20px;
+margin-left: 600px;
+padding:8px;
+/* or 143% */
+
+letter-spacing: -0.24px;
+
+color: #FFFFFF;
+}
+.preview, .next{
+  background-color: #FFFFFF;
+border: 1px solid #46258A;
+box-sizing: border-box;
+box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.1);
+border-radius: 3px;
+width:70px;
+margin:10px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 11px;
+line-height: 20px;
+letter-spacing: -0.24px;
+color: #46258A;
+}
+.navButton{
+  background: #FFFFFF;
+border: 1px solid #46258A;
+box-sizing: border-box;
+box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.1);
+border-radius: 3px;
+width:20px;
+height: 20px;
+margin:3px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 11px;
+line-height: 20px;
+letter-spacing: -0.24px;
+color: #46258A;
+}
+.deleteWrapper{
+  background-color: #FFFFFF;
+  height:100px;
+}
+.addRoomInput{
+  display:block;
+}
+.form{
+  border:1px solid black;
+  width:717px;
+  height:892px;
+  margin-left: 100px;
+}
+.roomAndLocation{
+  display:flex;
+  justify-content: space-around;
+}
+#roomType{
+border: 1px solid #373F41;
+box-sizing: border-box;
+width:540px;
+height: 40px;
+}
+#location,#RoomCapacity,#RoomName,#RoomNumber{
+  border: 1px solid #373F41;
+box-sizing: border-box;
+height: 40px;
+margin:10px;
+}
+.inputFile{
+  border: 1px solid #373F41;
+  box-sizing: border-box;
+  height:200px;
+  width:540px;
+  margin:80px;
+}
+#file{
+  margin:30px 0px 0px 130px;
+  background: rgba(70, 37, 138, 0.4);
+  border-radius: 5px;
+  width:245px;
+  height: 133px;
+}
+.checkbox{
+  width:20px;
+  height:20px;
+  margin:5px;
+}
+.addRoomButton{
+  width:80px;
+  height:30px;
+  background: #46258A;
+  border: 1px solid #46258A;
+  box-sizing: border-box;
+  border-radius: 6px;
+  margin:30px 0px 0px 280px;
+  
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 20px;
+/* identical to box height, or 111% */
+letter-spacing: -0.24px;
+color: #FFFFFF;
+
 }
