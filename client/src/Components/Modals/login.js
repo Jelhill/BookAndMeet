@@ -24,7 +24,6 @@ class Login extends Component{
       })
       .then(response => response.json())
       .then((jsonResponse) => {
-        console.log(jsonResponse)
         if(jsonResponse.message === "success" && jsonResponse.token !== null){
           window.localStorage.setItem("token", jsonResponse.token)
           this.props.history.push("/home")
@@ -46,7 +45,7 @@ class Login extends Component{
                   <div className="rightModal">
                       <div className="signupheader">
                           <button className="closeWrapper"><span className="close" onClick={this.onClose} >&times;</span></button>
-                          <h3 className="welcome">Sign in</h3>
+                          <h3 className="modalTitle">Sign in</h3>
                       </div>
                   
                       <div className="modalContent">
@@ -55,15 +54,15 @@ class Login extends Component{
                          <input 
                             type="text" 
                             name="username" 
-                            className="form-control input" 
+                            className="input" 
                             placeholder="Username" 
                             onChange={this.getUserInput}
                           />
                          <input 
                             type="password" 
                             name="password" 
-                            className="form-control input" 
-                            placeholder="password" 
+                            className="input" 
+                            placeholder="Password" 
                             autoComplete="off" 
                             onChange={this.getUserInput}
                           />
@@ -82,13 +81,7 @@ class Login extends Component{
                           </button>
                        </div>
                        </form>
-                    <div className="loginWithDiv">
-                        <label className=""> Login with</label>
-                          <Link to=""><i className="fa fa-google"></i></Link>
-                          <Link to=""><i className="fa fa-facebook"></i></Link>
-                          <Link to=""><i className="fa fa-twitter"></i></Link>
-                      </div>
-                      <p className="loginparagraph">Don't have an account ? <Link to="#">Sign up</Link></p>
+                       <p className="loginparagraph">Not yet registered <Link to="#"><span>Sign up</span></Link></p>
 
                   </div>
                       </div>

@@ -3,10 +3,6 @@ const cors = require("cors")
 
 const morgan = require("morgan")
 const router = require("./routes/router")
-const multer = require("multer");
-const cloudinary = require("cloudinary");
-const cloudinaryStorage = require("multer-storage-cloudinary");
-// const fileupload = require("express-fileupload")
 const app = express()
 
 

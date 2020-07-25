@@ -32,7 +32,7 @@ export default class imageLoader extends Component {
         return (
             <div>
                 <input type="file" name="myImage" onChange={this.uploadImage}/>
-                {this.state.setLoading ? <h3>Loading....</h3> : <img src={this.state.image} style={{width: "300px", height: "300px"}}/>}
+                {this.state.setLoading ? <h3>Loading....</h3> : <img src={this.state.image} alt="Display" style={{width: "300px", height: "300px"}}/>}
             </div>
         )
     }
