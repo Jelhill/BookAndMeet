@@ -23,7 +23,6 @@ if (app.get("env") === "development"){
         })
     })
 }
-
 app.use("/", router)
 app.listen(3001, () => {
     console.log("App Started")

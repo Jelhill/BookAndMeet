@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Login from "../Modals/Login";
-import SignUp from "../Modals/SignUp";
+import SignUp from "../Modals/signup";
 import { connect } from "react-redux"
 import {Link} from 'react-router-dom'
 import { showSignup, showSignIn} from "../../Actions/userActions"
