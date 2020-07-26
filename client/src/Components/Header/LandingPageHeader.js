@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import logo from "../../Images/meeting.png"
 import Login from "../Modals/Login";
-import SignUp from "../Modals/SignUp";
+import SignUp from "../Modals/Signup";
 import { connect } from "react-redux"
 import { showSignup, showSignIn} from "../../Actions/userActions"
 
@@ -36,8 +36,8 @@ class LandingPageHeader extends Component {
                 <i className="fa fa-bars" id="checkBtn" />
             </label>
           <div className="loginSignupWrapper" >
-            <Link id="login" to="" onClick={this.handleSignIn}>Login</Link>
-            <Link id="signup" to="" onClick={this.openSignUpModal}>Sign up</Link>
+            <Link id="login" to="#" onClick={this.handleSignIn}>Login</Link>
+            <Link id="signup" to="#" onClick={this.openSignUpModal}>Sign up</Link>
             <Login />  
             <SignUp />
             </div>

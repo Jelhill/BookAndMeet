@@ -32,8 +32,8 @@ class Landing extends Component {
               <h3>Search and book a meeting room</h3>
               <input type="text" placeholder="Conference room" id="search"></input><br/>
               <div className="flexDisplay">
-                <select name="" className="filterSelect" >
-                    <option value="" disabled selected hidden>Type</option>
+                <select defaultValue={"Type"} name="" className="filterSelect" >
+                    <option value="type" disabled>Type</option>
                     <option value="boardRoom">Board Room</option>
                     <option value="privateRoom">Private Room</option>
                     <option value="conferenceRoom">Conference</option>
@@ -41,8 +41,8 @@ class Landing extends Component {
                 </select>
                 <input type="date" className="filterSelect" id="datePicker"/>
                 <input type="time" className="filterSelect" id="timePicker"/>
-                <select name="" className="filterCapacity">
-                    <option value="" disabled selected hidden>Capacity</option>
+                <select defaultValue={"Capacity"} name="" className="filterCapacity">
+                    <option value="capacity" disabled>Capacity</option>
                     <option value="oneToTen">1 - 10 seats</option>
                     <option value="elevenToTwenty">11 - 50 seats</option>
                     <option value="fiftyOneToOneHundred">51 - 100 seats</option>
