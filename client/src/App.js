@@ -6,7 +6,7 @@ import Search from './Components/HomePage/Search';
 import BookingForm from './Components/BookingPage/BookingForm';
 import { Fragment } from 'react';
 import UserProfilePage from './Components/ProfilePage/UserProfilePage';
-import Login from './Components/Modals/Login';
+import Login from './Components/Modals/login';
 import SignUp from './Components/Modals/signup';
 import Logout from './Components/Modals/Logout';
 import CompleteSignUp from "./Components/Modals/CompleteSignUp"
