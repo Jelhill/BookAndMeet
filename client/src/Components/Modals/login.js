@@ -83,7 +83,7 @@ class Login extends Component{
                        </form>
                        <p className="loginparagraph">Not yet registered <Link to="#"><span>Sign up</span></Link></p>
 
-                  </div>
+                      </div>
                       </div>
                   </div>
             </div>

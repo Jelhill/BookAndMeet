@@ -13,7 +13,6 @@ import ImageRoom2 from "../../Images/room2.jpg"
 import ImageRoom4 from "../../Images/room4.jpg"
 import Header from "../Header";
 import Footer2 from "../Footer2";
-import ItemsInRoom from '../RoomInformation/ItemsInRoom';
 
 
 
