@@ -1,41 +1,47 @@
 import React, { Component } from 'react'
-import { Link } from "react-router-dom"
-import avatar from "../Images/avatar.png"
+import { Link, withRouter } from "react-router-dom"
+import logo from "../Images/meeting.png"
+import { connect } from 'react-redux'
 
-export default class Header extends Component {
+
+class Header extends Component {
     render() {
         return (
             <div className="headerPurpleDiv">
                 <div className="headerIconDiv">
-                    <div className="leftIconDiv">
-                        <h3>Logo</h3>
-                        <span><Link><i className="fa fa-home"></i></Link></span>
-                    </div>
-                    <div className="rightIconDiv">                         
-                        <Link><span><i className="fa fa-bars"></i></span></Link> 
-                        <img src={avatar} alt="userImage"/>
-                        <span className="font15 mgTop10">Jelhill</span>                                                  
-                    </div>
+                <div className="logoWrapper">
+                    <img src={logo} alt="Logo"/>
+                    <h2 className="logo">boardroom</h2>
+                </div>
+                {this.props.renderPage === true ?
+                <ul>
+                    <li><Link to="">Hi Taofeek</Link></li>
+                    <li><Link to="">History</Link></li>
+                    <li><Link to="">My Profile</Link></li>
+                    <li><Link to="">Logout</Link></li>
+                </ul> 
+                :
+                <ul>
+                    <li><Link>Login</Link></li>
+                    <li><Link>Signup</Link></li>
+                </ul> 
+                }
                 </div>
           
-                    <div>
-                {/* <div className="innerPurpleDiv">
-                 <div className="navigations">
-                    <div>Home</div>
-                    <div id="vector">
-                        <i className="fa fa-angle-right"></i>
-                    </div>
-                    <div>Search</div>
-            </div> 
-                    <div className="inputButtonDiv">
-                        <input type="text" className="inputSpecial" placeholder="Search Room"/>
-                        <button className="buttonSpecial">Today: June 8, 2020</button>
-                        <button className="buttonSpecial2">Today: June 8, 2020</button>
-                        <i class="fa fa-calendar form-control-feedback"></i>
-                    </div>                        
-                </div> */}
+                <div>
             </div> 
             </div>
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    const { userReducer } = state
+    return {
+      renderPage: userReducer.renderPage,
+    }
+}
+  
+    
+export default withRouter(connect(mapStateToProps)(Header));
+  

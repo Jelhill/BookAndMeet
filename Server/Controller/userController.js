@@ -13,9 +13,8 @@ exports.userSignUp = (req, res) => {
 exports.login = (req, res) => {
     const user = new User(req.body)
     user.authenticateUser().then((response) => {
-        console.log(response.result.rows[0])
         const payload = {
-            username: response.result.rows[0].username
+            firstname: response.result.rows[0].firstname
         }
         jwt.sign(payload, SECRET, {expiresIn: "120s"}, (err, token) => {
             if(err) res.send({message: "Failed"})

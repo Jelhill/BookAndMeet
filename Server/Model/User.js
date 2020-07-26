@@ -23,15 +23,15 @@ User.prototype.signUp = function() {
     return new Promise(async (resolve, reject) => {
         await this.validate()
         if(!this.errors.length){
-            const {surname, firstname, phone, gender, username, password, email, confirmPassword} = this.data;
+            const {surname, firstname, email, password, confirmPassword} = this.data;
             if(password !== confirmPassword) {
                 reject("Password Mismatch")
             }else{
                 const salt = bcrypt.genSaltSync(10)
                 const hashPassword = bcrypt.hashSync(password, salt)
                 
-                db.query("INSERT INTO users (surname, firstname, phone, gender, username, password, email) VALUES ($1, $2, $3, $4, $5, $6, $7)", 
-                [surname, firstname, phone, gender, username, hashPassword, email])
+                db.query("INSERT INTO users (surname, firstname, password, email) VALUES ($1, $2, $3, $4)", 
+                [surname, firstname, hashPassword, email])
                 resolve("Successfully Updated")
             }           
         }else{
@@ -42,8 +42,8 @@ User.prototype.signUp = function() {
 
 User.prototype.authenticateUser = function() {
     return new Promise((resolve, reject) => {
-        const {username, password} = this.data
-            db.query("SELECT * FROM users WHERE username = $1", [username])
+        const {email, password} = this.data
+            db.query("SELECT * FROM users WHERE email = $1", [email])
             .then((result)=> {
                 if(result.length && bcrypt.compareSync(password, result.rows[0].password)){
                     this.data = result

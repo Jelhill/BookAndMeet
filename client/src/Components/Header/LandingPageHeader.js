@@ -1,8 +1,8 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
-import logo from "../../Images/meeting.svg"
-import Login from "../Modals/login";
-import SignUp from "../Modals/signup";
+import logo from "../../Images/meeting.png"
+import Login from "../Modals/Login";
+import SignUp from "../Modals/SignUp";
 import { connect } from "react-redux"
 import { showSignup, showSignIn} from "../../Actions/userActions"
 
@@ -31,7 +31,10 @@ class LandingPageHeader extends Component {
               <img src={logo} alt="Logo"/>
               <h2 className="logo">boardroom</h2>
             </div>
-
+            <input type="checkbox" id="check"/>
+            <label htmlFor="check">
+                <i className="fa fa-bars" id="checkBtn" />
+            </label>
           <div className="loginSignupWrapper" >
             <Link id="login" to="" onClick={this.handleSignIn}>Login</Link>
             <Link id="signup" to="" onClick={this.openSignUpModal}>Sign up</Link>
