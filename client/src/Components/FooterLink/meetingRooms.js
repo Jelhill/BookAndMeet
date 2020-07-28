@@ -9,13 +9,13 @@ export default class MeetingRooms extends Component {
                 <div className=" container-fluid">
                     <div className="row" style={{ height: "100" }}>
                         <div className="col-xl-2" style={{borderRight:"1px solid black"}} >
-                            <div style={{ margin: "40px" }}>
-                                <h5 className="adminLink">Admin</h5>
-                                <div className="adminLink"><Link to="adminDashboard">Dashboard</Link></div>
-                                <div className="adminLink"><Link to="MeetingRooms">Meeting Rooms</Link></div>
-                                <div className="adminLink"> <Link to="">Bookings</Link></div>
-                                <div className="adminLink"><Link to="">Feedbacks</Link></div>
-                            </div>
+                        <div style={{marginRight:"40px"}}>
+                         <div className="LinkWrapper"><Link to="" className="adminLink">Admin</Link></div>
+                        <div className="LinkWrapper"><Link to="adminDashboard" className="adminLink">Dashboard</Link></div>
+                        <div className="LinkWrapper"><Link to="MeetingRooms" className="adminLink">Meeting Rooms</Link></div>
+                        <div className="LinkWrapper"> <Link to="" className="adminLink">Bookings</Link></div>
+                        <div className="LinkWrapper"><Link to="feedback" className="adminLink">Feedbacks</Link></div>
+                        </div>
                         </div>
                         <div className="col-md-10">
                             <div style={{marginLeft:"20px"}}>
