@@ -20,19 +20,10 @@ import Footer2 from "../Footer2";
 class Search extends Component {
 
     render() {
-        console.log(this.props.rooms)
-
         return (
             <div className="homePageWrapper">
                 <Header />
                 <div className="bookingRoomSearchWrapper">
-                    {/* <p className="searchLabel">Search Result</p> */}
-                    {/* <div>
-                        <input className="searchInput" type="search" placeholder="search by room" />
-                        <div>
-                            <span className="filterIcon"><Link><i className="fa fa-filter"></i></Link></span>
-                        </div>
-                    </div> */}
                     <div className="room1">
                         <img src={ImageRoom5} alt="Room 5" />
                         <div className="roomFeatures">
@@ -49,42 +40,49 @@ class Search extends Component {
                             </div>
                             <div className="featureAccessories">
                                 <div className="features1">
-                                    <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                    <span><p>Capacity</p></span>
-                                    <span><p>50 seats</p></span>
+                                    <span><i className="fa fa-user-friends"></i></span>
+                                    <div className="flexRoomItems">
+                                        <span><p>Capacity</p></span>
+                                        <span><p>50 seats</p></span>
+                                    </div>                                      
                                 </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>Air Condition</p></span>
-                                <span><p>Yes</p></span>
+                                <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>Air Condition</p></span>
+                                    <span><p>Yes</p></span>
+                                </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>Projector</p></span>
-                                <span><p>Yes</p></span>
+                                <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>Projector</p></span>
+                                    <span><p>Yes</p></span>
+                                </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>Water Dispenser</p></span>
-                                <span><p>Yes</p></span>
+                            <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>Water Dispenser</p></span>
+                                    <span><p>Yes</p></span>
+                                </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>White Board</p></span>
-                                <span><p>No</p></span>
+                                <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>White Board</p></span>
+                                    <span><p>No</p></span>
+                                </div>
                             </div>
-                            <div className="bookNow">
-                                <Link><span><button>Book Now</button></span></Link>
-                            </div>
+                            <Link to="booking"><div className="bookNowLink">Book Now</div></Link>
+                            
                         </div>
-                        {/* </div> */}
-                        {/* </div> */}
                     </div>
 
 
                     <div className="room1">
-                        <img src={ImageRoom13} alt="Room 13" />
+                        <img src={ImageRoom8} alt="Room 5" />
                         <div className="roomFeatures">
                             <div className="boardRoomFeatures">
                                 <span>Board Room</span>
@@ -93,48 +91,55 @@ class Search extends Component {
                             <div className="roomNumber">
                                 <label>Room 001,Ground floor, main building</label>
                             </div>
-                            {/* <div className="searchFeatures"> */}
+                           
                             <div className="features">
                                 <p>Features:</p>
                             </div>
-                            <div className="feautureAccessories">
+                            <div className="featureAccessories">
                                 <div className="features1">
-                                    <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                    <span><p>Capacity</p></span>
-                                    <span><p>50 seats</p></span>
+                                    <span><i className="fa fa-user-friends"></i></span>
+                                    <div className="flexRoomItems">
+                                        <span><p>Capacity</p></span>
+                                        <span><p>50 seats</p></span>
+                                    </div>                                      
                                 </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>Air Condition</p></span>
-                                <span><p>Yes</p></span>
+                                <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>Air Condition</p></span>
+                                    <span><p>Yes</p></span>
+                                </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>Projector</p></span>
-                                <span><p>Yes</p></span>
+                                <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>Projector</p></span>
+                                    <span><p>Yes</p></span>
+                                </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>Water Dispenser</p></span>
-                                <span><p>Yes</p></span>
+                            <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>Water Dispenser</p></span>
+                                    <span><p>Yes</p></span>
+                                </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>White Board</p></span>
-                                <span><p>No</p></span>
+                                <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>White Board</p></span>
+                                    <span><p>No</p></span>
+                                </div>
                             </div>
-                            <div className="bookNow">
-                                <Link><span><button>Book Now</button></span></Link>
-                            </div>
+                            <Link to="booking"><div className="bookNowLink">Book Now</div></Link>
+                            
                         </div>
-                        {/* </div> */}
-                        {/* </div> */}
                     </div>
 
 
                     <div className="room1">
-                        <img src={ImageRoom8} alt="Room 8" />
+                        <img src={ImageRoom13} alt="Room 5" />
                         <div className="roomFeatures">
                             <div className="boardRoomFeatures">
                                 <span>Board Room</span>
@@ -143,47 +148,54 @@ class Search extends Component {
                             <div className="roomNumber">
                                 <label>Room 001,Ground floor, main building</label>
                             </div>
-                            {/* <div className="searchFeatures"> */}
+                           
                             <div className="features">
                                 <p>Features:</p>
                             </div>
-                            <div className="feautureAccessories">
+                            <div className="featureAccessories">
                                 <div className="features1">
-                                    <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                    <span><p>Capacity</p></span>
-                                    <span><p>50 seats</p></span>
+                                    <span><i className="fa fa-user-friends"></i></span>
+                                    <div className="flexRoomItems">
+                                        <span><p>Capacity</p></span>
+                                        <span><p>50 seats</p></span>
+                                    </div>                                      
                                 </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>Air Condition</p></span>
-                                <span><p>Yes</p></span>
+                                <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>Air Condition</p></span>
+                                    <span><p>Yes</p></span>
+                                </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>Projector</p></span>
-                                <span><p>Yes</p></span>
+                                <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>Projector</p></span>
+                                    <span><p>Yes</p></span>
+                                </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>Water Dispenser</p></span>
-                                <span><p>Yes</p></span>
+                            <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>Water Dispenser</p></span>
+                                    <span><p>Yes</p></span>
+                                </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>White Board</p></span>
-                                <span><p>No</p></span>
+                                <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>White Board</p></span>
+                                    <span><p>No</p></span>
+                                </div>
                             </div>
-                            <div className="bookNow">
-                                <Link><span><button>Book Now</button></span></Link>
-                            </div>
+                            <Link to="booking"><div className="bookNowLink">Book Now</div></Link>
+                            
                         </div>
-                        {/* </div> */}
-                        {/* </div> */}
                     </div>
 
                     <div className="room1">
-                        <img src={ImageRoom2} alt="Room 2" />
+                        <img src={ImageRoom3} alt="Room 5" />
                         <div className="roomFeatures">
                             <div className="boardRoomFeatures">
                                 <span>Board Room</span>
@@ -192,47 +204,54 @@ class Search extends Component {
                             <div className="roomNumber">
                                 <label>Room 001,Ground floor, main building</label>
                             </div>
-                            {/* <div className="searchFeatures"> */}
+                           
                             <div className="features">
                                 <p>Features:</p>
                             </div>
-                            <div className="feautureAccessories">
+                            <div className="featureAccessories">
                                 <div className="features1">
-                                    <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                    <span><p>Capacity</p></span>
-                                    <span><p>50 seats</p></span>
+                                    <span><i className="fa fa-user-friends"></i></span>
+                                    <div className="flexRoomItems">
+                                        <span><p>Capacity</p></span>
+                                        <span><p>50 seats</p></span>
+                                    </div>                                      
                                 </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>Air Condition</p></span>
-                                <span><p>Yes</p></span>
+                                <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>Air Condition</p></span>
+                                    <span><p>Yes</p></span>
+                                </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>Projector</p></span>
-                                <span><p>Yes</p></span>
+                                <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>Projector</p></span>
+                                    <span><p>Yes</p></span>
+                                </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>Water Dispenser</p></span>
-                                <span><p>Yes</p></span>
+                            <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>Water Dispenser</p></span>
+                                    <span><p>Yes</p></span>
+                                </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>White Board</p></span>
-                                <span><p>No</p></span>
+                                <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>White Board</p></span>
+                                    <span><p>No</p></span>
+                                </div>
                             </div>
-                            <div className="bookNow">
-                                <Link><span><button>Book Now</button></span></Link>
-                            </div>
+                            <Link to="booking"><div className="bookNowLink">Book Now</div></Link>
+                            
                         </div>
-                        {/* </div> */}
-                        {/* </div> */}
                     </div>
 
                     <div className="room1">
-                        <img src={ImageRoom1} alt="Room 1" />
+                        <img src={ImageRoom1} alt="Room 5" />
                         <div className="roomFeatures">
                             <div className="boardRoomFeatures">
                                 <span>Board Room</span>
@@ -241,47 +260,56 @@ class Search extends Component {
                             <div className="roomNumber">
                                 <label>Room 001,Ground floor, main building</label>
                             </div>
-                            {/* <div className="searchFeatures"> */}
+                           
                             <div className="features">
                                 <p>Features:</p>
                             </div>
-                            <div className="feautureAccessories">
+                            <div className="featureAccessories">
                                 <div className="features1">
-                                    <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                    <span><p>Capacity</p></span>
-                                    <span><p>50 seats</p></span>
+                                    <span><i className="fa fa-user-friends"></i></span>
+                                    <div className="flexRoomItems">
+                                        <span><p>Capacity</p></span>
+                                        <span><p>50 seats</p></span>
+                                    </div>                                      
                                 </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>Air Condition</p></span>
-                                <span><p>Yes</p></span>
+                                <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>Air Condition</p></span>
+                                    <span><p>Yes</p></span>
+                                </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>Projector</p></span>
-                                <span><p>Yes</p></span>
+                                <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>Projector</p></span>
+                                    <span><p>Yes</p></span>
+                                </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>Water Dispenser</p></span>
-                                <span><p>Yes</p></span>
+                            <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>Water Dispenser</p></span>
+                                    <span><p>Yes</p></span>
+                                </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>White Board</p></span>
-                                <span><p>No</p></span>
+                                <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>White Board</p></span>
+                                    <span><p>No</p></span>
+                                </div>
                             </div>
-                            <div className="bookNow">
-                                <Link><span><button>Book Now</button></span></Link>
-                            </div>
+                            <Link to="booking"><div className="bookNowLink">Book Now</div></Link>
+                            
                         </div>
                         {/* </div> */}
                         {/* </div> */}
                     </div>
 
                     <div className="room1">
-                        <img src={ImageRoom3} alt="Room 3" />
+                        <img src={ImageRoom11} alt="Room 5" />
                         <div className="roomFeatures">
                             <div className="boardRoomFeatures">
                                 <span>Board Room</span>
@@ -290,47 +318,54 @@ class Search extends Component {
                             <div className="roomNumber">
                                 <label>Room 001,Ground floor, main building</label>
                             </div>
-                            {/* <div className="searchFeatures"> */}
+                           
                             <div className="features">
                                 <p>Features:</p>
                             </div>
-                            <div className="feautureAccessories">
+                            <div className="featureAccessories">
                                 <div className="features1">
-                                    <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                    <span><p>Capacity</p></span>
-                                    <span><p>50 seats</p></span>
+                                    <span><i className="fa fa-user-friends"></i></span>
+                                    <div className="flexRoomItems">
+                                        <span><p>Capacity</p></span>
+                                        <span><p>50 seats</p></span>
+                                    </div>                                      
                                 </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>Air Condition</p></span>
-                                <span><p>Yes</p></span>
+                                <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>Air Condition</p></span>
+                                    <span><p>Yes</p></span>
+                                </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>Projector</p></span>
-                                <span><p>Yes</p></span>
+                                <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>Projector</p></span>
+                                    <span><p>Yes</p></span>
+                                </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>Water Dispenser</p></span>
-                                <span><p>Yes</p></span>
+                            <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>Water Dispenser</p></span>
+                                    <span><p>Yes</p></span>
+                                </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>White Board</p></span>
-                                <span><p>No</p></span>
+                                <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>White Board</p></span>
+                                    <span><p>No</p></span>
+                                </div>
                             </div>
-                            <div className="bookNow">
-                                <Link><span><button>Book Now</button></span></Link>
-                            </div>
+                            <Link to="booking"><div className="bookNowLink">Book Now</div></Link>
+                            
                         </div>
-                        {/* </div> */}
-                        {/* </div> */}
                     </div>
 
                     <div className="room1">
-                        <img src={ImageRoom11} alt="Room 11" />
+                        <img src={ImageRoom2} alt="Room 5" />
                         <div className="roomFeatures">
                             <div className="boardRoomFeatures">
                                 <span>Board Room</span>
@@ -339,47 +374,54 @@ class Search extends Component {
                             <div className="roomNumber">
                                 <label>Room 001,Ground floor, main building</label>
                             </div>
-                            {/* <div className="searchFeatures"> */}
+                           
                             <div className="features">
                                 <p>Features:</p>
                             </div>
-                            <div className="feautureAccessories">
+                            <div className="featureAccessories">
                                 <div className="features1">
-                                    <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                    <span><p>Capacity</p></span>
-                                    <span><p>50 seats</p></span>
+                                    <span><i className="fa fa-user-friends"></i></span>
+                                    <div className="flexRoomItems">
+                                        <span><p>Capacity</p></span>
+                                        <span><p>50 seats</p></span>
+                                    </div>                                      
                                 </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>Air Condition</p></span>
-                                <span><p>Yes</p></span>
+                                <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>Air Condition</p></span>
+                                    <span><p>Yes</p></span>
+                                </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>Projector</p></span>
-                                <span><p>Yes</p></span>
+                                <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>Projector</p></span>
+                                    <span><p>Yes</p></span>
+                                </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>Water Dispenser</p></span>
-                                <span><p>Yes</p></span>
+                            <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>Water Dispenser</p></span>
+                                    <span><p>Yes</p></span>
+                                </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>White Board</p></span>
-                                <span><p>No</p></span>
+                                <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>White Board</p></span>
+                                    <span><p>No</p></span>
+                                </div>
                             </div>
-                            <div className="bookNow">
-                                <Link><span><button>Book Now</button></span></Link>
-                            </div>
+                            <Link to="booking"><div className="bookNowLink">Book Now</div></Link>
+                            
                         </div>
-                        {/* </div> */}
-                        {/* </div> */}
                     </div>
 
                     <div className="room1">
-                        <img src={ImageRoom4} alt="Room 4" />
+                        <img src={ImageRoom4} alt="Room 5" />
                         <div className="roomFeatures">
                             <div className="boardRoomFeatures">
                                 <span>Board Room</span>
@@ -388,45 +430,51 @@ class Search extends Component {
                             <div className="roomNumber">
                                 <label>Room 001,Ground floor, main building</label>
                             </div>
-                            {/* <div className="searchFeatures"> */}
+                           
                             <div className="features">
                                 <p>Features:</p>
                             </div>
-                            <div className="feautureAccessories">
+                            <div className="featureAccessories">
                                 <div className="features1">
-                                    <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                    <span><p>Capacity</p></span>
-                                    <span><p>50 seats</p></span>
+                                    <span><i className="fa fa-user-friends"></i></span>
+                                    <div className="flexRoomItems">
+                                        <span><p>Capacity</p></span>
+                                        <span><p>50 seats</p></span>
+                                    </div>                                      
                                 </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>Air Condition</p></span>
-                                <span><p>Yes</p></span>
+                                <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>Air Condition</p></span>
+                                    <span><p>Yes</p></span>
+                                </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>Projector</p></span>
-                                <span><p>Yes</p></span>
+                                <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>Projector</p></span>
+                                    <span><p>Yes</p></span>
+                                </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>Water Dispenser</p></span>
-                                <span><p>Yes</p></span>
+                            <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>Water Dispenser</p></span>
+                                    <span><p>Yes</p></span>
+                                </div>
                             </div>
                             <div className="features1">
-                                <span><Link><i className="fa fa-user-friends"></i></Link></span>
-                                <span><p>White Board</p></span>
-                                <span><p>No</p></span>
+                                <span><i className="fa fa-user-friends"></i></span>
+                                <div className="flexRoomItems">
+                                    <span><p>White Board</p></span>
+                                    <span><p>No</p></span>
+                                </div>
                             </div>
-                            <div className="bookNow">
-                                <Link><span><button>Book Now</button></span></Link>
-                            </div>
+                            <Link to="booking"><div className="bookNowLink">Book Now</div></Link>
+                            
                         </div>
-                        {/* </div> */}
-                        {/* </div> */}
                     </div>
-
 
                 </div><br />
                 <Footer2 />
