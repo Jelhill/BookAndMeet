@@ -2622,3 +2622,82 @@ letter-spacing: -0.24px;
 color: #FFFFFF;
 
 }
+.feedBackContent{
+  width:685.95px;
+  height: 146px;
+  border:2px solid #FBFBFB;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #FBFBFB;
+}
+.content{
+  font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 30px;
+/* or 214% */
+
+letter-spacing: -0.24px;
+
+color: #373F41;
+width:598px;
+height: 90px;
+text-align: center;
+}
+.userImage{
+  width:55px;
+  height: 56px;
+  font-size: 38px;
+  color:#46258A;
+}
+.name{
+  width: 69px;
+  height:30px;
+  font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 30px;
+/* identical to box height, or 214% */
+
+letter-spacing: -0.24px;
+
+color: #46258A;
+
+}
+.time{
+  width:80px;
+  height: 30px;
+  font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 30px;
+/* identical to box height, or 214% */
+
+letter-spacing: -0.24px;
+
+color: rgba(55, 63, 65, 0.41);
+
+}
+.feedBackContentHeader{
+  display:flex;
+  justify-content: space-between;
+}
+.feedBacksHeader{
+  width:115px;
+  height: 20px;
+  margin:30px;
+  font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 20px;
+/* identical to box height, or 83% */
+letter-spacing: -0.24px;
+color: #665687;
+
+}
+.feedBacksWrapper{
+  margin:10px 0px 10px 60px;
+}

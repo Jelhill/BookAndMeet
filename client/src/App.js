@@ -6,9 +6,9 @@ import Search from './Components/HomePage/Search';
 import BookingForm from './Components/BookingPage/BookingForm';
 import { Fragment } from 'react';
 import UserProfilePage from './Components/ProfilePage/UserProfilePage';
-import Login from './Components/Modals/Login';
-import SignUp from './Components/Modals/Signup';
-import Logout from './Components/Modals/Logout';
+import Login from './Components/Modals/login';
+import SignUp from './Components/Modals/signup';
+import Logout from './Components/Modals/logout';
 import CompleteSignUp from "./Components/Modals/CompleteSignUp"
 import Error404 from "./Components/404"
 import imageLoader from "./Components/imageLoader"
