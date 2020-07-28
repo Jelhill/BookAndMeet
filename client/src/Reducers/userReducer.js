@@ -4,7 +4,8 @@ import {
     SHOW_SIGNUP,
     SHOW_LOGIN,
     SAVE_INITIAL_USER_DETAILS,
-    UPDATE_STATE_WITH_API
+    UPDATE_STATE_WITH_API,
+    UPDATE_STATE_FOR_HEADER
  } from "../Actions/userActions"
 
 const initialState = {
@@ -12,7 +13,8 @@ const initialState = {
     imageInputs: {},
     showSignUp: false,
     showSignIn: false,
-    renderPage: false
+    renderPage: false,
+    headerState: false
 }   
 
 const userReducer = (state = initialState, action) => {
@@ -41,6 +43,11 @@ const userReducer = (state = initialState, action) => {
     if(action.type === UPDATE_STATE_WITH_API) {
         newState.renderPage = action.value
     }
+
+    if(action.type === UPDATE_STATE_FOR_HEADER) {
+        newState.headerState = action.value
+    }
+
 
     return newState
 }

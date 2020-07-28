@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Header from "../Header"
 import Footer2 from "../Footer2"
-import ItemsInRoom from '../RoomInformation/ItemsInRoom'
 import BookingPageLeftSide from "./BookingPageLeftSide"
 import BookingPageRightDiv from "./BookingPageRightDiv"
 import { withRouter } from 'react-router-dom'
@@ -14,9 +13,9 @@ class BookingForm extends Component {
         await fetch("http://localhost:3001/booking",{
             method: "GET",
             headers: {"Content-type": "application/json", 
-                        authorization: `Bearer ${window.localStorage.getItem("token")}`,
-                        credentials: "include"
-                     }
+                authorization: `Bearer ${window.localStorage.getItem("token")}`,
+                credentials: "include"
+                }
         })
         .then((response) => response.json())
         .then((jsonResponse) => {
@@ -40,9 +39,6 @@ class BookingForm extends Component {
                     <BookingPageLeftSide />
                     <BookingPageRightDiv />
                 </div>
-                <div class="bookingItemsInRoomDiv">
-                    <ItemsInRoom />
-                </div>       
                 <div className="spaceDiv"></div>         
                 <Footer2 />
             </div>
@@ -50,10 +46,8 @@ class BookingForm extends Component {
     }
 }
 
-
 const mapStateToProps = (state) => {
     const { userReducer } = state
-    console.log(userReducer.renderPage)
     return {
       renderPage: userReducer.renderPage,
     }
