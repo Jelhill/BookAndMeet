@@ -15,8 +15,19 @@ class Login extends Component{
       this.props.getSignupInputs({[e.target.name]: e.target.value})
     }
 
+    setWithExpiry = (key, value, ttl) => {
+      const now = new Date()
+      const item = {
+        value: value,
+        expiry: now.getTime() + ttl
+      }
+      localStorage.setItem(key, JSON.stringify(item), 60000)
+    }
+
+    
     handleLogin = async (e) => {
       e.preventDefault()
+      console.log(this.props.signUpFormDetails)
       fetch("http://localhost:3001/login", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
@@ -25,7 +36,7 @@ class Login extends Component{
       .then(response => response.json())
       .then((jsonResponse) => {
         if(jsonResponse.message === "success" && jsonResponse.token !== null){
-          window.localStorage.setItem("token", jsonResponse.token)
+          this.setWithExpiry("token", jsonResponse.token, 60000)
           this.props.history.push("/home")
         }       
       })
@@ -52,13 +63,13 @@ class Login extends Component{
                       <form>
                        <div className="formDiv">
                          <input 
-                            type="text" 
-                            name="username" 
+                            type="email" 
+                            name="email" 
                             className="input" 
-                            placeholder="Username" 
+                            placeholder="Email" 
                             onChange={this.getUserInput}
                           />
-                         <input 
+                         <input
                             type="password" 
                             name="password" 
                             className="input" 
@@ -73,7 +84,7 @@ class Login extends Component{
                             </input>
                            <label 
                             htmlFor="rememberme">Remember me</label>
-                           <span><Link className="forgetPassword">forget password ?</Link></span>
+                           <span><Link to="#" className="forgetPassword">forget password ?</Link></span>
                          <button 
                             onClick={this.handleLogin}
                             className="form-control signupsubmit">
@@ -94,7 +105,6 @@ class Login extends Component{
 
 const mapStateToProps = (state) => {
     const { userReducer } = state
-    console.log(userReducer.signUpFormDetails)
     return {
       showSignIn: userReducer.showSignIn,
       signUpFormDetails: userReducer.signUpFormDetails,

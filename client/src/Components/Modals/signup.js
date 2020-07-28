@@ -36,7 +36,6 @@ class SignUp extends Component{
       .then(response => response.json())
       .then((jsonResponse) => {
         console.log(jsonResponse)
-        
       })
       .catch((err) => console.log(err))
     }

@@ -1,5 +1,5 @@
 const iniialState = {
-
+    
 }
 
 const roomReducer = (state = iniialState, action) => {

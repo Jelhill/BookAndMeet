@@ -6,17 +6,16 @@ export default class Footer2 extends Component {
         return (
             <div className="footer2Div">
                 <div className="footerDiv1">
-                    <Link><span>About us</span></Link>
-                    <Link><span>Community</span></Link>
-                    <Link><span>Top Booking</span></Link>
-                    <Link><span>Contact</span></Link>
+                <Link to="aboutUs"><span>About us</span></Link>
+                <Link to="admin"><span>Admin</span></Link>
+                <Link to="feedback"><span>Feedback</span></Link>
                 </div>
-                <div className="footerDiv2">
+                {/* <div className="footerDiv2">
                     <Link><i className="fa fa-google"></i></Link>
                     <Link><i className="fa fa-facebook"></i></Link>
                     <Link><i className="fa fa-twitter"></i></Link>
                     <Link><i className="fa fa-instagram"></i></Link>
-                </div>
+                </div> */}
             </div>
         )
     }

@@ -44,14 +44,18 @@ User.prototype.authenticateUser = function() {
     return new Promise((resolve, reject) => {
         const {email, password} = this.data
             db.query("SELECT * FROM users WHERE email = $1", [email])
-            .then((result)=> {
-                if(result.length && bcrypt.compareSync(password, result.rows[0].password)){
+            .then((result) => {
+                if(result && bcrypt.compareSync(password, result.rows[0].password)){
                     this.data = result
+                    console.log("Fire", this.data)
+                    resolve({message: "Successful", result})
                 }
-                resolve({message: "Successful", result})
+                else{
+                    reject("username/password mismatch")
+                }
             })
             .catch((err) => {
-                reject("incorrect username/password")
+                reject(err)
             })
     })
 }

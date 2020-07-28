@@ -8,11 +8,11 @@ export default class BookingPageRightDiv extends Component {
                 <p>Select time duration</p>
                 <div className="checkInDiv">
                     <div>
-                        <label>Check out time</label>
+                        <label>Check in</label>
                         <input type="datetime-local"/>
                     </div>
                     <div>
-                        <label>Check in time</label>
+                        <label>Check out</label>
                         <input type="datetime-local"/>
                     </div>   
                 </div>    
@@ -21,12 +21,8 @@ export default class BookingPageRightDiv extends Component {
                     <label htmlFor="">Booking on behalf of someone?</label>
                 </div>
                 <div className="checkInDiv">
-                    <div>
-                        <input type="text" placeholder="Surname"/>
-                    </div>
-                    <div>
-                        <input type="text" placeholder="Firstname"/>
-                    </div>   
+                    <input type="text" placeholder="Surname"/>                    
+                    <input type="text" placeholder="Firstname"/>                     
                 </div>  
                 <div className="checkInDiv2">
                     <input type="email" placeholder="Email"/>
