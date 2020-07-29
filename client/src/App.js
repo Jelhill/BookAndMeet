@@ -17,6 +17,7 @@ import Feedback from "./Components/FooterLink/Feedback"
 import Admin from "./Components/FooterLink/Admin"
 import MeetingRooms from './Components/FooterLink/meetingRooms';
 import AddNewRoom from './Components/FooterLink/addNewRoom';
+import Bookings from './Components/FooterLink/Bookings';
 
 
 
@@ -44,6 +45,7 @@ function App() {
         <Route exact path="/meetingRooms" component={MeetingRooms}/>
         <Route exact path="/adminDashboard" component={Admin}/>
         <Route exact path="/addnewroom" component={AddNewRoom}/>
+        <Route exact path="/bookings" component={Bookings}/>
       </Switch>
     </Fragment> 
   );

@@ -95,7 +95,7 @@ class Admin extends Component {
 const mapStateToProps = (state) => {
     const { bookingReducer } = state
     return {
-      chartData: bookingReducer.chartData,
+        chartData: bookingReducer.chartData,
     }
 }
 

@@ -2363,16 +2363,53 @@ table{
   width:100%;
 }
 td,th{
-  font-family: Roboto;
+font-family: Roboto;
 font-style: normal;
-font-weight: bold;
-font-size: 15px;
+font-weight: normal;
+font-size: 18px;
 line-height: 20px;
 letter-spacing: -0.24px;
 color: rgba(0, 0, 0, 0.58);
 border-bottom: 4px solid #E5E5E5;
-padding:10px;
+padding:20px;
+margin:60px;
 
+}
+.bold{
+  font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 20px;
+letter-spacing: -0.24px;
+color: rgba(0, 0, 0, 0.58);
+border-bottom: 4px solid #E5E5E5;
+padding:20px;
+margin:60px;
+
+}
+.date{
+  width:150px;
+  height: 30px;
+  background: #FFFFFF;
+border: 1px solid #665687;
+box-sizing: border-box;
+border-radius: 3px;
+padding:10px;
+margin:5px;
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 20px;
+/* identical to box height, or 143% */
+
+letter-spacing: -0.24px;
+
+color: #373F41;
+}
+tr{
+  margin:80px;
 }
 .adminLeftSide ul {
   padding-left: 30%;
@@ -2491,6 +2528,7 @@ box-sizing: border-box;
 border-radius: 3px;
 width:140px;
 height: 30px;
+margin:5px;
 font-family: Roboto;
 font-style: normal;
 font-weight: bold;
@@ -2514,6 +2552,7 @@ font-style: normal;
 font-weight: bold;
 font-size: 14px;
 line-height: 20px;
+margin:5px;
 /* identical to box height, or 143% */
 
 letter-spacing: -0.24px;
@@ -2735,10 +2774,73 @@ color: #665687;
 
 }
 .feedBacksWrapper{
+<<<<<<< HEAD
   display: flex;
   justify-content: space-between;
   margin: 10px 5% 10px 10%;
   width: 80%;
   padding-right: 5%;
   box-sizing: border-box;
+=======
+  margin:10px 0px 10px 60px;
+}
+.bookingsContainer{
+  margin:30px 40px 0px 40px;
+}
+.bookingsHeader{
+margin:20px;
+}
+.history{
+  margin:10px;
+}
+#running{
+  font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 20px;
+/* identical to box height, or 111% */
+
+letter-spacing: -0.24px;
+
+color: #1AC63F;
+}
+#completed{
+  font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 20px;
+/* identical to box height, or 111% */
+
+letter-spacing: -0.24px;
+
+color: #46258A;
+
+}
+#upcoming{
+  font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 20px;
+/* identical to box height, or 111% */
+
+letter-spacing: -0.24px;
+
+color: #FF7E06;
+
+}
+#cancelled{
+  font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 20px;
+/* identical to box height, or 111% */
+
+letter-spacing: -0.24px;
+
+color: #B42A2A;
+>>>>>>> development
 }
