@@ -35,6 +35,7 @@ class Login extends Component{
       })
       .then(response => response.json())
       .then((jsonResponse) => {
+        console.log(jsonResponse)
         if(jsonResponse.message === "success" && jsonResponse.token !== null){
           this.setWithExpiry("token", jsonResponse.token, 60000)
           this.props.history.push("/home")

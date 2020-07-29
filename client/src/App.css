@@ -79,7 +79,6 @@ button {
   font-size: 27px;
 }
 .logo {
-  /* position: absolute; */
   width: 64px;
   height: 20px;
   left: 10px;
@@ -90,8 +89,6 @@ button {
   font-size: 24px;
   line-height: 20px;
   color: var(--mainWhite);
-  /* identical to box height, or 83% */
-
   letter-spacing: -0.24px;
   color: var(--mainPurple);
 }
@@ -100,7 +97,7 @@ button {
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
-  line-height: 100px;
+  line-height: 70px;
   color: var(--mainPurple);
   text-align: center;
   letter-spacing: -0.24px;
@@ -267,6 +264,10 @@ button {
   
 }
 
+.noDecoration {
+  text-decoration: none;
+}
+
 #signup {
   display: inline-block;
   text-align: center;
@@ -345,11 +346,11 @@ button {
 .signupmodal, .loginmodal {
   margin: auto;
   display:flex;
-  margin-top: 13vh; 
-  width: 760px;
-  height: 74vh;
+  margin-top: 10vh; 
+  width: 700px;
+  height: 80vh;
   background: white;
-  transition: .5s ease-out;
+  transition: .2s ease-out;
   box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35);
   filter: blur(0);
   /* transform: scale(1); */
@@ -650,23 +651,23 @@ padding:5px;
   justify-content: space-between;
 }
 .filterSelect{
-  height: 45px;
+  height: 40px;
   border-radius: 5px;
   border: none;
   margin-right: 5px;
-  width: 130px;
+  width: 165px;
   padding-left: 10px;
-  font-size: 18px;
+  font-size: 15px;
   color: gray;
   font-weight: bold;
 }
 
-.filterCapacity{
-  height: 45px;
-  border-radius: 5px;
+.filterDateTime{
+  height: 40px;
+  border-radius: 3px;
   border: none;
   margin-right: 5px;
-  width: 140px;
+  width: 200px;
   padding-left: 10px;
   color: gray;
   font-weight: bold;
@@ -681,7 +682,7 @@ padding:5px;
 
 .filterButton{
   width: 99px;
-  height: 45px;
+  height: 40px;
   top: 339px;
   background: var(--mainGreen);
   border-radius: 4px;
@@ -705,7 +706,47 @@ background-color: green;
   z-index: -1;
 }
 
+.searchAreaDiv {
+  margin: auto;
+  margin-top: 15px;
+  width: 88%;
+  
+}
 
+.searchAreaDiv input {
+  width: 195px;
+  height: 33px;
+  border-radius: 3px;
+  margin-right: 10px;
+  border: 1.5px solid gray;
+  font-size: 13px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.searchAreaDiv select {
+  width: 125px;
+  height: 33px;
+  border-radius: 3px;
+  margin-right: 10px;
+  font-size: 13px;
+  padding: 5px;
+  box-sizing: border-box;
+  border: 1.5px solid gray;
+
+}
+.searchAreaDiv button {
+  width: 100px;
+  height: 33px;
+  border: none;
+  background-color: var(--mainPurple);
+  color: var(--mainWhite);
+  border-radius: 3px;
+}
+
+.searchAreaDiv button:hover {
+  opacity: 0.8;
+}
 .googlesignuptext,
 .facebooksignuptext {
   height: 20px;
@@ -1965,7 +2006,7 @@ body {
   box-sizing: border-box;
   width: 90%; 
   margin: auto; 
-  margin-top: 100px;
+  margin-top: 35px;
 
 }
 .roomsSearched {
@@ -1979,7 +2020,7 @@ body {
   margin-top: 2%;
   float: left;
   margin: 0px 1% 30px 1%;
-  padding: 25px 15px 10px 15px ;
+  padding: 15px 15px 10px 15px ;
   border: 1px solid var(--mainPurple);
   background-color: var(--mainGray);
   background: #F3F3F3;
@@ -2033,20 +2074,7 @@ font-size: 17px;
 .roomNumber label {
   font-size: 11px;
 }
-/* .bookNow{
-color: #20B541;
-font-family: var(--Roboto) sans-serif;
-padding-left: 72px;
-margin-top: 3%;
-font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 10px;
-line-height: 20px;
-letter-spacing: -0.24px;
 
-color: #FFFFFF;
-}  */
 .bookNowLink{
   background-color: #20B541;
   padding: 3px 3px;
@@ -2058,8 +2086,7 @@ color: #FFFFFF;
   margin: auto;
   margin-top: 5px;
   width: 75px;
-  text-align: center;
-  
+  text-align: center; 
 }
 
 .bookNowLink:hover{
@@ -2662,46 +2689,52 @@ color: #FFFFFF;
 
 }
 .feedBackContent{
-  width:685.95px;
-  height: 146px;
+  /* width:685.95px; */
+  width: 90%;
+  /* height: 100px; */
   border:2px solid #FBFBFB;
-  border-radius: 6px;
-  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #FBFBFB;
+  border-radius: 5px;
+  padding-left: 30px;
+  font-family: var(--Roboto);
+  background-color: var(--mainGray);
+  padding-top: 15px;
+
 }
 .content{
   font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 12px;
-line-height: 30px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
 /* or 214% */
 
 letter-spacing: -0.24px;
 
 color: #373F41;
 width:598px;
-height: 90px;
-text-align: center;
+/* height: 90px; */
+
 }
-.userImage{
-  width:55px;
-  height: 56px;
-  font-size: 38px;
+.feedBacksWrapper i{
+  font-size: 60px;
+  margin-top: 20px;
+  margin-right: 10px;
   color:#46258A;
+  border-radius: 6px;
 }
 .name{
   width: 69px;
   height:30px;
   font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 14px;
-line-height: 30px;
-/* identical to box height, or 214% */
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 30px;
+  /* identical to box height, or 214% */
 
-letter-spacing: -0.24px;
+  letter-spacing: -0.24px;
 
-color: #46258A;
+  color: #46258A;
 
 }
 .time{
@@ -2722,11 +2755,14 @@ color: rgba(55, 63, 65, 0.41);
 .feedBackContentHeader{
   display:flex;
   justify-content: space-between;
+  padding-right: 20px;
+
 }
 .feedBacksHeader{
   width:115px;
   height: 20px;
-  margin:30px;
+  margin-left:10%;
+  margin-top: 30px;
   font-family: Roboto;
 font-style: normal;
 font-weight: bold;
@@ -2738,6 +2774,14 @@ color: #665687;
 
 }
 .feedBacksWrapper{
+<<<<<<< HEAD
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 5% 10px 10%;
+  width: 80%;
+  padding-right: 5%;
+  box-sizing: border-box;
+=======
   margin:10px 0px 10px 60px;
 }
 .bookingsContainer{
@@ -2798,4 +2842,5 @@ line-height: 20px;
 letter-spacing: -0.24px;
 
 color: #B42A2A;
+>>>>>>> development
 }

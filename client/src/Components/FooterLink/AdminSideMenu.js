@@ -9,8 +9,8 @@ export default class AdminSideMenu extends Component {
             <ul>
                 <Link to="adminDashboard"><li >Dashboard</li></Link>
                 <Link to="MeetingRooms"><li >Meeting Rooms</li></Link>
-                <Link to="bookings"><li> Bookings</li></Link>
-                <Link to="feedback"><li>Feedbacks</li></Link>
+                <Link to="adminBooking"><li> Bookings</li></Link>
+                <Link to="adminFeedback"><li>Feedbacks</li></Link>
             </ul>
         </div>
         )

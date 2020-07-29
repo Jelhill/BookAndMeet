@@ -5,6 +5,7 @@ import '../../App.css';
 import LandingPageHeader from "../Header/LandingPageHeader";
 import { Link } from "react-router-dom"
 
+
 class Landing extends Component {
   state = {
     show: false,
@@ -28,7 +29,8 @@ class Landing extends Component {
         <div className="landingWrapper">
           <div className="backgroundImage"></div>
           <LandingPageHeader />
-          <div className="landingBody">i
+          <div className="landingBody">
+             
               <h3>Search and book a meeting room</h3>
               <input type="text" placeholder="Conference room" id="search"></input><br/>
               <div className="flexDisplay">
@@ -39,16 +41,18 @@ class Landing extends Component {
                     <option value="conferenceRoom">Conference</option>
                     <option value="auditorium">Auditorium</option>
                 </select>
-                <input type="date" className="filterSelect" id="datePicker"/>
-                <input type="time" className="filterSelect" id="timePicker"/>
-                <select defaultValue={"Capacity"} name="" className="filterCapacity">
-                    <option value="capacity" disabled>Capacity</option>
+                
+                <select name="" defaultValue={"Capacity"} className="filterSelect">
+                    <option disabled selected hidden>Capacity</option>
                     <option value="oneToTen">1 - 10 seats</option>
                     <option value="elevenToTwenty">11 - 50 seats</option>
                     <option value="fiftyOneToOneHundred">51 - 100 seats</option>
                     <option value="hundredToTwoHundred">101 - 200 seats</option>
                     <option value="aboveTwoHundred">Above 200 seats</option>
                 </select>
+
+                <input type="datetime-local" className="filterDateTime" id="datePicker"/>
+                {/* <input type="time" className="filterSelect" id="timePicker"/> */}
                 <button className="filterButton">Search</button>
               </div>
           </div>
