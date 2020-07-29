@@ -13,6 +13,8 @@ import ImageRoom2 from "../../Images/room2.jpg"
 import ImageRoom4 from "../../Images/room4.jpg"
 import Header from "../Header";
 import Footer2 from "../Footer2";
+import SearchFilter from "../HomePage/SearchFilter";
+
 
 
 
@@ -23,6 +25,7 @@ class Search extends Component {
         return (
             <div className="homePageWrapper">
                 <Header />
+                <SearchFilter />
                 <div className="bookingRoomSearchWrapper">
                     <div className="room1">
                         <img src={ImageRoom5} alt="Room 5" />

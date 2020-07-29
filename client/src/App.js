@@ -6,9 +6,9 @@ import Search from './Components/HomePage/Search';
 import BookingForm from './Components/BookingPage/BookingForm';
 import { Fragment } from 'react';
 import UserProfilePage from './Components/ProfilePage/UserProfilePage';
-import Login from './Components/Modals/login';
-import SignUp from './Components/Modals/signup';
-import Logout from './Components/Modals/logout';
+import Login from './Components/Modals/Login';
+import SignUp from './Components/Modals/Signup';
+import Logout from './Components/Modals/Logout';
 import CompleteSignUp from "./Components/Modals/CompleteSignUp"
 import Error404 from "./Components/404"
 import imageLoader from "./Components/imageLoader"
@@ -31,7 +31,7 @@ function App() {
         <Route exact path="/home" component={Search} />
         <Route exact path="/booking" component={BookingForm} />
         <Route exact path="/aboutRoom" component={AboutRoom} />
-        <Route exact path="/user/profile" component={UserProfilePage} />
+        <Route exact path="/user/:profile" component={UserProfilePage} />
         <Route exact path="/login" component={ Login } />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/logout" component={Logout} />
@@ -39,7 +39,7 @@ function App() {
         <Route exact path="/404" component={Error404} />
         <Route exact path="/imageLoader" component={imageLoader} />
         <Route exact path="/aboutUs" component={AboutUs} />
-        <Route exact path="/feedback" component={Feedback} />
+        <Route exact path="/adminFeedback" component={Feedback} />
         <Route exact path="/admin" component={Admin} />
         <Route exact path="/meetingRooms" component={MeetingRooms}/>
         <Route exact path="/adminDashboard" component={Admin}/>

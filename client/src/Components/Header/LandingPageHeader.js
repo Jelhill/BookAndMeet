@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import logo from "../../Images/meeting.png"
-import Login from "../Modals/login";
-import SignUp from "../Modals/signup";
+import Login from "../Modals/Login";
+import SignUp from "../Modals/Signup";
 import { connect } from "react-redux"
 import { showSignup, showSignIn} from "../../Actions/userActions"
 
