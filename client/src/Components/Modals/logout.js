@@ -1,29 +1,41 @@
 import React, {Component} from 'react';
 import { showLogout } from "../../Actions/userActions"
-import {withRouter} from 'react-router-dom'
-import {connect } from 'react-redux'
-
-
+import { withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { unprotectedRoutes } from "../../Data/data"
 
 class Logout extends Component{
-    onClose = (e) => {
-        e.preventDefault()
-        this.props.showLogout(false) 
+    onClose = () => {
+        this.props.showLogout(false)
     }
+
+    logOutUser = (e) => {
+      e.preventDefault()
+      localStorage.removeItem("token")
+      const unprotected = unprotectedRoutes 
+      const currentRoute = this.props.history.location.pathname;
+      if(unprotected.includes(currentRoute)){
+        window.location = `${currentRoute}`
+      }else{
+        window.location = "/home"
+      }
+      this.onClose()
+    }
+    
     render(){
         if(!this.props.showLogoutModal){
             return null;
         }
         return (
+            
             <div className="logoutModalDiv">
                 <div className='logoutmodal'>
-                  <h2 className="logoutheader">Log Out</h2>
+                  <h2>Log Out</h2>
                   <p className="logoutparagraph">Do you wish to log out?</p>
                   <div className="logoutButtonsDiv">
-                    <button className="yesButton">Yes</button>
-                    <button className="noButton">No</button>
-                  </div>
-                  
+                    <button className="yesButton" onClick={this.logOutUser}>Yes</button>
+                    <button className="noButton" onClick={this.onClose}>No</button>
+                  </div>                  
                 </div>
             </div>
         );
@@ -31,7 +43,6 @@ class Logout extends Component{
 }
 const mapStateToProps = (state) => {
     const { userReducer } = state
-    console.log(">>>", userReducer.showLogOut)
     return {
       showLogoutModal : userReducer.showLogOut
     }

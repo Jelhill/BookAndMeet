@@ -8,7 +8,6 @@ import { Fragment } from 'react';
 import UserProfilePage from './Components/ProfilePage/UserProfilePage';
 import Login from './Components/Modals/Login';
 import SignUp from './Components/Modals/Signup';
-import Logout from './Components/Modals/Logout';
 import CompleteSignUp from "./Components/Modals/CompleteSignUp"
 import Error404 from "./Components/404"
 import imageLoader from "./Components/imageLoader"
@@ -19,6 +18,7 @@ import MeetingRooms from './Components/FooterLink/meetingRooms';
 import AddNewRoom from './Components/FooterLink/addNewRoom';
 import Bookings from './Components/FooterLink/Bookings';
 import Header from './Components/Header'
+import History from "./Components/ProfilePage/History"
 
 function App() {
  
@@ -43,6 +43,7 @@ function App() {
         <Route exact path="/adminDashboard" component={Admin}/>
         <Route exact path="/addnewroom" component={AddNewRoom}/>
         <Route exact path="/adminBooking" component={Bookings}/>
+        <Route exact path="/userHistory" component={History}/>
       </Switch>
     </Fragment> 
     // <Header/>

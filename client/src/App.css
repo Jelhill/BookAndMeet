@@ -417,10 +417,11 @@ padding:5px;
   top: 25%;
   z-index: 1;
 }
-.logoutheader {
+.logoutmodal h2 {
   margin-left: 20px;
   padding-top: 10px;
-  color: var(--mainPurple);
+  color: red;
+  
   font-family: var(--Roboto);
   font-weight: bold;
   font-size: 32px;

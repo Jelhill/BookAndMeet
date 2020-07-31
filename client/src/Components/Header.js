@@ -23,13 +23,14 @@ class Header extends Component {
             <div className="headerPurpleDiv">
                 <div className="headerIconDiv">
                     <div className="logoWrapper">
-                        <img src={logo} alt="Logo"/>
+                        <Link to="/"><img src={logo} alt="Logo"/></Link>
                         <h2 className="logo">boardroom</h2>
+                    
                     </div>
                     {this.props.headerState === true ?
                     <ul>
                         <li><Link to="#">Hi Taofeek</Link></li>
-                        <li><Link to="#">History</Link></li>
+                        <li><Link to="userHistory">History</Link></li>
                         <li><Link to="user/profile">My Profile</Link></li>
                         <li><Link to="#" onClick={this.openLogOutModal}>Logout</Link></li>
                         <Logout />
