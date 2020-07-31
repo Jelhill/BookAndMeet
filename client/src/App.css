@@ -393,7 +393,6 @@ padding:5px;
   margin-left: 40px;
 }
 .logoutmodal {
-  background-color: var(--mainRed);
   height: 252px;
   width: 334px;
   background-color: var(--mainWhite);
@@ -401,10 +400,12 @@ padding:5px;
   box-sizing: border-box;
   box-shadow: 3px 4px 16px rgba(0, 0, 0, 0.1);
   border-radius: 11px;
+  
 
   position: absolute;
   left: 40%;
-  bottom: 30%;
+  top: 60%;
+  z-index: 1;
 }
 .logoutheader {
   margin-left: 20px;
@@ -2774,14 +2775,12 @@ color: #665687;
 
 }
 .feedBacksWrapper{
-<<<<<<< HEAD
   display: flex;
   justify-content: space-between;
   margin: 10px 5% 10px 10%;
   width: 80%;
   padding-right: 5%;
   box-sizing: border-box;
-=======
   margin:10px 0px 10px 60px;
 }
 .bookingsContainer{
@@ -2842,5 +2841,4 @@ line-height: 20px;
 letter-spacing: -0.24px;
 
 color: #B42A2A;
->>>>>>> development
 }
