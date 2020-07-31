@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Header from "../Header"
 import { Link } from "react-router-dom"
 import avatar from "../../Images/avatar.png"
-import Footer from '../Footer'
+// import Footer from '../Footer'
 import Logout from '../Modals/Logout'
 import Footer2 from '../Footer2'
 
@@ -89,7 +89,7 @@ export default class UserProfilePage extends Component {
                         <button className="profileButton">Save Changes</button>                
                     </div>
                 </div> 
-                <Footer2 />               
+                <Footer2 />                              
             </div>
         )
     }

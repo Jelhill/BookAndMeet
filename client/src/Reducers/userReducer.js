@@ -5,7 +5,8 @@ import {
     SHOW_LOGIN,
     SAVE_INITIAL_USER_DETAILS,
     UPDATE_STATE_WITH_API,
-    UPDATE_STATE_FOR_HEADER
+    UPDATE_STATE_FOR_HEADER,
+    SHOW_LOGOUT
  } from "../Actions/userActions"
 
 const initialState = {
@@ -13,6 +14,7 @@ const initialState = {
     imageInputs: {},
     showSignUp: false,
     showSignIn: false,
+    showLogOut:false,
     renderPage: false,
     headerState: false
 }   
@@ -34,6 +36,9 @@ const userReducer = (state = initialState, action) => {
 
     if(action.type === SHOW_LOGIN) {
         newState.showSignIn = action.values
+    }
+    if(action.type === SHOW_LOGOUT ){
+        newState.showLogOut = action
     }
 
     if(action.type === SAVE_INITIAL_USER_DETAILS) {
