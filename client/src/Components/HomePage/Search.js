@@ -474,8 +474,7 @@ class Search extends Component {
                                     <span><p>No</p></span>
                                 </div>
                             </div>
-                            <Link to="booking"><div className="bookNowLink">Book Now</div></Link>
-                            
+                            <Link to="booking"><div className="bookNowLink">Book Now</div></Link>                            
                         </div>
                     </div>
 

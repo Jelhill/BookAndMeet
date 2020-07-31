@@ -6,6 +6,7 @@ export const SHOW_SIGNIN = "SHOW_LOGIN"
 export const SAVE_INITIAL_USER_DETAILS = "SAVE_INITIAL_USER_DETAILS"
 export const UPDATE_STATE_WITH_API = "UPDATE_STATE_WITH_API"
 export const UPDATE_STATE_FOR_HEADER = "UPDATE_STATE_FOR_HEADER"
+export const SHOW_LOGOUT = "SHOW_LOGOUT"
 
 
 export const getSignupInputs = (values) => {
@@ -33,6 +34,12 @@ export const showSignIn = (values) => {
     return{
         type: SHOW_LOGIN,
         values
+    }
+}
+export const showLogout = (value) =>{
+    return{
+        type:SHOW_LOGOUT,
+        value
     }
 }
 
