@@ -18,7 +18,10 @@ import Admin from "./Components/FooterLink/Admin"
 import MeetingRooms from './Components/FooterLink/meetingRooms';
 import AddNewRoom from './Components/FooterLink/addNewRoom';
 import Bookings from './Components/FooterLink/Bookings';
-import Header from './Components/Header'
+import Feed from './Components/Feed';
+
+
+
 
 function App() {
  
