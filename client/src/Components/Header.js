@@ -16,44 +16,33 @@ class Header extends Component {
 
     handleSignIn = () => this.props.showSignin(true)
     openSignUpModal = () => this.props.showSignup(true)
-    openLogOutModal = ()=>this.props.showLogout(true)
+    openLogOutModal = () => this.props.showLogout(true)
 
     render() {
         return (
             <div className="headerPurpleDiv">
                 <div className="headerIconDiv">
-                <div className="logoWrapper">
-                    <img src={logo} alt="Logo"/>
-                    <h2 className="logo">boardroom</h2>
-                </div>
-                {/* {this.props.headerState === true ? */}
-                <ul>
-                    <li><Link to="#">Hi Taofeek</Link></li>
-                    <li><Link to="#">History</Link></li>
-                    <li><Link to="user/profile">My Profile</Link></li>
-<<<<<<< HEAD
-                    <li><Link to="logout">Logout</Link></li>
-=======
-                    <li><Link to="logout" onClick={this.openLogOutModal}>Logout</Link></li>
->>>>>>> development
-                </ul> 
-                 {/* : */}
-                <ul>
-                    <li><Link to="#" className="noDecoration" onClick={this.handleSignIn}>Login</Link></li>
-                    <li><Link to="#" className="noDecoration" onClick={this.openSignUpModal}>Signup</Link></li>
-                    <Login />  
-                    <Signup />
-                </ul> 
-<<<<<<< HEAD
-                }
+                    <div className="logoWrapper">
+                        <img src={logo} alt="Logo"/>
+                        <h2 className="logo">boardroom</h2>
+                    </div>
+                    {this.props.headerState === true ?
+                    <ul>
+                        <li><Link to="#">Hi Taofeek</Link></li>
+                        <li><Link to="#">History</Link></li>
+                        <li><Link to="user/profile">My Profile</Link></li>
+                        <li><Link to="#" onClick={this.openLogOutModal}>Logout</Link></li>
+                        <Logout />
+                    </ul> 
+                    :
+                    <ul>
+                        <li><Link to="#" className="noDecoration" onClick={this.handleSignIn}>Login</Link></li>
+                        <li><Link to="#" className="noDecoration" onClick={this.openSignUpModal}>Signup</Link></li>
+                        <Login />  
+                        <Signup />
+                    </ul> 
+                    }
                 </div>          
-=======
-                 {/* } */}
-                </div>
-          
->>>>>>> development
-                <div>
-            </div> 
             </div>
         )
     }
@@ -65,7 +54,7 @@ const mapStateToProps = (state) => {
         headerState: userReducer.headerState,
         showSignUp: userReducer.showSignUp,
         showSignIn: userReducer.showSignIn,
-        showLogout : userReducer.showLogOut
+        showLogoutModal : userReducer.showLogOut
     }
 }
 
@@ -74,7 +63,7 @@ const mapDispatchToProps = (dispatch) => {
         updateStateForHeader: (value) => dispatch(updateStateForHeader(value)),
         showSignin: (values) => dispatch(showSignIn(values)),
         showSignup: (values) => dispatch(showSignup(values)) ,
-        showLogout:()=>dispatch(showLogout())   
+        showLogout:(value) => dispatch(showLogout(value))   
     }
 }
   

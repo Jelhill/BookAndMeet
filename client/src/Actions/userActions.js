@@ -36,9 +36,10 @@ export const showSignIn = (values) => {
         values
     }
 }
-export const showLogout = ()=>{
+export const showLogout = (value) =>{
     return{
-        type:SHOW_LOGOUT
+        type:SHOW_LOGOUT,
+        value
     }
 }
 
