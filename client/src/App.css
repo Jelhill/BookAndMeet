@@ -709,12 +709,11 @@ background-color: green;
 .searchAreaDiv {
   margin: auto;
   margin-top: 15px;
-  width: 88%;
-  
+  width: 90%;
 }
 
 .searchAreaDiv input {
-  width: 195px;
+  width: 125px;
   height: 33px;
   border-radius: 3px;
   margin-right: 10px;
@@ -725,7 +724,7 @@ background-color: green;
 }
 
 .searchAreaDiv select {
-  width: 125px;
+  width: 120px;
   height: 33px;
   border-radius: 3px;
   margin-right: 10px;
@@ -2003,11 +2002,10 @@ body {
   flex-direction: column;
 }
 .bookingRoomSearchWrapper{
-  box-sizing: border-box;
   width: 90%; 
   margin: auto; 
   margin-top: 35px;
-
+  /* padding-left: 3%; */
 }
 .roomsSearched {
   width: 100%;
@@ -2270,9 +2268,6 @@ font-size: 20px;
 }
 
 @media (max-width: 320px)  {
-    /* .landingBody {
-  
-    } */
 
     #search {
       width: 300px;
@@ -2319,7 +2314,34 @@ font-size: 20px;
     width: 300px;
   }
 }
-/* ADMIN CSS */
+
+
+@media (min-width: 1050px) and (max-width: 1365px)  {
+  .bookingRoomSearchWrapper {
+    width: 1230px;
+  }
+
+}
+
+@media (min-width: 800px) and (max-width: 1050px)  {
+  .bookingRoomSearchWrapper {
+    width: 908px;
+  }
+
+}
+
+@media (min-width: 580px) and (max-width: 800px)  {
+  .bookingRoomSearchWrapper {
+    width: 605px;
+  }
+}
+
+@media (max-width: 580px)  {
+  .bookingRoomSearchWrapper {
+    width: 320px;
+  }
+}
+  /* ADMIN CSS */ 
 .notifier{
   border: 1px solid black;
   width: 200px;
@@ -2774,14 +2796,12 @@ color: #665687;
 
 }
 .feedBacksWrapper{
-<<<<<<< HEAD
   display: flex;
   justify-content: space-between;
   margin: 10px 5% 10px 10%;
   width: 80%;
   padding-right: 5%;
   box-sizing: border-box;
-=======
   margin:10px 0px 10px 60px;
 }
 .bookingsContainer{
@@ -2842,5 +2862,4 @@ line-height: 20px;
 letter-spacing: -0.24px;
 
 color: #B42A2A;
->>>>>>> development
 }

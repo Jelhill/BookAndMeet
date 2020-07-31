@@ -2,28 +2,19 @@ import React, {Component} from 'react';
 import { Link, withRouter } from "react-router-dom"
 import { connect } from 'react-redux';
 import { showSignIn, getSignupInputs } from "../../Actions/userActions"
+import { setWithExpiry } from "../../Actions/helperFunctions"
 
 
-class Login extends Component{
+class Login extends Component{  
 
     onClose = (e) => {
         e.preventDefault()
         this.props.showSignin(false) 
     }
-
+    
     getUserInput = (e) => {
       this.props.getSignupInputs({[e.target.name]: e.target.value})
     }
-
-    setWithExpiry = (key, value, ttl) => {
-      const now = new Date()
-      const item = {
-        value: value,
-        expiry: now.getTime() + ttl
-      }
-      localStorage.setItem(key, JSON.stringify(item), 60000)
-    }
-
     
     handleLogin = async (e) => {
       e.preventDefault()
@@ -37,7 +28,8 @@ class Login extends Component{
       .then((jsonResponse) => {
         console.log(jsonResponse)
         if(jsonResponse.message === "success" && jsonResponse.token !== null){
-          this.setWithExpiry("token", jsonResponse.token, 60000)
+          setWithExpiry("token", jsonResponse.token, 60000)
+          console.log(this.props.history)
           this.props.history.push("/home")
         }       
       })

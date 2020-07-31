@@ -5,26 +5,11 @@ import { connect } from 'react-redux'
 import { updateStateForHeader, showSignup, showSignIn } from "../Actions/userActions"
 import Login from './Modals/Login'
 import Signup from './Modals/Signup'
+import { getWithExpiry } from "../Actions/helperFunctions"
 
-
-class Header extends Component {
-
-    getWithExpiry = (key) => {
-        const itemStr = localStorage.getItem(key)    
-        if (!itemStr) {
-          return false
-        }        
-        const item = JSON.parse(itemStr)
-        const now = new Date()
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return false
-        }
-        return true
-      }
-
+class Header extends Component {    
     componentDidMount = async () => {        
-        const response = this.getWithExpiry("token")
+        const response = getWithExpiry("token")
         this.props.updateStateForHeader(response)
     }
 
@@ -44,7 +29,7 @@ class Header extends Component {
                     <li><Link to="#">Hi Taofeek</Link></li>
                     <li><Link to="#">History</Link></li>
                     <li><Link to="user/profile">My Profile</Link></li>
-                    <li><Link to="  logout">Logout</Link></li>
+                    <li><Link to="logout">Logout</Link></li>
                 </ul> 
                 :
                 <ul>
@@ -54,8 +39,7 @@ class Header extends Component {
                     <Signup />
                 </ul> 
                 }
-                </div>
-          
+                </div>          
                 <div>
             </div> 
             </div>

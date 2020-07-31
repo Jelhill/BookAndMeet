@@ -33,9 +33,9 @@ function App() {
         <Route exact path="/booking" component={BookingForm} />
         <Route exact path="/aboutRoom" component={AboutRoom} />
         <Route exact path="/user/:profile" component={UserProfilePage} />
-        <Route exact path="/login" component={ Login } />
-        <Route exact path="/signup" component={SignUp} />
-        <Route exact path="/logout" component={Logout} />
+        <Route exact path="/Login" component={ Login } />
+        <Route exact path="/Signup" component={SignUp} />
+        <Route exact path="/Logout" component={Logout} />
         <Route exact path="/completeSignUp" component={CompleteSignUp} />
         <Route exact path="/404" component={Error404} />
         <Route exact path="/imageLoader" component={imageLoader} />
@@ -45,7 +45,7 @@ function App() {
         <Route exact path="/meetingRooms" component={MeetingRooms}/>
         <Route exact path="/adminDashboard" component={Admin}/>
         <Route exact path="/addnewroom" component={AddNewRoom}/>
-        <Route exact path="/bookings" component={Bookings}/>
+        <Route exact path="/adminBooking" component={Bookings}/>
       </Switch>
     </Fragment> 
   );
