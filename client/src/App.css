@@ -392,19 +392,29 @@ padding:5px;
 .checkbox {
   margin-left: 40px;
 }
+
+.logoutModalDiv {
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  /* overflow: auto; */
+  background-color: rgba(0,0,0,0.8); 
+}
 .logoutmodal {
   height: 252px;
   width: 334px;
+  margin: auto;
   background-color: var(--mainWhite);
   border: 1px solid #f6f6fa;
   box-sizing: border-box;
   box-shadow: 3px 4px 16px rgba(0, 0, 0, 0.1);
   border-radius: 11px;
-  
-
+  left: 37%;
   position: absolute;
-  left: 40%;
-  top: 60%;
+  top: 25%;
   z-index: 1;
 }
 .logoutheader {
@@ -452,7 +462,41 @@ padding:5px;
   font-family: var(--Roboto);
   font-size: 24px;
 }
+.logoutButtonsDiv {
+  width: 80%;
+  margin: auto;
+  margin-top: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
 
+}
+
+.yesButton {
+  height: 40px;
+  width: 110px;
+  border: none;
+  border-radius: 5px;
+  font-size: 25px;
+  font-family: var(--Roboto);
+  border: 1px solid var(--mainPurple);
+  color: var(--mainPurple);
+}
+
+.noButton {
+  height: 40px;
+  width: 110px;
+  border: none;
+  border-radius: 5px;
+  font-size: 25px;
+  font-family: var(--Roboto);
+  background-color: var(--mainPurple);
+  color: #FFF;
+}
+
+.yesButton:hover, .noButton:hover {
+  opacity: 0.7;
+}
 .signupheader {
   width: 100%;
   margin-bottom: 30px;

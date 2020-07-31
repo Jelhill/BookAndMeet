@@ -11,29 +11,35 @@ class Logout extends Component{
         this.props.showLogout(false) 
     }
     render(){
-        if(!this.props.showLogout){
+        if(!this.props.showLogoutModal){
             return null;
         }
-            return (
-                <div>
-                    <div className='logoutmodal'>
-                    <h2 className="logoutheader">Log Out</h2>
-                    <p className="logoutparagraph">Do you wish to log out?</p>
-                    </div>
+        return (
+            <div className="logoutModalDiv">
+                <div className='logoutmodal'>
+                  <h2 className="logoutheader">Log Out</h2>
+                  <p className="logoutparagraph">Do you wish to log out?</p>
+                  <div className="logoutButtonsDiv">
+                    <button className="yesButton">Yes</button>
+                    <button className="noButton">No</button>
+                  </div>
+                  
                 </div>
-            );
+            </div>
+        );
     }
 }
 const mapStateToProps = (state) => {
     const { userReducer } = state
+    console.log(">>>", userReducer.showLogOut)
     return {
-      showLogout: userReducer.showLogOut,
+      showLogoutModal : userReducer.showLogOut
     }
 }
   
   const mapDispatchToProps = (dispatch) => {
     return {
-      showLogout: () => dispatch(showLogout()),
+      showLogout: (value) => dispatch(showLogout(value)),
     }
   }
 

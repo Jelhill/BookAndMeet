@@ -38,7 +38,7 @@ const userReducer = (state = initialState, action) => {
         newState.showSignIn = action.values
     }
     if(action.type === SHOW_LOGOUT ){
-        newState.showLogOut = action
+        newState.showLogOut = action.value
     }
 
     if(action.type === SAVE_INITIAL_USER_DETAILS) {
