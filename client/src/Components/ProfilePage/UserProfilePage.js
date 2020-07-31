@@ -89,7 +89,7 @@ export default class UserProfilePage extends Component {
                         <button className="profileButton">Save Changes</button>                
                     </div>
                 </div> 
-                <Footer2/>               
+                <Footer2 />                              
             </div>
         )
     }
