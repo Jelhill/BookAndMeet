@@ -9,7 +9,7 @@ router.get("/home", (req, res) => {
 }) 
 
 // GET REQUESTS
-router.get("/booking", verify, userController.booking)
+router.get("/booking", userController.booking)
 // POST REQUEST
 router.post("/signUp", userController.userSignUp);
 router.post("/login", userController.login)

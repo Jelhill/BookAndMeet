@@ -5,6 +5,8 @@ export const SHOW_LOGIN = "SHOW_LOGIN"
 export const SHOW_SIGNIN = "SHOW_LOGIN"
 export const SAVE_INITIAL_USER_DETAILS = "SAVE_INITIAL_USER_DETAILS"
 export const UPDATE_STATE_WITH_API = "UPDATE_STATE_WITH_API"
+export const UPDATE_STATE_FOR_HEADER = "UPDATE_STATE_FOR_HEADER"
+
 
 export const getSignupInputs = (values) => {
     return {
@@ -44,6 +46,13 @@ export const saveInitialUserDetails = (values) => {
 export const updateStateWithAPI = (value) => {
     return{
         type: UPDATE_STATE_WITH_API,
+        value
+    }
+}
+
+export const updateStateForHeader = (value) => {
+    return{
+        type: UPDATE_STATE_FOR_HEADER,
         value
     }
 }

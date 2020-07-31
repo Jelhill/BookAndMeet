@@ -2,9 +2,35 @@ import React, { Component } from 'react'
 import { Link, withRouter } from "react-router-dom"
 import logo from "../Images/meeting.png"
 import { connect } from 'react-redux'
+import { updateStateForHeader, showSignup, showSignIn } from "../Actions/userActions"
+import Login from './Modals/Login'
+import Signup from './Modals/Signup'
 
 
 class Header extends Component {
+
+    getWithExpiry = (key) => {
+        const itemStr = localStorage.getItem(key)    
+        if (!itemStr) {
+          return false
+        }        
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return false
+        }
+        return true
+      }
+
+    componentDidMount = async () => {        
+        const response = this.getWithExpiry("token")
+        this.props.updateStateForHeader(response)
+    }
+
+    handleSignIn = () => this.props.showSignin(true)
+    openSignUpModal = () => this.props.showSignup(true)
+
     render() {
         return (
             <div className="headerPurpleDiv">
@@ -13,17 +39,19 @@ class Header extends Component {
                     <img src={logo} alt="Logo"/>
                     <h2 className="logo">boardroom</h2>
                 </div>
-                {this.props.renderPage === true ?
+                {this.props.headerState === true ?
                 <ul>
-                    <li><Link to="">Hi Taofeek</Link></li>
-                    <li><Link to="">History</Link></li>
-                    <li><Link to="">My Profile</Link></li>
-                    <li><Link to="">Logout</Link></li>
+                    <li><Link to="#">Hi Taofeek</Link></li>
+                    <li><Link to="#">History</Link></li>
+                    <li><Link to="user/profile">My Profile</Link></li>
+                    <li><Link to="  logout">Logout</Link></li>
                 </ul> 
                 :
                 <ul>
-                    <li><Link>Login</Link></li>
-                    <li><Link>Signup</Link></li>
+                    <li><Link to="#" className="noDecoration" onClick={this.handleSignIn}>Login</Link></li>
+                    <li><Link to="#" className="noDecoration" onClick={this.openSignUpModal}>Signup</Link></li>
+                    <Login />  
+                    <Signup />
                 </ul> 
                 }
                 </div>
@@ -38,10 +66,19 @@ class Header extends Component {
 const mapStateToProps = (state) => {
     const { userReducer } = state
     return {
-      renderPage: userReducer.renderPage,
+        headerState: userReducer.headerState,
+        showSignUp: userReducer.showSignUp,
+        showSignIn: userReducer.showSignIn
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        updateStateForHeader: (value) => dispatch(updateStateForHeader(value)),
+        showSignin: (values) => dispatch(showSignIn(values)),
+        showSignup: (values) => dispatch(showSignup(values))    
     }
 }
   
-    
-export default withRouter(connect(mapStateToProps)(Header));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));
   
