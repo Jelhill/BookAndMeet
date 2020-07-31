@@ -479,8 +479,7 @@ class Search extends Component {
                     </div>
 
                 </div><br />
-                <Footer2 />
-            </div>
+                <Footer2 />            </div>
         )
     }
 }
