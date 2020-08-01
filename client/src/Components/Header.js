@@ -9,27 +9,28 @@ import { getWithExpiry } from "../Actions/helperFunctions"
 import Logout from './Modals/Logout'
 
 class Header extends Component {    
-    componentDidMount = async () => {        
-        const response = getWithExpiry("token")
-        this.props.updateStateForHeader(response)
-    }
-
     handleSignIn = () => this.props.showSignin(true)
     openSignUpModal = () => this.props.showSignup(true)
     openLogOutModal = () => this.props.showLogout(true)
 
     render() {
+        const response = getWithExpiry("token")
+        this.props.updateStateForHeader(response)
+        const now = new Date()
+        console.log("Header Render", now.getTime(), this.props.user)
+        const {isLoggedIn, id, firstname} = this.props.user
         return (
             <div className="headerPurpleDiv">
                 <div className="headerIconDiv">
                     <div className="logoWrapper">
                         <Link to="/"><img src={logo} alt="Logo"/></Link>
-                        <h2 className="logo">boardroom</h2>
-                    
+                        <h2 className="logo">boardroom</h2>                    
                     </div>
-                    {this.props.headerState === true ?
+                    
+                    {isLoggedIn ?
+                    
                     <ul>
-                        <li><Link to="#">Hi Taofeek</Link></li>
+                        <li><Link to="#">{firstname}</Link></li>
                         <li><Link to="userHistory">History</Link></li>
                         <li><Link to="user/profile">My Profile</Link></li>
                         <li><Link to="#" onClick={this.openLogOutModal}>Logout</Link></li>
@@ -51,8 +52,10 @@ class Header extends Component {
 
 const mapStateToProps = (state) => {
     const { userReducer } = state
+    const now = new Date()
+    console.log("Header Map State", now.getTime(), userReducer.loggedInUserInfo)
     return {
-        headerState: userReducer.headerState,
+        user: userReducer.loggedInUserInfo,
         showSignUp: userReducer.showSignUp,
         showSignIn: userReducer.showSignIn,
         showLogoutModal : userReducer.showLogOut
@@ -61,7 +64,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        updateStateForHeader: (value) => dispatch(updateStateForHeader(value)),
+        updateStateForHeader: (values) => dispatch(updateStateForHeader(values)),
         showSignin: (values) => dispatch(showSignIn(values)),
         showSignup: (values) => dispatch(showSignup(values)) ,
         showLogout:(value) => dispatch(showLogout(value))   

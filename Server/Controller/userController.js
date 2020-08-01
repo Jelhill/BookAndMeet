@@ -12,19 +12,17 @@ exports.userSignUp = (req, res) => {
 
 exports.login = (req, res) => {
     const user = new User(req.body)
-    console.log("BODYREQ", req.body)
     user.authenticateUser().then((response) => {
-        console.log("RESPONSE", response.result.rows[0])
         const payload = {
-            firstname: response.result.rows[0].firstname
+            id: response.result.id,
+            firstname: response.result.firstname
         }
-        jwt.sign(payload, SECRET, {expiresIn: "60s"}, (err, token) => {
+        jwt.sign(payload, SECRET, {expiresIn: "600s"}, (err, token) => {
             if(err) res.send({message: "Failed"})
-            res.send({message: "success", token})
+            res.send({message: "success", token, payload})
         })
 
     }).catch((err) => {
-        console.log(err)
         res.send({message: err})
     })
 }
