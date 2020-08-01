@@ -16,7 +16,7 @@ const initialState = {
     showSignIn: false,
     showLogOut:false,
     renderPage: false,
-    headerState: false
+    loggedInUserInfo: {}
 }   
 
 const userReducer = (state = initialState, action) => {
@@ -50,7 +50,9 @@ const userReducer = (state = initialState, action) => {
     }
 
     if(action.type === UPDATE_STATE_FOR_HEADER) {
-        newState.headerState = action.value
+        const now = new Date()
+        console.log("Reducer",now.getTime(), action.values)
+        Object.assign(newState.loggedInUserInfo, action.values)
     }
 
 

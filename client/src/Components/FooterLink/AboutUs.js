@@ -48,7 +48,6 @@ export default function AboutUs() {
                     <img src={ImageRoom8} alt="Room 12" />
                 </div>
             </div>
-
             <Footer2 />
         </div>
     )

@@ -7,9 +7,9 @@ import { setWithExpiry } from "../../Actions/helperFunctions"
 
 class Login extends Component{  
 
-    onClose = (e) => {
-        e.preventDefault()
-        this.props.showSignin(false) 
+    onClose = () => {
+        // e.preventDefault()
+        this.props.showSignin(false)  
     }
     
     getUserInput = (e) => {
@@ -18,7 +18,8 @@ class Login extends Component{
     
     handleLogin = async (e) => {
       e.preventDefault()
-      console.log(this.props.signUpFormDetails)
+      const { email, password } = this.props.signUpFormDetails
+      console.log(email)
       fetch("http://localhost:3001/login", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
@@ -29,9 +30,15 @@ class Login extends Component{
         console.log(jsonResponse)
         if(jsonResponse.message === "success" && jsonResponse.token !== null){
           const unprotectedRoutes = ["home", "aboutRoom" ]
-          setWithExpiry("token", jsonResponse.token, 600000)
-          window.location = "/home"
-          // this.props.history.push("/home")
+          const currentRoute = this.props.history.location.pathname;
+          setWithExpiry("token", jsonResponse.token, 180000, jsonResponse.payload)  
+          if(currentRoute === "/"){
+            this.props.history.push("home")
+          }else{
+            this.props.history.push(currentRoute)
+          }  
+          window.location.reload(true)
+          this.onClose()               
         }       
       })
       .catch((err) => console.log(err))
@@ -99,6 +106,8 @@ class Login extends Component{
 
 const mapStateToProps = (state) => {
     const { userReducer } = state
+    const now = new Date()
+        console.log("Login Render", now.getTime(), userReducer.loggedInUserInfo)
     return {
       showSignIn: userReducer.showSignIn,
       signUpFormDetails: userReducer.signUpFormDetails,

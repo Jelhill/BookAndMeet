@@ -47,8 +47,8 @@ User.prototype.authenticateUser = function() {
             .then((result) => {
                 if(result && bcrypt.compareSync(password, result.rows[0].password)){
                     this.data = result
-                    console.log("Fire", this.data)
-                    resolve({message: "Successful", result})
+
+                    resolve({message: "Successful", result: result.rows[0]})
                 }
                 else{
                     reject("username/password mismatch")

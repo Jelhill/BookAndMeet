@@ -57,9 +57,9 @@ export const updateStateWithAPI = (value) => {
     }
 }
 
-export const updateStateForHeader = (value) => {
+export const updateStateForHeader = (values) => {
     return{
         type: UPDATE_STATE_FOR_HEADER,
-        value
+        values
     }
 }

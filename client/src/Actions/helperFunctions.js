@@ -6,19 +6,23 @@ export const getWithExpiry = (key) => {
       return false
     }        
     const expiryTime = itemStr.split(" ")[1] 
+    const id = itemStr.split(" ")[2] 
+    const firstname = itemStr.split(" ")[3] 
+
     const now = new Date()
     if (now.getTime() > expiryTime) {
       localStorage.removeItem(key)
-      return false
+      return {isLoggedIn: false}
     }
-    return true
+    return {isLoggedIn: true, id: id, firstname: firstname}
 }
 
 //SET TOKEN IN LOCAL STORAGE
-export const setWithExpiry = (key, token, tokenDuration) => {
+export const setWithExpiry = (key, token, tokenDuration, userInfo) => {
+    console.log("PAyload", userInfo)
     const now = new Date()
     const expiryTime = now.getTime() + tokenDuration
-    localStorage.setItem(key, `${token} ${expiryTime}`)
+    localStorage.setItem(key, `${token} ${expiryTime} ${userInfo.id} ${userInfo.firstname}`)
 }
 
 

@@ -19,7 +19,6 @@ import AddNewRoom from './Components/FooterLink/addNewRoom';
 import Bookings from './Components/FooterLink/Bookings';
 import FeedbackForm from './Components/FeedbackForm'
 import History from "./Components/ProfilePage/History"
-import Feed from './Components/FeedbackForm';
 
 
 
