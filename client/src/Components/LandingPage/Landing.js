@@ -59,7 +59,7 @@ class Landing extends Component {
             <div className="landingFooter"> 
               <Link to="aboutUs"><span>About us</span></Link>
               <Link to="admin"><span>Admin</span></Link>
-              <Link to="feedback"><span>Feedback</span></Link>
+              <Link to="feedbackForm"><span>Feedback</span></Link>
             </div>
           
         </div>

@@ -2,6 +2,10 @@ import React from 'react';
 import Headers from '../Header';
 import Footer2 from '../Footer2';
 import ImageRoom12 from '../../Images/room12.jpg';
+import ImageRoom2 from '../../Images/room2.jpg';
+import ImageRoom3 from '../../Images/room3.jpg';
+import ImageRoom8 from '../../Images/room18.jpg';
+import ImageRoom5 from '../../Images/room15.jpg';
 
 export default function AboutUs() {
     return (
@@ -34,16 +38,16 @@ export default function AboutUs() {
                     Sit integer lacus ac risus, nunc. Pulvinar sapien et viverra sagittis eget.
  Ipsum, nulla at cras suspendisse suspendisse. Enim in nunc, enim mattis in.</p>
                 </div>
-                <div className="aboutUsFavorite">
-                    <h5>YOUR FAVORITE MEETINGS ROOM</h5>
+
+                <h5>YOUR FAVORITE MEETINGS ROOM</h5>
+                <div className="aboutUsFavorite">                    
                     <img src={ImageRoom12} alt="Room 12" />
-                    <img src={ImageRoom12} alt="Room 12" />
-                    <img src={ImageRoom12} alt="Room 12" />
-                    <img src={ImageRoom12} alt="Room 12" />
-                    <img src={ImageRoom12} alt="Room 12" />
+                    <img src={ImageRoom2} alt="Room 12" />
+                    <img src={ImageRoom3} alt="Room 12" />
+                    <img src={ImageRoom5} alt="Room 12" />
+                    <img src={ImageRoom8} alt="Room 12" />
                 </div>
             </div>
-
             <Footer2 />
         </div>
     )

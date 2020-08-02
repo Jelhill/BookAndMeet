@@ -13,7 +13,8 @@ h3,
 h4,
 h5,
 h6,
-button {
+button,
+label {
   padding: 0px;
   margin: 0px;
 }
@@ -119,6 +120,8 @@ button {
 
 .formDiv label{
   margin-left: 10px;
+  letter-spacing: -0.24px;
+  color: #373F41;
 }
 
 .genderDiv {
@@ -417,10 +420,11 @@ padding:5px;
   top: 25%;
   z-index: 1;
 }
-.logoutheader {
+.logoutmodal h2 {
   margin-left: 20px;
   padding-top: 10px;
-  color: var(--mainPurple);
+  color: red;
+  
   font-family: var(--Roboto);
   font-weight: bold;
   font-size: 32px;
@@ -941,14 +945,20 @@ body {
 .headerPurpleDiv ul li {
   list-style: none;
   display: inline;
-  margin-right: 20px;
+  margin-right: 30px;
   line-height: 70px;
   letter-spacing: 1px;
-  font-size: 13px;
 }
 
 .headerPurpleDiv ul li a {
   color: #FFF;
+  font-size: 14px;
+  font-family: var(--Roboto);
+
+}
+
+.headerPurpleDiv ul li a:hover {
+  text-decoration: none;
 }
 
 .headerIconDiv {
@@ -1279,10 +1289,15 @@ body {
 
 .footer2Div {
   display: flex;
+  box-sizing: border-box;
   justify-content: space-between;
   background-color: var(--mainPurple);
-  height: 50px;
+  height: 80px;
   box-sizing: border-box;
+  margin-top: 100px;
+  padding-top: 20px;
+  padding-left: 5%;
+
 }
 
 .footer2Div i {
@@ -1295,8 +1310,9 @@ body {
 .footer2Div span {
   color: var(--mainWhite);
   font-size: 13px;
-  margin-right: 25px;
+  margin-right: 40px;
   font-family: var(--Roboto);
+  letter-spacing: 1.3px;
   /* margin-top: 25px;   */
 }
 
@@ -2987,17 +3003,73 @@ letter-spacing: -0.24px;
 color: #B42A2A;
 }
 
-.bodyForm{
-  
-  background: #E5E5E5;
-  width: 100%;
-  padding: 100px 0px 150px 200px;
+.feedBackFormContainer {
+  width: 100vw;
 }
-.contentBodyForm{
+.feedbackFormWrapper{  
+  background-color: var(--mainGray);
+  width: 70%;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  padding: 2% 10%;
+  border-radius: 5px;
+}
+.feedbackFormWrapper h5 {
+  text-align: center;
+  font-family: var(--Roboto);
+}
+.feedbackFormContent{
   width: 80%;
-  padding: 80px 0px 60px 200px;
+  /* padding: 80px 0px 60px 200px; */
   background: #F6F6FA;
   border-radius: 9px;
+}
+
+.feedbackInputDiv{
+  display: flex;
+  justify-content: space-between;
+}
+.feedbackSmallInput {
+  width: 49%;
+}
+.feedbackSmallInput input {
+  width: 100%;
+  height: 40px;
+  border: none;
+  padding-left: 15px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.1);
+}
+
+.feedbackLongInput {
+  margin-top: 20px;
+}
+
+.feedbackFormWrapper label {
+  font-size: 14px;
+  font-family: var(--Roboto);
+  letter-spacing: -0.24px;
+  color: #373F41;
+}
+
+.feedbackLongInput input {
+  width: 100%;
+  height: 40px;
+  border: none;
+  padding-left: 15px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.1);
+}
+
+.feedbackCommentDiv {
+  margin-top: 20px;
+}
+
+.feedbackCommentDiv textarea {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
 }
 .formNames{
   font-family: Roboto sans-serif;
@@ -3013,10 +3085,10 @@ color: #373F41;
   margin-left: 280px;
 }
 .inputFormContent input {
-background: #FFFFFF;
-box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.1);
-width: 300px;
-border: none;
+  background: #FFFFFF;
+  box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.1);
+  width: 300px;
+  border: none;
 
 }
 .inputFormContent span{
@@ -3056,20 +3128,18 @@ border: none;
   height: 250px;
   border: none;
 }
-.inputFormSubmit button{
-background: #1AC63F;
-color: var(--mainWhite);
-border: none;
-width: 150px;
-height: 30px;
-border-radius: 4px; 
-margin-top: 2%;
-margin-left: 260px;
-font-family: Roboto sans-serif;
-font-style: normal;
-font-weight: normal;
-font-size: 15px;
-line-height: 20px;
+
+.feedbackFormWrapper button{
+  margin: auto;
+  margin-top: 10px;
+  background-color: #1AC63F;
+  color: var(--mainWhite);
+  border: none;
+  width: 150px;
+  height: 30px;
+  border-radius: 4px; 
+  font-family: Roboto sans-serif;
+  font-size: 15px;
 }
 
 /* AboutUs */
@@ -3096,7 +3166,6 @@ margin-bottom: 2%;
 .aboutUsImageContent h1{
   font-family: Roboto ;
   font-style: normal;
-  font-weight: bold;
   font-size: 45px;
   line-height: 20px;
   letter-spacing: -0.24px;
@@ -3108,14 +3177,14 @@ margin-bottom: 2%;
   background: #46258A;
   color: var(--mainWhite);
   display: block;
-  width: 40%; 
-  height: 35px;
+  width: 35%; 
   margin: auto;
   font-family: Roboto ;
   font-size: 27px;
   border: none;
   text-align: center;
-  margin-bottom: 2.5%;
+  margin-bottom: 30px;
+  padding: 10px 0;
 }
 .aboutUsImageContent p{
 color: var(--mainGray);
@@ -3127,7 +3196,7 @@ line-height: 20px;
 letter-spacing: -0.24px;
 text-align: center;
 }
-.aboutUsContent h5{
+.aboutUsWrapper h5{
   font-family: Roboto;
 font-style: normal;
 font-size: 24px;
@@ -3135,6 +3204,14 @@ line-height: 20px;
 letter-spacing: -0.24px;
 color: #000000;
 margin-bottom: 1%;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: -0.24px;
+  color: #000000;
+  margin-bottom: 20px;
+
 }
 .aboutUsContent p{
   font-family: Roboto;
@@ -3148,23 +3225,15 @@ color: #373F41;
 }
 .aboutUsFavorite{
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
 }
 .aboutUsFavorite img{
-  display: inline-flex;
-  width: 230px;
+  width: 220px;
+  height: 140px;
 }
-.aboutUsFavorite :nth-child(3){
-  margin-left: 20px;
-}
-.aboutUsFavorite :nth-child(4){
-  margin-left: 20px;
-}
-.aboutUsFavorite :nth-child(5){
-  margin-left: 20px;
-}
-.aboutUsFavorite :nth-child(6){
-  margin-left: 20px;
-}
+
 .aboutUsWrapper{
   display: flex;
   flex-direction: column;

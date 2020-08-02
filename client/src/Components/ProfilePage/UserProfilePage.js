@@ -43,7 +43,7 @@ export default class UserProfilePage extends Component {
                     <h2 className="logoutheader">Log Out</h2>
                     <p className="logoutparagraph">Do you wish to log out?</p>
                     <div className='logoutlink'>
-                        <Link> <p className="logoutlink1">Yes</p> </Link>
+                        <Link to="#"> <p className="logoutlink1">Yes</p> </Link>
                         <Link onClick={e=>{this.onClose(e)}} ><p className="logoutlink2">No</p></Link>
                     </div>
                     </Logout>
