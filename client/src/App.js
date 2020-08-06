@@ -17,8 +17,9 @@ import Admin from "./Components/FooterLink/Admin"
 import MeetingRooms from './Components/FooterLink/meetingRooms';
 import AddNewRoom from './Components/FooterLink/addNewRoom';
 import Bookings from './Components/FooterLink/Bookings';
-import FeedbackForm from './Components/FeedbackForm'
+import FeedbackForm from './Components/FeedbackForm';
 import History from "./Components/ProfilePage/History"
+import AdminHeader from './Components/AdminHeader';
 
 
 
@@ -48,6 +49,7 @@ function App() {
         <Route exact path="/adminBooking" component={Bookings}/>
         <Route exact path="/userHistory" component={History}/>
         <Route exact path="/feedbackForm" component={FeedbackForm}/>
+        <Route exact path="/adminHeader" component={AdminHeader}/>
       </Switch>
     </Fragment> 
   );
