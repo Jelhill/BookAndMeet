@@ -98,12 +98,22 @@ label {
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
-  line-height: 70px;
+  line-height: 40px;
   color: var(--mainPurple);
   text-align: center;
   letter-spacing: -0.24px;
 }
 
+.modalTitle2 {
+  font-family: roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 90px;
+  color: var(--mainPurple);
+  text-align: center;
+  letter-spacing: -0.24px;
+}
 .welcomeSignIn {
   margin-bottom: 50px;
   margin-left: 5px;
@@ -164,10 +174,11 @@ label {
   width: 80%;
   justify-content: space-between;
   margin: auto;
+
 }
 
-.doubleInputDiv input{
-  width: 48%;
+.nameInput input{
+  width: 100%;
   height: 33px;
   margin-bottom: 10px;
   box-sizing: border-box;
@@ -179,9 +190,9 @@ label {
   height: 33px;
   box-sizing: border-box;
   margin-left: 10%;
-  margin-bottom: 15px;  
+  /* margin-bottom: 15px;   */
   padding-left: 10px;
-}
+} 
 
 .inputsubmit {
   margin: auto;
@@ -311,6 +322,25 @@ label {
   background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
 }
 
+.flexInput {
+  display: flex;
+  flex-direction: column;
+}
+
+.nameInput {
+  width: 49%;
+  
+}
+.flexInput small {
+  font-size: 11px;
+  margin-left: 10%;
+  height: 20px;
+  color: red;
+  font-family: var(--Roboto);
+  box-sizing: border-box;
+  padding-top: 5px;
+}
+
 .modalDiv2{
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -349,9 +379,9 @@ label {
 .signupmodal, .loginmodal {
   margin: auto;
   display:flex;
-  margin-top: 10vh; 
+  margin-top: 7vh; 
   width: 700px;
-  height: 80vh;
+  height: 86vh;
   background: white;
   transition: .2s ease-out;
   box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.35);
@@ -1476,7 +1506,7 @@ body {
 .bookingPageBody {
   display: flex;
   justify-content: space-between;
-  width: 86%;
+  width: 80%;
   margin: auto;
   box-sizing: border-box;
   margin-top: 50px;
@@ -1484,14 +1514,32 @@ body {
 }
 
 .bookingPageLeftSide {
-  width: 35%;
+  width: 30%;
 }
 
+/* .errorDisplayDiv {
+  width: 80%;
+  margin: auto;
+  height: 40px;
+  background-color: #b9e769;
+  text-align: centre;
+} */
+
+.successulRegistrationMessage {
+  font-size: 15px;
+  font-weight: bold;
+  color: green;
+  margin-left: 10%;
+
+
+}
 .bookingPageRightSide {
-  width: 63%;
-  margin-left: 2%;
-  background-color: var(--mainGray);
-  padding: 35px;
+  width: 68%;
+  /* margin-left: 2%; */
+  /* background-color: var(--mainGray); */
+  padding: 3%;
+  box-sizing: border-box;
+  border: 1px solid #373F41;
   box-sizing: border-box;
 }
 
@@ -1504,7 +1552,7 @@ body {
 
 .bookingPageLeftSide img {
   width: 100%;
-  height: 270px;
+  height: 100%;
 }
 
 .bookingPageLeftSide h3 {
@@ -1520,6 +1568,19 @@ body {
   margin-bottom: 10px;
 }
 
+.fillMessage {
+  margin-bottom: 30px;
+  font-size: 15px;
+  font-family: var(--Roboto);
+}
+.bookingRoomDetails {
+  display: flex;
+}
+
+.bookingRoomDetails label {
+  margin-left: 10px;
+  font-size: 13px;
+}
 .formMessage {
   width: 100%;
   background-color: var(--mainGray);
@@ -1551,40 +1612,48 @@ body {
 .checkInDiv {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .checkInDiv label {
-  font-size: 18px;
-  margin-right: 10px;
+  font-size: 15px;
+  /* margin-right: 10px; */
   font-family: var(--Roboto);
 }
 
+.dateTime {
+  display: flex;
+  flex-direction: column;
+  width: 49%;
+
+}
+
 .checkInDiv input[type="datetime-local"] {
-  height: 40px;
-  width: 220px;
-  border: 1px solid var(--mainGray);
+  height: 35px;
+  width: 100%;
+  border: 1px solid #373F41;
   padding-left: 10px;
 }
 
 .checkInDiv input[type="text"] {
-  height: 45px;
-  width: 48%;
-  margin-top: 10px;
-  border: 1px solid var(--mainGray);
+  height: 35px;
+  width: 49%;
+  /* margin-top: 10px; */
+  border: 1px solid #373F41;  
   padding-left: 15px;
-  margin-bottom: 10px;
-  box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.1);
+  /* margin-bottom: 10px; */
+  /* box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.1); */
   font-size: 20px;
 }
 
 .checkInDiv2 input {
   width: 100%;
-  height: 45px;
-  margin-top: 15px;
-  border: 1px solid var(--mainGray);
+  height: 35px;
+  /* margin-top: 15px; */
+  border: 1px solid #373F41;
   padding-left: 15px;
-  margin-bottom: 10px;
-  box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.1);
+  margin-bottom: 30px;
+  /* box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.1); */
   font-size: 20px;
 }
 
@@ -1602,6 +1671,7 @@ body {
   border: 2px solid var(--mainPurple);
   color: var(--mainPurple);
   font-family: var(--Roboto);
+  margin: auto;
 }
 
 .button2 {
@@ -1619,11 +1689,12 @@ body {
 }
 
 .bookingFormBtnDiv {
-  width: 325px;
+  width: 150px;
   margin: auto;
   display: flex;
   justify-content: space-between;
 }
+
 
 .spaceDiv {
   height: 100px;
@@ -2175,7 +2246,6 @@ font-size: 17px;
 }
 .boardRoomFeatures{
 display: flex;
-justify-content: space-between; 
 align-items: center;
 padding: -1;
 margin: 1;
@@ -2190,8 +2260,16 @@ letter-spacing: -0.24px;
   font-family: var(--Roboto);  
   font-size: 14px;
   color: var(--mainPurple);
+  letter-spacing: 1px;
 }
 
+.boardRoomFeatures .roomTypeSpan {
+  font-weight: normal;
+  margin-left: 5px;
+  font-family: var(--Roboto);
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
 .boardRoomFeatures label{
   font-family: Roboto;
   font-style: normal;
@@ -2712,21 +2790,60 @@ color: #46258A;
   display:block;
 }
 .form{
-  border:1px solid black;
-  width:717px;
-  height:892px;
-  margin-left: 100px;
+  border:1px solid gray;
+  width:76%;
+  margin: auto;
+  /* height:892px; */
+  /* margin-left: 100px; */
 }
+
+.roomType {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.roomType select {
+  height: 40px;
+  padding-left: 15px;
+}
+
 .roomAndLocation{
   display:flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  /* padding-left: 10%; */
+  /* padding-right: 10%; */
+}
+
+.roomLocation {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.roomLocation label, .roomType label {
+  font-size: 15px;
+  text-align: start;
+  margin-top: 20px;
+}
+.roomLocation input, 
+.roomLocation select {
+  width: 100%;
+  height: 40px;
+
 }
 #roomType{
 border: 1px solid #373F41;
-box-sizing: border-box;
-width:540px;
+/* box-sizing: border-box; */
+width: 80%;
 height: 40px;
-}
+margin: auto;
+background-color: yellow;
+} 
 #location,#RoomCapacity,#RoomName,#RoomNumber{
   border: 1px solid #373F41;
 box-sizing: border-box;
@@ -2736,41 +2853,101 @@ margin:10px;
 .inputFile{
   border: 1px solid #373F41;
   box-sizing: border-box;
-  height:200px;
-  width:540px;
-  margin:80px;
+  height:100px;
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
 }
 #file{
-  margin:30px 0px 0px 130px;
   background: rgba(70, 37, 138, 0.4);
   border-radius: 5px;
-  width:245px;
-  height: 133px;
+  width:60%;
+  height: 100px;
+  margin-left: 20%;
 }
 /* .checkbox{
   width:20px;
   height:20px;
   margin:5px;
 } */
+
+.selectEquipment {
+  margin-left: 10%;
+  margin-bottom: 20px;
+  font-family: var(--Roboto);
+  font-size: 20px;
+}
+
+.addRoomButtonDiv{
+  width: 150px;
+  
+  background-color: yellow;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
 .addRoomButton{
-  width:80px;
+  width:150px;
+  margin: auto;
   height:30px;
   background: #46258A;
   border: 1px solid #46258A;
   box-sizing: border-box;
   border-radius: 6px;
-  margin:30px 0px 0px 280px;
+  /* margin:30px 0px 0px 280px; */
+  
   
 font-family: Roboto;
 font-style: normal;
 font-weight: bold;
 font-size: 18px;
-line-height: 20px;
+/* line-height: 20px; */
 /* identical to box height, or 111% */
 letter-spacing: -0.24px;
 color: #FFFFFF;
-
 }
+
+
+
+.roomItemDiv {
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 10%;
+}
+
+.roomListDiv {
+  width: 45%;
+  /* background-color: green; */
+}
+
+.roomItemListDiv{
+  display: flex;
+  flex-direction: column;
+}
+
+.roomItemListDiv select, 
+.roomLocation select, 
+.roomType select,
+.form input{
+  width: 100%;
+  height: 35px;
+  padding-left: 20px;
+  font-size: 15px;
+  font-family: var(--Roboto);
+}
+
+.roomItemListDiv label {
+  font-size: 14px;
+  font-family: var(--Roboto);
+}
+
+.addRoomButton:hover{
+  opacity: 0.8;
+}
+
 /* HEAD */
 
 

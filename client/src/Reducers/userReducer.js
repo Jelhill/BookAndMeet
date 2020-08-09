@@ -7,7 +7,8 @@ import {
     SAVE_INITIAL_USER_DETAILS,
     UPDATE_STATE_WITH_API,
     UPDATE_STATE_FOR_HEADER,
-    SHOW_LOGOUT
+    SHOW_LOGOUT,
+    SUCCESS_MESSAGE
  } from "../Actions/userActions"
 
 const initialState = {
@@ -17,9 +18,16 @@ const initialState = {
     showSignIn: false,
     showLogOut:false,
     renderPage: false,
+<<<<<<< HEAD
+    userIsLoggedIn: false,
+    userFirstname: "",
+    userId: 0,
+    successMessage: ""
+=======
     loggedInUserInfo: {},
     feedBackFormDetails:{},
     populateFeedbackPage:[]
+>>>>>>> development
 }   
 
 const userReducer = (state = initialState, action) => {
@@ -56,9 +64,14 @@ const userReducer = (state = initialState, action) => {
     }
 
     if(action.type === UPDATE_STATE_FOR_HEADER) {
-        const now = new Date()
-        console.log("Reducer",now.getTime(), action.values)
-        Object.assign(newState.loggedInUserInfo, action.values)
+        newState.isLoggedIn = action.values.isLoggedIn
+        newState.userFirstname = action.values.firstname
+        newState.userId = action.values.id
+    }
+
+    if(action.type === SUCCESS_MESSAGE) {
+        console.log("action", action.message)
+        newState.successMessage = action.message
     }
 
 
