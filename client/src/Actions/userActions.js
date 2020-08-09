@@ -7,6 +7,7 @@ export const SAVE_INITIAL_USER_DETAILS = "SAVE_INITIAL_USER_DETAILS"
 export const UPDATE_STATE_WITH_API = "UPDATE_STATE_WITH_API"
 export const UPDATE_STATE_FOR_HEADER = "UPDATE_STATE_FOR_HEADER"
 export const SHOW_LOGOUT = "SHOW_LOGOUT"
+export const SUCCESS_MESSAGE = "SUCCESS_MESSAGE"
 
 
 export const getSignupInputs = (values) => {
@@ -61,5 +62,12 @@ export const updateStateForHeader = (values) => {
     return{
         type: UPDATE_STATE_FOR_HEADER,
         values
+    }
+}
+
+export const successMessage = (message) => {
+    return{
+        type: SUCCESS_MESSAGE,
+        message
     }
 }

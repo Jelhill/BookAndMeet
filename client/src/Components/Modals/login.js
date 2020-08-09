@@ -18,9 +18,7 @@ class Login extends Component{
     
     handleLogin = async (e) => {
       e.preventDefault()
-      const { email, password } = this.props.signUpFormDetails
-      console.log(email)
-      fetch("http://localhost:3001/login", {
+        fetch("http://localhost:3001/login", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(this.props.signUpFormDetails)
@@ -29,7 +27,7 @@ class Login extends Component{
       .then((jsonResponse) => {
         console.log(jsonResponse)
         if(jsonResponse.message === "success" && jsonResponse.token !== null){
-          const unprotectedRoutes = ["home", "aboutRoom" ]
+          // const unprotectedRoutes = ["home", "aboutRoom" ]
           const currentRoute = this.props.history.location.pathname;
           setWithExpiry("token", jsonResponse.token, 180000, jsonResponse.payload)  
           if(currentRoute === "/"){
@@ -37,7 +35,7 @@ class Login extends Component{
           }else{
             this.props.history.push(currentRoute)
           }  
-          window.location.reload(true)
+          // window.location.reload(true)
           this.onClose()               
         }       
       })
@@ -57,9 +55,9 @@ class Login extends Component{
                   <div className="rightModal">
                       <div className="signupheader">
                           <button className="closeWrapper"><span className="close" onClick={this.onClose} >&times;</span></button>
-                          <h3 className="modalTitle">Sign in</h3>
+                          <h3 className="modalTitle2">Sign in</h3>
                       </div>
-                  
+                      <small> Result Here </small>
                       <div className="modalContent">
                       <form>
                        <div className="formDiv">
@@ -106,8 +104,8 @@ class Login extends Component{
 
 const mapStateToProps = (state) => {
     const { userReducer } = state
-    const now = new Date()
-        console.log("Login Render", now.getTime(), userReducer.loggedInUserInfo)
+    // const now = new Date()
+    //     console.log("Login State", now.getTime(), userReducer.loggedInUserInfo)
     return {
       showSignIn: userReducer.showSignIn,
       signUpFormDetails: userReducer.signUpFormDetails,

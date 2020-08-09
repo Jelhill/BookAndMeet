@@ -1,87 +1,163 @@
-import React, { Component } from 'react'
-import { Link } from "react-router-dom"
+                                                                                                        import React, { Component } from 'react'
+import { Link, withRouter } from "react-router-dom"
+import AdminSideMenu from './AdminSideMenu'
+import { getRoomFormInputs, getRoomImage } from "../../Actions/roomActions"
+import { connect } from 'react-redux'
 
-export default class AddNewRoom extends Component {
-    render() {
-        return (
-            <div className="adminLandingPageWrapper">
-                <div className=" container">
-                    <div className="row" style={{height: "100" }}>
-                        <div className="col-xl-2 "style={{borderRight:"1px solid black"}} >
-                        <div style={{marginRight:"40px"}}>
-                         <div className="LinkWrapper"><Link to="" className="adminLink">Admin</Link></div>
-                        <div className="LinkWrapper"><Link to="adminDashboard" className="adminLink">Dashboard</Link></div>
-                        <div className="LinkWrapper"><Link to="MeetingRooms" className="adminLink">Meeting Rooms</Link></div>
-                        <div className="LinkWrapper"> <Link to="" className="adminLink">Bookings</Link></div>
-                        <div className="LinkWrapper"><Link to="feedback" className="adminLink">Feedbacks</Link></div>
+const AddNewRoom = (props) =>  {
+
+    const getFormInput = (e) => {
+        props.getRoomFormInputs({[e.target.name]: e.target.value})
+    }
+
+    const getRoomImage = (e) => {
+        props.getRoomImage({[e.target.name]: e.target.files})
+    }
+
+    const addNewRoom = async (e) => {
+        e.preventDefault()
+        const data = new FormData()
+        console.log("Room Image", props.roomImage.image)
+        data.append("file", props.roomImage.image[0])
+        data.append("upload_preset", "jelhill")
+        props.setLoading(true)
+        const res = await fetch("https://api.cloudinary.com/v1_1/dvbaflmgm/image/upload", {
+            method: "POST",
+            body: data
+        })  
+        const jsonRes = await res.json()
+        const {type, location, capacity, name, available, hasProjector, hasAirCondition, hasWaterDispenser, hasWhiteBoard} = props.addRoomFormInputs
+        const secure_url = jsonRes.secure_url
+        console.log(secure_url);
+        const body = {type, location, capacity, name, available, hasProjector, hasAirCondition, hasWaterDispenser, hasWhiteBoard, secure_url}
+        await fetch("http://localhost:3001/addRoom",{
+            method: "POST",
+            headers: {"Content-type": "application/json"},
+            body: JSON.stringify(body)
+        })
+        .then((response) => response.json())
+        .then((jsonResponse) => {
+            console.log(jsonResponse)
+        }).catch((err) => {
+            console.log(err)
+        })    
+    }
+
+
+    return (
+        <div className="adminLandingPageWrapper">
+            <AdminSideMenu />
+            <div className="adminRightSide"> 
+                <div className="form">
+                    <form>
+                        <div className="roomType">
+                            <label>Room type</label>
+                            <select name="type" onChange={getFormInput}>
+                                <option disabled selected hidden>Select Type</option>
+                                <option value="Private Room">Private Room</option>
+                                <option value="Board Room">Board Room</option>
+                                <option value="Conference Room">Conference Room</option>
+                                <option value="Auditorium">Auditorium </option>
+                            </select>
+                            {/* <input type="text" name="type" onChange={getFormInput}></input> */}
                         </div>
-                        </div>
-                        <div className="col-md-10">
-                            <div className="container-fluid">
-                                <div className="row">
-                                    <div className="form">
-                                        <form>
-                                            <div style={{margin:"30px 0px 30px 90px"}}>
-                                                <label for="roomType" className="addRoomInput">Room type</label>
-                                                <input type="text" id="roomType" placeholder="Conference Room"></input>
-                                            </div>
-                                            <div className="roomAndLocation">
-                                                <div>
-                                                    <label for="location" className="addRoomInput">Location</label>
-                                                    <input type="text" id="location" placeholder="Third Floor"></input>
-                                                </div>
-                                                <div>
-                                                    <label for="RoomCapacity" className="addRoomInput">Room Capacity</label>
-                                                    <input type="text" id="RoomCapacity" placeholder="25"></input>
-                                                </div>
-                                            </div>
-                                            <div className="roomAndLocation">
-                                                <div>
-                                                    <label for="RoomName" className="addRoomInput"> Room Name</label>
-                                                    <input type="text" id="RoomName" placeholder="Personal"></input>
-                                                </div>
-                                                <div>
-                                                    <label for="RoomNumber" className="addRoomInput">Room Number</label>
-                                                    <input type="text" id="RoomNumber" placeholder="305"></input>
-                                                </div>
-                                            </div>
-                                            <div className="inputFile">
-                                                <input type="file" id="file"></input>
-                                            </div>
-                                            <div style={{margin:"10px"}}>
-                                            <h4 style={{margin:"20px"}}>Select Equipment/Features</h4>
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <label><input type="checkbox" className="checkbox"></input>Projector</label>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label><input type="checkbox" className="checkbox"></input>Telephone</label>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label><input type="checkbox" className="checkbox"></input>Tv</label>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label><input type="checkbox" className="checkbox"></input>Air-condition</label>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label><input type="checkbox" className="checkbox"></input>Dispenser</label>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label><input type="checkbox" className="checkbox"></input>White Board</label>
-                                                </div>
-                                            </div>
-                                            </div>
-                                            <div>
-                                                <input type="submit" value="Add" className="addRoomButton"></input>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
+                        <div className="roomAndLocation">
+                            <div className="roomLocation">
+                                <label >Location</label>
+                                <input type="text" name="location" onChange={getFormInput}></input>
+                            </div>
+                            <div className="roomLocation">
+                                <label>Room Capacity</label>
+                                <input type="number" name="capacity" onChange={getFormInput}></input>
                             </div>
                         </div>
-                    </div>
+                        <div className="roomAndLocation">
+                            <div className="roomLocation">
+                                <label> Room Name</label>
+                                <input type="text" name="name" onChange={getFormInput}></input>
+                            </div>
+                            <div className="roomLocation">
+                                <label>Available</label>
+                                <select name="available" onChange={getFormInput}>
+                                    <option disabled selected hidden>Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="inputFile">
+                            <input type="file" name="image" id="file" onChange={getRoomImage} />
+                        </div>
+                        <div>
+                        <h4 className="selectEquipment">Select Equipment/Features</h4>
+                        <div className="roomItemDiv">
+                            <div className="roomListDiv">
+                                <div className="roomItemListDiv">
+                                    <label>Projector</label>
+                                    <select name="hasProjector" id="" onChange={getFormInput} placeholder="Projector">
+                                        <option disabled selected hidden>Select</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
+                                </div>
+                                <div className="roomItemListDiv">
+                                    <label>White Board</label>
+                                    <select name="hasWhiteBoard" id="" onChange={getFormInput} placeholder="Projector">
+                                        <option disabled selected hidden>Select</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div className="roomListDiv">
+                                <div className="roomItemListDiv">
+                                    <label>Air Condition</label>
+                                    <select name="hasAirCondition" id="" onChange={getFormInput}>
+                                        <option disabled selected hidden>Select</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
+                                </div>
+                                <div className="roomItemListDiv">
+                                    <label>Water Dispenser</label>
+                                    <select name="hasWaterDispenser" id="" onChange={getFormInput} placeholder="a">
+                                        <option disabled selected hidden>Select</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="addRoomButtonDiv">
+                            <button className="addRoomButton" onClick={addNewRoom}>Add Room</button>
+                        </div>
+                    </form>
                 </div>
+            </div>
             </div>
         )
     }
+
+
+const mapStateToProps = (state) => {
+    const { roomReducer } = state
+    console.log(roomReducer.addRoomFormInputs)
+    return {
+        roomImage: roomReducer.roomImage,
+        addRoomFormInputs: roomReducer.addRoomFormInputs,
+        setRoomLoading: roomReducer.setLoading
+    }
 }
+    
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getRoomFormInputs: (values) => {dispatch(getRoomFormInputs(values))},
+        getRoomImage: (value) => {dispatch(getRoomImage(value))},
+        setLoading: (value) => {dispatch(getRoomFormInputs(value))}
+    }
+}
+        
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(AddNewRoom));
+      

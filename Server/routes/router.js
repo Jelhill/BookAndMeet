@@ -1,6 +1,9 @@
 const express = require("express")
 const router = express.Router()
 const userController = require("../Controller/userController")
+const adminController = require("../Controller/adminController")
+const roomController = require("../Controller/roomController")
+
 require('dotenv').config()
 const verify = require("../middleware/verify")
 
@@ -10,8 +13,10 @@ router.get("/home", (req, res) => {
 
 // GET REQUESTS
 router.get("/booking", userController.booking)
+router.get("/getRooms", roomController.getRoom)
 // POST REQUEST
 router.post("/signUp", userController.userSignUp);
 router.post("/login", userController.login)
+router.post("/addRoom", adminController.addRoom)
 
 module.exports = router

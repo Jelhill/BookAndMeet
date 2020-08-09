@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useEffect } from 'react'
 import { Link, withRouter } from "react-router-dom"
 import logo from "../Images/meeting.png"
 import { connect } from 'react-redux'
@@ -8,54 +8,54 @@ import Signup from './Modals/Signup'
 import { getWithExpiry } from "../Actions/helperFunctions"
 import Logout from './Modals/Logout'
 
-class Header extends Component {    
-    handleSignIn = () => this.props.showSignin(true)
-    openSignUpModal = () => this.props.showSignup(true)
-    openLogOutModal = () => this.props.showLogout(true)
+const Header = (props) => {    
+    const handleSignIn = () => props.showSignin(true)
+    const openSignUpModal = () => props.showSignup(true)
+    const openLogOutModal = () => props.showLogout(true)
 
-    render() {
+    useEffect(() => {
         const response = getWithExpiry("token")
-        this.props.updateStateForHeader(response)
-        const now = new Date()
-        console.log("Header Render", now.getTime(), this.props.user)
-        const {isLoggedIn, id, firstname} = this.props.user
-        return (
-            <div className="headerPurpleDiv">
-                <div className="headerIconDiv">
-                    <div className="logoWrapper">
-                        <Link to="/"><img src={logo} alt="Logo"/></Link>
-                        <h2 className="logo">boardroom</h2>                    
-                    </div>
-                    
-                    {isLoggedIn ?
-                    
-                    <ul>
-                        <li><Link to="#">{firstname}</Link></li>
-                        <li><Link to="userHistory">History</Link></li>
-                        <li><Link to="user/profile">My Profile</Link></li>
-                        <li><Link to="#" onClick={this.openLogOutModal}>Logout</Link></li>
-                        <Logout />
-                    </ul> 
-                    :
-                    <ul>
-                        <li><Link to="#" className="noDecoration" onClick={this.handleSignIn}>Login</Link></li>
-                        <li><Link to="#" className="noDecoration" onClick={this.openSignUpModal}>Signup</Link></li>
-                        <Login />  
-                        <Signup />
-                    </ul> 
-                    }
-                </div>          
-            </div>
-        )
-    }
+        props.updateStateForHeader(response)
+    })
+
+    const {isLoggedIn, firstname} = props
+    return (
+        <div className="headerPurpleDiv">
+            <div className="headerIconDiv">
+                <div className="logoWrapper">
+                    <Link to="/"><img src={logo} alt="Logo"/></Link>
+                    <h2 className="logo">boardroom</h2>                    
+                </div>
+                
+                {isLoggedIn ?        
+                
+                <ul>
+                    <li><Link to="#">{firstname}</Link></li>
+                    <li><Link to="userHistory">History</Link></li>
+                    <li><Link to="user/profile">My Profile</Link></li>
+                    <li><Link to="#" onClick={openLogOutModal}>Logout</Link></li>
+                    <Logout />
+                </ul> 
+                :
+                <ul>
+                    <li><Link to="#" className="noDecoration" onClick={handleSignIn}>Login</Link></li>
+                    <li><Link to="#" className="noDecoration" onClick={openSignUpModal}>Signup</Link></li>
+                    <Login />  
+                    <Signup />
+                </ul> 
+                }
+            </div>          
+        </div>
+    )
 }
+
 
 const mapStateToProps = (state) => {
     const { userReducer } = state
-    const now = new Date()
-    console.log("Header Map State", now.getTime(), userReducer.loggedInUserInfo)
     return {
-        user: userReducer.loggedInUserInfo,
+        isLoggedIn: userReducer.isLoggedIn,
+        firstname: userReducer.userFirstname,
+        id: userReducer.userid,
         showSignUp: userReducer.showSignUp,
         showSignIn: userReducer.showSignIn,
         showLogoutModal : userReducer.showLogOut
@@ -72,4 +72,3 @@ const mapDispatchToProps = (dispatch) => {
 }
   
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));
-  
