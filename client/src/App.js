@@ -19,6 +19,8 @@ import AddNewRoom from './Components/FooterLink/addNewRoom';
 import Bookings from './Components/FooterLink/Bookings';
 import FeedbackForm from './Components/FeedbackForm'
 import History from "./Components/ProfilePage/History"
+import AdminPortal from './Components/FooterLink/AdminPortal';
+import AddAdminForm from './Components/FooterLink/AddAdminForm';
 
 
 
@@ -26,6 +28,7 @@ import History from "./Components/ProfilePage/History"
 function App() {
  
   return (
+    // <AdminPortal/>
     <Fragment>    
       <Switch>
         <Route exact path="/" component={Landing} />
@@ -48,6 +51,7 @@ function App() {
         <Route exact path="/adminBooking" component={Bookings}/>
         <Route exact path="/userHistory" component={History}/>
         <Route exact path="/feedbackForm" component={FeedbackForm}/>
+        <Route exact path="/addAdminForm" component={AddAdminForm}/>
       </Switch>
     </Fragment> 
   );

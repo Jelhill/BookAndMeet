@@ -1,5 +1,6 @@
 const User = require("../Model/User")
 const jwt = require("jsonwebtoken")
+const db = require('../config/db')
 const SECRET = process.env.SECRET
 
 
@@ -30,4 +31,14 @@ exports.login = (req, res) => {
 
 exports.booking = (req, res) => {
     res.send({message: true})
+}
+exports.feedbackComments=async(req,res,next)=>{
+    try{
+          const comments= await db.query("SELECT firstname,lastname,comments FROM feedbacks");
+          console.log(comments.rows);
+          return res.json(comments.rows);
+    }
+    catch(err){
+        return next(err);
+    }
 }

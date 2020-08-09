@@ -1,5 +1,6 @@
 import { 
     GET_SIGNUP_INPUTS, 
+    GET_FEEDBACK_INPUTS,
     GET_IMAGE_INPUTS, 
     SHOW_SIGNUP,
     SHOW_LOGIN,
@@ -17,10 +18,16 @@ const initialState = {
     showSignIn: false,
     showLogOut:false,
     renderPage: false,
+<<<<<<< HEAD
     userIsLoggedIn: false,
     userFirstname: "",
     userId: 0,
     successMessage: ""
+=======
+    loggedInUserInfo: {},
+    feedBackFormDetails:{},
+    populateFeedbackPage:[]
+>>>>>>> development
 }   
 
 const userReducer = (state = initialState, action) => {
@@ -28,6 +35,9 @@ const userReducer = (state = initialState, action) => {
 
     if(action.type === GET_SIGNUP_INPUTS) {
         Object.assign(newState.signUpFormDetails, action.values)
+    }
+    if(action.type === GET_FEEDBACK_INPUTS){
+        Object.assign(newState.feedBackFormDetails,action.values)
     }
 
     if(action.type === GET_IMAGE_INPUTS) {

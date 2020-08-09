@@ -13,6 +13,7 @@ import catReducer from './Reducers/catReducer';
 import RangeReducer from './Reducers/RangeReducer';
 import formReducer from './Reducers/formReducer';
 import thunk from "redux-thunk"
+import feedbackReducer from './Reducers/feedbackReducer'
 // import store from './Components/core copy/store';
 // import 'tachyons';
 
@@ -23,7 +24,8 @@ const rootReducer = combineReducers({
   categories: catReducer,
   ranges: RangeReducer,
   userReducer,
-  formReducer
+  formReducer,
+  feedbackReducer
 })
 const store = createStore(rootReducer, applyMiddleware(thunk))
 
