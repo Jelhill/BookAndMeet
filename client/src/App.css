@@ -3232,3 +3232,99 @@ color: #373F41;
   flex-direction: column;
   width: 100vw;
 }
+.addAdmin{
+  margin-left:900px;
+  margin-bottom:30px;
+  width: 100px;
+  height: 30px;
+  background-color: #46258A;
+  border-radius: 4px;
+  text-align: center;
+
+}
+.addAdminLink{
+  width: 80px;
+  height: 17px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+/* or 143% */
+  letter-spacing: -0.24px;
+  color: #FFFFFF;
+}
+.adminFormWrapper{
+  width: 80%;
+  height: 419px;
+  left: 350px;
+  top: 169px;
+  border: 1px solid #373F41;
+  box-sizing: border-box;
+  margin: auto;
+}
+.doubleInputDiv2 {
+  display: flex;
+  margin:0px 0px 0px 75px;
+}
+.adminFormInput{
+  width:300px;
+  height: 30px;
+  border: 1px solid #373F41;
+  box-sizing: border-box;
+  margin-right:20px;
+}
+.adminFormLabel{
+  width:87px;
+  height: 20px;
+  margin:20px 0px 10px 0px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: -0.24px;
+  color: rgba(0, 0, 0, 0.58);
+
+}
+.adminFormEmail{
+  width:627px;
+  height: 40px;
+}
+.adminFormEmailWrapper{
+  margin-left:75px;
+}
+.adminCheckBoxWrapper{
+  width:80%;
+  margin-left:75px;
+}
+.adminCheckBoxLabel{
+  margin:20px 0px 10px 10px;
+  font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 20px;
+/* identical to box height, or 111% */
+
+letter-spacing: -0.24px;
+
+color: rgba(0, 0, 0, 0.58);
+
+}
+.adminCheckBox{
+  width:20px;
+  height: 20px;
+}
+.adminFormSubmitButton{
+  width: 80px;
+height: 25px;
+color:white;
+background: #46258A;
+border: 1px solid #46258A;
+box-sizing: border-box;
+border-radius: 6px;
+}
+.adminFormSubmitWrapper{
+  margin:20px 0px 0px 350px;
+}

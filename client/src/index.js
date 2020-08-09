@@ -11,6 +11,7 @@ import userReducer from "./Reducers/userReducer"
 import { BrowserRouter as Router } from 'react-router-dom';
 import catReducer from './Reducers/catReducer';
 import RangeReducer from './Reducers/RangeReducer';
+import feedbackReducer from './Reducers/feedbackReducer'
 // import store from './Components/core copy/store';
 // import 'tachyons';
 
@@ -20,7 +21,8 @@ const rootReducer = combineReducers({
   roomReducer, 
   categories: catReducer,
   ranges: RangeReducer,
-  userReducer
+  userReducer,
+  feedbackReducer
 })
 const store = createStore(rootReducer)
 
