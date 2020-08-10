@@ -20,6 +20,8 @@ import Bookings from './Components/FooterLink/Bookings';
 import FeedbackForm from './Components/FeedbackForm';
 import History from "./Components/ProfilePage/History"
 import AdminHeader from './Components/AdminHeader';
+import AdminPortal from './Components/FooterLink/AdminPortal';
+import AddAdminForm from './Components/FooterLink/AddAdminForm';
 
 
 
@@ -27,6 +29,7 @@ import AdminHeader from './Components/AdminHeader';
 function App() {
  
   return (
+    // <AdminPortal/>
     <Fragment>    
       <Switch>
         <Route exact path="/" component={Landing} />
@@ -50,6 +53,7 @@ function App() {
         <Route exact path="/userHistory" component={History}/>
         <Route exact path="/feedbackForm" component={FeedbackForm}/>
         <Route exact path="/adminHeader" component={AdminHeader}/>
+        <Route exact path="/addAdminForm" component={AddAdminForm}/>
       </Switch>
     </Fragment> 
   );

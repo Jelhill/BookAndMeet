@@ -1,16 +1,18 @@
-import React, { Component } from 'react'
+import React, { Component, useEffect } from 'react'
 import Header from "../Header"
 import Footer2 from "../Footer2"
 import BookingPageLeftSide from "./BookingPageLeftSide"
 import BookingPageRightDiv from "./BookingPageRightDiv"
-import { withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { updateStateWithAPI } from "../../Actions/userActions"
 
-class BookingForm extends Component {
+const BookingForm = (props) => {
 
-    componentDidMount = async () => {
-        await fetch("http://localhost:3001/booking",{
+    const { roomImage } = props
+
+    useEffect(() => {
+        fetch("http://localhost:3001/booking",{
             method: "GET",
             headers: {"Content-type": "application/json", 
                 authorization: `Bearer ${window.localStorage.getItem("token")}`,
@@ -20,23 +22,32 @@ class BookingForm extends Component {
         .then((response) => response.json())
         .then((jsonResponse) => {
             if(jsonResponse.message === true) {
-                this.props.updateStateWithAPI(true);
+                props.updateStateWithAPI(true);
             }else{
-                this.props.history.push("/404")            
+                props.history.push("/404")            
             }
         }).catch((err) => {
             console.log(err)
         })
-    }
+        // }
+    })  
 
-    render() {   
-        return (      
-            this.props.renderPage !== true ?
-            this.props.renderPage :               
+         return (      
+            props.renderPage !== true ?
+            props.renderPage :               
             <div>
                 <Header />
+                <div className="aboutRoomNav">
+                    <ul>
+                        <Link to="home"><li>Meeting Rooms</li></Link>
+                        <span><i className="fa fa-greater-than"></i></span>
+                        <Link to={"/aboutRoom"}><li>Booking Page</li></Link>
+                    </ul>
+                </div>
                 <div className="bookingPageBody">
-                    <BookingPageLeftSide />
+                    <div className="bookingPageLeftSide">
+                         <img src={roomImage} alt="ImageRoom14"/>
+                    </div>
                     <BookingPageRightDiv />
                 </div>
                 <div className="spaceDiv"></div>         
@@ -44,12 +55,14 @@ class BookingForm extends Component {
             </div>
         )
     }
-}
+
 
 const mapStateToProps = (state) => {
     const { userReducer } = state
+    const { roomReducer } = state
     return {
       renderPage: userReducer.renderPage,
+      roomImage: roomReducer.currentRoom.imageurl
     }
 }
   

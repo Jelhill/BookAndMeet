@@ -8,8 +8,10 @@ export default class imageLoader extends Component {
     uploadImage = async e => {
         const files = e.target.files
         const data = new FormData()
+        console.log("Filesssss", files)
         data.append("file", files[0])
         data.append("upload_preset", "jelhill")
+        
         this.setState({
             setLoading: true
         })
@@ -18,7 +20,6 @@ export default class imageLoader extends Component {
             method: "POST",
             body: data
         })  
-
         const jsonRes = await res.json()
         console.log(jsonRes)
         this.setState({

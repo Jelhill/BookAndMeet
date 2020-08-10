@@ -3,12 +3,12 @@ const dataSchema = require("../Schema/userScheme.json")
 const bcrypt = require("bcrypt")
 const db = require('../config/db')
 
-function User(data) {
+function Admin(data) {
     this.data = data
     this.errors = []
 }
 
-User.prototype.validate = async function(){    
+Admin.prototype.validate = async function(){    
     const cleanData = validate(this.data, dataSchema)
     const { email } =  this.data
 
@@ -21,7 +21,7 @@ User.prototype.validate = async function(){
     return cleanData.instance
 }
 
-User.prototype.checkExistingEmail = function() {
+Admin.prototype.checkExistingEmail = function() {
     return new Promise(async (resolve, reject) => {
         const { email } = this.data
         const userExist = await db.query("SELECT * FROM users WHERE email = $1", [email])
@@ -32,22 +32,15 @@ User.prototype.checkExistingEmail = function() {
     })
 }
 
-User.prototype.signUp = function() {
-    return new Promise(async (resolve, reject) => {        
-        await this.validate()
-        await this.checkExistingEmail()
-        const {surname, firstname, email, password, confirmPassword} = this.data;
+Admin.prototype.addRoom = function() {
+    return new Promise(async (resolve, reject) => {      
+        const now = new Date()  
+        const todaysDate = `${now.getDay()}/${now.getMonth() + 1}/${now.getFullYear()}`
+        const {type, location, capacity, name, available, hasProjector, hasAirCondition, hasWaterDispenser, hasWhiteBoard, secure_url} = this.data;
         if(!this.errors.length){            
-            if(password !== confirmPassword) {
-                reject("Password Mismatch")
-            }else{
-                const salt = bcrypt.genSaltSync(10)
-                const hashPassword = bcrypt.hashSync(password, salt)
-                
-                db.query("INSERT INTO users (surname, firstname, password, email) VALUES ($1, $2, $3, $4)", 
-                [surname, firstname, hashPassword, email])
-                resolve("Successfully Updated")
-            }           
+            db.query("INSERT INTO rooms (type, location, capacity, name, isavailable, hasprojector, hasaircondition, haswaterdispenser, haswhiteboard, imageurl, datecreated) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)", 
+            [type, location, capacity, name, available, hasProjector, hasAirCondition, hasWaterDispenser, hasWhiteBoard, secure_url, todaysDate])
+            resolve("Successfully Updated")
         }else{
             console.log("This Errors", this.errors)
             reject(this.errors)
@@ -55,7 +48,7 @@ User.prototype.signUp = function() {
     })
 }
 
-User.prototype.authenticateUser = function() {
+Admin.prototype.authenticateUser = function() {
     return new Promise((resolve, reject) => {
         const {email, password} = this.data
             db.query("SELECT * FROM users WHERE email = $1", [email])
@@ -77,4 +70,4 @@ User.prototype.authenticateUser = function() {
 
 
 
-module.exports = User
+module.exports = Admin
