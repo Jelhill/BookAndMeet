@@ -3,7 +3,7 @@ import { connect } from "react-redux"
 import { showSignup, showSignIn} from "../../Actions/userActions"
 import '../../App.css';
 import LandingPageHeader from "../Header/LandingPageHeader";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 
 class Landing extends Component {
@@ -55,6 +55,7 @@ class Landing extends Component {
                 {/* <input type="time" className="filterSelect" id="timePicker"/> */}
                 <button className="filterButton">Search</button>
               </div>
+            
           </div>
             <div className="landingFooter"> 
               <Link to="aboutUs"><span>About us</span></Link>

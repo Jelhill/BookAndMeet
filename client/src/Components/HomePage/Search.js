@@ -16,6 +16,14 @@ import Footer2 from "../Footer2";
 import SearchFilter from "../HomePage/SearchFilter";
 import { updateStateWithRooms, saveCurrentRoom } from "../../Actions/roomActions"
 import roomReducer from '../../Reducers/roomReducer';
+import ImageAirConditioner from "../../Images/air-conditioner.png";
+import ImageProjector from "../../Images/projector.png";
+import ImageWaterCooler from "../../Images/water-cooler.png";
+import ImagePresentation from "../../Images/presentation.png";
+import ImageFriend from "../../Images/friend.png";
+
+
+
 class Search extends Component {
 
     componentDidMount = async () => {
@@ -67,6 +75,7 @@ class Search extends Component {
                                 <div className="features1">
                                     <span><i className="fa fa-user-friends"></i></span>
                                     <div className="flexRoomItems">
+                                    <img src={ImageFriend} width="27.59" height="20" alt="Room 5" />
                                         <span><p>Capacity</p></span>
                                         <span><p>{room.capacity} seats</p></span>
                                     </div>                                      
@@ -75,6 +84,7 @@ class Search extends Component {
                             <div className="features1">
                                 <span><i className="fa fa-user-friends"></i></span>
                                 <div className="flexRoomItems">
+                                <img src={ImageAirConditioner} width="27.59" height="20" alt="Room 5" />
                                     <span><p>Air Condition</p></span>
                                     <span><p>{room.airCondition ? "Yes" : "No"}</p></span>
                                 </div>
@@ -82,6 +92,7 @@ class Search extends Component {
                             <div className="features1">
                                 <span><i className="fa fa-user-friends"></i></span>
                                 <div className="flexRoomItems">
+                                <img src={ImageProjector} width="27.59" height="20" alt="Room 5" />
                                     <span><p>Projector</p></span>
                                     <span><p>{room.projector ? "Yes" : "No"}</p></span>
                                 </div>  
@@ -89,6 +100,7 @@ class Search extends Component {
                             <div className="features1">
                             <span><i className="fa fa-user-friends"></i></span>
                                 <div className="flexRoomItems">
+                                <img src={ImageWaterCooler} width="27.59" height="20" alt="Room 5" />
                                     <span><p>Water Dispenser</p></span>
                                     <span><p>{room.waterDispenser ? "Yes" : "No"}</p></span>
                                 </div>
@@ -96,6 +108,7 @@ class Search extends Component {
                             <div className="features1">
                                 <span><i className="fa fa-user-friends"></i></span>
                                 <div className="flexRoomItems">
+                                <img src={ImagePresentation} width="27.59" height="20" alt="Room 5" />
                                     <span><p>White Board</p></span>
                                     <span><p>{room.hasWhiteBoard ? "Yes" : "No"}</p></span>
                                 </div>
