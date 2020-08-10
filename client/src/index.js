@@ -11,6 +11,9 @@ import userReducer from "./Reducers/userReducer"
 import { BrowserRouter as Router } from 'react-router-dom';
 import catReducer from './Reducers/catReducer';
 import RangeReducer from './Reducers/RangeReducer';
+
+
+
 // import store from './Components/core copy/store';
 // import 'tachyons';
 

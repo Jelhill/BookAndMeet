@@ -1,6 +1,8 @@
 /* /* /* To use the color variable,  follow the below example
  background-color: var(--mainWhite) !important;
 */
+
+
 body {
   width: 100%;
   background: #ffffff;
