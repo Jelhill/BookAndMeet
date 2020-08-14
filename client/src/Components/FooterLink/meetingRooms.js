@@ -5,6 +5,7 @@ import Header from "../Header"
 import AdminSideMenu from "./AdminSideMenu"
 
 
+
 export default class MeetingRooms extends Component {
     render() {
         return (
@@ -33,8 +34,8 @@ export default class MeetingRooms extends Component {
                                     </div>
                                     <p className="roomLocation">Room 203 Second Floor, Main Building</p>
                                     <div className="buttonContainer">
-                                        <span className="deleteButton">Delete</span>
-                                        <span className="editButton">Edit</span>
+                                       <span className="deleteButton">Delete</span>
+                                       <Link to="editroom"> <span className="editButton" >Edit</span></Link>
                                     </div>
                                 </div>
                             </div>

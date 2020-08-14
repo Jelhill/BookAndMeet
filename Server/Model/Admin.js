@@ -47,6 +47,19 @@ Admin.prototype.addRoom = function() {
         }        
     })
 }
+Admin.prototype.editRoom = function() {
+    return new Promise(async (resolve, reject) => {
+        const {type, location, capacity, name, available, hasProjector, hasAirCondition, hasWaterDispenser, hasWhiteBoard, secure_url} = this.data;
+        if(!this.errors.length){            
+            db.query("UPDATE rooms set type = $1, location = $2, capacity =$3, name = $4, isavailable = $5, hasprojector = $6, hasaircondition = $7, haswaterdispenser = $8, haswhiteboard = $9, imageurl = $10, datecreated = $11 WHERE id = $12) RETURNING *", 
+            [type, location, capacity, name, available, hasProjector, hasAirCondition, hasWaterDispenser, hasWhiteBoard, secure_url, todaysDate])
+            resolve("Successfully Updated")
+        }else{
+            console.log("This Errors", this.errors)
+            reject(this.errors)
+        } 
+    })
+}
 
 Admin.prototype.authenticateUser = function() {
     return new Promise((resolve, reject) => {

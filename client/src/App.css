@@ -2195,8 +2195,9 @@ body {
   padding-top: 8px;
   font-family: var(--Roboto) sans-serif;
 }
-.features1 i{
-font-size: 17px;
+.features1 span img{
+width: 27.59px;
+height: 20px;
 
 }
 .roomNumber{

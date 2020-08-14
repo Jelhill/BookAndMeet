@@ -25,5 +25,6 @@ router.get("/feedbackComments", userController.feedbackComments);
 router.post("/signUp", userController.userSignUp);
 router.post("/login", userController.login)
 router.post("/feedback", feedbacks.feedBack)
-
+//PATCH REQUEST
+router.patch("/addRoom/:id", adminController.editRoom)
 module.exports = router

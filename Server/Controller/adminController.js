@@ -9,3 +9,9 @@ exports.addRoom = (req, res) => {
     .then((result) => {res.json({message: "Room Added Successfully"})})
     .catch((error) => {res.json({message: error})})
 }
+exports.editRoom = (req, res) => {
+    const editBoard = new Admin(req.body)
+    editBoard.editRoom()
+    .then((result) => {res.json({message: "Room Edited Successfully"})})
+    .catch((error) => {res.json({message: error})})
+}
