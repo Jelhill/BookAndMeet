@@ -18,16 +18,13 @@ const initialState = {
     showSignIn: false,
     showLogOut:false,
     renderPage: false,
-<<<<<<< HEAD
     userIsLoggedIn: false,
     userFirstname: "",
     userId: 0,
-    successMessage: ""
-=======
+    successMessage: "",
     loggedInUserInfo: {},
     feedBackFormDetails:{},
     populateFeedbackPage:[]
->>>>>>> development
 }   
 
 const userReducer = (state = initialState, action) => {
