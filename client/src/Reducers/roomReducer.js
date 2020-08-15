@@ -2,10 +2,12 @@ import { GET_ROOM_FORM_INPUTS,
     SET_LOADING,
     GET_ROOM_IMAGE, 
     UPDATE_STATE_WITH_ROOMS,
+    EDIT_ROOM_FORM_INPUTS,
     SAVE_CURRENT_ROOM } from "../Actions/roomActions"
 
 const initialState = {
     addRoomFormInputs: {}, 
+    editRoomFormInputs: [],
     setLoading: false, 
     roomImage: null,
     rooms: [],
@@ -17,6 +19,9 @@ const roomReducer = (state = initialState, action) => {
 
     if(action.type === GET_ROOM_FORM_INPUTS) {
         Object.assign(newState.addRoomFormInputs, action.values)
+    }
+    if(action.type === EDIT_ROOM_FORM_INPUTS) {
+        Object.assign(newState.editRoomFormInputs, action.values)
     }
 
     if(action.type === SET_LOADING) {

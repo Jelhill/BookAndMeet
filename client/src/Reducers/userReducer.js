@@ -20,10 +20,15 @@ const initialState = {
     showLogOut: false,
     showSuccessfullRegModal: false,
     renderPage: false,
+
     userIsLoggedIn: false,
     userFirstname: "",
     userId: 0,
     successMessage: "",
+
+    loggedInUserInfo: {},
+    feedBackFormDetails:{},
+    populateFeedbackPage:[],
     loggedInUserInfo: {},
     feedBackFormDetails:{},
     populateFeedbackPage:[]

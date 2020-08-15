@@ -23,6 +23,8 @@ router.post("/addRoom", adminController.addRoom)
 // router.get("/booking", verify, userController.booking);
 router.get("/feedbackComments", userController.feedbackComments);
 router.post("/feedback", feedbacks.feedBack)
+//PATCH REQUEST
+router.patch("/addRoom/:id", adminController.editRoom)
 router.post("/bookRoom", bookingController.bookRoom)
 
 
