@@ -10,7 +10,7 @@ export const UPDATE_STATE_FOR_HEADER = "UPDATE_STATE_FOR_HEADER"
 export const SHOW_LOGOUT = "SHOW_LOGOUT"
 export const SUCCESS_MESSAGE = "SUCCESS_MESSAGE"
 export const GET_USER_COMMENTS = "GET_USER_COMMENTS"
-export const SUCCESSFULL_REG_MODAL = "SUCCESSFULL_REG_MODAL"
+export const SUCCESSFUL_REG_MODAL = "SUCCESSFULL_REG_MODAL"
 
 
 
@@ -45,9 +45,9 @@ export const showSignup = (values) => {
         values
     }
 }
-export const showRegSuccessfull = (values) => {
+export const showSuccessfulRegModal = (values) => {
     return {
-        type: SUCCESSFULL_REG_MODAL,
+        type: SUCCESSFUL_REG_MODAL,
         values
     }
 }

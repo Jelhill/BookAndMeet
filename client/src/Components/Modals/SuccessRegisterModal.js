@@ -1,18 +1,24 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-// import showRegSuccessfull from '../../Reducers/userReducer'
+import { showSuccessfulRegModal}  from '../../Actions/userActions'
 import {withRouter} from 'react-router-dom'
 
 
 class SuccessRegisterModal extends Component {
-  // onClose = () => {
-  //   // e.preventDefault()
-  //   this.props.showSuccessfullRegModal(false)  
-  // }
+
+  closeSuccessRegModal = () => {
+    this.props.showSuccessfulRegModal(false)  
+  }
+
+  goToProfile = () =>{
+    this.props.history.push("/userProfile")
+    this.closeSuccessRegModal()
+  }
+
   render() {
-  //   if(!this.props.showSuccessfullRegModal){
-  //     return null;
-  // }
+    if(!this.props.successfulRegModal){
+      return null;
+  }
     return (
       <div className="modalDiv">
         <div className="signupmodal">
@@ -28,9 +34,9 @@ class SuccessRegisterModal extends Component {
                   <p className="paragraph2">Check your account and update your profile</p>
                   </div>
                   <div>
-                    <button className="contdButton">Continue</button>
+                    <button className="contdButton" onClick={this.closeSuccessRegModal}>Continue</button>
                   </div>
-                  <div><button className="myAccButton">My Account</button></div>
+                  <div><button className="myAccButton" onClick={this.goToProfile}>My Account</button></div>
                 </div>
           </div>
         </div>
@@ -40,12 +46,18 @@ class SuccessRegisterModal extends Component {
 }
 const mapStateToProps = (state) => {
   const { userReducer } = state
-  console.log('logging', userReducer.showSuccessfullRegModal);
-  // const now = new Date()
-  //     console.log("Login State", now.getTime(), userReducer.loggedInUserInfo)
+  console.log(userReducer.showSuccessfulRegModal)
   return {
-    showSuccessfullRegModal: userReducer.showSuccessfullRegModal
+    successfulRegModal: userReducer.showSuccessfulRegModal,
+
   }
 }
 
-export default withRouter(connect(mapStateToProps)(SuccessRegisterModal));
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    showSuccessfulRegModal: (value) => dispatch(showSuccessfulRegModal(value))
+  }
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SuccessRegisterModal));
