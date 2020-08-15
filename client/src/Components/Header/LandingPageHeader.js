@@ -1,24 +1,24 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import logo from "../../Images/meeting.png"
-import Login from "../Modals/Login";
-import SignUp from "../Modals/Signup";
+import Login from "../Modals/login";
+import SignUp from "../Modals/signup";
 import { connect } from "react-redux"
 import { showSignup, showSignIn} from "../../Actions/userActions"
 
 
 class LandingPageHeader extends Component {
-    state = {
-        show: false,
-        show2: false
-    };
+    // state = {
+    //     show: false,
+    //     show2: false
+    // };
     
-    showLogin = e => {
-        this.setState({
-        show: !this.state.show
-        });
-        this.props.showLogin(false)
-    };
+    // showLogin = e => {
+    //     this.setState({
+    //     show: !this.state.show
+    //     });
+    //     this.props.showLogin(false)
+    // };
     
     handleSignIn = () => this.props.showSignin(true)
     openSignUpModal = () => this.props.showSignup(true)
