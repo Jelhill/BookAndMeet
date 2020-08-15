@@ -21,6 +21,8 @@ import FeedbackForm from './Components/FeedbackForm'
 import History from "./Components/ProfilePage/History"
 import AdminPortal from './Components/FooterLink/AdminPortal';
 import AddAdminForm from './Components/FooterLink/AddAdminForm';
+import EditRoomForm from './Components/FooterLink/EditRoomForm';
+
 import SuccessRegisterModal from './Components/Modals/SuccessRegisterModal'
 
 
@@ -52,6 +54,7 @@ function App() {
         <Route exact path="/userHistory" component={History}/>
         <Route exact path="/feedbackForm" component={FeedbackForm}/>
         <Route exact path="/addAdminForm" component={AddAdminForm}/>
+        <Route exact path="/editRoomForm/:id" component={EditRoomForm}/>
       </Switch>
     </Fragment> 
   );
