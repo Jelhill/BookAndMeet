@@ -6,8 +6,8 @@ import Search from './Components/HomePage/Search';
 import BookingForm from './Components/BookingPage/BookingForm';
 import { Fragment } from 'react';
 import UserProfilePage from './Components/ProfilePage/UserProfilePage';
-import Login from './Components/Modals/Login';
-import SignUp from './Components/Modals/Signup';
+import Login from './Components/Modals/login';
+import SignUp from './Components/Modals/signup';
 import CompleteSignUp from "./Components/Modals/CompleteSignUp"
 import Error404 from "./Components/404"
 import imageLoader from "./Components/imageLoader"
@@ -21,14 +21,14 @@ import FeedbackForm from './Components/FeedbackForm'
 import History from "./Components/ProfilePage/History"
 import AdminPortal from './Components/FooterLink/AdminPortal';
 import AddAdminForm from './Components/FooterLink/AddAdminForm';
-
+import SuccessRegisterModal from './Components/Modals/SuccessRegisterModal'
 
 
 
 function App() {
  
   return (
-    // <AdminPortal/>
+    // <SuccessRegisterModal/>
     <Fragment>    
       <Switch>
         <Route exact path="/" component={Landing} />

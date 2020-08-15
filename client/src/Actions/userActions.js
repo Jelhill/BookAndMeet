@@ -10,6 +10,8 @@ export const UPDATE_STATE_FOR_HEADER = "UPDATE_STATE_FOR_HEADER"
 export const SHOW_LOGOUT = "SHOW_LOGOUT"
 export const SUCCESS_MESSAGE = "SUCCESS_MESSAGE"
 export const GET_USER_COMMENTS = "GET_USER_COMMENTS"
+export const SUCCESSFULL_REG_MODAL = "SUCCESSFULL_REG_MODAL"
+
 
 
 export const getSignupInputs = (values) => {
@@ -40,6 +42,12 @@ export const getInputForImage = (values) => {
 export const showSignup = (values) => {
     return{
         type: SHOW_SIGNUP,
+        values
+    }
+}
+export const showRegSuccessfull = (values) => {
+    return {
+        type: SUCCESSFULL_REG_MODAL,
         values
     }
 }

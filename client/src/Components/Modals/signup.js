@@ -2,15 +2,24 @@ import React, {Component} from 'react';
 import { Link } from "react-router-dom"
 import CompleteSignUp from './CompleteSignUp';
 import { connect } from 'react-redux';
-import { showSignup, getSignupInputs, successMessage} from "../../Actions/userActions"
+import { showSignup, getSignupInputs, successMessage,showRegSuccessfull} from "../../Actions/userActions"
 import { showValidationError } from "../../Actions/formValidation"
+import SuccessRegisterModal from '../Modals/SuccessRegisterModal'
 
 class SignUp extends Component{
 
-  state = {
-    show3: false,
-  };
-
+  // state = {
+  //   show3: false,
+  // };
+//   showLogin = e => {
+//     e.preventDefault()
+//     this.setState({
+//     show: !this.state.show
+//     });
+// };
+// successfullRegistrationModal = () => {
+//   this.props.showRegSuccessfull(true);
+// }
     onClose = (e) => {
       e.preventDefault()
       this.props.showSignup(false)
@@ -54,12 +63,18 @@ class SignUp extends Component{
         if(jsonResponse.message === "Registered Successfully") {
           console.log("res", jsonResponse.message)
           this.props.successMessage(jsonResponse.message)
+          // this.props.showRegSuccessfull(true);
         }else{
           this.props.successMessage("Failed Registration")
         }
       })
       .catch((err) => console.log(err))
     }
+    // onClick=(e) => {
+    //   e.preventDefault()
+    //   successfullRegistrationModal();
+    //   handleSignup()
+    // }
   
     render(){
         if(this.props.showSignUp === false){
@@ -103,7 +118,7 @@ class SignUp extends Component{
                         </div>
                             <input type = "checkbox" name ="rememberme" value="" className="checkbox"></input>
                         <label htmlFor ="rememberme" >Remember me</label>
-                        <button className="signupsubmit" onClick={this.handleSignup}>Sign Up</button>
+                        <button className="signupsubmit" onClick={this.handleSignup} >Sign Up</button>
                       </div>                   
                     </form>
                       <p className="loginparagraph">Already have an account? <Link to="#"><span>Sign in</span></Link></p>
@@ -111,7 +126,7 @@ class SignUp extends Component{
                   </div>
                       </div>
                   </div>
-                  <CompleteSignUp onClose={this.onSignUp} show3={this.state.show3} />
+                  {/* <CompleteSignUp onClose={this.onSignUp} show3={this.state.show3} /> */}
             </div>
         )
     }
@@ -121,7 +136,7 @@ class SignUp extends Component{
 const mapStateToProps = (state) => {
   const { userReducer } = state
   const { formReducer } = state
-  console.log("state", userReducer.successMessage)
+  console.log("state2222", userReducer.showSuccessfullRegModal, userReducer.showSignUp)
   return {
     signUpFormDetails: userReducer.signUpFormDetails,
     firstname: userReducer.signUpFormDetails.firstname,
@@ -133,7 +148,8 @@ const mapStateToProps = (state) => {
     firstnameErrorMessage: formReducer.firstnameErrorMessage,
     emailErrorMessage: formReducer.emailErrorMessage,
     passwordErrorMessage: formReducer.passwordErrorMessage,
-    successDisplayMessage: userReducer.successMessage
+    successDisplayMessage: userReducer.successMessage,
+    showSuccessfullRegModal: userReducer.showSuccessfullRegModal
   }
 }
 
@@ -143,7 +159,8 @@ const mapDispatchToProps = (dispatch) => {
     getSignupInputs: (values) => dispatch(getSignupInputs(values)),
     // saveInitialUserDetails: (values) => dispatch(saveInitialUserDetails(values)),
     showValidationError: (values) => dispatch(showValidationError(values)),
-    successMessage: (message) => dispatch(successMessage(message))
+    successMessage: (message) => dispatch(successMessage(message)),
+    showRegSuccessfull: (values) => dispatch(showRegSuccessfull(values))
 
   }
 }
