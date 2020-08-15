@@ -21,6 +21,7 @@ const BookingForm = (props) => {
         })
         .then((response) => response.json())
         .then((jsonResponse) => {
+            console.log("Booking Feedback", jsonResponse)
             if(jsonResponse.message === true) {
                 props.updateStateWithAPI(true);
             }else{
@@ -29,7 +30,6 @@ const BookingForm = (props) => {
         }).catch((err) => {
             console.log(err)
         })
-        // }
     })  
 
          return (      
@@ -62,7 +62,8 @@ const mapStateToProps = (state) => {
     const { roomReducer } = state
     return {
       renderPage: userReducer.renderPage,
-      roomImage: roomReducer.currentRoom.imageurl
+      roomImage: roomReducer.currentRoom.imageurl,
+
     }
 }
   
