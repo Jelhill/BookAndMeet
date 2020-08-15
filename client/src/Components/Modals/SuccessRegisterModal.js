@@ -10,9 +10,9 @@ class SuccessRegisterModal extends Component {
   //   this.props.showSuccessfullRegModal(false)  
   // }
   render() {
-  //   if(!this.props.showSuccessfullRegModal){
-  //     return null;
-  // }
+    if(!this.props.showSignUp){
+      return null;
+  }
     return (
       <div className="modalDiv">
         <div className="signupmodal">
@@ -40,11 +40,12 @@ class SuccessRegisterModal extends Component {
 }
 const mapStateToProps = (state) => {
   const { userReducer } = state
-  console.log('logging', userReducer.showSuccessfullRegModal);
+  console.log('logging', userReducer.showSignUp);
   // const now = new Date()
   //     console.log("Login State", now.getTime(), userReducer.loggedInUserInfo)
   return {
-    showSuccessfullRegModal: userReducer.showSuccessfullRegModal
+    showSuccessfullRegModal: userReducer.showSuccessfullRegModal,
+    showSignUp : userReducer.showSignUp
   }
 }
 

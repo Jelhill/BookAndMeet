@@ -42,7 +42,7 @@ const Header = (props) => {
                     <li><Link to="#" className="noDecoration" onClick={handleSignIn}>Login</Link></li>
                     <li><Link to="#" className="noDecoration" onClick={openSignUpModal}>Signup</Link></li>
                     <Login />  
-                    <Signup />
+                    {/* <Signup /> */}
                     <SuccessRegisterModal/>
                 </ul> 
                 }
