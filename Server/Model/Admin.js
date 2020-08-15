@@ -68,7 +68,6 @@ Admin.prototype.authenticateUser = function() {
             .then((result) => {
                 if(result && bcrypt.compareSync(password, result.rows[0].password)){
                     this.data = result
-
                     resolve({message: "Successful", result: result.rows[0]})
                 }
                 else{

@@ -4,9 +4,7 @@ const SECRET = process.env.SECRET
 module.exports = (req, res, next) => {
     try {
         const headerToken = req.headers.authorization.split(" ")[1]
-        console.log(headerToken)
-        const verifyToken = jwt.verify(headerToken, SECRET)
-    
+        const verifyToken = jwt.verify(headerToken, SECRET)    
         next()
     } catch (error) {
         res.status(401).json({message: "Unauthorize"})

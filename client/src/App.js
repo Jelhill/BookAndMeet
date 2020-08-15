@@ -6,8 +6,8 @@ import Search from './Components/HomePage/Search';
 import BookingForm from './Components/BookingPage/BookingForm';
 import { Fragment } from 'react';
 import UserProfilePage from './Components/ProfilePage/UserProfilePage';
-import Login from './Components/Modals/Login';
-import SignUp from './Components/Modals/Signup';
+import Login from './Components/Modals/login';
+import SignUp from './Components/Modals/signup';
 import CompleteSignUp from "./Components/Modals/CompleteSignUp"
 import Error404 from "./Components/404"
 import imageLoader from "./Components/imageLoader"
@@ -23,7 +23,9 @@ import History from "./Components/ProfilePage/History"
 import AdminHeader from './Components/AdminHeader';
 import AdminPortal from './Components/FooterLink/AdminPortal';
 import AddAdminForm from './Components/FooterLink/AddAdminForm';
+import EditRoomForm from './Components/FooterLink/EditRoomForm';
 
+import SuccessRegisterModal from './Components/Modals/SuccessRegisterModal'
 
 
 
@@ -31,7 +33,7 @@ import AddAdminForm from './Components/FooterLink/AddAdminForm';
 function App() {
 
   return (
-    // <AdminPortal/>
+    // <SuccessRegisterModal/>
     <Fragment>    
       <Switch>
         <Route exact path="/" component={Landing} />
@@ -57,6 +59,8 @@ function App() {
         <Route exact path="/feedbackForm" component={FeedbackForm}/>
         <Route exact path="/adminHeader" component={AdminHeader}/>
         <Route exact path="/addAdminForm" component={AddAdminForm}/> 
+        <Route exact path="/addAdminForm" component={AddAdminForm}/>
+        <Route exact path="/editRoomForm/:id" component={EditRoomForm}/>
       </Switch>
     </Fragment> 
   );

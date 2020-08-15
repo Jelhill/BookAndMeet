@@ -29,7 +29,7 @@ class Login extends Component{
         if(jsonResponse.message === "success" && jsonResponse.token !== null){
           // const unprotectedRoutes = ["home", "aboutRoom" ]
           const currentRoute = this.props.history.location.pathname;
-          setWithExpiry("token", jsonResponse.token, 180000, jsonResponse.payload)  
+          setWithExpiry("token", jsonResponse.token, 7200000, jsonResponse.payload)  
           if(currentRoute === "/"){
             this.props.history.push("home")
           }else{

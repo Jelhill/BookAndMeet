@@ -2607,7 +2607,7 @@ tr{
 }
 .roomImg{
   width: 100%;
-  height: 113px;
+  height: 48%;
   margin-bottom:5px;
 }
 .boardRoomTag{
@@ -2644,18 +2644,18 @@ color: rgba(55, 63, 65, 0.84);
 font-style: normal;
 font-weight: bold;
 font-size: 10px;
-line-height: 20px;
+/* line-height: 20px;  */
 /* identical to box height, or 200% */
 
 letter-spacing: -0.24px;
 text-align: center;
 color:  #46258A;;
-margin-left:-10px;
+/* margin-left:-10px; */
 width:60px;
 border:1px solid black;
 border-radius:4px;
-padding:5px 20px 5px 20px;
-margin-left:-30px;
+padding:5px 20px 5px 15px;
+/* margin-left:-30px; */
 background: #FFFFFF;
 }
 .editButton{
@@ -2671,12 +2671,15 @@ background: #FFFFFF;
   border-radius: 4px;
   width:60px;
   padding:5px 20px 5px 20px;
-  margin: 0px 0px 60px 50px;
+  /* margin: 0px 0px 60px 50px; */
 
 }
 .buttonContainer{
-  margin: 20px 0px 0px 30px;
-  padding: 0px 5px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  /* margin: 20px 0px 0px 30px; */
+  /* padding: 0px 5px; */
   box-sizing: border-box;
 }
 .boardRoomTag{
@@ -2787,7 +2790,7 @@ color: #46258A;
 }
 .deleteWrapper{
   background-color: #FFFFFF;
-  height:100px;
+  height:51%;
 }
 .addRoomInput{
   display:block;
@@ -3514,5 +3517,48 @@ border-radius: 6px;
 }
 .adminFormSubmitWrapper{
   margin:20px 0px 0px 350px;
+}
+.thankyou{
+  width:1290px;
+  height: 20px;
+  margin:20px 0px 60px 60px;
+  font-weight: bold;
+  font-size: 36px;
+  color: #46258A;
+}
+.contdButton{
+  width:260px;
+height:40px;
+margin:20px 0px 0px 40px;
+border:1px solid #46258A;
+background: #46258A;
+border-radius: 8px;
+font-size:20px;
+color:white;
+}
+.myAccButton{
+  width:260px;
+  height: 40px;
+  margin:20px 0px 0px 40px;
+  background: #FFFFFF;
+  border:1px solid grey;
+  box-shadow: 3px 3px 9px rgba(102, 86, 135, 0.15);
+  font-size:16px;
+  color:#665687
+}
+.paragraph1{
+font-family: Roboto;
+font-size: 16px;
+color: #373F41;
+margin:20px 10px 20px 20px;
+}
+.paragraph2{
+font-family: Roboto;
+font-size: 16px;
+color: #373F41;
+margin:0px 10px 0px 20px;
+}
+.successContentWrapper{
+  margin-top:90px;
 
 }

@@ -10,3 +10,5 @@ exports.getRoom = (req, res) => {
         res.send({message: "Room Added Successfully", rooms: result.rooms})})
     .catch((error) => {res.send({message: error})})
 }
+
+
