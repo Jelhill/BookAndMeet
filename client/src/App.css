@@ -1,6 +1,8 @@
 /* /* /* To use the color variable,  follow the below example
  background-color: var(--mainWhite) !important;
 */
+
+
 body {
   width: 100%;
   background: #ffffff;
@@ -2193,8 +2195,9 @@ body {
   padding-top: 8px;
   font-family: var(--Roboto) sans-serif;
 }
-.features1 i{
-font-size: 17px;
+.features1 span img{
+width: 27.59px;
+height: 20px;
 
 }
 .roomNumber{
@@ -3378,6 +3381,12 @@ text-align: center;
 }
 .aboutUsWrapper h5{
   font-family: Roboto;
+font-style: normal;
+font-size: 24px;
+line-height: 20px;
+letter-spacing: -0.24px;
+color: #000000;
+margin-bottom: 1%;
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
@@ -3385,6 +3394,7 @@ text-align: center;
   letter-spacing: -0.24px;
   color: #000000;
   margin-bottom: 20px;
+
 }
 .aboutUsContent p{
   font-family: Roboto;
@@ -3550,4 +3560,5 @@ margin:0px 10px 0px 20px;
 }
 .successContentWrapper{
   margin-top:90px;
+
 }

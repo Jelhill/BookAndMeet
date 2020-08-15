@@ -16,9 +16,11 @@ import Feedback from "./Components/FooterLink/Feedback"
 import Admin from "./Components/FooterLink/Admin"
 import MeetingRooms from './Components/FooterLink/meetingRooms';
 import AddNewRoom from './Components/FooterLink/addNewRoom';
+import EditRoom from './Components/FooterLink/editRoom';
 import Bookings from './Components/FooterLink/Bookings';
-import FeedbackForm from './Components/FeedbackForm'
+import FeedbackForm from './Components/FeedbackForm';
 import History from "./Components/ProfilePage/History"
+import AdminHeader from './Components/AdminHeader';
 import AdminPortal from './Components/FooterLink/AdminPortal';
 import AddAdminForm from './Components/FooterLink/AddAdminForm';
 import EditRoomForm from './Components/FooterLink/EditRoomForm';
@@ -27,8 +29,9 @@ import SuccessRegisterModal from './Components/Modals/SuccessRegisterModal'
 
 
 
+
 function App() {
- 
+
   return (
     // <SuccessRegisterModal/>
     <Fragment>    
@@ -40,19 +43,22 @@ function App() {
         <Route exact path="/user/:profile" component={UserProfilePage} />
         <Route exact path="/Login" component={ Login } />
         <Route exact path="/Signup" component={SignUp} />
-        {/* <Route exact path="/Logout" component={Logout} /> */}
-        <Route exact path="/completeSignUp" component={CompleteSignUp} />
+        {/* <Route exact path="/Logout" component={Logout} />  */}
+         <Route exact path="/completeSignUp" component={CompleteSignUp} />
         <Route exact path="/404" component={Error404} />
-        <Route exact path="/imageLoader" component={imageLoader} />
+        <Route exact path="/imageLoader" component={imageLoader} /> 
         <Route exact path="/aboutUs" component={AboutUs} />
         <Route exact path="/adminFeedback" component={Feedback} />
         <Route exact path="/admin" component={Admin} />
         <Route exact path="/meetingRooms" component={MeetingRooms}/>
         <Route exact path="/adminDashboard" component={Admin}/>
         <Route exact path="/addnewroom" component={AddNewRoom}/>
+        <Route exact path="/editroom" component={EditRoom}/>
         <Route exact path="/adminBooking" component={Bookings}/>
         <Route exact path="/userHistory" component={History}/>
         <Route exact path="/feedbackForm" component={FeedbackForm}/>
+        <Route exact path="/adminHeader" component={AdminHeader}/>
+        <Route exact path="/addAdminForm" component={AddAdminForm}/> 
         <Route exact path="/addAdminForm" component={AddAdminForm}/>
         <Route exact path="/editRoomForm/:id" component={EditRoomForm}/>
       </Switch>
