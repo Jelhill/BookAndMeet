@@ -6,8 +6,8 @@ import Search from './Components/HomePage/Search';
 import BookingForm from './Components/BookingPage/BookingForm';
 import { Fragment } from 'react';
 import UserProfilePage from './Components/ProfilePage/UserProfilePage';
-import Login from './Components/Modals/login';
-import SignUp from './Components/Modals/signup';
+import Login from './Components/Modals/Login';
+import SignUp from './Components/Modals/Signup';
 import CompleteSignUp from "./Components/Modals/CompleteSignUp"
 import Error404 from "./Components/404"
 import imageLoader from "./Components/imageLoader"
@@ -40,7 +40,7 @@ function App() {
         <Route exact path="/home" component={Search} />
         <Route exact path="/booking" component={BookingForm} />
         <Route exact path="/aboutRoom" component={AboutRoom} />
-        <Route exact path="/user/:profile" component={UserProfilePage} />
+        <Route exact path="/userProfile" component={UserProfilePage} />
         <Route exact path="/Login" component={ Login } />
         <Route exact path="/Signup" component={SignUp} />
         {/* <Route exact path="/Logout" component={Logout} />  */}
@@ -53,7 +53,7 @@ function App() {
         <Route exact path="/meetingRooms" component={MeetingRooms}/>
         <Route exact path="/adminDashboard" component={Admin}/>
         <Route exact path="/addnewroom" component={AddNewRoom}/>
-        <Route exact path="/editroom" component={EditRoom}/>
+        {/* <Route exact path="/editroom" component={EditRoom}/> */}
         <Route exact path="/adminBooking" component={Bookings}/>
         <Route exact path="/userHistory" component={History}/>
         <Route exact path="/feedbackForm" component={FeedbackForm}/>

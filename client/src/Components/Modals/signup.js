@@ -2,24 +2,12 @@ import React, {Component} from 'react';
 import { Link } from "react-router-dom"
 import CompleteSignUp from './CompleteSignUp';
 import { connect } from 'react-redux';
-import { showSignup, getSignupInputs, successMessage,showRegSuccessfull} from "../../Actions/userActions"
+import { showSignup, getSignupInputs, successMessage,showRegSuccessful} from "../../Actions/userActions"
 import { showValidationError } from "../../Actions/formValidation"
-import SuccessRegisterModal from '../Modals/SuccessRegisterModal'
+import SuccessRegisterModal from './SuccessRegisterModal'
 
 class SignUp extends Component{
 
-  // state = {
-  //   show3: false,
-  // };
-//   showLogin = e => {
-//     e.preventDefault()
-//     this.setState({
-//     show: !this.state.show
-//     });
-// };
-// successfullRegistrationModal = () => {
-//   this.props.showRegSuccessfull(true);
-// }
     onClose = (e) => {
       e.preventDefault()
       this.props.showSignup(false)
@@ -51,7 +39,7 @@ class SignUp extends Component{
       this.userInputValidation(e)    
     }
 
-    handleSignup = async (e) => {
+    handleSignup = (e) => {
       e.preventDefault()
       fetch("http://localhost:3001/signUp", {
         method: "POST",
@@ -61,20 +49,13 @@ class SignUp extends Component{
       .then(response => response.json())
       .then((jsonResponse) => {
         if(jsonResponse.message === "Registered Successfully") {
-          console.log("res", jsonResponse.message)
           this.props.successMessage(jsonResponse.message)
-          // this.props.showRegSuccessfull(true);
         }else{
           this.props.successMessage("Failed Registration")
         }
       })
       .catch((err) => console.log(err))
     }
-    // onClick=(e) => {
-    //   e.preventDefault()
-    //   successfullRegistrationModal();
-    //   handleSignup()
-    // }
   
     render(){
         if(this.props.showSignUp === false){
@@ -119,14 +100,15 @@ class SignUp extends Component{
                             <input type = "checkbox" name ="rememberme" value="" className="checkbox"></input>
                         <label htmlFor ="rememberme" >Remember me</label>
                         <button className="signupsubmit" onClick={this.handleSignup} >Sign Up</button>
+                        
                       </div>                   
                     </form>
                       <p className="loginparagraph">Already have an account? <Link to="#"><span>Sign in</span></Link></p>
-
+                      
                   </div>
                       </div>
                   </div>
-                  {/* <CompleteSignUp onClose={this.onSignUp} show3={this.state.show3} /> */}
+                  <SuccessRegisterModal />
             </div>
         )
     }
@@ -136,7 +118,6 @@ class SignUp extends Component{
 const mapStateToProps = (state) => {
   const { userReducer } = state
   const { formReducer } = state
-  console.log("state2222", userReducer.showSuccessfullRegModal, userReducer.showSignUp)
   return {
     signUpFormDetails: userReducer.signUpFormDetails,
     firstname: userReducer.signUpFormDetails.firstname,
@@ -149,19 +130,18 @@ const mapStateToProps = (state) => {
     emailErrorMessage: formReducer.emailErrorMessage,
     passwordErrorMessage: formReducer.passwordErrorMessage,
     successDisplayMessage: userReducer.successMessage,
-    showSuccessfullRegModal: userReducer.showSuccessfullRegModal
+    showSuccessfulRegModal: userReducer.showSuccessfulRegModal
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
+
   return {
     showSignup: (values) =>  dispatch(showSignup(values)),
     getSignupInputs: (values) => dispatch(getSignupInputs(values)),
-    // saveInitialUserDetails: (values) => dispatch(saveInitialUserDetails(values)),
     showValidationError: (values) => dispatch(showValidationError(values)),
     successMessage: (message) => dispatch(successMessage(message)),
-    showRegSuccessfull: (values) => dispatch(showRegSuccessfull(values))
-
+    // showRegSuccessfull: (values) => dispatch(showRegSuccessfull(values))
   }
 }
 

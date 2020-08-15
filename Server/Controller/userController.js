@@ -7,7 +7,10 @@ const SECRET = process.env.SECRET
 exports.userSignUp = (req, res) => {
     const user = new User(req.body)
     user.signUp()
-    .then((result) => {res.json({message: "Registered Successfully"})})
+    .then((result) => {
+        console.log(result)
+        res.json({message: "Registered Successfully"})
+    })
     .catch((error) => {res.json({message: error})})
 }
 
