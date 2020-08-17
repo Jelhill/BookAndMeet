@@ -15,22 +15,22 @@ class Admin extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="notifier">
-                            <h7>Available Rooms</h7>
+                            <h6>Available Rooms</h6>
                             <p>15</p>
                             <p className="view-details">View Details</p>
                         </div>
                         <div className="notifier">
-                        <h7>Booked Rooms</h7>
+                        <h6>Booked Rooms</h6>
                             <p>11</p>
                             <p className="view-details">View Details</p>
                         </div>
                         <div className="notifier">
-                        <h7>Cancellations</h7>
+                        <h6>Cancellations</h6>
                             <p>5</p>
                             <p className="view-details">View Details</p>
                         </div>
                         <div className="notifier">
-                        <h7>Feedbacks</h7>
+                        <h6>Feedbacks</h6>
                             <p>2</p>
                             <p className="view-details">View Details</p>
                         </div>
@@ -47,13 +47,16 @@ class Admin extends Component {
                     
                     <h4>Today's Bookings</h4>
                 <table style={{width:"100%"}}>
-                    <tr>
-                        <th>Room Type</th>
-                        <th>Booked By</th>
-                        <th>Date</th>
-                        <th>Duration</th>
-                        <th>Status</th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Room Type</th>
+                            <th>Booked By</th>
+                            <th>Date</th>
+                            <th>Duration</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                     <tr>
                         <td>Senate Meeting Room</td>
                         <td>Temitope Daniel</td>
@@ -82,6 +85,7 @@ class Admin extends Component {
                         <td></td>
                         <td></td>
                     </tr>
+                    </tbody>
                 </table>
                 </div>
             </div>

@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import { Link } from "react-router-dom"
-import CompleteSignUp from './CompleteSignUp';
 import { connect } from 'react-redux';
-import { showSignup, getSignupInputs, successMessage,showRegSuccessful} from "../../Actions/userActions"
+import { showSignup, getSignupInputs, successMessage} from "../../Actions/userActions"
 import { showValidationError } from "../../Actions/formValidation"
 import SuccessRegisterModal from './SuccessRegisterModal'
 

@@ -18,7 +18,7 @@ class Header extends Component {
         this.props.updateStateForHeader(response)
         const now = new Date()
         console.log("Header Render", now.getTime(), this.props.user)
-        const {isLoggedIn, id, firstname} = this.props.user
+        const {isLoggedIn, firstname} = this.props.user
         return (
             <div className="headerPurpleDiv">
                 <div className="headerIconDiv">

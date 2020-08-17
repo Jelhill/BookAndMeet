@@ -22,7 +22,6 @@ export default class AdminPortal extends Component {
                                     <thead>
                                         <tr>
                                             <th>Name</th>
-                                            {/* <th>Gender</th> */}
                                             <th>code</th>
                                             <th>Department</th>
                                             <th>E-mail</th>

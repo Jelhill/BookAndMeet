@@ -46,7 +46,6 @@ class SuccessRegisterModal extends Component {
 }
 const mapStateToProps = (state) => {
   const { userReducer } = state
-  console.log(userReducer.showSuccessfulRegModal)
   return {
     successfulRegModal: userReducer.showSuccessfulRegModal,
 
