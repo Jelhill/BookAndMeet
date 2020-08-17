@@ -16,16 +16,13 @@ import Feedback from "./Components/FooterLink/Feedback"
 import Admin from "./Components/FooterLink/Admin"
 import MeetingRooms from './Components/FooterLink/meetingRooms';
 import AddNewRoom from './Components/FooterLink/addNewRoom';
-import EditRoom from './Components/FooterLink/editRoom';
+// import EditRoom from './Components/FooterLink/editRoom';
 import Bookings from './Components/FooterLink/Bookings';
 import FeedbackForm from './Components/FeedbackForm';
 import History from "./Components/ProfilePage/History"
 import AdminHeader from './Components/AdminHeader';
-import AdminPortal from './Components/FooterLink/AdminPortal';
 import AddAdminForm from './Components/FooterLink/AddAdminForm';
 import EditRoomForm from './Components/FooterLink/EditRoomForm';
-
-import SuccessRegisterModal from './Components/Modals/SuccessRegisterModal'
 
 
 

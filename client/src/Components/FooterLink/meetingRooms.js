@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom"
-import room1 from "../../Images/room1.jpg"
 import Header from "../Header"
 import AdminSideMenu from "./AdminSideMenu"
 import { updateStateWithRooms } from "../../Actions/roomActions"
@@ -9,19 +8,37 @@ import { connect } from 'react-redux'
 
 class MeetingRooms extends Component {
 
-    componentDidMount =(() => {
+    
+    deleteRoom = (id) => {
+        fetch(`http://localhost:3001/deleteRoom/${id}`, {method: "DELETE"})
+        .then(response => response.json())
+        .then(jsonResponse => {
+            window.location.reload(true)
+        })
+    }
+
+    editRoom = (id) => {
+        fetch(`http://localhost:3001/editRoom/${id}`, {method: "PUT"})
+        .then(response => response.json())
+        .then(jsonResponse => {
+            console.log("Feedback", jsonResponse)
+            window.location.reload(true)
+        })
+    }
+
+    componentDidMount = () => {
         fetch("http://localhost:3001/getRooms", {
             method: "GET",
             headers: {"Content-type": "application/json"}
         })
         .then((response) => response.json())
         .then((jsonResponse) => {
-            console.log(jsonResponse)
+            console.log("MMMMM", jsonResponse)
             this.props.updateStateWithRooms(jsonResponse.rooms)
         }).catch((error) => {
             console.log(error)
         })
-    })
+    }
 
     render() {
         return (
@@ -42,18 +59,17 @@ class MeetingRooms extends Component {
     
                         <div className="adminRightSideBody">
 
-                        {this.props.rooms.map((room) => (
-                            <div className="roomCards">
+                        {this.props.rooms.map((room, index) => (
+                            <div key={index} className="roomCards">
                                 <img src={room.imageurl} alt="room1" className="roomImg"></img>
                                 <div className="deleteWrapper">
                                     <div>
                                         <span className="boardRoomTag">{room.name}</span>
                                         <span className="available">Available</span>
                                     </div>
-                                    {/* <p className="roomLocation">Room 203 Second Floor, Main Building</p> */}
                                     <div className="buttonContainer">
-                                        <span className="deleteButton">Delete</span>
-                                        <Link to={{pathname: `editRoomForm/${room.id}`, state: room}}><span className="editButton">Edit</span></Link>
+                                        <span className="deleteButton" onClick={() => this.deleteRoom(room.id)}>Delete</span>
+                                        <Link to={`/editRoomForm/${room.id}`}><span className="editButton">Edit</span></Link>
                                     </div>
                                 </div>
                             </div>
@@ -83,6 +99,7 @@ class MeetingRooms extends Component {
 
 const mapStateToProps = (state) => {
     const { roomReducer } = state
+    console.log(roomReducer.rooms)
     return {
         rooms: roomReducer.rooms
     }    

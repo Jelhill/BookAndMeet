@@ -74,5 +74,4 @@ User.prototype.authenticateUser = function() {
 }
 
 
-
 module.exports = User

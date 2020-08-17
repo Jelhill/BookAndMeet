@@ -12,7 +12,7 @@ const feedbackReducer = (state = initialState, action) => {
 
     if(action.type === GET_USER_COMMENTS) {
         console.log(">>>>", action.values);
-        newState.userComments = newState.userComments. concat(action.values)
+        newState.userComments = newState.userComments.concat(action.values)
     }
    
 

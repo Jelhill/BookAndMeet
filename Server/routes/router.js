@@ -16,6 +16,7 @@ router.get("/home", (req, res) => {
 // GET REQUESTS
 router.get("/booking", verify, userController.booking)
 router.get("/getRooms", roomController.getRoom)
+router.get("/getRoomDetails/:id", roomController.getRoomDetails)
 // POST REQUEST
 router.post("/signUp", userController.userSignUp);
 router.post("/login", userController.login)
@@ -26,6 +27,8 @@ router.post("/feedback", feedbacks.feedBack)
 //PATCH REQUEST
 router.patch("/addRoom/:id", adminController.editRoom)
 router.post("/bookRoom", bookingController.bookRoom)
+router.put("/editRoom/:id", roomController.editRoom)
+router.delete("/deleteRoom/:id", roomController.deleteRoom)
 
 
 

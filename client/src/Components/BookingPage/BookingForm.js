@@ -1,7 +1,6 @@
-import React, { Component, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import Header from "../Header"
 import Footer2 from "../Footer2"
-import BookingPageLeftSide from "./BookingPageLeftSide"
 import BookingPageRightDiv from "./BookingPageRightDiv"
 import { Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'

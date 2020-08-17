@@ -43,7 +43,7 @@ class Landing extends Component {
                 </select>
                 
                 <select name="" defaultValue={"Capacity"} className="filterSelect">
-                    <option disabled selected hidden>Capacity</option>
+                    <option disabled hidden>Capacity</option>
                     <option value="oneToTen">1 - 10 seats</option>
                     <option value="elevenToTwenty">11 - 50 seats</option>
                     <option value="fiftyOneToOneHundred">51 - 100 seats</option>

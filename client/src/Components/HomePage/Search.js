@@ -1,21 +1,10 @@
 import React, { Component } from 'react';
-import { addList } from "../../Actions/catAction";
-import { addRange } from "../../Actions/catAction";
 import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
-import ImageRoom5 from "../../Images/room5.jpg"
-import ImageRoom13 from "../../Images/room13.jpg"
-import ImageRoom8 from "../../Images/room8.jpg"
-import ImageRoom3 from "../../Images/room3.jpg"
-import ImageRoom1 from "../../Images/room1.jpg"
-import ImageRoom11 from "../../Images/room11.jpg"
-import ImageRoom2 from "../../Images/room2.jpg"
-import ImageRoom4 from "../../Images/room4.jpg"
 import Header from "../Header";
 import Footer2 from "../Footer2";
 import SearchFilter from "../HomePage/SearchFilter";
 import { updateStateWithRooms, saveCurrentRoom } from "../../Actions/roomActions"
-import roomReducer from '../../Reducers/roomReducer';
 import ImageAirConditioner from "../../Images/air-conditioner.png";
 import ImageProjector from "../../Images/projector.png";
 import ImageWaterCooler from "../../Images/water-cooler.png";
