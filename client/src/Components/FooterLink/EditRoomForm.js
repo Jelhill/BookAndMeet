@@ -1,51 +1,42 @@
-import React, { useEffect } from 'react'
-import { withRouter } from "react-router-dom"
+import React, {useEffect} from 'react'
+import { withRouter, useParams } from "react-router-dom"
 import AdminSideMenu from './AdminSideMenu'
-import { getRoomFormInputs, getRoomImage } from "../../Actions/roomActions"
+import { getRoomFormInputs, getRoomImage, editFormInputs } from "../../Actions/roomActions"
 import { connect } from 'react-redux'
+import { updateStateWithRoomInfo } from '../../Actions/roomActions'
 
 const EditRoomForm = (props) =>  {
+    const {id} = useParams()
+    const { roomName, roomType, roomId, whiteBoard, airCondition, waterDispenser, capacity, roomLocation, isavailable, projector, imageurl } = props
+    const fetchRoom = () => {
+        fetch(`http://localhost:3001/getRoomDetails/${id}`, {method: "GET"})
+        .then((response) => response.json())
+        .then((jsonRes) => {
+            props.updateStateWithRoomInfo(jsonRes.response.result)
+        })
+    }
+
+    useEffect(fetchRoom, [])
 
     const getFormInput = (e) => {
-        props.getRoomFormInputs({[e.target.name]: e.target.value})
+        props.editFormInputs({[e.target.name]: e.target.value})
     }
 
-    // const getRoomImage = (e) => {
-    //     props.getRoomImage({[e.target.name]: e.target.files})
-    // }
-
-    // const addNewRoom = async (e) => {
-    //     e.preventDefault()
-    //     const data = new FormData()
-    //     console.log("Room Image", props.roomImage.image)
-    //     data.append("file", props.roomImage.image[0])
-    //     data.append("upload_preset", "jelhill")
-    //     props.setLoading(true)
-    //     const res = await fetch("https://api.cloudinary.com/v1_1/dvbaflmgm/image/upload", {
-    //         method: "POST",
-    //         body: data
-    //     })  
-    //     const jsonRes = await res.json()
-    //     const {type, location, capacity, name, available, hasProjector, hasAirCondition, hasWaterDispenser, hasWhiteBoard} = props.addRoomFormInputs
-    //     const secure_url = jsonRes.secure_url
-    //     console.log(secure_url);
-    //     const body = {type, location, capacity, name, available, hasProjector, hasAirCondition, hasWaterDispenser, hasWhiteBoard, secure_url}
-    //     await fetch("http://localhost:3001/addRoom",{
-    //         method: "POST",
-    //         headers: {"Content-type": "application/json"},
-    //         body: JSON.stringify(body)
-    //     })
-    //     .then((response) => response.json())
-    //     .then((jsonResponse) => {
-    //         console.log(jsonResponse)
-    //     }).catch((err) => {
-    //         console.log(err)
-    //     })    
-    // }
-
-    const updateRoom = () => {
-
+    const updateRoom = (e) => {
+        e.preventDefault()
+        // const body = {roomName, roomType, id, whiteBoard, airCondition, waterDispenser, capacity, roomLocation, isavailable, projector, imageurl}
+       
+        fetch(`http://localhost:3001/editRoom/${id}`, {
+            method: "PUT",
+            headers: {"Content-type": "application/json"},
+            body: JSON.stringify(props.editRoomFormInputs)
+        })
+        .then(response => response.json())
+        .then(jsonResponse => {
+            console.log(jsonResponse)
+        })
     }
+
     return (
         <div className="adminLandingPageWrapper">
             <AdminSideMenu />
@@ -54,41 +45,41 @@ const EditRoomForm = (props) =>  {
                     <form>
                         <div className="roomType">
                             <label>Room type</label>
-                            <select name="type" onChange={getFormInput}>
-                                <option disabled selected hidden>Select Type</option>
+                            <select name="type" onChange={getFormInput} value={roomType}>
+                                <option disabled hidden>Select Type</option>
                                 <option value="Private Room">Private Room</option>
                                 <option value="Board Room">Board Room</option>
                                 <option value="Conference Room">Conference Room</option>
                                 <option value="Auditorium">Auditorium </option>
                             </select>
-                            {/* <input type="text" name="type" onChange={getFormInput}></input> */}
                         </div>
                         <div className="roomAndLocation">
                             <div className="roomLocation">
                                 <label >Location</label>
-                                <input type="text" name="location" onChange={getFormInput}></input>
+                                <input type="text" name="location" value={roomLocation} onChange={getFormInput} ></input>
                             </div>
                             <div className="roomLocation">
                                 <label>Room Capacity</label>
-                                <input type="number" name="capacity" onChange={getFormInput}></input>
+                                <input type="number" name="capacity" onChange={getFormInput} value={capacity}></input>
                             </div>
                         </div>
                         <div className="roomAndLocation">
                             <div className="roomLocation">
                                 <label> Room Name</label>
-                                <input type="text" name="name" onChange={getFormInput}></input>
+                                <input type="text" name="name" onChange={getFormInput} value={roomName}></input>
                             </div>
                             <div className="roomLocation">
                                 <label>Available</label>
-                                <select name="available" onChange={getFormInput}>
-                                    <option disabled selected hidden>Select</option>
+                                <select name="isavailable" onChange={getFormInput} defaultValue={isavailable}>
+                                    <option disabled hidden>Select</option>
                                     <option value="yes">Yes</option>
                                     <option value="no">No</option>
                                 </select>
                             </div>
                         </div>
                         <div className="inputFile">
-                            <input type="file" name="image" id="file" onChange={getRoomImage} />
+                            <img src={imageurl} alt=""/>
+                            <input type="file" name="imageurl" id="file" onChange={getRoomImage} />
                         </div>
                         <div>
                         <h4 className="selectEquipment">Select Equipment/Features</h4>
@@ -96,16 +87,16 @@ const EditRoomForm = (props) =>  {
                             <div className="roomListDiv">
                                 <div className="roomItemListDiv">
                                     <label>Projector</label>
-                                    <select name="hasProjector" id="" onChange={getFormInput} placeholder="Projector">
-                                        <option disabled selected hidden>Select</option>
+                                    <select name="hasprojector" onChange={getFormInput} defaultValue={projector ? "Yes" : "No"}>
+                                        <option disabled hidden>Select</option>
                                         <option value="yes">Yes</option>
                                         <option value="no">No</option>
                                     </select>
                                 </div>
                                 <div className="roomItemListDiv">
                                     <label>White Board</label>
-                                    <select name="hasWhiteBoard" id="" onChange={getFormInput} placeholder="Projector">
-                                        <option disabled selected hidden>Select</option>
+                                    <select name="haswhiteboard" onChange={getFormInput} defaultValue={whiteBoard ? "Yes" : "No"}>
+                                        <option disabled hidden>Select</option>
                                         <option value="yes">Yes</option>
                                         <option value="no">No</option>
                                     </select>
@@ -115,16 +106,16 @@ const EditRoomForm = (props) =>  {
                             <div className="roomListDiv">
                                 <div className="roomItemListDiv">
                                     <label>Air Condition</label>
-                                    <select name="hasAirCondition" id="" onChange={getFormInput}>
-                                        <option disabled selected hidden>Select</option>
+                                    <select name="hasaircondition" onChange={getFormInput} defaultValue={airCondition ? "Yes" : "No"}>
+                                        <option disabled hidden>Select</option>
                                         <option value="yes">Yes</option>
                                         <option value="no">No</option>
                                     </select>
                                 </div>
                                 <div className="roomItemListDiv">
                                     <label>Water Dispenser</label>
-                                    <select name="hasWaterDispenser" id="" onChange={getFormInput} placeholder="a">
-                                        <option disabled selected hidden>Select</option>
+                                    <select name="haswaterdispenser" onChange={getFormInput} defaultValue={waterDispenser ? "Yes" : "No"  }>
+                                        <option disabled hidden>Select</option>
                                         <option value="yes">Yes</option>
                                         <option value="no">No</option>
                                     </select>
@@ -145,19 +136,33 @@ const EditRoomForm = (props) =>  {
 
 const mapStateToProps = (state) => {
     const { roomReducer } = state
-    console.log(roomReducer.addRoomFormInputs)
+    console.log("Room Info", roomReducer.editRoomFormInputs)
     return {
         roomImage: roomReducer.roomImage,
+        editRoomFormInputs: roomReducer.editRoomFormInputs,
         addRoomFormInputs: roomReducer.addRoomFormInputs,
-        setRoomLoading: roomReducer.setLoading
+        setRoomLoading: roomReducer.setLoading,
+        capacity: roomReducer.capacity,
+        waterDispenser: roomReducer.waterDispenser,
+        airCondition: roomReducer.airCondition,
+        roomName: roomReducer.roomName,
+        roomType: roomReducer.roomType,
+        whiteBoard: roomReducer.whiteBoard,
+        roomLocation: roomReducer.roomLocation,
+        projector: roomReducer.projector,
+        isavailable: roomReducer.isavailable,
+        imageurl: roomReducer.imageurl,
+        roomId: roomReducer.id
     }
 }
     
 const mapDispatchToProps = (dispatch) => {
     return {
-        getRoomFormInputs: (values) => {dispatch(getRoomFormInputs(values))},
-        getRoomImage: (value) => {dispatch(getRoomImage(value))},
-        setLoading: (value) => {dispatch(getRoomFormInputs(value))}
+        getRoomFormInputs: (values) => dispatch(getRoomFormInputs(values)),
+        getRoomImage: (value) => dispatch(getRoomImage(value)),
+        setLoading: (value) => dispatch(getRoomFormInputs(value)),
+        updateStateWithRoomInfo: (values) => dispatch(updateStateWithRoomInfo(values)),
+        editFormInputs: (values) => dispatch(editFormInputs(values)),
     }
 }
         

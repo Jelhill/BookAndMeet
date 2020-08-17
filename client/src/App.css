@@ -2196,8 +2196,9 @@ body {
   font-family: var(--Roboto) sans-serif;
 }
 .features1 span img{
-width: 27.59px;
-height: 20px;
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
 
 }
 .roomNumber{
@@ -2857,25 +2858,29 @@ height: 40px;
 margin:10px;
 }
 .inputFile{
+  display: flex;
   border: 1px solid #373F41;
   box-sizing: border-box;
-  height:100px;
+  height:150px;
   width: 80%;
   margin: auto;
   margin-top: 30px;
 }
+
+.inputFile img {
+  height: 100%;
+  width: 50%;
+}
+
+.inputFile input{
+  width: 50%;
+  height: 100%;                                             
+}
 #file{
   background: rgba(70, 37, 138, 0.4);
   border-radius: 5px;
-  width:60%;
-  height: 100px;
-  margin-left: 20%;
+  height: 100%;
 }
-/* .checkbox{
-  width:20px;
-  height:20px;
-  margin:5px;
-} */
 
 .selectEquipment {
   margin-left: 10%;

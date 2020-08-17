@@ -3,15 +3,29 @@ import { GET_ROOM_FORM_INPUTS,
     GET_ROOM_IMAGE, 
     UPDATE_STATE_WITH_ROOMS,
     EDIT_ROOM_FORM_INPUTS,
-    SAVE_CURRENT_ROOM } from "../Actions/roomActions"
+    SAVE_CURRENT_ROOM ,
+    UPDATE_STATE_WITH_ROOM_INFO,
+    EDIT_FORM_INPUTS,
+} from "../Actions/roomActions"
 
 const initialState = {
     addRoomFormInputs: {}, 
-    editRoomFormInputs: [],
+    editRoomFormInputs: {},
     setLoading: false, 
     roomImage: null,
     rooms: [],
-    currentRoom: {}
+    currentRoom: {},
+    roomInfo: {},
+    capacity: 0,
+    waterDispenser: false,
+    airCondition: false,
+    roomName: "",
+    roomType: "",
+    whiteBoard: false,
+    roomLocation: "",
+    projector: false,
+    isavailable: false,
+    imageurl: "",
 }
 
 const roomReducer = (state = initialState, action) => {
@@ -22,6 +36,7 @@ const roomReducer = (state = initialState, action) => {
     }
     if(action.type === EDIT_ROOM_FORM_INPUTS) {
         Object.assign(newState.editRoomFormInputs, action.values)
+        Object.assign(newState.roomInfo, action.values)
     }
 
     if(action.type === SET_LOADING) {
@@ -37,9 +52,40 @@ const roomReducer = (state = initialState, action) => {
     }
 
     if(action.type === SAVE_CURRENT_ROOM) {
-        console.log("actionss", action.values)
+   
         Object.assign(newState.currentRoom, action.values)
     }
+
+    if(action.type === UPDATE_STATE_WITH_ROOM_INFO) {
+        console.log("actionss", action.values)
+        // Object.assign(newState.roomInfo, action.values)
+        newState.capacity = action.values.capacity
+        newState.waterDispenser = action.values.haswaterdispenser
+        newState.airCondition = action.values.hasaircondition
+        newState.roomName = action.values.name
+        newState.roomType = action.values.type
+        newState.whiteBoard = action.values.haswhiteboard
+        newState.roomLocation = action.values.location
+        newState.projector = action.values.hasprojector
+        newState.isavailable = action.values.isavailable
+        newState.imageurl = action.values.imageurl
+    }
+
+    if(action.type === EDIT_FORM_INPUTS) {
+        console.log("actionss", action.values)
+        Object.assign(newState.editRoomFormInputs, action.values)
+        newState.capacity = action.values.capacity
+        newState.waterDispenser = action.values.haswaterdispenser
+        newState.airCondition = action.values.hasaircondition
+        newState.roomName = action.values.name
+        newState.roomType = action.values.type
+        newState.whiteBoard = action.values.haswhiteboard
+        newState.roomLocation = action.values.location
+        newState.projector = action.values.hasprojector
+        newState.isavailable = action.values.isavailable
+        newState.imageurl = action.values.imageurl
+    }
+
     return newState
 }
 

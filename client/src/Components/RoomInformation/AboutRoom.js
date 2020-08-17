@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import Room1 from "../../Images/room18.jpg"
+import React from 'react'
 import Footer2 from '../Footer2'
 import ItemsInRoom from './ItemsInRoom'
 import Header from '../Header'

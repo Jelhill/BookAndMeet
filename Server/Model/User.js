@@ -10,7 +10,6 @@ function User(data) {
 
 User.prototype.validate = async function(){    
     const cleanData = validate(this.data, dataSchema)
-    const { email } =  this.data
 
     if(!cleanData.valid) {       
         const err = cleanData.errors.map(err => err.stack)
@@ -21,7 +20,7 @@ User.prototype.validate = async function(){
     return cleanData.instance
 }
 
-User.prototype.checkExistingEmail = function() {
+User.prototype.checkExistingEmail = async function() {
     return new Promise(async (resolve, reject) => {
         const { email } = this.data
         const userExist = await db.query("SELECT * FROM users WHERE email = $1", [email])
@@ -33,17 +32,17 @@ User.prototype.checkExistingEmail = function() {
 }
 
 User.prototype.signUp = function() {
-    return new Promise(async (resolve, reject) => {        
+    return new Promise(async (resolve, reject) => {      
         await this.validate()
         await this.checkExistingEmail()
         const {surname, firstname, email, password, confirmPassword} = this.data;
+
         if(!this.errors.length){            
             if(password !== confirmPassword) {
                 reject("Password Mismatch")
             }else{
                 const salt = bcrypt.genSaltSync(10)
                 const hashPassword = bcrypt.hashSync(password, salt)
-                
                 db.query("INSERT INTO users (surname, firstname, password, email) VALUES ($1, $2, $3, $4)", 
                 [surname, firstname, hashPassword, email])
                 resolve("Successfully Updated")
@@ -62,7 +61,6 @@ User.prototype.authenticateUser = function() {
             .then((result) => {
                 if(result && bcrypt.compareSync(password, result.rows[0].password)){
                     this.data = result
-
                     resolve({message: "Successful", result: result.rows[0]})
                 }
                 else{
@@ -74,7 +72,6 @@ User.prototype.authenticateUser = function() {
             })
     })
 }
-
 
 
 module.exports = User

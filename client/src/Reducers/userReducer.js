@@ -9,7 +9,7 @@ import {
     UPDATE_STATE_FOR_HEADER,
     SHOW_LOGOUT,
     SUCCESS_MESSAGE,
-    SUCCESSFULL_REG_MODAL
+    SUCCESSFUL_REG_MODAL
  } from "../Actions/userActions"
 
 const initialState = {
@@ -18,20 +18,16 @@ const initialState = {
     showSignUp: false,
     showSignIn: false,
     showLogOut: false,
-    showSuccessfullRegModal: false,
+    showSuccessfulRegModal: false,
     renderPage: false,
-
     userIsLoggedIn: false,
     userFirstname: "",
     userId: 0,
     successMessage: "",
-
     loggedInUserInfo: {},
     feedBackFormDetails:{},
     populateFeedbackPage:[],
-    loggedInUserInfo: {},
-    feedBackFormDetails:{},
-    populateFeedbackPage:[]
+
 }   
 
 const userReducer = (state = initialState, action) => {
@@ -58,11 +54,10 @@ const userReducer = (state = initialState, action) => {
     if(action.type === SHOW_LOGOUT ){
         newState.showLogOut = action.value
     }
-    // if(action.type === SUCCESSFULL_REG_MODAL){
-    //     console.log('succes', action.values);
-    //     newState.showSignUp = false
-    //     newState.showSuccessfullRegModal = action.values
-    // }
+    if(action.type === SUCCESSFUL_REG_MODAL){
+        newState.showSuccessfulRegModal = action.values
+    }
+
     if(action.type === SAVE_INITIAL_USER_DETAILS) {
         Object.assign(newState.signUpFormDetails, action.values)
     }
@@ -78,14 +73,11 @@ const userReducer = (state = initialState, action) => {
     }
 
     if(action.type === SUCCESS_MESSAGE) {
-        console.log("action", action.message)
         newState.successMessage = action.message
-        if(newState.showSignUp){
-            newState.showSignUp = false
-            newState.showSuccessfullRegModal = true
-        } 
+        newState.showSuccessfulRegModal = true
+        newState.showSignUp = false
+        
     }
-
 
     return newState
 }

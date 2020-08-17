@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import Room14 from "../../Images/room14.jpg"
+import React from 'react'
 
 const BookingPageLeftSide = ({room})  =>{
 
