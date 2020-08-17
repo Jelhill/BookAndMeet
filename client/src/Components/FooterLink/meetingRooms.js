@@ -24,11 +24,6 @@ class MeetingRooms extends Component {
     })
 
 
-<<<<<<< HEAD
-
-export default class MeetingRooms extends Component {
-=======
->>>>>>> development
     render() {
         return (
             <div>
@@ -58,111 +53,8 @@ export default class MeetingRooms extends Component {
                                     </div>
                                     {/* <p className="roomLocation">Room 203 Second Floor, Main Building</p> */}
                                     <div className="buttonContainer">
-<<<<<<< HEAD
-                                       <span className="deleteButton">Delete</span>
-                                       <Link to="editroom"> <span className="editButton" >Edit</span></Link>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-xm-3 roomCards">
-                                <img src={room1} alt="room1" className="roomImg"></img>
-                                <div className="deleteWrapper">
-                                    <div>
-                                        <span className="boardRoomTag">BoardRoom</span>
-                                        <span className="available">Available</span>
-                                    </div>
-                                    <p className="roomLocation">Room 203 Second Floor, Main Building</p>
-                                    <div className="buttonContainer">
-                                        <span className="deleteButton">Delete</span>
-                                        <span className="editButton">Edit</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-xm-3 roomCards">
-                                <img src={room1} alt="room1" className="roomImg"></img>
-                                <div className="deleteWrapper">
-                                    <div>
-                                        <span className="boardRoomTag">BoardRoom</span>
-                                        <span className="available">Available</span>
-                                    </div>
-                                    <p className="roomLocation">Room 203 Second Floor, Main Building</p>
-                                    <div className="buttonContainer">
-                                        <span className="deleteButton">Delete</span>
-                                        <span className="editButton">Edit</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-xm-3 roomCards">
-                                <img src={room1} alt="room1" className="roomImg"></img>
-                                <div className="deleteWrapper">
-                                    <div>
-                                        <span className="boardRoomTag">BoardRoom</span>
-                                        <span className="available">Available</span>
-                                    </div>
-                                    <p className="roomLocation">Room 203 Second Floor, Main Building</p>
-                                    <div className="buttonContainer">
-                                        <span className="deleteButton">Delete</span>
-                                        <span className="editButton">Edit</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-xm-3 roomCards">
-                                <img src={room1} alt="room1" className="roomImg"></img>
-                                <div className="deleteWrapper">
-                                    <div>
-                                        <span className="boardRoomTag">BoardRoom</span>
-                                        <span className="available">Available</span>
-                                    </div>
-                                    <p className="roomLocation">Room 203 Second Floor, Main Building</p>
-                                    <div className="buttonContainer">
-                                        <span className="deleteButton">Delete</span>
-                                        <span className="editButton">Edit</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-xm-3 roomCards">
-                                <img src={room1} alt="room1" className="roomImg"></img>
-                                <div className="deleteWrapper">
-                                    <div>
-                                        <span className="boardRoomTag">BoardRoom</span>
-                                        <span className="available">Available</span>
-                                    </div>
-                                    <p className="roomLocation">Room 203 Second Floor, Main Building</p>
-                                    <div className="buttonContainer">
-                                        <span className="deleteButton">Delete</span>
-                                        <span className="editButton">Edit</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-xm-3 roomCards">
-                                <img src={room1} alt="room1" className="roomImg"></img>
-                                <div className="deleteWrapper">
-                                    <div>
-                                        <span className="boardRoomTag">BoardRoom</span>
-                                        <span className="available">Available</span>
-                                    </div>
-                                    <p className="roomLocation">Room 203 Second Floor, Main Building</p>
-                                    <div className="buttonContainer">
-                                        <span className="deleteButton">Delete</span>
-                                        <span className="editButton">Edit</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-xm-3 roomCards">
-                                <img src={room1} alt="room1" className="roomImg"></img>
-                                <div className="deleteWrapper">
-                                    <div>
-                                        <span className="boardRoomTag">BoardRoom</span>
-                                        <span className="available">Available</span>
-                                    </div>
-                                    <p className="roomLocation">Room 203 Second Floor, Main Building</p>
-                                    <div className="buttonContainer">
-                                        <span className="deleteButton">Delete</span>
-                                        <span className="editButton">Edit</span>
-=======
                                         <span className="deleteButton">Delete</span>
                                         <Link to={{pathname: `editRoomForm/${room.id}`, state: room}}><span className="editButton">Edit</span></Link>
->>>>>>> development
                                     </div>
                                 </div>
                             </div>

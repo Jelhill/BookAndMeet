@@ -4,7 +4,7 @@ import CompleteSignUp from './CompleteSignUp';
 import { connect } from 'react-redux';
 import { showSignup, getSignupInputs, successMessage,showRegSuccessfull} from "../../Actions/userActions"
 import { showValidationError } from "../../Actions/formValidation"
-import SuccessRegisterModal from '../Modals/SuccessRegisterModal'
+import SuccessRegisterModal from './SuccessRegisterModal'
 
 class SignUp extends Component{
 
