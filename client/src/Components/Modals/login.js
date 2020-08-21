@@ -57,10 +57,12 @@ class Login extends Component{
                           <button className="closeWrapper"><span className="close" onClick={this.onClose} >&times;</span></button>
                           <h3 className="modalTitle2">Sign in</h3>
                       </div>
-                      <small> Result Here </small>
+                      <small></small>
                       <div className="modalContent">
                       <form>
                        <div className="formDiv">
+                         <div className="flexInput">
+                         <small></small>
                          <input 
                             type="email" 
                             name="email" 
@@ -68,6 +70,9 @@ class Login extends Component{
                             placeholder="Email" 
                             onChange={this.getUserInput}
                           />
+                          </div>
+                          <div className="flexInput">
+                          <small></small>
                          <input
                             type="password" 
                             name="password" 
@@ -76,6 +81,7 @@ class Login extends Component{
                             autoComplete="off" 
                             onChange={this.getUserInput}
                           />
+                          </div>
                            <input 
                             type="checkbox" 
                             name="rememberme" 

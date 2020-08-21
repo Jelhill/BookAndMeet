@@ -100,7 +100,7 @@ label {
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
-  line-height: 40px;
+  line-height: 30px;
   color: var(--mainPurple);
   text-align: center;
   letter-spacing: -0.24px;
@@ -576,7 +576,7 @@ padding:5px;
   margin-bottom: 20px;
 }
 .signupsubmit {
-  margin: 0px 0px 20px 40px;
+  margin: 0px 0px 20px 10%;
   width: 80%;
   height: 40px;
   top: 78px;
@@ -1721,6 +1721,8 @@ body {
 .userProfileBody {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+
 }
 
 .content2 {
@@ -1920,7 +1922,7 @@ body {
 .userProfileLeft {
   width: 20%;
   box-sizing: border-box;
-  border-right: 1px solid #d5dbdb;
+  border-right: 1px solid hsl(180, 8%, 85%);
   box-sizing: border-box;
   padding-top: 100px;
 }
@@ -1928,8 +1930,10 @@ body {
 .userProfileRight {
   width: 80%;
   box-sizing: border-box;
-  padding-left: 10%;
+  /* padding-left: 10%; */
   padding-top: 4%;
+  margin: auto;
+  padding-left: 6%;
 }
 
 .userProfileLeft h5 {
@@ -1959,6 +1963,7 @@ body {
   font-weight: normal;
   font-size: 17px;
   line-height: 20px;
+  color: var(--mainPurple);
   /* identical to box height, or 143% */
 
   letter-spacing: -0.24px;
@@ -1998,17 +2003,23 @@ body {
 .avatarInput {
   width: 50%;
 }
-.profileButton {
+
+.profileButtonDiv{
   width: 150px;
+  margin: auto;
+}
+.profileButton {
+  width: 100%;
   height: 40px;
-  background-color: var(--mainRed);
+  background-color: var(--mainPurple);
   color: var(--mainWhite);
   font-size: 1rem;
   border: none;
-  border-radius: 10px;
-  margin-left: 33%;
-  margin-top: 40px;
-  margin-bottom: 120px;
+  border-radius: 25px;
+  /* margin-left: 33%; */
+  /* margin: auto;
+  margin-bottom: 120px;*/
+  /* margin-top: 40px; */
 }
 
 .userProfileLogout {
@@ -3566,4 +3577,8 @@ margin:0px 10px 0px 20px;
 .successContentWrapper{
   margin-top:90px;
 
+}
+
+.searchNotification {
+   margin: auto;
 }
