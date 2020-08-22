@@ -11,6 +11,7 @@ export const SHOW_LOGOUT = "SHOW_LOGOUT"
 export const SUCCESS_MESSAGE = "SUCCESS_MESSAGE"
 export const GET_USER_COMMENTS = "GET_USER_COMMENTS"
 export const SUCCESSFUL_REG_MODAL = "SUCCESSFULL_REG_MODAL"
+export const UPDATE_STATE_WITH_USER_INFO = "UPDATE_STATE_WITH_USER_INFO"
 
 
 
@@ -90,6 +91,13 @@ export const successMessage = (message) => {
     return{
         type: SUCCESS_MESSAGE,
         message
+    }
+}
+
+export const updateStateWithUserInfo = (values) => {
+    return{
+        type: UPDATE_STATE_WITH_USER_INFO,
+        values
     }
 }
 

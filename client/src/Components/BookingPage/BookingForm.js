@@ -2,26 +2,32 @@ import React, { useEffect } from 'react'
 import Header from "../Header"
 import Footer2 from "../Footer2"
 import BookingPageRightDiv from "./BookingPageRightDiv"
-import { Link, withRouter } from 'react-router-dom'
+import { Link, withRouter, useParams } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { updateStateWithAPI } from "../../Actions/userActions"
+import { updateStateWithAPI, updateStateWithUserInfo } from "../../Actions/userActions"
+import { updateStateWithRoomInfo } from "../../Actions/roomActions"
+import { getWithExpiry } from "../../Actions/helperFunctions"
+
 
 const BookingForm = (props) => {
-
+    const { id } = useParams()
     const { roomImage } = props
-
     useEffect(() => {
-        fetch("http://localhost:3001/booking",{
+        const user = getWithExpiry("token")
+        props.updateStateWithUserInfo(user)
+        console.log(user)
+        fetch(`http://localhost:3001/booking/${id}`,{
             method: "GET",
             headers: {"Content-type": "application/json", 
-                authorization: `Bearer ${window.localStorage.getItem("token")}`,
+                authorization: `Bearer ${user.token}`,
                 credentials: "include"
-                }
+            }
         })
         .then((response) => response.json())
         .then((jsonResponse) => {
             console.log("Booking Feedback", jsonResponse)
-            if(jsonResponse.message === true) {
+            if(jsonResponse.message === "success") {
+                props.updateStateWithRoomInfo(jsonResponse.data.result)
                 props.updateStateWithAPI(true);
             }else{
                 props.history.push("/404")            
@@ -47,7 +53,7 @@ const BookingForm = (props) => {
                     <div className="bookingPageLeftSide">
                          <img src={roomImage} alt="ImageRoom14"/>
                     </div>
-                    <BookingPageRightDiv />
+                    <BookingPageRightDiv roomId={id}/>
                 </div>
                 <div className="spaceDiv"></div>         
                 <Footer2 />
@@ -61,14 +67,16 @@ const mapStateToProps = (state) => {
     const { roomReducer } = state
     return {
       renderPage: userReducer.renderPage,
-      roomImage: roomReducer.currentRoom.imageurl,
-
+      roomImage: roomReducer.imageurl,
+      roomName: roomReducer.imageurl,
     }
 }
   
   const mapDispatchToProps = (dispatch) => {
     return {
         updateStateWithAPI: (value) => dispatch(updateStateWithAPI(value)),
+        updateStateWithRoomInfo: (values) => dispatch(updateStateWithRoomInfo(values)),
+        updateStateWithUserInfo: (values) => dispatch(updateStateWithUserInfo(values)),
     }
   }
     

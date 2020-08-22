@@ -29,7 +29,8 @@ const initialState = {
     isavailable: false,
     imageurl: "",
     searchInput: {},
-    filteredRoom: []
+    filteredRoom: [],
+    roomId: 0
 }
 
 const roomReducer = (state = initialState, action) => {
@@ -61,8 +62,9 @@ const roomReducer = (state = initialState, action) => {
     }
 
     if(action.type === UPDATE_STATE_WITH_ROOM_INFO) {
-        console.log("actionss", action.values)
+        console.log("actionss", action)
         // Object.assign(newState.roomInfo, action.values)
+
         newState.capacity = action.values.capacity
         newState.waterDispenser = action.values.haswaterdispenser
         newState.airCondition = action.values.hasaircondition
@@ -88,6 +90,7 @@ const roomReducer = (state = initialState, action) => {
         newState.projector = action.values.hasprojector
         newState.isavailable = action.values.isavailable
         newState.imageurl = action.values.imageurl
+        newState.roomId = action.values.id
     }
 
     if(action.type === UPDATE_STATE_WITH_SEARCH_INPUT) {

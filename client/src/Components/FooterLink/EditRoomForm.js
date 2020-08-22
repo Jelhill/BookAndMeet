@@ -7,7 +7,7 @@ import { updateStateWithRoomInfo } from '../../Actions/roomActions'
 
 const EditRoomForm = (props) =>  {
     const {id} = useParams()
-    const { roomName, roomType, roomId, whiteBoard, airCondition, waterDispenser, capacity, roomLocation, isavailable, projector, imageurl } = props
+    const { roomName, roomType, whiteBoard, airCondition, waterDispenser, capacity, roomLocation, isavailable, projector, imageurl } = props
     const fetchRoom = () => {
         fetch(`http://localhost:3001/getRoomDetails/${id}`, {method: "GET"})
         .then((response) => response.json())
@@ -23,9 +23,7 @@ const EditRoomForm = (props) =>  {
     }
 
     const updateRoom = (e) => {
-        e.preventDefault()
-        // const body = {roomName, roomType, id, whiteBoard, airCondition, waterDispenser, capacity, roomLocation, isavailable, projector, imageurl}
-       
+        e.preventDefault()       
         fetch(`http://localhost:3001/editRoom/${id}`, {
             method: "PUT",
             headers: {"Content-type": "application/json"},

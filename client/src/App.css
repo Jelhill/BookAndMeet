@@ -1618,21 +1618,22 @@ body {
 }
 
 .checkInDiv label {
-  font-size: 15px;
+  font-size: 14px;
   /* margin-right: 10px; */
   font-family: var(--Roboto);
 }
 
 .dateTime {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   width: 49%;
-
+  justify-content: space-between;
 }
 
-.checkInDiv input[type="datetime-local"] {
-  height: 35px;
-  width: 100%;
+.checkInDiv input[type="date"], 
+.checkInDiv input[type="time"] {
+  height: 30px;
+  width: 62%;
   border: 1px solid #373F41;
   padding-left: 10px;
 }

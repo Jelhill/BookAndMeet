@@ -14,7 +14,7 @@ router.get("/home", (req, res) => {
 }) 
 
 // GET REQUESTS
-router.get("/booking", verify, userController.booking)
+router.get("/booking/:id", roomController.booking)
 router.get("/getRooms", roomController.getRoom)
 router.get("/getRoomDetails/:id", roomController.getRoomDetails)
 // POST REQUEST

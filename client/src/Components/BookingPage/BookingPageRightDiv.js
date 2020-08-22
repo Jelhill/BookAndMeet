@@ -1,19 +1,22 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { getUserBookingDetails } from "../../Actions/bookingActions"
+import { formatDateTime } from "../../Actions/helperFunctions"
 
 function BookingPageRightDiv(props) {
     
     const getBookingInputs = (e) => {
         props.getUserBookingDetails({[e.target.name]: e.target.value})
-        // this.userInputValidation(e)
+            
     }
 
     const bookRoom = (e) => {
         e.preventDefault()
-        const { checkIn, checkOut, surname, firstname, email} = props.bookersDetails
+        const { checkinDate, checkinTime, checkoutDate, checkoutTime, surname, firstname, email} = props.bookersDetails
         const { userId, roomId} = props
-        const body = {checkIn, checkOut, surname, firstname, email, userId, roomId} 
+        const checkin = formatDateTime(checkinDate, checkinTime)
+        const checkout = formatDateTime(checkoutDate, checkoutTime)
+        const body = {checkin, checkout, surname, firstname, email, userId, roomId} 
         fetch("http://localhost:3001/bookRoom", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
@@ -21,19 +24,7 @@ function BookingPageRightDiv(props) {
           })
           .then(response => response.json())
           .then((jsonResponse) => {
-            console.log(jsonResponse)
-            // if(jsonResponse.message === "success" && jsonResponse.token !== null){
-
-            //   const currentRoute = this.props.history.location.pathname;
-            //   setWithExpiry("token", jsonResponse.token, 180000, jsonResponse.payload)  
-            //   if(currentRoute === "/"){
-            //     this.props.history.push("home")
-            //   }else{
-            //     this.props.history.push(currentRoute)
-            //   }  
-              // window.location.reload(true)
-            //   this.onClose()               
-            // }       
+            console.log(jsonResponse)    
           })
           .catch((err) => console.log(err))
     }
@@ -48,12 +39,22 @@ function BookingPageRightDiv(props) {
             <label className="fillMessage">Fill the booking form</label>
             <div className="checkInDiv">
                 <div className="dateTime">
-                    <label>Check in</label>
-                    <input type="datetime-local" name="checkIn" onChange={getBookingInputs}/>
+                    <label>Check in Date :</label>
+                    <input type="date" name="checkinDate" onChange={getBookingInputs}/>
                 </div>
                 <div className="dateTime">
-                    <label>Check out</label>
-                    <input type="datetime-local" name="checkOut" onChange={getBookingInputs}/>
+                    <label>Check in time :</label>
+                    <input type="time" name="checkinTime" onChange={getBookingInputs}/>
+                </div>   
+            </div>    
+            <div className="checkInDiv">
+                <div className="dateTime">
+                    <label>Checkout date :</label>
+                    <input type="date" name="checkoutDate" onChange={getBookingInputs}/>
+                </div>
+                <div className="dateTime">
+                    <label>Checkout time :</label>
+                    <input type="time" name="checkoutTime" onChange={getBookingInputs}/>
                 </div>   
             </div>    
             
@@ -85,7 +86,9 @@ function BookingPageRightDiv(props) {
       bookersDetails: bookingReducer.userBookingDetails,
       userId: userReducer.userId,
       firstname: userReducer.userFirstname,
-      roomId: roomReducer.currentRoom.id
+    //   roomId: roomReducer.currentRoom.id,
+    //   roomId: roomReducer.roomId,
+    //   userId: userReducer.userId
     }
 }
 
