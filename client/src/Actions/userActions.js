@@ -11,12 +11,19 @@ export const SHOW_LOGOUT = "SHOW_LOGOUT"
 export const SUCCESS_MESSAGE = "SUCCESS_MESSAGE"
 export const GET_USER_COMMENTS = "GET_USER_COMMENTS"
 export const SUCCESSFUL_REG_MODAL = "SUCCESSFULL_REG_MODAL"
+export const GET_ADMINFORM_INPUT = " GET_ADMINFORM_INPUT"
 
 
 
 export const getSignupInputs = (values) => {
     return {
         type: GET_SIGNUP_INPUTS,
+        values: values
+    }
+}
+export const getAdminRegInputs = (values) => {
+    return {
+        type: GET_ADMINFORM_INPUT,
         values: values
     }
 }

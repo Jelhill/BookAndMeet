@@ -3462,7 +3462,7 @@ color: #373F41;
 }
 .adminFormWrapper{
   width: 80%;
-  height: 419px;
+  height: 450px;
   left: 350px;
   top: 169px;
   border: 1px solid #373F41;
@@ -3523,13 +3523,14 @@ color: rgba(0, 0, 0, 0.58);
   height: 20px;
 }
 .adminFormSubmitButton{
-  width: 80px;
+width: 80px;
 height: 25px;
 color:white;
 background: #46258A;
 border: 1px solid #46258A;
 box-sizing: border-box;
 border-radius: 6px;
+margin-top:0px;
 }
 .adminFormSubmitWrapper{
   margin:20px 0px 0px 350px;
@@ -3577,6 +3578,13 @@ margin:0px 10px 0px 20px;
 .successContentWrapper{
   margin-top:90px;
 
+}
+/* .adminform{
+  height:2000px;
+} */
+
+.modalDiv{
+  background-image: url("./Images/room0.jfif");
 }
 
 .searchNotification {
