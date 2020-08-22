@@ -2,12 +2,27 @@ import React from 'react'
 import Footer2 from '../Footer2'
 import ItemsInRoom from './ItemsInRoom'
 import Header from '../Header'
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { connect } from 'react-redux'
+import { useEffect } from 'react'
+import { updateStateWithRoomInfo } from "../../Actions/roomActions"
  
 function AboutRoom (props) {
-    
-        const { roomName, roomImage } = props
+    const { name, roomImage } = props
+    const { id } = useParams()
+    useEffect(() => {
+        fetch(`http://localhost:3001/getRoomDetails/${id}`, {
+            method: "GET",
+            headers: {"Content-type": "application/json"}
+        })
+        .then(response => response.json())
+        .then((jsonResponse) => {
+             console.log("NNNN", jsonResponse.response.result)
+             if(jsonResponse.message === "success")
+             props.updateStateWithRoomInfo(jsonResponse.response.result)
+        })
+        .catch(err => console.log(err))
+    })
     
         return (
             <div className="aboutRoomContainer">
@@ -22,7 +37,7 @@ function AboutRoom (props) {
                 
                 <div className="aboutRoomBelowBar">
                     <div className="title-conf">
-                        <h4>{roomName}</h4>
+                        <h4>{name}</h4>
                         <p>Room 301, 3rd Floor Main Building</p>
                     </div>
                     <span className="status">In Use</span>
@@ -31,7 +46,7 @@ function AboutRoom (props) {
                         <span>01:00:56</span>
                     </div>
                 </div>
-                
+
                 <div className="bodyWhiteDiv">
                     <div className="imageAndItems">
                         <img src={roomImage} alt="RoomImage"/>
@@ -54,9 +69,15 @@ function AboutRoom (props) {
         const { roomReducer } = state
         return {
           renderPage: userReducer.renderPage,
-          roomName: roomReducer.currentRoom.name,
-          roomImage: roomReducer.currentRoom.imageurl
+          roomName: roomReducer.name,
+          roomImage: roomReducer.imageurl,
+    
         }
     }
 
-    export default connect(mapStateToProps)(AboutRoom)
+    const mapDispatchToProps = (dispatch) => {
+        return {
+            updateStateWithRoomInfo: (values) => dispatch(updateStateWithRoomInfo(values))
+        }
+    }
+    export default connect(mapStateToProps, mapDispatchToProps)(AboutRoom)

@@ -10,7 +10,8 @@ import {
     UPDATE_STATE_FOR_HEADER,
     SHOW_LOGOUT,
     SUCCESS_MESSAGE,
-    SUCCESSFUL_REG_MODAL
+    SUCCESSFUL_REG_MODAL,
+    UPDATE_STATE_WITH_USER_INFO
  } from "../Actions/userActions"
 
 const initialState = {
@@ -29,7 +30,7 @@ const initialState = {
     loggedInUserInfo: {},
     feedBackFormDetails:{},
     populateFeedbackPage:[],
-
+    
 }   
 
 const userReducer = (state = initialState, action) => {
@@ -82,6 +83,10 @@ const userReducer = (state = initialState, action) => {
         newState.showSuccessfulRegModal = true
         newState.showSignUp = false
         
+    }
+
+    if(action.type === UPDATE_STATE_WITH_USER_INFO) {
+       newState.userId = action.values.id
     }
 
     return newState

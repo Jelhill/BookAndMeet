@@ -41,10 +41,7 @@ exports.login = (req, res) => {
 }
 
 
-exports.booking = (req, res) => {
-    res.send({message: true})
-}
-exports.feedbackComments=async(req,res,next)=>{
+exports.feedbackComments = async(req,res,next)=>{
     try{
           const comments= await db.query("SELECT firstname,lastname,comments FROM feedbacks");
           console.log(comments.rows);

@@ -39,8 +39,8 @@ function App() {
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route exact path="/home" component={Search} />
-        <Route exact path="/booking" component={BookingForm} />
-        <Route exact path="/aboutRoom" component={AboutRoom} />
+        <Route exact path="/booking/:id" component={BookingForm} />
+        <Route exact path="/aboutRoom/:id" component={AboutRoom} />
         <Route exact path="/userProfile" component={UserProfilePage} />
         <Route exact path="/Login" component={ Login } />
         <Route exact path="/Signup" component={SignUp} />

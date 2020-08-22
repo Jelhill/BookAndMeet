@@ -4,7 +4,7 @@ const SECRET = process.env.SECRET
 
 
 exports.bookRoom = (req, res) => {
-    console.log(req.body)
+    console.log("req body", req.body)
     const booking = new Booking(req.body)
     booking.bookNow()
     .then(() => {

@@ -38,3 +38,12 @@ exports.editRoom = (req, res) => {
     })
     .catch((error) => res.send({message: error}))
 }
+
+exports.booking = (req, res) => {
+    const { id } = req.params
+    console.log("!!!", id)
+    const room = new Room(id)
+    room.getRoomById()
+    .then((data) => res.send({message: "success", data}))
+    .catch((err) => res.send({message: err}))
+}
