@@ -15,3 +15,30 @@ exports.editRoom = (req, res) => {
     .then((result) => {res.json({message: "Room Edited Successfully"})})
     .catch((error) => {res.json({message: error})})
 }
+
+exports.adminSignUp = (req, res) => {
+    const admin = new Admin(req.body)
+    admin.adminsignUp()
+    .then((result) => {
+        console.log(result)
+        res.json({message: "Registered Successfully"})
+    })
+    .catch((error) => {res.json({message: error})})
+}
+
+exports.login = (req, res) => { 
+    const admin = new Admin (req.body)
+    admin.authenticateUser().then((response) => {
+        const payload = {
+            id: response.result.id,
+            firstname: response.result.firstname
+        }
+        jwt.sign(payload, SECRET, {expiresIn: "600s"}, (err, token) => {
+            if(err) res.send({message: "Failed"})
+            res.send({message: "success", token, payload})
+        })
+
+    }).catch((err) => {
+        res.send({message: err})
+    })
+}

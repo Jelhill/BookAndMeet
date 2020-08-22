@@ -13,6 +13,15 @@ exports.userSignUp = (req, res) => {
     })
     .catch((error) => {res.json({message: error})})
 }
+// exports.adminSignUp = (req, res) => {
+//     const user = new User(req.body)
+//     user.adminsignUp()
+//     .then((result) => {
+//         console.log(result)
+//         res.json({message: "Registered Successfully"})
+//     })
+//     .catch((error) => {res.json({message: error})})
+// }
 
 exports.login = (req, res) => {
     const user = new User(req.body)

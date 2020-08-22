@@ -1,5 +1,6 @@
 import { 
-    GET_SIGNUP_INPUTS, 
+    GET_SIGNUP_INPUTS,
+    GET_ADMINFORM_INPUT, 
     GET_FEEDBACK_INPUTS,
     GET_IMAGE_INPUTS, 
     SHOW_SIGNUP,
@@ -15,6 +16,7 @@ import {
 
 const initialState = {
     signUpFormDetails: {},
+    adminRegFormDetails: {},
     imageInputs: {},
     showSignUp: false,
     showSignIn: false,
@@ -36,6 +38,9 @@ const userReducer = (state = initialState, action) => {
 
     if(action.type === GET_SIGNUP_INPUTS) {
         Object.assign(newState.signUpFormDetails, action.values)
+    }
+    if(action.type === GET_ADMINFORM_INPUT) {
+        Object.assign(newState.adminRegFormDetails, action.values)
     }
     if(action.type === GET_FEEDBACK_INPUTS){
         Object.assign(newState.feedBackFormDetails,action.values)

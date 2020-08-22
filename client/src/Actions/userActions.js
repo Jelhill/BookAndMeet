@@ -12,12 +12,19 @@ export const SUCCESS_MESSAGE = "SUCCESS_MESSAGE"
 export const GET_USER_COMMENTS = "GET_USER_COMMENTS"
 export const SUCCESSFUL_REG_MODAL = "SUCCESSFULL_REG_MODAL"
 export const UPDATE_STATE_WITH_USER_INFO = "UPDATE_STATE_WITH_USER_INFO"
+export const GET_ADMINFORM_INPUT = " GET_ADMINFORM_INPUT"
 
 
 
 export const getSignupInputs = (values) => {
     return {
         type: GET_SIGNUP_INPUTS,
+        values: values
+    }
+}
+export const getAdminRegInputs = (values) => {
+    return {
+        type: GET_ADMINFORM_INPUT,
         values: values
     }
 }

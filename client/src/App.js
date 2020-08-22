@@ -7,7 +7,7 @@ import BookingForm from './Components/BookingPage/BookingForm';
 import { Fragment } from 'react';
 import UserProfilePage from './Components/ProfilePage/UserProfilePage';
 import Login from './Components/Modals/Login';
-import SignUp from './Components/Modals/Signup';
+import SignUp from './Components/Modals/signup';
 import CompleteSignUp from "./Components/Modals/CompleteSignUp"
 import Error404 from "./Components/404"
 import imageLoader from "./Components/imageLoader"
@@ -23,6 +23,9 @@ import History from "./Components/ProfilePage/History"
 import AdminHeader from './Components/AdminHeader';
 import AddAdminForm from './Components/FooterLink/AddAdminForm';
 import EditRoomForm from './Components/FooterLink/EditRoomForm';
+import AdminPortal from './Components/FooterLink/AdminPortal';
+import AdminLogin from './Components/Modals/AdminLogin';
+import LandingPageHeader from './Components/Header/LandingPageHeader';
 
 
 
@@ -30,7 +33,8 @@ import EditRoomForm from './Components/FooterLink/EditRoomForm';
 function App() {
 
   return (
-    // <SuccessRegisterModal/>
+    //  <AdminHeader/>
+
     <Fragment>    
       <Switch>
         <Route exact path="/" component={Landing} />
@@ -46,7 +50,7 @@ function App() {
         <Route exact path="/imageLoader" component={imageLoader} /> 
         <Route exact path="/aboutUs" component={AboutUs} />
         <Route exact path="/adminFeedback" component={Feedback} />
-        <Route exact path="/admin" component={Admin} />
+        <Route exact path="/admin" component={AdminLogin} />
         <Route exact path="/meetingRooms" component={MeetingRooms}/>
         <Route exact path="/adminDashboard" component={Admin}/>
         <Route exact path="/addnewroom" component={AddNewRoom}/>
@@ -55,9 +59,10 @@ function App() {
         <Route exact path="/userHistory" component={History}/>
         <Route exact path="/feedbackForm" component={FeedbackForm}/>
         <Route exact path="/adminHeader" component={AdminHeader}/>
-        <Route exact path="/addAdminForm" component={AddAdminForm}/> 
-        <Route exact path="/addAdminForm" component={AddAdminForm}/>
+        <Route exact path="/addadminForm" component={AddAdminForm}/> 
+        {/* <Route exact path="/addAdminForm" component={AddAdminForm}/> */}
         <Route exact path="/editRoomForm/:id" component={EditRoomForm}/>
+        <Route exact path= "/adminlanding" component={Admin}/>
       </Switch>
     </Fragment> 
   );
