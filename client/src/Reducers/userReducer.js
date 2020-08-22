@@ -1,5 +1,6 @@
 import { 
     GET_SIGNUP_INPUTS, 
+    GET_SEARCH_INPUTS,
     GET_FEEDBACK_INPUTS,
     GET_IMAGE_INPUTS, 
     SHOW_SIGNUP,
@@ -27,7 +28,7 @@ const initialState = {
     loggedInUserInfo: {},
     feedBackFormDetails:{},
     populateFeedbackPage:[],
-
+   
 }   
 
 const userReducer = (state = initialState, action) => {
@@ -36,6 +37,7 @@ const userReducer = (state = initialState, action) => {
     if(action.type === GET_SIGNUP_INPUTS) {
         Object.assign(newState.signUpFormDetails, action.values)
     }
+    
     if(action.type === GET_FEEDBACK_INPUTS){
         Object.assign(newState.feedBackFormDetails,action.values)
     }

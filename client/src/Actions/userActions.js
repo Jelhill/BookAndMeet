@@ -20,6 +20,7 @@ export const getSignupInputs = (values) => {
         values: values
     }
 }
+
 export const getUserComments = (values) => {
     return {
         type: GET_USER_COMMENTS,

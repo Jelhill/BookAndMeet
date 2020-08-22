@@ -1,6 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-export default class seachFilter extends Component {
+
+export default class SearchFilter extends Component {
+
     render() {
         return (
             <div className="searchAreaDiv">
@@ -28,3 +30,6 @@ export default class seachFilter extends Component {
         )
     }
 }
+
+
+

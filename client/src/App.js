@@ -35,23 +35,23 @@ function App() {
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route exact path="/home" component={Search} />
-        <Route exact path="/booking" component={BookingForm} />
+         <Route exact path="/booking" component={BookingForm} />
         <Route exact path="/aboutRoom" component={AboutRoom} />
         <Route exact path="/userProfile" component={UserProfilePage} />
         <Route exact path="/Login" component={ Login } />
         <Route exact path="/Signup" component={SignUp} />
-        {/* <Route exact path="/Logout" component={Logout} />  */}
+         {/* <Route exact path="/Logout" component={Logout} />   */}
          <Route exact path="/completeSignUp" component={CompleteSignUp} />
         <Route exact path="/404" component={Error404} />
         <Route exact path="/imageLoader" component={imageLoader} /> 
         <Route exact path="/aboutUs" component={AboutUs} />
         <Route exact path="/adminFeedback" component={Feedback} />
         <Route exact path="/admin" component={Admin} />
-        <Route exact path="/meetingRooms" component={MeetingRooms}/>
-        <Route exact path="/adminDashboard" component={Admin}/>
-        <Route exact path="/addnewroom" component={AddNewRoom}/>
-        {/* <Route exact path="/editroom" component={EditRoom}/> */}
-        <Route exact path="/adminBooking" component={Bookings}/>
+        <Route exact path="/meetingRooms" component={MeetingRooms}/> 
+        <Route exact path="/adminDashboard" component={Admin}/> 
+        <Route exact path="/addnewroom" component={AddNewRoom}/> 
+         {/* <Route exact path="/editroom" component={EditRoom}/>  */}
+         <Route exact path="/adminBooking" component={Bookings}/>
         <Route exact path="/userHistory" component={History}/>
         <Route exact path="/feedbackForm" component={FeedbackForm}/>
         <Route exact path="/adminHeader" component={AdminHeader}/>
