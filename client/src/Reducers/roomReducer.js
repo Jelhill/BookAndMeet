@@ -6,6 +6,8 @@ import { GET_ROOM_FORM_INPUTS,
     SAVE_CURRENT_ROOM ,
     UPDATE_STATE_WITH_ROOM_INFO,
     EDIT_FORM_INPUTS,
+    UPDATE_STATE_WITH_SEARCH_INPUT,
+    UPDATE_STATE_WITH_FILTERED_ROOM
 } from "../Actions/roomActions"
 
 const initialState = {
@@ -26,6 +28,8 @@ const initialState = {
     projector: false,
     isavailable: false,
     imageurl: "",
+    searchInput: {},
+    filteredRoom: []
 }
 
 const roomReducer = (state = initialState, action) => {
@@ -86,6 +90,13 @@ const roomReducer = (state = initialState, action) => {
         newState.imageurl = action.values.imageurl
     }
 
+    if(action.type === UPDATE_STATE_WITH_SEARCH_INPUT) {
+        Object.assign(newState.searchInput, action.values)
+    }
+
+    if(action.type === UPDATE_STATE_WITH_FILTERED_ROOM) {
+        newState.filteredRoom = action.values
+    }
     return newState
 }
 

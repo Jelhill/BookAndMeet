@@ -38,20 +38,26 @@ class Search extends Component {
         this.props.saveCurrentRoom(room)
         this.props.history.push("/aboutRoom")
     }
+
+    
     render() {
+        const renderingRoom = this.props.filteredRoom.length ? this.props.filteredRoom : this.props.rooms
+        console.log("rendering", renderingRoom)
         return (
             <div className="homePageWrapper">
                 <Header />
-                <SearchFilter />
+                <SearchFilter />                
+                    <small className="searchNotification">{ this.props.filteredRoom.length ? `${this.props.filteredRoom.length} Rooms Found`  : "No Record Found"}</small>
+
                 <div className="bookingRoomSearchWrapper">
-                    {this.props.rooms.map((room, index) => {
+                    {renderingRoom.map((room, index) => {
                       return <div key={index}className="room1">
                         <img src={room.imageurl} alt="Room 5" />
                         <div className="roomFeatures">
                             <div className="boardRoomFeatures">
                                 <Link onClick={() => this.viewRoomDetails(room)} ><span>{`${room.name}`}</span></Link>
                                     <span className="roomTypeSpan">{`(${room.type})`}</span>
-                                <label>{room.available}</label>
+                                <label>{room.available ? "Available" : "In use"}</label>
                             </div>
                             <div className="roomNumber">
                                 <label>{room.location}</label>
@@ -115,7 +121,8 @@ class Search extends Component {
 const mapStateToProps = (state) => {
     const { roomReducer } = state
     return {
-        rooms: roomReducer.rooms
+        rooms: roomReducer.rooms,
+        filteredRoom: roomReducer.filteredRoom
     }    
 }
 

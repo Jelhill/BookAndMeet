@@ -29,7 +29,7 @@ export default class UserProfilePage extends Component {
             <div>
                 <Header />
                 <div className="userProfileBody">
-                    <div className="userProfileLeft">
+                    {/* <div className="userProfileLeft">
                         <h5>User Profile</h5>
                         <ul>
                             <Link><li>User Info</li></Link>
@@ -47,7 +47,7 @@ export default class UserProfilePage extends Component {
                         <Link onClick={e=>{this.onClose(e)}} ><p className="logoutlink2">No</p></Link>
                     </div>
                     </Logout>
-                    </div>
+                    </div> */}
                     <div className="userProfileRight">
                         <div className="avatarDiv">
                             <img src={avatar} alt="ImagePhoto"/>
@@ -86,7 +86,9 @@ export default class UserProfilePage extends Component {
                                 <input type="text" name="" />
                             </div>
                         </div>    
-                        <button className="profileButton">Save Changes</button>                
+                        <div className="profileButtonDiv">
+                        <button className="profileButton">Save Changes</button> 
+                        </div>               
                     </div>
                 </div> 
                 <Footer2 />                              

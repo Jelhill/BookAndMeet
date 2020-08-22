@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import AdminSideMenu from './AdminSideMenu';
 import Header from '../Header';
-import { Bar } from "react-chartjs-2"
+import { Line } from "react-chartjs-2"
 import { connect } from 'react-redux';
 import AdminHeader from '../AdminHeader'
 
@@ -39,7 +39,7 @@ class Admin extends Component {
                     <div className="graphDiv">
                         <h6>Booking Rate</h6>
                         
-                        <Bar data={this.props.chartData}
+                        <Line data={this.props.chartData}
                             height={60}
                             width={200}
                             options={{maintainAspectRatio: false}}
