@@ -3,12 +3,13 @@ import AdminSideMenu from './AdminSideMenu';
 import Header from '../Header';
 import { Bar } from "react-chartjs-2"
 import { connect } from 'react-redux';
+import AdminHeader from '../AdminHeader'
 
 class Admin extends Component {
     render() {
         return (
             <Fragment>
-            <Header />
+            <AdminHeader/>
             <div className="adminLandingPageWrapper">
             <AdminSideMenu />
             <div className="adminRightSide">

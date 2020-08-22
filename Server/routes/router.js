@@ -4,7 +4,8 @@ const userController = require("../Controller/userController")
 const adminController = require("../Controller/adminController")
 const roomController = require("../Controller/roomController")
 const bookingController = require("../Controller/bookingController")
-const feedbacks = require("../Model/Feedback")
+// const adminRegController = require("../Model/AdminPersonnel")
+const feedbackController = require("../Model/Feedback")
 require('dotenv').config()
 const verify = require("../middleware/verify")
 
@@ -17,13 +18,15 @@ router.get("/home", (req, res) => {
 router.get("/booking", verify, userController.booking)
 router.get("/getRooms", roomController.getRoom)
 router.get("/getRoomDetails/:id", roomController.getRoomDetails)
+router.get("/feedbackComments", userController.feedbackComments);
 // POST REQUEST
 router.post("/signUp", userController.userSignUp);
-router.post("/login", userController.login)
-router.post("/addRoom", adminController.addRoom)
+router.post("/login", userController.login);
+router.post("/addRoom", adminController.addRoom);
+router.post("/adminsignup", adminController.adminSignUp);
+router.post("/adminlogin",adminController.login);
 // router.get("/booking", verify, userController.booking);
-router.get("/feedbackComments", userController.feedbackComments);
-router.post("/feedback", feedbacks.feedBack)
+router.post("/feedback", feedbackController.feedBack)
 //PATCH REQUEST
 router.patch("/addRoom/:id", adminController.editRoom)
 router.post("/bookRoom", bookingController.bookRoom)
