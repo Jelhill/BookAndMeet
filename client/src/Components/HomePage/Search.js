@@ -9,8 +9,8 @@ import ImageAirConditioner from "../../Images/air-conditioner.png";
 import ImageProjector from "../../Images/projector.png";
 import ImageWaterCooler from "../../Images/water-cooler.png";
 import ImagePresentation from "../../Images/presentation.png";
-import ImageFriend from "../../Images/friend.png";
-import Filter from '../LandingPage/Filter';
+// import ImageFriend from "../../Images/friend.png";
+// import Filter from '../LandingPage/Filter';
 
 
 
@@ -39,41 +39,36 @@ class Search extends Component {
         this.props.saveCurrentRoom(room)
         this.props.history.push("/aboutRoom")
     }
+
+    
     render() {
+        const renderingRoom = this.props.filteredRoom.length ? this.props.filteredRoom : this.props.rooms
+        console.log("rendering", renderingRoom)
         return (
             <div className="homePageWrapper">
                 <Header />
-                <SearchFilter />
-                <Filter type={this.props.rooms} seats={this.props.rooms} date={this.props.rooms} handleChangeType={this.handleChangeType}
-                    handleChangeSeats={this.handleChangeSeats} handleChangeDate={this.handleChangeDate} count={this.props.rooms.length} />
-                    <hr/>
+                <SearchFilter />                
+                    <small className="searchNotification">{ this.props.filteredRoom.length ? `${this.props.filteredRoom.length} Rooms Found`  : "No Record Found"}</small>
+
                 <div className="bookingRoomSearchWrapper">
-                    {this.props.rooms.map((room, index) => {
-                        return <div key={index} className="room1">
-                            <img src={room.imageurl} alt="Room 5" />
-                            <div className="roomFeatures">
-                                <div className="boardRoomFeatures">
-                                    <Link onClick={() => this.viewRoomDetails(room)} ><span>{`${room.name}`}</span></Link>
+                    {renderingRoom.map((room, index) => {
+                      return <div key={index}className="room1">
+                        <img src={room.imageurl} alt="Room 5" />
+                        <div className="roomFeatures">
+                            <div className="boardRoomFeatures">
+                                <Link onClick={() => this.viewRoomDetails(room)} ><span>{`${room.name}`}</span></Link>
                                     <span className="roomTypeSpan">{`(${room.type})`}</span>
-                                    <label>{room.available}</label>
-                                </div>
-                                <div className="roomNumber">
-                                    <label>{room.location}</label>
-                                </div>
-
-                                <div className="features">
-                                    <p>Features:</p>
-                                </div>
-                                <div className="featureAccessories">
-                                    <div className="features1">
-                                        <span><img src={ImageFriend} alt="Room 5" /></span>
-                                        <div className="flexRoomItems">
-
-                                            <span><p>Capacity</p></span>
-                                            <span><p>{room.capacity} seats</p></span>
-                                        </div>
-                                    </div>
-                                </div>
+                                <label>{room.available ? "Available" : "In use"}</label>
+                            </div>
+                            </div>
+                            <div className="roomNumber">
+                                <label>{room.location}</label>
+                            </div>
+                           
+                            <div className="features">
+                                <p>Features:</p>
+                            </div>
+                            <div className="featureAccessories">
                                 <div className="features1">
                                     <span> <img src={ImageAirConditioner} alt="Room 5" /></span>
                                     <div className="flexRoomItems">
@@ -112,15 +107,19 @@ class Search extends Component {
                 </div><br />
                 <Footer2 />
             </div>
+            
+        
         )
+        
     }
 }
 
 const mapStateToProps = (state) => {
     const { roomReducer } = state
     return {
-        rooms: roomReducer.rooms
-    }
+        rooms: roomReducer.rooms,
+        filteredRoom: roomReducer.filteredRoom
+    }    
 }
 
 const mapDispatchToProps = (dispatch) => {

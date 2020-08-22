@@ -51,7 +51,7 @@ Room.prototype.editRoomById = function() {
         const { formInputs, id } = this.data
         const formKeys = Object.keys(formInputs)
         const formValues = Object.values(formInputs)
-        db.query(`UPDATE rooms SET (${formKeys.toString()}) = (${formValues.map(elem => typeof elem === "string" ? `'${elem}'` : elem)})`) 
+        db.query(`UPDATE rooms SET (${formKeys.toString()}) = (${formValues.map(elem => typeof elem === "string" ? `'${elem}'` : elem)}) WHERE id = ${id}`) 
         .then((result) => {
             resolve({message: "success", result})
         })            
