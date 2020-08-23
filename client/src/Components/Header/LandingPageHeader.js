@@ -1,25 +1,14 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import logo from "../../Images/meeting.png"
-import Login from "../Modals/login";
-import SignUp from "../Modals/signup";
+import Login from "../Modals/Login";
+import SignUp from "../Modals/Signup";
 import { connect } from "react-redux"
 import { showSignup, showSignIn} from "../../Actions/userActions"
 import SuccessRegisterModal from '../Modals/SuccessRegisterModal';
 
 
 class LandingPageHeader extends Component {
-    // state = {
-    //     show: false,
-    //     show2: false
-    // };
-    
-    // showLogin = e => {
-    //     this.setState({
-    //     show: !this.state.show
-    //     });
-    //     this.props.showLogin(false)
-    // };
     
     handleSignIn = () => this.props.showSignin(true)
     openSignUpModal = () => this.props.showSignup(true)
@@ -37,8 +26,8 @@ class LandingPageHeader extends Component {
                 <i className="fa fa-bars" id="checkBtn" />
             </label>
           <div className="loginSignupWrapper" >
-            <Link id="login" to="#" onClick={this.handleSignIn}>Login</Link>
-            <Link id="signup" to="#" onClick={this.openSignUpModal}>Sign up</Link>
+            <span id="login" onClick={this.handleSignIn}>Login</span>
+            <span id="signup" onClick={this.openSignUpModal}>Sign up</span>
             <Login />  
             <SignUp />
             <SuccessRegisterModal />
