@@ -54,7 +54,7 @@ function AboutRoom (props) {
                     </div>
                     
                     <div className="roomInfoBtnDIv">
-                        <Link to={"/booking"}><span>Book now</span></Link>
+                        <Link to={`/booking/${id}`}><span>Book now</span></Link>
                         {/* <Link to={{pathname:"/booking", room: room}}><span>Book now</span></Link> */}
                     </div>
                 </div>  

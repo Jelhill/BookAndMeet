@@ -2207,7 +2207,7 @@ body {
   padding-top: 8px;
   font-family: var(--Roboto) sans-serif;
 }
-.features1 span img{
+.features1 span img, .roomInfoSpanDiv span img{
   width: 20px;
   height: 20px;
   margin-right: 20px;
@@ -3590,6 +3590,7 @@ margin:0px 10px 0px 20px;
 }
 .Container404Page{
   width: 100vw;
+  height: 100vh;
 }
 
 .Error{
@@ -3598,9 +3599,9 @@ text-align: center;
 }
 
 .Big404{
-  margin-top: 10%;
-  color:black;
-  height:100px; 
+  margin-top: 5;
+  color: black;
+  height: 100px; 
   font-size: 180px;
 }
 .Ooops{
@@ -3614,10 +3615,22 @@ text-align: center;
   margin-bottom: 3%;
 }
 .Button404{
-  background-color: rgb(58, 170, 223);
+  display: block;
+  background-color: var(--mainPurple);
   width: 200px;
   height: 40px;
+  margin: auto;
   color: var(--mainWhite);
   border: none;
   border-radius: 2px;
+  text-align: center;
+  text-decoration: none;
+  padding-top: 5px;
+  border-radius: 3px;
+}
+.Button404:hover{
+  text-decoration: none;
+  opacity: 0.8;
+  color: var(--mainWhite);
+  
 }
