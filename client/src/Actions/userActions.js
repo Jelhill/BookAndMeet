@@ -22,16 +22,12 @@ export const getSignupInputs = (values) => {
         values: values
     }
 }
-<<<<<<< HEAD
-
-=======
 export const getAdminRegInputs = (values) => {
     return {
         type: GET_ADMINFORM_INPUT,
         values: values
     }
 }
->>>>>>> development
 export const getUserComments = (values) => {
     return {
         type: GET_USER_COMMENTS,

@@ -101,11 +101,8 @@ class Search extends Component {
                                 {/* <Link to={{pathname: "/booking", room: room}} onClick={() => this.saveCurrentRoom(room)}><div className="bookNowLink">Book Now</div></Link>                             */}
                                 <Link onClick={() => this.saveCurrentRoom(room)}><div className="bookNowLink">Book Now</div></Link>
                             </div>
-<<<<<<< HEAD
-=======
                             {/* <Link to={{pathname: "/booking", room: room}} onClick={() => this.saveCurrentRoom(room)}><div className="bookNowLink">Book Now</div></Link>                             */}
                             <Link to={`/booking/${room.id}`}><div className="bookNowLink">Book Now</div></Link>                            
->>>>>>> development
                         </div>
                     })}
 

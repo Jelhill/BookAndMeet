@@ -3593,17 +3593,17 @@ margin:0px 10px 0px 20px;
 
 
 }
+.Container404Page{
+  width: 100vw;
+}
 
 .Error{
-  width: 100%; 
-  background: #ffffff;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 text-align: center;
 
 }
 
 .Big404{
-  margin-top: 15%;
+  margin-top: 10%;
   color:black;
   height:100px; 
   font-size: 180px;
@@ -3622,4 +3622,7 @@ text-align: center;
   background-color: rgb(58, 170, 223);
   width: 200px;
   height: 40px;
+  color: var(--mainWhite);
+  border: none;
+  border-radius: 2px;
 }
