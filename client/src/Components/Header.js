@@ -3,7 +3,7 @@ import { Link, withRouter } from "react-router-dom"
 import logo from "../Images/meeting.png"
 import { connect } from 'react-redux'
 import { updateStateForHeader, showSignup, showSignIn, showLogout } from "../Actions/userActions"
-import Login from './Modals/Login'
+import Login from './Modals/login'
 import Signup from './Modals/signup'
 import { getWithExpiry } from "../Actions/helperFunctions"
 import Logout from './Modals/Logout'

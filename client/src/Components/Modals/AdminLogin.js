@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
-import { getSignupInputs} from '../../Actions/userActions'
+import {  showAdminSignup, getSignupInputs} from '../../Actions/userActions'
 import { setWithExpiry } from "../../Actions/helperFunctions"
  
 class AdminLogin extends Component {
+    onClose = () => {
+        // e.preventDefault()
+        this.props.showAdminLogin(false)  
+    }
+
     getInput = (e) => {
         this.props.getSignupInputs({[e.target.name]:e.target.value})
     }
@@ -22,8 +27,8 @@ class AdminLogin extends Component {
           // const unprotectedRoutes = ["home", "aboutRoom" ]
           const currentRoute = this.props.history.location.pathname;
           setWithExpiry("token", jsonResponse.token, 7200000, jsonResponse.payload)  
-          if(currentRoute === "/admin"){
-            this.props.history.push("/adminlanding")
+          if(currentRoute === "/"){
+            this.props.history.push("adminlanding")
           }else{
             this.props.history.push(currentRoute)
           }  
@@ -34,6 +39,9 @@ class AdminLogin extends Component {
       .catch((err) => console.log(err))
     }
     render() {
+        if(!this.props.showadminsignup){
+            return null;
+        }
         return (
             <div className="modalDiv">
                 <div className="signupmodal">
@@ -94,14 +102,14 @@ const mapStateToProps = (state) => {
     // const now = new Date()
     //     console.log("Login State", now.getTime(), userReducer.loggedInUserInfo)
     return {
-      showSignIn: userReducer.showSignIn,
-      signUpFormDetails: userReducer.signUpFormDetails,
+        showadminsignup: userReducer.showAdminLogin,
+        signUpFormDetails: userReducer.signUpFormDetails,
     }
 }
   
   const mapDispatchToProps = (dispatch) => {
     return {
-    //   showSignin: (values) => dispatch(showSignIn(values)),
+        showAdminLogin: (values) => dispatch(showAdminSignup(values)), 
       getSignupInputs: (values) => dispatch(getSignupInputs(values)),
     }
   }

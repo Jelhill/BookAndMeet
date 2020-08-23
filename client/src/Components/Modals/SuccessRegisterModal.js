@@ -26,7 +26,7 @@ class SuccessRegisterModal extends Component {
             <h1 className="boardRoom">BoardRoom</h1>
           </div>
           <div className="rightModal">
-          <button className="closeWrapper"><span className="close" onClick={this.onClose} >&times;</span></button>
+          {/* <button className="closeWrapper"><span className="close" onClick={this.onClose} >&times;</span></button> */}
                 <div>
                   <div className="successContentWrapper">
                   <h1 className="thankyou">Thank You </h1>
