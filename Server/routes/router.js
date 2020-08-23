@@ -15,7 +15,7 @@ router.get("/home", (req, res) => {
 }) 
 
 // GET REQUESTS
-router.get("/booking/:id", roomController.booking)
+router.get("/booking/:id", verify, roomController.booking)
 router.get("/getRooms", roomController.getRoom)
 router.get("/getRoomDetails/:id", roomController.getRoomDetails)
 router.get("/feedbackComments", userController.feedbackComments);

@@ -9,9 +9,7 @@ import ImageAirConditioner from "../../Images/air-conditioner.png";
 import ImageProjector from "../../Images/projector.png";
 import ImageWaterCooler from "../../Images/water-cooler.png";
 import ImagePresentation from "../../Images/presentation.png";
-// import ImageFriend from "../../Images/friend.png";
-// import Filter from '../LandingPage/Filter';
-
+import ImageFriend from "../../Images/friend.png";
 
 
 class Search extends Component {
@@ -60,7 +58,7 @@ class Search extends Component {
                                     <span className="roomTypeSpan">{`(${room.type})`}</span>
                                 <label>{room.available ? "Available" : "In use"}</label>
                             </div>
-                            </div>
+                            
                             <div className="roomNumber">
                                 <label>{room.location}</label>
                             </div>
@@ -69,6 +67,13 @@ class Search extends Component {
                                 <p>Features:</p>
                             </div>
                             <div className="featureAccessories">
+                                <div className="features1">
+                                    <span> <img src={ImageFriend} alt="Room 5" /></span>
+                                    <div className="flexRoomItems">
+                                        <span><p>Capacity</p></span>
+                                        <span><p>{room.capacity} seats</p></span>
+                                    </div>
+                                </div>
                                 <div className="features1">
                                     <span> <img src={ImageAirConditioner} alt="Room 5" /></span>
                                     <div className="flexRoomItems">
@@ -98,11 +103,10 @@ class Search extends Component {
                                         <span><p>{room.hasWhiteBoard ? "Yes" : "No"}</p></span>
                                     </div>
                                 </div>
-                                {/* <Link to={{pathname: "/booking", room: room}} onClick={() => this.saveCurrentRoom(room)}><div className="bookNowLink">Book Now</div></Link>                             */}
-                                <Link onClick={() => this.saveCurrentRoom(room)}><div className="bookNowLink">Book Now</div></Link>
                             </div>
-                            {/* <Link to={{pathname: "/booking", room: room}} onClick={() => this.saveCurrentRoom(room)}><div className="bookNowLink">Book Now</div></Link>                             */}
+                            
                             <Link to={`/booking/${room.id}`}><div className="bookNowLink">Book Now</div></Link>                            
+                            </div>
                         </div>
                     })}
 
