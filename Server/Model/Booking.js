@@ -25,10 +25,10 @@ Booking.prototype.bookNow = function() {
     return new Promise(async (resolve, reject) => {
         const now = new Date()  
         const todaysDate = `${now.getDate()}/${now.getMonth() + 1}/${now.getFullYear()}`
-        const { checkIn, checkOut, userId, roomId } = this.data
+        const { checkin, checkout, userId, roomId } = this.data
         if(!this.errors.length){
             await db.query("INSERT INTO booking (checkin, checkout, userid, roomid, bookingdate) VALUES ($1, $2, $3, $4, $5)",
-            [checkIn, checkOut, userId, roomId, todaysDate])
+            [checkin, checkout, userId, roomId, todaysDate])
             resolve("Room Booked Succefully")
         }else{      
             reject(this.errors)

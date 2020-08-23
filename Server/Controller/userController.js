@@ -13,6 +13,15 @@ exports.userSignUp = (req, res) => {
     })
     .catch((error) => {res.json({message: error})})
 }
+// exports.adminSignUp = (req, res) => {
+//     const user = new User(req.body)
+//     user.adminsignUp()
+//     .then((result) => {
+//         console.log(result)
+//         res.json({message: "Registered Successfully"})
+//     })
+//     .catch((error) => {res.json({message: error})})
+// }
 
 exports.login = (req, res) => {
     const user = new User(req.body)
@@ -32,10 +41,7 @@ exports.login = (req, res) => {
 }
 
 
-exports.booking = (req, res) => {
-    res.send({message: true})
-}
-exports.feedbackComments=async(req,res,next)=>{
+exports.feedbackComments = async(req,res,next)=>{
     try{
           const comments= await db.query("SELECT firstname,lastname,comments FROM feedbacks");
           console.log(comments.rows);

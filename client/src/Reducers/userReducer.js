@@ -1,6 +1,6 @@
 import { 
-    GET_SIGNUP_INPUTS, 
-    GET_SEARCH_INPUTS,
+    GET_SIGNUP_INPUTS,
+    GET_ADMINFORM_INPUT, 
     GET_FEEDBACK_INPUTS,
     GET_IMAGE_INPUTS, 
     SHOW_SIGNUP,
@@ -10,11 +10,13 @@ import {
     UPDATE_STATE_FOR_HEADER,
     SHOW_LOGOUT,
     SUCCESS_MESSAGE,
-    SUCCESSFUL_REG_MODAL
+    SUCCESSFUL_REG_MODAL,
+    UPDATE_STATE_WITH_USER_INFO
  } from "../Actions/userActions"
 
 const initialState = {
     signUpFormDetails: {},
+    adminRegFormDetails: {},
     imageInputs: {},
     showSignUp: false,
     showSignIn: false,
@@ -28,7 +30,7 @@ const initialState = {
     loggedInUserInfo: {},
     feedBackFormDetails:{},
     populateFeedbackPage:[],
-   
+    
 }   
 
 const userReducer = (state = initialState, action) => {
@@ -37,7 +39,9 @@ const userReducer = (state = initialState, action) => {
     if(action.type === GET_SIGNUP_INPUTS) {
         Object.assign(newState.signUpFormDetails, action.values)
     }
-    
+    if(action.type === GET_ADMINFORM_INPUT) {
+        Object.assign(newState.adminRegFormDetails, action.values)
+    }
     if(action.type === GET_FEEDBACK_INPUTS){
         Object.assign(newState.feedBackFormDetails,action.values)
     }
@@ -79,6 +83,10 @@ const userReducer = (state = initialState, action) => {
         newState.showSuccessfulRegModal = true
         newState.showSignUp = false
         
+    }
+
+    if(action.type === UPDATE_STATE_WITH_USER_INFO) {
+       newState.userId = action.values.id
     }
 
     return newState

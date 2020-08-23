@@ -56,7 +56,7 @@ class Search extends Component {
                         <img src={room.imageurl} alt="Room 5" />
                         <div className="roomFeatures">
                             <div className="boardRoomFeatures">
-                                <Link onClick={() => this.viewRoomDetails(room)} ><span>{`${room.name}`}</span></Link>
+                                <Link to={`/aboutRoom/${room.id}`} ><span>{`${room.name}`}</span></Link>
                                     <span className="roomTypeSpan">{`(${room.type})`}</span>
                                 <label>{room.available ? "Available" : "In use"}</label>
                             </div>
@@ -101,6 +101,11 @@ class Search extends Component {
                                 {/* <Link to={{pathname: "/booking", room: room}} onClick={() => this.saveCurrentRoom(room)}><div className="bookNowLink">Book Now</div></Link>                             */}
                                 <Link onClick={() => this.saveCurrentRoom(room)}><div className="bookNowLink">Book Now</div></Link>
                             </div>
+<<<<<<< HEAD
+=======
+                            {/* <Link to={{pathname: "/booking", room: room}} onClick={() => this.saveCurrentRoom(room)}><div className="bookNowLink">Book Now</div></Link>                             */}
+                            <Link to={`/booking/${room.id}`}><div className="bookNowLink">Book Now</div></Link>                            
+>>>>>>> development
                         </div>
                     })}
 
