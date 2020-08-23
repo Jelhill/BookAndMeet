@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { updateStateWithSearchInput, updateStateWithFilteredRoom } from  "../../Actions/roomActions"
 
@@ -41,7 +41,6 @@ class seachFilter extends Component {
         }
 
         const filteredRoom = this.props.rooms.filter(room => {
-            console.log("MMMR", minimum, maximum, roomCapacity)
             if(room.type === roomType && (room.capacity >= minimum && room.capacity <= maximum) ){
                 return true
             }

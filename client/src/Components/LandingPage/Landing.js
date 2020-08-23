@@ -13,13 +13,16 @@ class Landing extends Component {
   //   show2: false
   // };
 
-  // showLogin = e => {
-  //   this.setState({
-  //     show: !this.state.show
-  //   });
-  //   this.props.showLogin(false)
-  // };
-  
+  showLogin = e => {
+    this.setState({
+      show: !this.state.show
+    });
+    this.props.showLogin(false)
+  };
+  getUsersInput = (e) => {
+    this.props.getSearchInputs({[e.target.name]: e.target.value})
+   
+  }
 
   handleSignIn = () => this.props.showSignin(true)
   openSignUpModal = () => this.props.showSignup(true)
@@ -34,7 +37,7 @@ class Landing extends Component {
           <div className="landingBody">
              
               <h3>Search and book a meeting room</h3>
-              <input type="text" placeholder="Conference room" id="search"></input><br/>
+              <input type="text" placeholder="Conference room" id="search" onChange={this.getUsersInput}></input><br/>
               <div className="flexDisplay">
                 <select defaultValue={"Type"} name="" className="filterSelect" >
                     <option value="type" disabled>Type</option>
@@ -73,6 +76,7 @@ class Landing extends Component {
 const mapStateToProps = (state) => {
   const { userReducer } = state
   return {  
+   searchInput: userReducer.searchInput, 
     signUpFormDetails: userReducer.signUpFormDetails,
     showSignUp: userReducer.showSignUp,
     showSignIn: userReducer.showSignIn,
@@ -82,6 +86,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+   
     showSignin: (values) => dispatch(showSignIn(values)),
     showSignup: (values) => dispatch(showSignup(values)),
     showAdminLogin: (values) => dispatch(showAdminSignup(values)),   

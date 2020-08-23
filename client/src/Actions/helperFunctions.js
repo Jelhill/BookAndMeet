@@ -5,6 +5,7 @@ export const getWithExpiry = (key) => {
     if (!itemStr) {
       return false
     }        
+    const token = itemStr.split(" ")[0] 
     const expiryTime = itemStr.split(" ")[1] 
     const id = itemStr.split(" ")[2] 
     const firstname = itemStr.split(" ")[3] 
@@ -14,7 +15,7 @@ export const getWithExpiry = (key) => {
       localStorage.removeItem(key)
       return {isLoggedIn: false}
     }
-    return {isLoggedIn: true, id: id, firstname: firstname}
+    return {isLoggedIn: true, id, firstname, token}
 }
 
 //SET TOKEN IN LOCAL STORAGE
@@ -25,4 +26,7 @@ export const setWithExpiry = (key, token, tokenDuration, userInfo) => {
     localStorage.setItem(key, `${token} ${expiryTime} ${userInfo.id} ${userInfo.firstname}`)
 }
 
+export const formatDateTime = (date, time) => {
+  return `${date} ${time}`
+}
 

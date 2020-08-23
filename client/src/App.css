@@ -1618,21 +1618,22 @@ body {
 }
 
 .checkInDiv label {
-  font-size: 15px;
+  font-size: 14px;
   /* margin-right: 10px; */
   font-family: var(--Roboto);
 }
 
 .dateTime {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   width: 49%;
-
+  justify-content: space-between;
 }
 
-.checkInDiv input[type="datetime-local"] {
-  height: 35px;
-  width: 100%;
+.checkInDiv input[type="date"], 
+.checkInDiv input[type="time"] {
+  height: 30px;
+  width: 62%;
   border: 1px solid #373F41;
   padding-left: 10px;
 }
@@ -3584,4 +3585,39 @@ margin:0px 10px 0px 20px;
 } */
 .searchNotification {
    margin: auto;
+
+
+}
+.Container404Page{
+  width: 100vw;
+}
+
+.Error{
+text-align: center;
+
+}
+
+.Big404{
+  margin-top: 10%;
+  color:black;
+  height:100px; 
+  font-size: 180px;
+}
+.Ooops{
+  margin-top: 10%;
+  font-family: var(--Roboto);
+  font-weight: bold;
+  font-size: 20px;
+}
+.PageExist{
+  margin-top: 1%;
+  margin-bottom: 3%;
+}
+.Button404{
+  background-color: rgb(58, 170, 223);
+  width: 200px;
+  height: 40px;
+  color: var(--mainWhite);
+  border: none;
+  border-radius: 2px;
 }
