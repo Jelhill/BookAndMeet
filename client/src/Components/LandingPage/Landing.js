@@ -1,16 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux"
-import { showSignup, showSignIn} from "../../Actions/userActions"
+import { showSignup, showSignIn, showAdminSignup} from "../../Actions/userActions"
 import '../../App.css';
 import LandingPageHeader from "../Header/LandingPageHeader";
 import { Link } from "react-router-dom";
+import AdminLogin from "../Modals/AdminLogin";
 
 
 class Landing extends Component {
-  state = {
-    show: false,
-    show2: false
-  };
+  // state = {
+  //   show: false,
+  //   show2: false
+  // };
 
   showLogin = e => {
     this.setState({
@@ -26,6 +27,7 @@ class Landing extends Component {
   handleSignIn = () => this.props.showSignin(true)
   openSignUpModal = () => this.props.showSignup(true)
   signInNew = () => this.props.signInModal(true)
+  adminLogin = () => this.props.showAdminLogin(true)
  
   render() {
     return (        
@@ -62,10 +64,10 @@ class Landing extends Component {
           </div>
             <div className="landingFooter"> 
               <Link to="aboutUs"><span>About us</span></Link>
-              <Link to="admin"><span>Admin</span></Link>
+              <Link to="#" onClick = {this.adminLogin}><span>Admin</span></Link>
               <Link to="feedbackForm"><span>Feedback</span></Link>
             </div>
-          
+            <AdminLogin/>
         </div>
     );
   }
@@ -77,7 +79,8 @@ const mapStateToProps = (state) => {
    searchInput: userReducer.searchInput, 
     signUpFormDetails: userReducer.signUpFormDetails,
     showSignUp: userReducer.showSignUp,
-    showSignIn: userReducer.showSignIn
+    showSignIn: userReducer.showSignIn,
+    showadminsignup: userReducer.showAdminLogin
   }
 }
 
@@ -85,7 +88,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
    
     showSignin: (values) => dispatch(showSignIn(values)),
-    showSignup: (values) => dispatch(showSignup(values))    
+    showSignup: (values) => dispatch(showSignup(values)),
+    showAdminLogin: (values) => dispatch(showAdminSignup(values)),   
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Landing);

@@ -26,7 +26,7 @@ exports.adminSignUp = (req, res) => {
     .catch((error) => {res.json({message: error})})
 }
 
-exports.login = (req, res) => { 
+exports.adminLogin = (req, res) => { 
     const admin = new Admin (req.body)
     admin.authenticateUser().then((response) => {
         const payload = {

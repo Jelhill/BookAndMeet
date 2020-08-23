@@ -11,7 +11,8 @@ import {
     SHOW_LOGOUT,
     SUCCESS_MESSAGE,
     SUCCESSFUL_REG_MODAL,
-    UPDATE_STATE_WITH_USER_INFO
+    SHOW_ADMIN_SIGNIN,
+    UPDATE_STATE_WITH_USER_INFO,
  } from "../Actions/userActions"
 
 const initialState = {
@@ -21,6 +22,7 @@ const initialState = {
     showSignUp: false,
     showSignIn: false,
     showLogOut: false,
+    showAdminLogin: false,
     showSuccessfulRegModal: false,
     renderPage: false,
     userIsLoggedIn: false,
@@ -52,6 +54,9 @@ const userReducer = (state = initialState, action) => {
 
     if(action.type === SHOW_SIGNUP) {
         newState.showSignUp = action.values
+    }
+    if(action.type === SHOW_ADMIN_SIGNIN) {
+        newState.showAdminLogin = action.values
     }
 
     if(action.type === SHOW_LOGIN) {

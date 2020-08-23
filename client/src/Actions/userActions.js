@@ -4,6 +4,7 @@ export const GET_IMAGE_INPUTS = 'GET_IMAGE_INPUTS'
 export const SHOW_SIGNUP = "SHOW_SIGNUP"
 export const SHOW_LOGIN = "SHOW_LOGIN"
 export const SHOW_SIGNIN = "SHOW_LOGIN"
+export const SHOW_ADMIN_SIGNIN = "SHOW_ADMIN_SIGNIN"
 export const SAVE_INITIAL_USER_DETAILS = "SAVE_INITIAL_USER_DETAILS"
 export const UPDATE_STATE_WITH_API = "UPDATE_STATE_WITH_API"
 export const UPDATE_STATE_FOR_HEADER = "UPDATE_STATE_FOR_HEADER"
@@ -50,6 +51,12 @@ export const getInputForImage = (values) => {
 export const showSignup = (values) => {
     return{
         type: SHOW_SIGNUP,
+        values
+    }
+}
+export const showAdminSignup = (values) => {
+    return{
+        type: SHOW_ADMIN_SIGNIN,
         values
     }
 }

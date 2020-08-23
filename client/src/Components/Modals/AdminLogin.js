@@ -1,16 +1,23 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
-import {connect} from 'react-redux'
-import { getSignupInputs} from '../../Actions/userActions'
+import { Link, withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { showAdminSignup, getSignupInputs} from '../../Actions/userActions'
 import { setWithExpiry } from "../../Actions/helperFunctions"
+
  
 class AdminLogin extends Component {
+    onClose = () => {
+        // e.preventDefault()
+        this.props.showAdminLogin(false)  
+    }
+
     getInput = (e) => {
         this.props.getSignupInputs({[e.target.name]:e.target.value})
     }
-    handleLogin = (e) => {
+    handleAdminLogin = (e) => {
         e.preventDefault()
-        fetch("http://localhost:3001/adminlogin", {
+        console.log('log', this.props.signUpFormDetails);
+        fetch("http://localhost:3001/adminLogin", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(this.props.signUpFormDetails)
@@ -22,7 +29,7 @@ class AdminLogin extends Component {
           // const unprotectedRoutes = ["home", "aboutRoom" ]
           const currentRoute = this.props.history.location.pathname;
           setWithExpiry("token", jsonResponse.token, 7200000, jsonResponse.payload)  
-          if(currentRoute === "/admin"){
+          if(currentRoute === "/"){
             this.props.history.push("/adminlanding")
           }else{
             this.props.history.push(currentRoute)
@@ -34,6 +41,9 @@ class AdminLogin extends Component {
       .catch((err) => console.log(err))
     }
     render() {
+        if(!this.props.showadminsignup){
+            return null;
+        }
         return (
             <div className="modalDiv">
                 <div className="signupmodal">
@@ -73,7 +83,7 @@ class AdminLogin extends Component {
                                         htmlFor="rememberme">Remember me</label>
                                     <span><Link to="#" className="forgetPassword">forget password ?</Link></span>
                                     <button
-                                        onClick={this.handleLogin}
+                                        onClick={this.handleAdminLogin}
                                         className="form-control signupsubmit">
                                         Login
                               </button>
@@ -94,16 +104,16 @@ const mapStateToProps = (state) => {
     // const now = new Date()
     //     console.log("Login State", now.getTime(), userReducer.loggedInUserInfo)
     return {
-      showSignIn: userReducer.showSignIn,
-      signUpFormDetails: userReducer.signUpFormDetails,
+        showadminsignup: userReducer.showAdminLogin,
+        signUpFormDetails: userReducer.signUpFormDetails,
     }
 }
   
   const mapDispatchToProps = (dispatch) => {
     return {
-    //   showSignin: (values) => dispatch(showSignIn(values)),
+        showAdminLogin: (values) => dispatch(showAdminSignup(values)), 
       getSignupInputs: (values) => dispatch(getSignupInputs(values)),
     }
   }
  
- export default connect(mapStateToProps,mapDispatchToProps)(AdminLogin)
+ export default withRouter( connect(mapStateToProps,mapDispatchToProps)(AdminLogin) )
