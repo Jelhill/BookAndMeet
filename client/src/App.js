@@ -44,7 +44,7 @@ function App() {
         <Route exact path="/userProfile" component={UserProfilePage} />
         <Route exact path="/Login" component={ Login } />
         <Route exact path="/Signup" component={SignUp} />
-        {/* <Route exact path="/Logout" component={Logout} />  */}
+         {/* <Route exact path="/Logout" component={Logout} />   */}
          <Route exact path="/completeSignUp" component={CompleteSignUp} />
         <Route exact path="/404" component={Error404} />
         <Route exact path="/imageLoader" component={imageLoader} /> 
