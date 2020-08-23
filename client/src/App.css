@@ -3583,11 +3583,41 @@ margin:0px 10px 0px 20px;
 /* .adminform{
   height:2000px;
 } */
-
-.modalDiv{
-  background-image: url("./Images/room0.jfif");
-}
-
 .searchNotification {
    margin: auto;
+
+
+}
+.Container404Page{
+  width: 100vw;
+}
+
+.Error{
+text-align: center;
+
+}
+
+.Big404{
+  margin-top: 10%;
+  color:black;
+  height:100px; 
+  font-size: 180px;
+}
+.Ooops{
+  margin-top: 10%;
+  font-family: var(--Roboto);
+  font-weight: bold;
+  font-size: 20px;
+}
+.PageExist{
+  margin-top: 1%;
+  margin-bottom: 3%;
+}
+.Button404{
+  background-color: rgb(58, 170, 223);
+  width: 200px;
+  height: 40px;
+  color: var(--mainWhite);
+  border: none;
+  border-radius: 2px;
 }

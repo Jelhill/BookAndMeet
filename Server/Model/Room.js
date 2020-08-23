@@ -63,18 +63,19 @@ Room.prototype.editRoomById = function() {
 
 Room.prototype.getRoomById = function() {
     return new Promise((resolve, reject) => {
-            db.query("SELECT * FROM rooms WHERE id = $1", [this.data])
-            .then((result) => {
-                if(result){
-                    resolve({message: "Successful", result: result.rows[0]})
-                }
-                else{
-                    reject("No data to Fetch")
-                }
-            })
-            .catch((err) => {
-                reject(err)
-            })
+        db.query("SELECT * FROM rooms WHERE id = $1", [this.data])
+        .then((result) => {
+            if(result){
+                resolve({message: "Successful", result: result.rows[0]})
+            }
+            else{
+                reject("No data to Fetch")
+            }
+        })
+        .catch((err) => {
+            reject(err)
+        })
     })
 }
+
 module.exports = Room
