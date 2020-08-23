@@ -46,23 +46,19 @@ import {getAdminRegInputs} from '../../Actions/userActions'
                                     <div className="doubleInputDiv2">
                                         <div>
                                             <label className="adminFormLabel">First Name</label><br></br>
-                                            <input type="text" placeholder="Input your First name" className="adminFormInput" name = "firstname" onChange={this.adminRegInput}></input><br></br>
+                                            <input type="text" className="adminFormInput" name = "firstname" onChange={this.adminRegInput}></input><br></br>
                                         </div>
                                         <div>
-                                            <label className="adminFormLabel">last Name</label><br></br>
-                                            <input type="text" placeholder="Input your Last name" className="adminFormInput" name = "lastname" onChange={this.adminRegInput}></input>
+                                            <label className="adminFormLabel">Surname</label><br></br>
+                                            <input type="text" className="adminFormInput" name = "surname" onChange={this.adminRegInput}></input>
                                         </div>
                                     </div>
                                     <div className="adminFormEmailWrapper">
                                     <label className="adminFormLabel">Email</label><br></br>
-                                    <input type="email" placeholder="Input your email address" className="adminFormEmail" name = "email" onChange={this.adminRegInput}></input>
+                                    <input type="email"  className="adminFormEmail" name = "email" onChange={this.adminRegInput}></input>
                                     </div>
                                     
                                     <div className="doubleInputDiv2">
-                                        <div>
-                                            <label className="adminFormLabel">Staff Code</label><br></br>
-                                            <input type="text" placeholder="SGA0.7"className="adminFormInput" name = "staffcode" onChange={this.adminRegInput}></input><br></br>
-                                        </div>
                                         <div>
                                             <label className="adminFormLabel">Department</label><br></br>
                                             <input type="text" placeholder="305" className="adminFormInput" name = "department" onChange={this.adminRegInput}></input>
@@ -77,10 +73,6 @@ import {getAdminRegInputs} from '../../Actions/userActions'
                                             <label className="adminFormLabel">Confirmpassword</label><br></br>
                                             <input type="password" placeholder="confirmpassword" className="adminFormInput" name = "confirmpassword" onChange={this.adminRegInput}></input>
                                         </div>
-                                    </div>
-                                    <div className="adminCheckBoxWrapper">
-                                    <input type="checkbox" className="adminCheckBox" name = "TandC" onChange={this.adminRegInput}></input>
-                                    <label className="adminCheckBoxLabel">I accept the terms and condition</label>
                                     </div>
                                     
                                     <div className="adminFormSubmitWrapper">

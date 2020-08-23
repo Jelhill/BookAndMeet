@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
-import {connect} from 'react-redux'
-import {  showAdminSignup, getSignupInputs} from '../../Actions/userActions'
+import { Link, withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { showAdminSignup, getSignupInputs} from '../../Actions/userActions'
 import { setWithExpiry } from "../../Actions/helperFunctions"
+
  
 class AdminLogin extends Component {
     onClose = () => {
@@ -13,9 +14,10 @@ class AdminLogin extends Component {
     getInput = (e) => {
         this.props.getSignupInputs({[e.target.name]:e.target.value})
     }
-    handleLogin = (e) => {
+    handleAdminLogin = (e) => {
         e.preventDefault()
-        fetch("http://localhost:3001/adminlogin", {
+        console.log('log', this.props.signUpFormDetails);
+        fetch("http://localhost:3001/adminLogin", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(this.props.signUpFormDetails)
@@ -28,7 +30,7 @@ class AdminLogin extends Component {
           const currentRoute = this.props.history.location.pathname;
           setWithExpiry("token", jsonResponse.token, 7200000, jsonResponse.payload)  
           if(currentRoute === "/"){
-            this.props.history.push("adminlanding")
+            this.props.history.push("/adminlanding")
           }else{
             this.props.history.push(currentRoute)
           }  
@@ -81,7 +83,7 @@ class AdminLogin extends Component {
                                         htmlFor="rememberme">Remember me</label>
                                     <span><Link to="#" className="forgetPassword">forget password ?</Link></span>
                                     <button
-                                        onClick={this.handleLogin}
+                                        onClick={this.handleAdminLogin}
                                         className="form-control signupsubmit">
                                         Login
                               </button>
@@ -114,4 +116,4 @@ const mapStateToProps = (state) => {
     }
   }
  
- export default connect(mapStateToProps,mapDispatchToProps)(AdminLogin)
+ export default withRouter( connect(mapStateToProps,mapDispatchToProps)(AdminLogin) )

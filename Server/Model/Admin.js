@@ -65,15 +65,17 @@ Admin.prototype.adminsignUp = function() {
     return new Promise(async (resolve, reject) => {      
         // await this.validate()
         // await this.checkExistingEmail()
-        console.log('data', this.data);
-        const {firstname, lastname, email, staffcode, department, password,tandc} = this.data;
+        const now = new Date()  
+        const todaysDate = `${now.getFullYear()}/${now.getMonth() + 1}/${now.getDate()}`
+        console.log('date', todaysDate);
+        const {firstname, surname, email, department, password} = this.data;
 
         if(!this.errors.length){            
                 const salt = bcrypt.genSaltSync(10)
                 console.log('salt', salt);
                 const hashPassword = bcrypt.hashSync(password, salt)
-                db.query("INSERT INTO adminpersonnel (firstname, lastname, email, staffcode, department, password,tandc) VALUES ($1, $2, $3, $4, $5, $6, $7)", 
-                [firstname, lastname, email, staffcode, department, hashPassword,tandc])
+                db.query("INSERT INTO admin (firstname, surname, email, department, password, date) VALUES ($1, $2, $3, $4, $5, $6)", 
+                [firstname, surname, email, department, hashPassword, todaysDate])
                 resolve("Successfully Updated")
             }           
         else{
@@ -86,7 +88,7 @@ Admin.prototype.adminsignUp = function() {
 Admin.prototype.authenticateUser = function() {
     return new Promise((resolve, reject) => {
         const {email, password} = this.data
-            db.query("SELECT * FROM adminpersonnel WHERE email = $1", [email])
+            db.query("SELECT * FROM admin WHERE email = $1", [email])
             .then((result) => {
                 if(result && bcrypt.compareSync(password, result.rows[0].password)){
                     this.data = result
