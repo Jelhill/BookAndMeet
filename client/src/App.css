@@ -2207,7 +2207,7 @@ body {
   padding-top: 8px;
   font-family: var(--Roboto) sans-serif;
 }
-.features1 span img{
+.features1 span img, .roomInfoSpanDiv span img{
   width: 20px;
   height: 20px;
   margin-right: 20px;
