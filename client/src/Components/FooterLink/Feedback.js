@@ -8,7 +8,7 @@ import { getUserComments } from '../../Actions/userActions'
 
 class Feedback extends Component {
     componentDidMount = async () => {
-        await fetch("http://localhost:3001/feedbackComments", {
+        await fetch("https://bookandmeet.herokuapp.com/feedbackComments", {
             method: 'GET',
             headers: { 'Content-type': 'application/json' },
         })

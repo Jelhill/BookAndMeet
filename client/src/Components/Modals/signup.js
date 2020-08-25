@@ -40,13 +40,14 @@ class SignUp extends Component{
 
     handleSignup = (e) => {
       e.preventDefault()
-      fetch("http://localhost:3001/signUp", {
+      fetch("https://bookandmeet.herokuapp.com/signUp", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(this.props.signUpFormDetails)
       })
       .then(response => response.json())
       .then((jsonResponse) => {
+        console.log("response", jsonResponse)
         if(jsonResponse.message === "Registered Successfully") {
           this.props.successMessage(jsonResponse.message)
         }else{

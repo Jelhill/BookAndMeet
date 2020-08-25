@@ -12,7 +12,7 @@ class seachFilter extends Component {
     
     searchForRooms = (e) => {
         e.preventDefault()                
-        const { roomType, roomCapacity, dateSearch, timeSearch } = this.props
+        const { roomType, roomCapacity } = this.props
         let minimum = 0, maximum = 0
         switch(roomCapacity) {
             case "oneToTen":

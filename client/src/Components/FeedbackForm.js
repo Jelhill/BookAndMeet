@@ -11,7 +11,7 @@ import { connect } from 'react-redux'
   }
   submitFeedBack =async (e)=>{
       e.preventDefault()
-      fetch("http://localhost:3001/feedback",{
+      fetch("https://bookandmeet.herokuapp.com/feedback",{
         method:"POST",
         headers:{"Content-Type":"application/json"},
         body:JSON.stringify(this.props.feedBackFormDetails)

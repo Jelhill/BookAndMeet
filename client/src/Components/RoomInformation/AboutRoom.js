@@ -11,7 +11,7 @@ function AboutRoom (props) {
     const { name, roomImage } = props
     const { id } = useParams()
     useEffect(() => {
-        fetch(`http://localhost:3001/getRoomDetails/${id}`, {
+        fetch(`https://bookandmeet.herokuapp.com/getRoomDetails/${id}`, {
             method: "GET",
             headers: {"Content-type": "application/json"}
         })

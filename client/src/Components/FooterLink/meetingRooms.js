@@ -10,7 +10,7 @@ class MeetingRooms extends Component {
 
     
     deleteRoom = (id) => {
-        fetch(`http://localhost:3001/deleteRoom/${id}`, {method: "DELETE"})
+        fetch(`https://bookandmeet.herokuapp.com/deleteRoom/${id}`, {method: "DELETE"})
         .then(response => response.json())
         .then(jsonResponse => {
             window.location.reload(true)
@@ -18,7 +18,7 @@ class MeetingRooms extends Component {
     }
 
     editRoom = (id) => {
-        fetch(`http://localhost:3001/editRoom/${id}`, {method: "PUT"})
+        fetch(`https://bookandmeet.herokuapp.com/editRoom/${id}`, {method: "PUT"})
         .then(response => response.json())
         .then(jsonResponse => {
             console.log("Feedback", jsonResponse)
@@ -27,7 +27,7 @@ class MeetingRooms extends Component {
     }
 
     componentDidMount = () => {
-        fetch("http://localhost:3001/getRooms", {
+        fetch("https://bookandmeet.herokuapp.com/getRooms", {
             method: "GET",
             headers: {"Content-type": "application/json"}
         })

@@ -15,7 +15,7 @@ import ImageFriend from "../../Images/friend.png";
 class Search extends Component {
 
     componentDidMount = async () => {
-        await fetch("http://localhost:3001/getRooms", {
+        await fetch("https://bookandmeet.herokuapp.com/getRooms", {
             method: "GET",
             headers: { "Content-type": "application/json" }
         })
