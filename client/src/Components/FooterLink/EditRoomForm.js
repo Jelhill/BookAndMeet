@@ -9,7 +9,7 @@ const EditRoomForm = (props) =>  {
     const {id} = useParams()
     const { roomName, roomType, whiteBoard, airCondition, waterDispenser, capacity, roomLocation, isavailable, projector, imageurl } = props
     const fetchRoom = () => {
-        fetch(`http://localhost:3001/getRoomDetails/${id}`, {method: "GET"})
+        fetch(`https://bookandmeet.herokuapp.com/getRoomDetails/${id}`, {method: "GET"})
         .then((response) => response.json())
         .then((jsonRes) => {
             props.updateStateWithRoomInfo(jsonRes.response.result)

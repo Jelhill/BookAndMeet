@@ -30,7 +30,7 @@ const AddNewRoom = (props) =>  {
         const secure_url = jsonRes.secure_url
         console.log(secure_url);
         const body = {type, location, capacity, name, available, hasProjector, hasAirCondition, hasWaterDispenser, hasWhiteBoard, secure_url}
-        await fetch("http://localhost:3001/addRoom",{
+        await fetch("https://bookandmeet.herokuapp.com/addRoom",{
             method: "POST",
             headers: {"Content-type": "application/json"},
             body: JSON.stringify(body)

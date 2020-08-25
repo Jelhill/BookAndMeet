@@ -17,7 +17,7 @@ function BookingPageRightDiv(props) {
         const checkin = formatDateTime(checkinDate, checkinTime)
         const checkout = formatDateTime(checkoutDate, checkoutTime)
         const body = {checkin, checkout, surname, firstname, email, userId, roomId} 
-        fetch("http://localhost:3001/bookRoom", {
+        fetch("https://bookandmeet.herokuapp.com/bookRoom", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(body)

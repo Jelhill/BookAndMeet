@@ -8,7 +8,6 @@ exports.userSignUp = (req, res) => {
     const user = new User(req.body)
     user.signUp()
     .then((result) => {
-        console.log(result)
         res.json({message: "Registered Successfully"})
     })
     .catch((error) => {res.json({message: error})})
@@ -30,8 +29,8 @@ exports.login = (req, res) => {
             id: response.result.id,
             firstname: response.result.firstname
         }
-        jwt.sign(payload, SECRET, {expiresIn: "600s"}, (err, token) => {
-            if(err) res.send({message: "Failed"})
+        jwt.sign(payload, SECRET, (err, token) => {
+            // if(err) res.send({message: "Failed"})
             res.send({message: "success", token, payload})
         })
 

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
 import logo from "../../Images/meeting.png"
 import Login from "../Modals/Login";
 import SignUp from "../Modals/Signup";

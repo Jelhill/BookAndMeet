@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import AdminHeader from '../../Components/AdminHeader'
 import AdminSideMenu from './AdminSideMenu'
 import { connect } from 'react-redux'
-import userReducer from '../../Reducers/userReducer'
 import {getAdminRegInputs} from '../../Actions/userActions'
 
 
@@ -12,7 +11,7 @@ import {getAdminRegInputs} from '../../Actions/userActions'
         }
         handleAdminSignUp = (e) =>{
             e.preventDefault()
-            fetch("http://localhost:3001/adminsignup", {
+            fetch("https://bookandmeet.herokuapp.com/adminsignup", {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(this.props.adminRegformDetails)
@@ -94,7 +93,7 @@ const mapStateToProps = (state)=>{
 //    console.log('uuuuuu', userReducer);
 
     return {
-        adminRegformDetails: userReducer. adminRegFormDetails
+        adminRegformDetails: userReducer.adminRegFormDetails
     }
    
 }

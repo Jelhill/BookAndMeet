@@ -7,7 +7,6 @@ import { updateStateForHeader, showSignup, showSignIn, showLogout } from "../Act
 // import Signup from './Modals/signup'
 import { getWithExpiry } from "../Actions/helperFunctions"
 import Logout from './Modals/Logout'
-import SuccessRegisterModal from './Modals/SuccessRegisterModal'
 
 const Header = (props) => {    
     // const handleSignIn = () => props.showSignin(true)
@@ -19,7 +18,7 @@ const Header = (props) => {
         props.updateStateForHeader(response)
     })
 
-    const {isLoggedIn, firstname} = props
+    const {firstname} = props
     return (
         <div className="headerPurpleDiv">
             <div className="headerIconDiv">

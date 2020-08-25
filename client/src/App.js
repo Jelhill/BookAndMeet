@@ -23,9 +23,7 @@ import History from "./Components/ProfilePage/History"
 import AdminHeader from './Components/AdminHeader';
 import AddAdminForm from './Components/FooterLink/AddAdminForm';
 import EditRoomForm from './Components/FooterLink/EditRoomForm';
-import AdminPortal from './Components/FooterLink/AdminPortal';
 import AdminLogin from './Components/Modals/AdminLogin';
-import LandingPageHeader from './Components/Header/LandingPageHeader';
 
 
 

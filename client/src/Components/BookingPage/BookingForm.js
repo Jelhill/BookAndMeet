@@ -15,8 +15,7 @@ const BookingForm = (props) => {
     useEffect(() => {
         const user = getWithExpiry("token")
         props.updateStateWithUserInfo(user)
-        console.log(user)
-        fetch(`http://localhost:3001/booking/${id}`,{
+        fetch(`https://bookandmeet.herokuapp.com/booking/${id}`,{
             method: "GET",
             headers: {"Content-type": "application/json", 
                 authorization: `Bearer ${user.token}`,

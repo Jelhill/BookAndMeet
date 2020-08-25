@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react'
 import AdminSideMenu from './AdminSideMenu';
-import Header from '../Header';
 import { Line } from "react-chartjs-2"
 import { connect } from 'react-redux';
 import AdminHeader from '../AdminHeader'

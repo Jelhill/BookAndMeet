@@ -17,7 +17,7 @@ class AdminLogin extends Component {
     handleAdminLogin = (e) => {
         e.preventDefault()
         console.log('log', this.props.signUpFormDetails);
-        fetch("http://localhost:3001/adminLogin", {
+        fetch("https://bookandmeet.herokuapp.com/adminLogin", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(this.props.signUpFormDetails)

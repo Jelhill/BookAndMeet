@@ -20,7 +20,7 @@ class CompleteSignUp extends Component{
 
     handleSignup = async (e) => {
       e.preventDefault()
-      fetch("http://localhost:3001/signUp", {
+      fetch("https://bookandmeet.herokuapp.com/signUp", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(this.props.signUpFormDetails)
