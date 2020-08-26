@@ -59,6 +59,7 @@ class AdminLogin extends Component {
                         <div className="modalContent">
                             <form>
                                 <div className="formDiv">
+                                    <div className="adminlogindiv">
                                     <input
                                         type="email"
                                         name="email"
@@ -66,6 +67,8 @@ class AdminLogin extends Component {
                                         placeholder="Email"
                                         onChange = {this.getInput}
                                     />
+                                    </div>
+                                    <div className= "adminlogindiv">
                                     <input
                                         type="password"
                                         name="password"
@@ -74,6 +77,7 @@ class AdminLogin extends Component {
                                         autoComplete="off"
                                         onChange = {this.getInput}
                                     />
+                                    </div>
                                     <input
                                         type="checkbox"
                                         name="rememberme"

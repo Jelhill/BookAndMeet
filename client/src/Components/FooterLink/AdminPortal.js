@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Header from '../Header'
+import AdminHeader from '../../Components/AdminHeader'
 import AdminSideMenu from './AdminSideMenu'
 import { Link } from 'react-router-dom'
 
@@ -8,7 +8,7 @@ export default class AdminPortal extends Component {
         return (
 
             <div>
-                <Header />
+                <AdminHeader />
                 <div className="adminLandingPageWrapper">
                     <AdminSideMenu />
                     <div className="adminRightSide">
@@ -16,7 +16,7 @@ export default class AdminPortal extends Component {
                             <div className="bookingsHeader">
                                 <h4 className="history">Admin Portal</h4>
                             </div>
-                            <div className="addAdmin"><Link to="addAdminForm" className="addAdminLink">+Add Admin</Link></div>
+                            <div className="addAdmin"><Link to="/addAdminForm" className="addAdminLink">+Add Admin</Link></div>
                             <div>
                                 <table style={{ width: "100%" }}>
                                     <thead>

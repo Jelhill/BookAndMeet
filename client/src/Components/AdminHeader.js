@@ -6,7 +6,7 @@ import { updateStateForHeader, showSignup, showSignIn, showLogout } from "../Act
 // import Login from './Modals/login'
 // import Signup from './Modals/signup'
 import { getWithExpiry } from "../Actions/helperFunctions"
-import Logout from './Modals/Logout'
+import AdminLogout from './Modals/Logout'
 
 const Header = (props) => {    
     // const handleSignIn = () => props.showSignin(true)
@@ -28,9 +28,9 @@ const Header = (props) => {
                 </div>     
                 <ul>
                     <li><Link to="#">{firstname}</Link></li>
-                   <li className="addAdminPersonnel1"><Link to = "/addadminform" className = "adminPersonnel">Admin</Link></li>
+                   <li className="addAdminPersonnel1"><Link to = "/adminPortal" className = "adminPersonnel">Admin</Link></li>
                     <li><Link to="#" onClick={openLogOutModal}>Logout</Link></li>
-                    <Logout />
+                    <AdminLogout />
                 </ul> 
             </div>          
         </div>

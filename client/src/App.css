@@ -3455,16 +3455,16 @@ color: #373F41;
 
 }
 .addAdminLink{
-  width: 80px;
+  padding-top: 20px;
   height: 17px;
   font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
   font-size: 14px;
   line-height: 20px;
-/* or 143% */
-  letter-spacing: -0.24px;
   color: #FFFFFF;
+}
+.addAdminLink:hover{
+  text-decoration: none;
+  color:white;
 }
 .adminFormWrapper{
   width: 80%;
@@ -3477,14 +3477,21 @@ color: #373F41;
 }
 .doubleInputDiv2 {
   display: flex;
+  width:80%;
   margin:0px 0px 0px 75px;
 }
+.adminformdepartment{
+  width:90%;
+}
 .adminFormInput{
-  width:300px;
-  height: 30px;
+  width:90%;
+  height: 40px;
   border: 1px solid #373F41;
   box-sizing: border-box;
-  margin-right:20px;
+  margin-right:60px;
+}
+.adminforminputdiv{
+  width:80%;
 }
 .adminFormLabel{
   width:87px;
@@ -3500,7 +3507,7 @@ color: #373F41;
 
 }
 .adminFormEmail{
-  width:627px;
+  width:84%;
   height: 40px;
 }
 .adminFormEmailWrapper{
@@ -3536,10 +3543,12 @@ background: #46258A;
 border: 1px solid #46258A;
 box-sizing: border-box;
 border-radius: 6px;
-margin-top:0px;
+margin:30px 50px 0px 0px;
 }
 .adminFormSubmitWrapper{
-  margin:20px 0px 0px 350px;
+  width:80%;
+  margin:auto;
+  text-align: center;
 }
 .thankyou{
   width:1290px;
@@ -3638,4 +3647,7 @@ text-align: center;
   opacity: 0.8;
   color: var(--mainWhite);
   
+}
+.adminlogindiv{
+  margin:20px;
 }

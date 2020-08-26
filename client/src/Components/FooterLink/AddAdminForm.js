@@ -43,11 +43,11 @@ import {getAdminRegInputs} from '../../Actions/userActions'
                             <div className="adminFormWrapper">
                                 <form className="adminform">
                                     <div className="doubleInputDiv2">
-                                        <div>
+                                        <div className = "adminforminputdiv">
                                             <label className="adminFormLabel">First Name</label><br></br>
                                             <input type="text" className="adminFormInput" name = "firstname" onChange={this.adminRegInput}></input><br></br>
                                         </div>
-                                        <div>
+                                        <div className = "adminforminputdiv">
                                             <label className="adminFormLabel">Surname</label><br></br>
                                             <input type="text" className="adminFormInput" name = "surname" onChange={this.adminRegInput}></input>
                                         </div>
@@ -56,21 +56,20 @@ import {getAdminRegInputs} from '../../Actions/userActions'
                                     <label className="adminFormLabel">Email</label><br></br>
                                     <input type="email"  className="adminFormEmail" name = "email" onChange={this.adminRegInput}></input>
                                     </div>
-                                    
-                                    <div className="doubleInputDiv2">
-                                        <div>
+                                    <div className="adminFormEmailWrapper">
+                                        <div classname = "adminformdepartment">
                                             <label className="adminFormLabel">Department</label><br></br>
-                                            <input type="text" placeholder="305" className="adminFormInput" name = "department" onChange={this.adminRegInput}></input>
-                                        </div>
+                                            <input type="text"  className="adminFormEmail" name = "department" onChange={this.adminRegInput}></input>
+                                    </div>
                                     </div>
                                     <div className="doubleInputDiv2">
-                                        <div>
+                                        <div className = "adminforminputdiv">
                                             <label className="adminFormLabel">Password</label><br></br>
-                                            <input type="password" placeholder="password"className="adminFormInput" name = "password" onChange={this.adminRegInput}></input><br></br>
+                                            <input type="password" className="adminFormInput" name = "password" onChange={this.adminRegInput}></input><br></br>
                                         </div>
-                                        <div>
+                                        <div className = "adminforminputdiv">
                                             <label className="adminFormLabel">Confirmpassword</label><br></br>
-                                            <input type="password" placeholder="confirmpassword" className="adminFormInput" name = "confirmpassword" onChange={this.adminRegInput}></input>
+                                            <input type="password" className="adminFormInput" name = "confirmpassword" onChange={this.adminRegInput}></input>
                                         </div>
                                     </div>
                                     
