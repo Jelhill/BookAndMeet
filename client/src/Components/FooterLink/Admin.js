@@ -15,37 +15,50 @@ class Admin extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="notifier">
-                            <h6>Available Rooms</h6>
-                            <p>15</p>
+                            <div>
+                        <i class="fas fa-user-robot"></i>
+                            <span>Available Rooms</span>
+                    </div>
+                            <div className="labelRoomInfo">
+                            <label>15</label>
+                            </div>
                             <p className="view-details">View Details</p>
                         </div>
                         <div className="notifier">
-                        <h6>Booked Rooms</h6>
-                            <p>11</p>
+                        <span>Booked Rooms</span>
+                        <div className="labelRoomInfo">
+                            <label>11</label>
+                            </div>
                             <p className="view-details">View Details</p>
                         </div>
                         <div className="notifier">
-                        <h6>Cancellations</h6>
+                        <span>Cancellations</span>
+                        <div className="labelRoomInfo">
                             <p>5</p>
+                            </div>
                             <p className="view-details">View Details</p>
                         </div>
                         <div className="notifier">
-                        <h6>Feedbacks</h6>
-                            <p>2</p>
+                        <span>Feedbacks</span>
+                            <div className="labelRoomInfo">
+                            <label>2</label>
+                            </div>
                             <p className="view-details">View Details</p>
                         </div>
                     </div>
+                    <div className="bookingRate">
+                        <span>Booking Rate</span>
+                    </div>
                     <div className="graphDiv">
-                        <h6>Booking Rate</h6>
-                        
                         <Line data={this.props.chartData}
                             height={60}
                             width={200}
                             options={{maintainAspectRatio: false}}
                         />
                     </div>
-                    
-                    <h4>Today's Bookings</h4>
+                    <div className="bookingsToday">
+                    <span>Today's Bookings</span>
+                    </div>
                 <table style={{width:"100%"}}>
                     <thead>
                         <tr>

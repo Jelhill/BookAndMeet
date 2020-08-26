@@ -2503,13 +2503,15 @@ font-size: 20px;
 }
   /* ADMIN CSS */ 
 .notifier{
-  border: 1px solid black;
+  border: 1px solid ;
+  border: none;
+  box-shadow: 10px 10px 10px #E5E5E5;
   width: 200px;
   height: 100px;
   background-color: #fdfdfdfd;
   margin-top: 75px;
   margin-left: 60px;
-    
+ 
 }
 
 .graphDiv {
@@ -2520,24 +2522,69 @@ font-size: 20px;
   margin-bottom: 25px;
   margin: auto;
 }
-h7{  
+span{  
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 20px;
+  letter-spacing: -0.24px;
+  color: #373F41;
+  margin-left: 50px;
+
+}
+.labelRoomInfo{
+  margin-left: 50px;
+}
+.label{
+  font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 20px;
+letter-spacing: -0.24px;
+color: #373F41;
+}
+.view-details{
+color: var(--mainGray);
+width: 100%;
+height: 31px;
+text-align: center;
+margin-top: 10%;
 font-family: Roboto;
 font-style: normal;
 font-weight: bold;
 font-size: 10px;
 line-height: 20px;
 letter-spacing: -0.24px;
-color: #373F41;
-
+background: #776A98;
+box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.25);
 }
-.view-details{
+.bookingRate{
+  margin-top: 4%;
+}
+.bookingRate span{
+  color: var(--mainPurple);
   font-family: Roboto;
 font-style: normal;
 font-weight: bold;
-font-size: 8px;
+font-size: 18px;
 line-height: 20px;
 letter-spacing: -0.24px;
-color: #181717;
+}
+.bookingsToday{
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.bookingsToday span{
+  color: var(--mainPurple);
+  font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 20px;
+letter-spacing: -0.24px;
 }
 table{
   font-family:var(--Roboto);
@@ -2548,13 +2595,14 @@ td,th{
 font-family: Roboto;
 font-style: normal;
 font-weight: normal;
-font-size: 18px;
+font-size: 15px;
 line-height: 20px;
 letter-spacing: -0.24px;
 color: rgba(0, 0, 0, 0.58);
 border-bottom: 4px solid #E5E5E5;
-padding:20px;
+padding:10px;
 margin:60px;
+
 
 }
 .bold{

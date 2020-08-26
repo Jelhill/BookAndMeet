@@ -4,7 +4,7 @@ import logo from "../Images/meeting.png"
 import { connect } from 'react-redux'
 import { updateStateForHeader, showSignup, showSignIn, showLogout } from "../Actions/userActions"
 // import Login from './Modals/login'
-// import Signup from './Modals/signup'
+// import Signup fro./Modals/Signupnup'
 import { getWithExpiry } from "../Actions/helperFunctions"
 import Logout from './Modals/Logout'
 
