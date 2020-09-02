@@ -7,7 +7,8 @@ import { GET_ROOM_FORM_INPUTS,
     UPDATE_STATE_WITH_ROOM_INFO,
     EDIT_FORM_INPUTS,
     UPDATE_STATE_WITH_SEARCH_INPUT,
-    UPDATE_STATE_WITH_FILTERED_ROOM
+    UPDATE_STATE_WITH_FILTERED_ROOM,
+    UPDATE_STATE_WITH_SEARCH
 } from "../Actions/roomActions"
 
 const initialState = {
@@ -30,7 +31,8 @@ const initialState = {
     imageurl: "",
     searchInput: {},
     filteredRoom: [],
-    roomId: 0
+    roomId: 0,
+    searchedRooms: []
 }
 
 const roomReducer = (state = initialState, action) => {
@@ -62,7 +64,6 @@ const roomReducer = (state = initialState, action) => {
     }
 
     if(action.type === UPDATE_STATE_WITH_ROOM_INFO) {
-        console.log("actionss", action)
         // Object.assign(newState.roomInfo, action.values)
 
         newState.capacity = action.values.capacity
@@ -78,7 +79,6 @@ const roomReducer = (state = initialState, action) => {
     }
 
     if(action.type === EDIT_FORM_INPUTS) {
-        console.log("actionss", action.values)
         Object.assign(newState.editRoomFormInputs, action.values)
         newState.capacity = action.values.capacity
         newState.waterDispenser = action.values.haswaterdispenser
@@ -99,6 +99,9 @@ const roomReducer = (state = initialState, action) => {
 
     if(action.type === UPDATE_STATE_WITH_FILTERED_ROOM) {
         newState.filteredRoom = action.values
+    }
+    if(action.type === UPDATE_STATE_WITH_SEARCH) {
+        newState.searchedRooms = action.values
     }
     return newState
 }

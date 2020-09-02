@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux"
 import { showSignup, showSignIn, showAdminSignup} from "../../Actions/userActions"
+import { getSignupInputs} from "../../Actions/userActions"
+import { updateStateWithSearch} from "../../Actions/roomActions"
 import '../../App.css';
 import LandingPageHeader from "../Header/LandingPageHeader";
 import { Link } from "react-router-dom";
@@ -8,10 +10,24 @@ import AdminLogin from "../Modals/AdminLogin";
 
 
 class Landing extends Component {
-  // state = {
-  //   show: false,
-  //   show2: false
-  // };
+
+  filterRoom = () => {
+    fetch("http://localhost:3001/searchRoom", {
+      method: "POST", 
+      headers: {"Content-type": "application/json"},
+      body: JSON.stringify(this.props.signUpFormDetails)
+    })
+    .then(response => response.json())
+    .then(jsonResponse => {
+      console.log(jsonResponse)
+      if(jsonResponse.status === "success"){
+        this.props.updateStateWithSearch(jsonResponse.data.data)
+        this.props.history.push("/home")
+      }
+
+    })
+    .catch(err => console.log(err))
+  }
 
   showLogin = e => {
     this.setState({
@@ -20,8 +36,7 @@ class Landing extends Component {
     this.props.showLogin(false)
   };
   getUsersInput = (e) => {
-    this.props.getSearchInputs({[e.target.name]: e.target.value})
-   
+    this.props.getSignupInputs({[e.target.name]: e.target.value})
   }
 
   handleSignIn = () => this.props.showSignin(true)
@@ -39,26 +54,26 @@ class Landing extends Component {
               <h3>Search and book a meeting room</h3>
               <input type="text" placeholder="Conference room" id="search" onChange={this.getUsersInput}></input><br/>
               <div className="flexDisplay">
-                <select defaultValue={"Type"} name="" className="filterSelect" >
-                    <option value="type" disabled>Type</option>
-                    <option value="boardRoom">Board Room</option>
-                    <option value="privateRoom">Private Room</option>
-                    <option value="conferenceRoom">Conference</option>
-                    <option value="auditorium">Auditorium</option>
+                <select defaultValue={"Type"} name="type" className="filterSelect" onChange={this.getUsersInput}>
+                    <option disabled hidden>Type</option>
+                    <option value="Board Room">Board Room</option>
+                    <option value="Private Room">Private Room</option>
+                    <option value="Conference Room">Conference</option>
+                    <option value="Auditorium">Auditorium</option>
                 </select>
                 
-                <select name="" defaultValue={"Capacity"} className="filterSelect">
+                <select name="capacity" defaultValue={"Capacity"} className="filterSelect" onChange={this.getUsersInput}>
                     <option disabled hidden>Capacity</option>
-                    <option value="oneToTen">1 - 10 seats</option>
-                    <option value="elevenToTwenty">11 - 50 seats</option>
-                    <option value="fiftyOneToOneHundred">51 - 100 seats</option>
-                    <option value="hundredToTwoHundred">101 - 200 seats</option>
-                    <option value="aboveTwoHundred">Above 200 seats</option>
+                    <option value="maxTen">Below 10 seats</option>
+                    <option value="maxFifty">Below 50 seats</option>
+                    <option value="maxOneHundred">Below 100 seats</option>
+                    <option value="maxTwoHundred">Below 200 seats</option>
+                    <option value="aboveTwoHundred">Below 1000 seats</option>
                 </select>
 
-                <input type="datetime-local" className="filterDateTime" id="datePicker"/>
-                {/* <input type="time" className="filterSelect" id="timePicker"/> */}
-                <button className="filterButton">Search</button>
+                <input type="date" name="searchDate" className="filterDateTime" id="datePicker" onChange={this.getUsersInput}/>
+                <input type="time" name="searchTime" className="filterDateTime" id="datePicker" onChange={this.getUsersInput}/>
+                <button className="filterButton" onClick={this.filterRoom}>Search</button>
               </div>
             
           </div>
@@ -75,12 +90,14 @@ class Landing extends Component {
 
 const mapStateToProps = (state) => {
   const { userReducer } = state
+  const { roomReducer } = state
   return {  
    searchInput: userReducer.searchInput, 
     signUpFormDetails: userReducer.signUpFormDetails,
     showSignUp: userReducer.showSignUp,
     showSignIn: userReducer.showSignIn,
-    showadminsignup: userReducer.showAdminLogin
+    showadminsignup: userReducer.showAdminLogin,
+    searchedRooms: roomReducer.searchedRooms,
   }
 }
 
@@ -90,6 +107,8 @@ const mapDispatchToProps = (dispatch) => {
     showSignin: (values) => dispatch(showSignIn(values)),
     showSignup: (values) => dispatch(showSignup(values)),
     showAdminLogin: (values) => dispatch(showAdminSignup(values)),   
+    getSignupInputs: (values) => dispatch(getSignupInputs(values)),   
+    updateStateWithSearch: (values) => dispatch(updateStateWithSearch(values)),   
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Landing);
