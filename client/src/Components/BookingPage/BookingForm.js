@@ -16,6 +16,7 @@ const BookingForm = (props) => {
         const user = getWithExpiry("token")
         props.updateStateWithUserInfo(user)
         fetch(`https://bookandmeet.herokuapp.com/booking/${id}`,{
+        // fetch(`http://localhost:3001/booking/${id}`,{
             method: "GET",
             headers: {"Content-type": "application/json", 
                 authorization: `Bearer ${user.token}`,
@@ -24,12 +25,9 @@ const BookingForm = (props) => {
         })
         .then((response) => response.json())
         .then((jsonResponse) => {
-            console.log("Booking Feedback", jsonResponse)
             if(jsonResponse.message === "success") {
                 props.updateStateWithRoomInfo(jsonResponse.data.result)
                 props.updateStateWithAPI(true);
-            }else{
-                props.history.push("/404")            
             }
         }).catch((err) => {
             console.log(err)

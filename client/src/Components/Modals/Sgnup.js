@@ -117,7 +117,6 @@ class SignUp extends Component{
 
 const mapStateToProps = (state) => {
   const { userReducer } = state
-  console.log('uuuu',userReducer);
   const { formReducer } = state
   return {
     signUpFormDetails: userReducer.signUpFormDetails,
@@ -142,7 +141,6 @@ const mapDispatchToProps = (dispatch) => {
     getSignupInputs: (values) => dispatch(getSignupInputs(values)),
     showValidationError: (values) => dispatch(showValidationError(values)),
     successMessage: (message) => dispatch(successMessage(message)),
-    // showRegSuccessfull: (values) => dispatch(showRegSuccessfull(values))
   }
 }
 

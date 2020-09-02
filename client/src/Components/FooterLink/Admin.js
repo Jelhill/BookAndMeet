@@ -14,36 +14,25 @@ class Admin extends Component {
             <div className="adminRightSide">
                 <div className="container">
                     <div className="row">
-                        <div className="notifier">
-                            <div>
-                        <i class="fas fa-user-robot"></i>
+                        <div className="notifier">                
                             <span>Available Rooms</span>
-                    </div>
-                            <div className="labelRoomInfo">
                             <label>15</label>
-                            </div>
-                            <p className="view-details">View Details</p>
+                            <p className="view-details"></p>
                         </div>
                         <div className="notifier">
-                        <span>Booked Rooms</span>
-                        <div className="labelRoomInfo">
-                            <label>11</label>
-                            </div>
-                            <p className="view-details">View Details</p>
+                            <span>Booked Rooms</span>
+                            <label>11</label>                            
+                            <p className="view-details"></p>
                         </div>
                         <div className="notifier">
-                        <span>Cancellations</span>
-                        <div className="labelRoomInfo">
-                            <p>5</p>
-                            </div>
-                            <p className="view-details">View Details</p>
+                            <span>Cancellations</span>
+                            <label>5</label>
+                            <p className="view-details"></p>
                         </div>
                         <div className="notifier">
-                        <span>Feedbacks</span>
-                            <div className="labelRoomInfo">
+                            <span>Feedbacks</span>
                             <label>2</label>
-                            </div>
-                            <p className="view-details">View Details</p>
+                            <p className="view-details"></p>
                         </div>
                     </div>
                     <div className="bookingRate">
