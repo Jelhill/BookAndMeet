@@ -18,14 +18,14 @@ class Login extends Component{
     
     handleLogin = async (e) => {
       e.preventDefault()
-        fetch(`https://bookandmeet.herokuapp.com/login`, {
+        fetch(`http://localhost:3001/login`, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(this.props.signUpFormDetails)
       })
       .then(response => response.json())
       .then((jsonResponse) => {
-        console.log(jsonResponse)
+        console.log( 'json', jsonResponse)
         if(jsonResponse.message === "success" && jsonResponse.token !== null){
           // const unprotectedRoutes = ["home", "aboutRoom" ]
           const currentRoute = this.props.history.location.pathname;

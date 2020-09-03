@@ -3651,3 +3651,47 @@ text-align: center;
 .adminlogindiv{
   margin:20px;
 }
+.successfullbookingBackground{
+  position: relative;
+  /* z-index: 1; */
+  background-color:  rgba(0,0,0,0.8);
+}
+.successfullbookingWrapper{
+  width:25%;
+  position: absolute;
+  top:50px;
+  right:0px;
+  right:0px;
+  left:0px;
+  margin:0 auto;
+  height:343px;
+  border: 1px solid #CCCCCC;
+}
+.successfullbookingTop{
+  background-color: var(--mainPurple);
+  height: 142px;
+}
+.successfullbookingBottom{
+    text-align: center;
+    height:175px;
+}
+.successfullbookingHeader{
+  padding:10px;
+  font-weight:bold;
+  font-size:24px;
+  color:var(--mainPurple);
+}
+.successfullbookingParagraph{
+  font-size:14px;
+  color: #373F41;
+}
+.successfullbookingLink{
+    background-color: var(--mainPurple);
+    width:30%;
+    height:30px;
+    margin-top:20px;
+    color:var(--mainWhite);
+    border:1px solid var(--mainPurple);
+    border-radius: 4px;
+    padding:0px;
+}

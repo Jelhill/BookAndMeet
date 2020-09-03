@@ -29,11 +29,10 @@ import AdminPortal from './Components/FooterLink/AdminPortal';
 
 
 
+
 function App() {
 
   return (
-    //  <AdminHeader/>
-
     <Fragment>    
       <Switch>
         <Route exact path="/" component={Landing} />
