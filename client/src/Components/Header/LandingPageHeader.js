@@ -1,13 +1,8 @@
 import React, { Component } from 'react'
 import logo from "../../Images/meeting.png"
-<<<<<<< HEAD
-import Login from "../Modals/login";
-import SignUp from "../Modals/signup";
-=======
 import { Link } from "react-router-dom"
 import Login from "../Modals/Login";
 import SignUp from "../Modals/Sgnup"
->>>>>>> development
 import { connect } from "react-redux"
 import { showSignup, showSignIn} from "../../Actions/userActions"
 import SuccessRegisterModal from '../Modals/SuccessRegisterModal';

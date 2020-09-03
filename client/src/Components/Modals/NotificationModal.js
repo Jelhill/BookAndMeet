@@ -11,20 +11,20 @@ function NotificationModal(props) {
       size="md"
       aria-labelledby="contained-modal-title-vcenter"
       centered
-    >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Login
+      className = "shownotificationWrapper"
+     >
+      {/* <Modal.Header closeButton> */}
+        <Modal.Title id="contained-modal-title-vcenter" >
+        <h3 className="successfullbookingHeader"><i className="fa fa-exclamation exclaim"></i></h3>
         </Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <h5>
-          Please Login to book a room
-        </h5>
+      {/* </Modal.Header> */}
+      <Modal.Body className = "successfullbookingBottom">
+      <p className="successfullbookingParagraph">Please Login to Book your favorite room</p>
+      <button onClick={props.onHide} className="successfullbookingLink">Close</button>
       </Modal.Body>
-      <Modal.Footer>
-        <button onClick={props.onHide}>Close</button>
-      </Modal.Footer>
+      {/* <Modal.Footer>
+        
+      </Modal.Footer> */}
     </Modal>
     );  
   }
