@@ -1,10 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { getUserBookingDetails, showFailedBookingModal } from "../../Actions/bookingActions"
-import { formatDateTime } from "../../Actions/helperFunctions"
-// import FailedBooking from '../Modals/FailedBooking'
+import { getUserBookingDetails } from "../../Actions/bookingActions"
+import { formatDateTime, getWithExpiry } from "../../Actions/helperFunctions"
+import { notificationModal } from "../../Actions/userActions"
+import { bookingSuccessMessage } from "../../Actions/bookingActions"
+import NotificationModal from '../Modals/NotificationModal'
 
 function BookingPageRightDiv(props) {
+
+    // const openFundWalletModal = (e) => {
+	// 	e.preventDefault()
+	// 	props.notificationModal(true)
+    // }
     
     const getBookingInputs = (e) => {
         props.getUserBookingDetails({[e.target.name]: e.target.value})
@@ -16,30 +23,31 @@ function BookingPageRightDiv(props) {
 
     const bookRoom = (e) => {
         e.preventDefault()
-        const token = localStorage.token;
-        console.log('tk',token);
+        const user = getWithExpiry("token")
         const { checkinDate, checkinTime, checkoutDate, checkoutTime, surname, firstname, email} = props.bookersDetails
         const { userId, roomId} = props
         const checkin = formatDateTime(checkinDate, checkinTime)
         const checkout = formatDateTime(checkoutDate, checkoutTime)
-        const body = {checkin, checkout, surname, firstname, email, userId, roomId}
-        if (token) {
-            fetch("https://localhost:3001/bookRoom", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(body)
-            })
-                .then(response => response.json())
-                .then((jsonResponse) => {
-                    console.log(jsonResponse)
-                })
-                .catch((err) => console.log(err))
+        const body = {checkin, checkout, surname, firstname, email, userId, roomId} 
+        console.log("user", user)
+        if(user === false) {
+            props.notificationModal(true)
+        }else{
+        fetch("https://bookandmeet.herokuapp.com/bookRoom", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(body)
+          })
+          .then(response => response.json())
+          .then((jsonResponse) => {
+              console.log(jsonResponse)
+              if(jsonResponse.status === "success"){
+                  props.bookingSuccessMessage()   
+              }
+          })
+          .catch((err) => console.log(err))
         }
-        else{
-            return failedBooking()
-        }
-    } 
-       
+    }
 
     const { name, category } = props
     return (
@@ -48,6 +56,9 @@ function BookingPageRightDiv(props) {
                 <h5>{name}</h5>
                 <label>{category}</label>
             </div>
+           {!props.bookingSuccessStatus.length ? null :
+            <div className="bookingSuccessDiv">{props.bookingSuccessStatus}</div>
+           }
             <label className="fillMessage">Fill the booking form</label>
             <div className="checkInDiv">
                 <div className="dateTime">
@@ -79,9 +90,14 @@ function BookingPageRightDiv(props) {
             </div>   
         
             <div className="bookingFormBtnDiv">
-                <button className="button2" onClick={bookRoom}>Book</button>
+                <button className="button2" onClick={bookRoom}>Book</button>    
             </div>        
+            <NotificationModal
+                    show={props.showNotificationModal}
+                    onHide={() => props.notificationModal(false)}
+                />
         </div>
+        
     )
  }
 
@@ -89,7 +105,7 @@ function BookingPageRightDiv(props) {
     const { userReducer } = state
     const { roomReducer } = state
     const {bookingReducer } = state
-    console.log(bookingReducer.userBookingDetails)
+    console.log(userReducer.showNotificationModal)
     return {
       renderPage: userReducer.renderPage,
       imageurl: roomReducer.currentRoom.imageurl,
@@ -98,17 +114,18 @@ function BookingPageRightDiv(props) {
       bookersDetails: bookingReducer.userBookingDetails,
       userId: userReducer.userId,
       firstname: userReducer.userFirstname,
-      showFailedBookingModal: bookingReducer.showfailedBookingModal
-    //   roomId: roomReducer.currentRoom.id,
-    //   roomId: roomReducer.roomId,
-    //   userId: userReducer.userId
+      bookingSuccessStatus: bookingReducer.bookingSuccessStatus,
+      showNotificationModal: userReducer.showNotificationModal,
+ 
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return{
         getUserBookingDetails: (values) => dispatch(getUserBookingDetails(values)),
-        showfailedBookingModal: (values)=> dispatch(showFailedBookingModal(values))
+        bookingSuccessMessage: () => dispatch(bookingSuccessMessage()),
+        notificationModal: (value) => dispatch(notificationModal(value)),
+
     }
 }
 

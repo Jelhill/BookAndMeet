@@ -12,12 +12,12 @@ function AboutRoom (props) {
     const { id } = useParams()
     useEffect(() => {
         fetch(`https://bookandmeet.herokuapp.com/getRoomDetails/${id}`, {
+        // fetch(`http://localhost:3001/getRoomDetails/${id}`, {
             method: "GET",
             headers: {"Content-type": "application/json"}
         })
         .then(response => response.json())
         .then((jsonResponse) => {
-             console.log("NNNN", jsonResponse.response.result)
              if(jsonResponse.message === "success")
              props.updateStateWithRoomInfo(jsonResponse.response.result)
         })

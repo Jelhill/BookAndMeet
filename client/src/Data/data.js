@@ -53,6 +53,6 @@ export const chartData = {
   }]
 }
 
-export const unprotectedRoutes = ["/home", "/aboutRoom" ]
+export const unprotectedRoutes = ["/home", "/aboutRoom", "/" ]
 
 export default roomList 

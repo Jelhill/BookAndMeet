@@ -15,17 +15,21 @@ import ImageFriend from "../../Images/friend.png";
 class Search extends Component {
 
     componentDidMount = async () => {
-        await fetch("https://bookandmeet.herokuapp.com/getRooms", {
-            method: "GET",
-            headers: { "Content-type": "application/json" }
-        })
-            .then((response) => response.json())
-            .then((jsonResponse) => {
-                console.log(jsonResponse)
-                this.props.updateStateWithRooms(jsonResponse.rooms)
-            }).catch((error) => {
-                console.log(error)
+        if(this.props.searchedRooms.length > 0) {
+            this.props.updateStateWithRooms(this.props.searchedRooms)
+        }else{
+            fetch("https://bookandmeet.herokuapp.com/getRooms", {
+                method: "GET",
+                headers: { "Content-type": "application/json" }
             })
+                .then((response) => response.json())
+                .then((jsonResponse) => {
+                    console.log(jsonResponse)
+                    this.props.updateStateWithRooms(jsonResponse.rooms)
+                }).catch((error) => {
+                    console.log(error)
+                })
+            }
     }
 
     saveCurrentRoom = (room) => {
@@ -41,7 +45,6 @@ class Search extends Component {
     
     render() {
         const renderingRoom = this.props.filteredRoom.length ? this.props.filteredRoom : this.props.rooms
-        console.log("rendering", renderingRoom)
         return (
             <div className="homePageWrapper">
                 <Header />
@@ -124,7 +127,8 @@ const mapStateToProps = (state) => {
     const { roomReducer } = state
     return {
         rooms: roomReducer.rooms,
-        filteredRoom: roomReducer.filteredRoom
+        filteredRoom: roomReducer.filteredRoom,
+        searchedRooms: roomReducer.searchedRooms
     }    
 }
 

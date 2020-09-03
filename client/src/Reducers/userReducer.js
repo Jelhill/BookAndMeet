@@ -13,6 +13,7 @@ import {
     SUCCESSFUL_REG_MODAL,
     SHOW_ADMIN_SIGNIN,
     UPDATE_STATE_WITH_USER_INFO,
+    SHOW_NOTIFICATION_MODAL,
  } from "../Actions/userActions"
 
 const initialState = {
@@ -32,6 +33,8 @@ const initialState = {
     loggedInUserInfo: {},
     feedBackFormDetails:{},
     populateFeedbackPage:[],
+    showNotificationModal: false,
+
     
 }   
 
@@ -92,6 +95,12 @@ const userReducer = (state = initialState, action) => {
 
     if(action.type === UPDATE_STATE_WITH_USER_INFO) {
        newState.userId = action.values.id
+    }
+
+    if(action.type === SHOW_NOTIFICATION_MODAL) {
+       console.log(action.value)
+       newState.showNotificationModal = action.value
+
     }
 
     return newState
