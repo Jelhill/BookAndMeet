@@ -18,16 +18,16 @@ function NotificationModal(props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h5>
-          Please Login to book a room
-        </h5>
+        <p>Please Login to book a room</p>
       </Modal.Body>
       <Modal.Footer>
-        <button onClick={props.onHide}>Close</button>
+        <button onClick={props.onHide} className="btn btn-primary">Close</button>
       </Modal.Footer>
     </Modal>
-    );  
+    ); 
+    
   }
+  
   
 const mapStateToProps = (state) => {
 	const { userReducer } = state

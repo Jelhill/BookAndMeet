@@ -7,11 +7,6 @@ import { bookingSuccessMessage } from "../../Actions/bookingActions"
 import NotificationModal from '../Modals/NotificationModal'
 
 function BookingPageRightDiv(props) {
-
-    // const openFundWalletModal = (e) => {
-	// 	e.preventDefault()
-	// 	props.notificationModal(true)
-    // }
     
     const getBookingInputs = (e) => {
         props.getUserBookingDetails({[e.target.name]: e.target.value})
@@ -26,7 +21,6 @@ function BookingPageRightDiv(props) {
         const checkin = formatDateTime(checkinDate, checkinTime)
         const checkout = formatDateTime(checkoutDate, checkoutTime)
         const body = {checkin, checkout, surname, firstname, email, userId, roomId} 
-        console.log("user", user)
         if(user === false) {
             props.notificationModal(true)
         }else{
@@ -90,11 +84,11 @@ function BookingPageRightDiv(props) {
                 <button className="button2" onClick={bookRoom}>Book</button>    
             </div>        
             <NotificationModal
-                    show={props.showNotificationModal}
-                    onHide={() => props.notificationModal(false)}
+                style={{paddingTop: "20px", marginLeft: "100px" }}
+                show={props.showNotificationModal}
+                onHide={() => props.notificationModal(false)}
                 />
-        </div>
-        
+        </div>        
     )
  }
 
@@ -102,7 +96,6 @@ function BookingPageRightDiv(props) {
     const { userReducer } = state
     const { roomReducer } = state
     const {bookingReducer } = state
-    console.log(userReducer.showNotificationModal)
     return {
       renderPage: userReducer.renderPage,
       imageurl: roomReducer.currentRoom.imageurl,
@@ -122,7 +115,6 @@ const mapDispatchToProps = (dispatch) => {
         getUserBookingDetails: (values) => dispatch(getUserBookingDetails(values)),
         bookingSuccessMessage: () => dispatch(bookingSuccessMessage()),
         notificationModal: (value) => dispatch(notificationModal(value)),
-
     }
 }
 

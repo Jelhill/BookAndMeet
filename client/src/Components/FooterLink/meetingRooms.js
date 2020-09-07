@@ -99,7 +99,6 @@ class MeetingRooms extends Component {
 
 const mapStateToProps = (state) => {
     const { roomReducer } = state
-    console.log(roomReducer.rooms)
     return {
         rooms: roomReducer.rooms
     }    

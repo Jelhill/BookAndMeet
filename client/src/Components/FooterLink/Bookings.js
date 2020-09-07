@@ -1,8 +1,34 @@
 import React, { Component } from 'react'
 import Header from '../Header'
 import AdminSideMenu from './AdminSideMenu'
+import { updateStateWithBookings } from "../../Actions/bookingActions"
+import { bookingDuration, bookingStatus } from "../../Actions/helperFunctions"
+import { connect } from "react-redux"
 
-export default class Bookings extends Component {
+
+ class Bookings extends Component {
+
+    getBookings = () => {
+        fetch("https://bookandmeet.herokuapp.com/getBookings", {
+        // fetch("http://localhost:3001/getBookings", {
+            method: "GET",
+            headers: { "Content-type": "application/json" }
+        })
+        .then((response) => response.json())
+        .then((jsonResponse) => {
+            console.log("Booking!!!!", jsonResponse)
+            if(jsonResponse.status === "success") {
+                this.props.updateStateWithBookings(jsonResponse.data)
+            }
+        }).catch((error) => {
+            console.log(error)
+        })
+    }
+
+    componentDidMount = async () => {  
+        this.getBookings()
+    }
+
     render() {
         return (
             <div>
@@ -22,70 +48,29 @@ export default class Bookings extends Component {
                     </div>
                     <div>
                     <table style={{ width: "100%" }}>
-                                <tr>
-                                    <th>MEETING ROOMS</th>
-                                    <th>BOOKED BY</th>
-                                    <th>TIME</th>
-                                    <th>DATE</th>
-                                    <th>STATUS</th>
+                        <thead>
+                            <tr>
+                                <th>MEETING ROOMS</th>
+                                <th>BOOKED BY</th>
+                                <th>TIME</th>
+                                <th>DATE</th>
+                                <th>STATUS</th>
+                            </tr>
+                        </thead>
+                        <tbody>                        
+                        {
+                            this.props.allBookings.map((booking, index) => (
+                                <tr key={booking.id}>
+                                    <td>{booking.roomid}</td>
+                                    <td>{booking.userid}</td>
+                                    <td>{booking.bookingdate.split("T")[0]}</td>
+                                    <td>{bookingDuration(booking.checkin, booking.checkout)}</td>
+                                    <td>{bookingStatus(booking.status)}</td>
                                 </tr>
-                                <tr>
-                                    <td className="bold">Senate</td>
-                                    <td>Temitope Daniel</td>
-                                    <td>4:30 - 6:00</td>
-                                    <td>07/09/2020</td>
-                                    <td id="running">Running</td>
-                                </tr>
-                                <tr>
-                                    <td className="bold">Conference Room</td>
-                                    <td>Ope Taiwo</td>
-                                    <td>7:00 - 9:00</td>
-                                    <td>04/10/2020</td>
-                                    <td id="completed">Completed</td>
-                                </tr>
-                                <tr>
-                                    <td className="bold">Private Meeting Room</td>
-                                    <td>Jelhill Umaru</td>
-                                    <td>9:00 - 10:00</td>
-                                    <td>12/12/2020</td>
-                                    <td id="upcoming">Upcoming</td>
-                                </tr>
-                                <tr>
-                                    <td className="bold">Private Meeting Room</td>
-                                    <td>Taofeek John</td>
-                                    <td>9:00 - 10:00</td>
-                                    <td>12/12/2020</td>
-                                    <td id="upcoming">Upcoming</td>
-                                </tr>
-                                <tr>
-                                    <td className="bold">Private Meeting Room</td>
-                                    <td>Temitope Daniel</td>
-                                    <td>9:00 - 10:00</td>
-                                    <td>12/12/2020</td>
-                                    <td id="upcoming">Upcoming</td>
-                                </tr>
-                                <tr>
-                                    <td className="bold">Private Meeting Room</td>
-                                    <td>Olamide Opeyemi</td>
-                                    <td>9:00 - 10:00</td>
-                                    <td>12/12/2020</td>
-                                    <td id="upcoming" >Upcoming</td>
-                                </tr>
-                                <tr>
-                                    <td className="bold">Private Meeting Room</td>
-                                    <td>Efe Franklin</td>
-                                    <td>9:00 - 10:00</td>
-                                    <td>12/12/2020</td>
-                                    <td id="cancelled">Cancelled</td>
-                                </tr>
-                                <tr>
-                                    <td className="bold">Private Meeting Room</td>
-                                    <td>Temitope Daniel</td>
-                                    <td>9:00 - 10:00</td>
-                                    <td>12/12/2020</td>
-                                    <td id="cancelled">Cancelled</td>
-                                </tr>
-                            </table>
+                            ))
+                        } 
+                        </tbody>
+                        </table>
                     </div>
                     </div>
                 </div>
@@ -94,3 +79,21 @@ export default class Bookings extends Component {
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    const { bookingReducer } = state
+    const { roomReducer } = state
+    console.log(roomReducer.rooms)
+    return {
+        allBookings: bookingReducer.allBookings,
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        updateStateWithBookings: (data) => dispatch(updateStateWithBookings(data)),
+
+    }
+}
+
+export default connect(mapStateToProps ,mapDispatchToProps)(Bookings)

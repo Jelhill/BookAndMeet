@@ -3,9 +3,68 @@ import AdminSideMenu from './AdminSideMenu';
 import { Line } from "react-chartjs-2"
 import { connect } from 'react-redux';
 import AdminHeader from '../AdminHeader'
+import { updateStateWithRooms } from "../../Actions/roomActions"
+import { updateStateWithBookings } from "../../Actions/bookingActions"
+import { bookingDuration, bookingStatus } from "../../Actions/helperFunctions"
+import { getUserComments } from '../../Actions/userActions'
+
+
 
 class Admin extends Component {
+
+    getBookings = () => {
+        fetch("https://bookandmeet.herokuapp.com/getBookings", {
+        // fetch("http://localhost:3001/getBookings", {
+            method: "GET",
+            headers: { "Content-type": "application/json" }
+        })
+        .then((response) => response.json())
+        .then((jsonResponse) => {
+            console.log("Booking!!!!", jsonResponse)
+            if(jsonResponse.status === "success") {
+                this.props.updateStateWithBookings(jsonResponse.data)
+            }
+        }).catch((error) => {
+            console.log(error)
+        })
+    }
+
+    getRooms = () => {
+        fetch("https://bookandmeet.herokuapp.com/getRooms", {
+            method: "GET",
+            headers: {"Content-type": "application/json"}
+        })
+        .then((response) => response.json())
+        .then((jsonResponse) => {
+            console.log("MMMMM", jsonResponse)
+            this.props.updateStateWithRooms(jsonResponse.rooms)
+        }).catch((error) => {
+            console.log(error)
+        })
+    }
+   
+    getComments = () => {
+        fetch("https://bookandmeet.herokuapp.com/feedbackComments", {
+            method: 'GET',
+            headers: { 'Content-type': 'application/json' },
+        })
+        .then(response => response.json())
+        .then((jsonResponse) => {
+            if(jsonResponse){
+                this.props.getUserComments(jsonResponse)
+            }
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+    }
+
+    componentDidMount = async () => {  
+        Promise.all([this.getRooms(), this.getBookings(), this.getComments()])    
+    }
+
     render() {
+        const cancellation = this.props.allBookings.filter(booking => booking.status === 3)
         return (
             <Fragment>
             <AdminHeader/>
@@ -16,22 +75,22 @@ class Admin extends Component {
                     <div className="row">
                         <div className="notifier">                
                             <span>Available Rooms</span>
-                            <label>15</label>
+                            <label>{this.props.rooms.length}</label>
                             <p className="view-details"></p>
                         </div>
                         <div className="notifier">
                             <span>Booked Rooms</span>
-                            <label>11</label>                            
+                            <label>{this.props.allBookings.length}</label>                            
                             <p className="view-details"></p>
                         </div>
                         <div className="notifier">
                             <span>Cancellations</span>
-                            <label>5</label>
+                            <label>{cancellation.length}</label>
                             <p className="view-details"></p>
                         </div>
                         <div className="notifier">
                             <span>Feedbacks</span>
-                            <label>2</label>
+                            <label>{this.props.userComments.length}</label>
                             <p className="view-details"></p>
                         </div>
                     </div>
@@ -59,34 +118,18 @@ class Admin extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>Senate Meeting Room</td>
-                        <td>Temitope Daniel</td>
-                        <td>07/06/20</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Conference Room</td>
-                        <td>Temitope Daniel</td>
-                        <td>07/06/20</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                    <td>Private Meeting Room</td>
-                        <td>Temitope Daniel</td>
-                        <td>07/06/20</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Conference Meeting Room</td>
-                        <td>Temitope Daniel</td>
-                        <td>07/06/20</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                {
+                    this.props.allBookings.map((booking, index) => (
+                         <tr key={booking.id}>
+                            <td>{booking.roomid}</td>
+                            <td>{booking.userid}</td>
+                            <td>{booking.bookingdate.split("T")[0]}</td>
+                            <td>{bookingDuration(booking.checkin, booking.checkout)}</td>
+                            <td>{bookingStatus(booking.status)}</td>
+                         </tr>
+                    ))
+                } 
+                                       
                     </tbody>
                 </table>
                 </div>
@@ -100,9 +143,22 @@ class Admin extends Component {
 
 const mapStateToProps = (state) => {
     const { bookingReducer } = state
+    const { roomReducer } = state
+    const { feedbackReducer } = state
     return {
         chartData: bookingReducer.chartData,
+        rooms: roomReducer.rooms,
+        allBookings: bookingReducer.allBookings,
+        userComments: feedbackReducer.userComments
+
     }
 }
 
-export default connect(mapStateToProps)(Admin)
+const mapDispatchToProps = (dispatch) => {
+    return {
+        updateStateWithRooms: (values) => dispatch(updateStateWithRooms(values)),
+        updateStateWithBookings: (data) => dispatch(updateStateWithBookings(data)),
+        getUserComments: (value) => dispatch(getUserComments(value)),
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Admin)

@@ -79,9 +79,6 @@ class seachFilter extends Component {
 
 const mapStateToProps = (state) => {
     const { roomReducer } = state
-    console.log("Rooms", roomReducer.rooms)
-    console.log("Filtered ROoms", roomReducer.filteredRoom)
-
     return {
         rooms: roomReducer.rooms,
         roomType: roomReducer.searchInput.roomType,
