@@ -19,7 +19,6 @@ class Landing extends Component {
     })
     .then(response => response.json())
     .then(jsonResponse => {
-      console.log(jsonResponse)
       if(jsonResponse.status === "success"){
         this.props.updateStateWithSearch(jsonResponse.data.data)
         this.props.history.push("/home")

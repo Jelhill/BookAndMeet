@@ -47,7 +47,7 @@ const EditRoomForm = (props) =>  {
                                 <option disabled hidden>Select Type</option>
                                 <option value="Private Room">Private Room</option>
                                 <option value="Board Room">Board Room</option>
-                                <option value="Conference Room">Conference Room</option>
+                                <option value="Conf. Room">Conference Room</option>
                                 <option value="Auditorium">Auditorium </option>
                             </select>
                         </div>

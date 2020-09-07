@@ -55,7 +55,7 @@ const roomReducer = (state = initialState, action) => {
     }
 
     if(action.type === UPDATE_STATE_WITH_ROOMS) {
-        newState.rooms = newState.rooms.concat(action.values)
+        newState.rooms = action.values
     }
 
     if(action.type === SAVE_CURRENT_ROOM) {

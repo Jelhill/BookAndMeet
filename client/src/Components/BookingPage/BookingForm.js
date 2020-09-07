@@ -7,6 +7,8 @@ import { connect } from 'react-redux'
 import { updateStateWithAPI, updateStateWithUserInfo } from "../../Actions/userActions"
 import { updateStateWithRoomInfo } from "../../Actions/roomActions"
 import { getWithExpiry } from "../../Actions/helperFunctions"
+import NotificationModal from '../Modals/NotificationModal'
+
 
 
 const BookingForm = (props) => {
@@ -52,6 +54,10 @@ const BookingForm = (props) => {
                     </div>
                     <BookingPageRightDiv roomId={id}/>
                 </div>
+                <NotificationModal
+                    show={props.showNotificationModal}
+                    onHide={() => props.notificationModal(false)}
+                />
                 <div className="spaceDiv"></div>         
                 <Footer2 />
             </div>

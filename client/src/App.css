@@ -300,6 +300,7 @@ label {
   color: var(--mainWhite);
   margin-right: 20px;
   text-decoration: none;
+  cursor: pointer;
 }
 .loginmodal {
   position: absolute;
@@ -2309,10 +2310,11 @@ letter-spacing: -0.24px;
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 9px;
+  font-size: 11px;
   line-height: 20px;
-  letter-spacing: -0.24px;
+  letter-spacing: 0.24px;
   color: #20B541;
+  margin-left: 10px;
 }
 
 .boardRoomFeatures i{
@@ -2561,7 +2563,7 @@ font-size: 20px;
 .graphDiv {
   width: 70%;
   height: 250px;
-  /* background-color: yellowgreen; */
+  /* background-color: var(--mainPurple); */
   margin-top: 25px;
   margin-bottom: 25px;
   margin: auto;
@@ -3702,4 +3704,11 @@ text-align: center;
 
 .modal-style {
   height: 200px;
+}
+
+.LoaderDiv {
+  height: 100vh;
+  width: 100px;
+  padding-top: 40vh;
+  margin: auto;
 }
