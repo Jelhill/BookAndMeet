@@ -7,6 +7,8 @@ import { connect } from 'react-redux'
 import { updateStateWithAPI, updateStateWithUserInfo } from "../../Actions/userActions"
 import { updateStateWithRoomInfo } from "../../Actions/roomActions"
 import { getWithExpiry } from "../../Actions/helperFunctions"
+import NotificationModal from '../Modals/NotificationModal'
+
 
 
 const BookingForm = (props) => {
@@ -16,6 +18,7 @@ const BookingForm = (props) => {
         const user = getWithExpiry("token")
         props.updateStateWithUserInfo(user)
         fetch(`https://bookandmeet.herokuapp.com/booking/${id}`,{
+        // fetch(`http://localhost:3001/booking/${id}`,{
             method: "GET",
             headers: {"Content-type": "application/json", 
                 authorization: `Bearer ${user.token}`,
@@ -24,12 +27,9 @@ const BookingForm = (props) => {
         })
         .then((response) => response.json())
         .then((jsonResponse) => {
-            console.log("Booking Feedback", jsonResponse)
             if(jsonResponse.message === "success") {
                 props.updateStateWithRoomInfo(jsonResponse.data.result)
                 props.updateStateWithAPI(true);
-            }else{
-                props.history.push("/404")            
             }
         }).catch((err) => {
             console.log(err)
@@ -54,6 +54,10 @@ const BookingForm = (props) => {
                     </div>
                     <BookingPageRightDiv roomId={id}/>
                 </div>
+                <NotificationModal
+                    show={props.showNotificationModal}
+                    onHide={() => props.notificationModal(false)}
+                />
                 <div className="spaceDiv"></div>         
                 <Footer2 />
             </div>

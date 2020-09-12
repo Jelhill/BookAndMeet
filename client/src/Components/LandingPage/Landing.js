@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux"
 import { showSignup, showSignIn, showAdminSignup} from "../../Actions/userActions"
+import { getSignupInputs} from "../../Actions/userActions"
+import { updateStateWithSearch} from "../../Actions/roomActions"
 import '../../App.css';
 import LandingPageHeader from "../Header/LandingPageHeader";
 import { Link } from "react-router-dom";
@@ -9,10 +11,24 @@ import { updateStateWithSearchInput, updateStateWithFilteredRoom } from  "../../
 
 
 class Landing extends Component {
-  // state = {
-  //   show: false,
-  //   show2: false
-  // };
+
+  filterRoom = () => {
+    // fetch("http://localhost:3001/searchRoom", {
+    fetch("https://bookandmeet.herokuapp.com/searchRoom", {
+      method: "POST", 
+      headers: {"Content-type": "application/json"},
+      body: JSON.stringify(this.props.signUpFormDetails)
+    })
+    .then(response => response.json())
+    .then(jsonResponse => {
+      if(jsonResponse.status === "success"){
+        this.props.updateStateWithSearch(jsonResponse.data.data)
+        this.props.history.push("/home")
+      }
+
+    })
+    .catch(err => console.log(err))
+  }
 
   showLogin = e => {
     this.setState({
@@ -55,6 +71,7 @@ searchForRooms = (e) => {
       default: 
           minimum = 0;
           maximum = 0;
+    this.props.getSignupInputs({[e.target.name]: e.target.value})
   }
 
   const filteredRoom = this.props.rooms.filter(room => {
@@ -81,26 +98,29 @@ this.props.updateStateWithFilteredRoom(filteredRoom)
               <h3>Search and book a meeting room</h3>
               <input type="text" placeholder="Conference room" id="search" onChange={this.getUsersInput}></input><br/>
               <div className="flexDisplay">
-                <select defaultValue={"Type"} name="" className="filterSelect" onChange={this.getSearchInput}>
-                    <option value="type" disabled>Type</option>
-                    <option value="boardRoom">Board Room</option>
-                    <option value="privateRoom">Private Room</option>
-                    <option value="conferenceRoom">Conference</option>
-                    <option value="auditorium">Auditorium</option>
+                <select defaultValue={"Type"} name="type" className="filterSelect" onChange={this.getUsersInput}>
+                    <option disabled hidden>Type</option>
+                    <option value="Board Room">Board Room</option>
+                    <option value="Private Room">Private Room</option>
+                    <option value="Conference Room">Conference</option>
+                    <option value="Auditorium">Auditorium</option>
                 </select>
                 
-                <select name="" defaultValue={"Capacity"} className="filterSelect" onChange={this.getSearchInput}>
+                <select name="capacity" defaultValue={"Capacity"} className="filterSelect" onChange={this.getUsersInput}>
                     <option disabled hidden>Capacity</option>
-                    <option value="oneToTen">1 - 10 seats</option>
-                    <option value="elevenToTwenty">11 - 50 seats</option>
-                    <option value="fiftyOneToOneHundred">51 - 100 seats</option>
-                    <option value="hundredToTwoHundred">101 - 200 seats</option>
-                    <option value="aboveTwoHundred">Above 200 seats</option>
+                    <option value="maxTen">Below 10 seats</option>
+                    <option value="maxFifty">Below 50 seats</option>
+                    <option value="maxOneHundred">Below 100 seats</option>
+                    <option value="maxTwoHundred">Below 200 seats</option>
+                    <option value="aboveTwoHundred">Below 1000 seats</option>
                 </select>
 
                 <input type="datetime-local" className="filterDateTime" id="datePicker" onChange={this.getSearchInput}/>
                 {/* <input type="time" className="filterSelect" id="timePicker"/> */}
                 <button onClick={this.searchForRooms} className="filterButton">Search</button>
+                <input type="date" name="searchDate" className="filterDateTime" id="datePicker" onChange={this.getUsersInput}/>
+                <input type="time" name="searchTime" className="filterDateTime" id="datePicker" onChange={this.getUsersInput}/>
+                <button className="filterButton" onClick={this.filterRoom}>Search</button>
               </div>
             
           </div>
@@ -132,7 +152,8 @@ const mapStateToProps = (state) => {
     roomCapacity: roomReducer.searchInput.capacity,
     dateSearch: roomReducer.searchInput.dateSearch,
     timeSearch: roomReducer.searchInput.timeSearch,  
-    filteredRoom: roomReducer.filteredRoom 
+    filteredRoom: roomReducer.filteredRoom,
+    searchedRooms: roomReducer.searchedRooms,
   }
 }
 
@@ -143,7 +164,10 @@ const mapDispatchToProps = (dispatch) => {
     showSignup: (values) => dispatch(showSignup(values)),
     showAdminLogin: (values) => dispatch(showAdminSignup(values)), 
     updateStateWithSearchInput: (values) => dispatch(updateStateWithSearchInput(values)),
-    updateStateWithFilteredRoom: (values) => dispatch(updateStateWithFilteredRoom(values))  
+    updateStateWithFilteredRoom: (values) => dispatch(updateStateWithFilteredRoom(values)) , 
+    showAdminLogin: (values) => dispatch(showAdminSignup(values)),   
+    getSignupInputs: (values) => dispatch(getSignupInputs(values)),   
+    updateStateWithSearch: (values) => dispatch(updateStateWithSearch(values)),   
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Landing);

@@ -26,14 +26,28 @@ Booking.prototype.bookNow = function() {
         const now = new Date()  
         const todaysDate = `${now.getDate()}/${now.getMonth() + 1}/${now.getFullYear()}`
         const { checkin, checkout, userId, roomId } = this.data
+        
         if(!this.errors.length){
-            await db.query("INSERT INTO booking (checkin, checkout, userid, roomid, bookingdate) VALUES ($1, $2, $3, $4, $5)",
+            await db.query("INSERT INTO booking (checkin, checkout, userid, roomid, bookingdate, status) VALUES ($1, $2, $3, $4, $5, 1)",
             [checkin, checkout, userId, roomId, todaysDate])
-            resolve("Room Booked Succefully")
+            resolve()
         }else{      
             reject(this.errors)
         }
     })
 }
 
+Booking.prototype.fetchBookings = function() {
+    return new Promise(async (resolve, reject) => {
+        db.query("SELECT * FROM booking")
+        .then(response => {
+            if(response.rows.length > 0) {
+                resolve(response.rows)
+            }else{
+                reject("No data to fetch")
+            }
+        })
+        .catch(err => reject(err))
+    })
+}
 module.exports = Booking

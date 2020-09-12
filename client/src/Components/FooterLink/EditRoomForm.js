@@ -24,7 +24,7 @@ const EditRoomForm = (props) =>  {
 
     const updateRoom = (e) => {
         e.preventDefault()       
-        fetch(`http://localhost:3001/editRoom/${id}`, {
+        fetch(`https://bookandmeet.herokuapp.com/editRoom/${id}`, {
             method: "PUT",
             headers: {"Content-type": "application/json"},
             body: JSON.stringify(props.editRoomFormInputs)
@@ -47,7 +47,7 @@ const EditRoomForm = (props) =>  {
                                 <option disabled hidden>Select Type</option>
                                 <option value="Private Room">Private Room</option>
                                 <option value="Board Room">Board Room</option>
-                                <option value="Conference Room">Conference Room</option>
+                                <option value="Conf. Room">Conference Room</option>
                                 <option value="Auditorium">Auditorium </option>
                             </select>
                         </div>
@@ -122,7 +122,7 @@ const EditRoomForm = (props) =>  {
                           </div>
                         </div>
                         <div className="addRoomButtonDiv">
-                            <button className="addRoomButton" onClick={updateRoom}>Add Room</button>
+                            <button className="addRoomButton" onClick={updateRoom}>Update Room</button>
                         </div>
                     </form>
                 </div>

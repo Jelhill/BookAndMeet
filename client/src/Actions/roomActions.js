@@ -8,6 +8,7 @@ export const UPDATE_STATE_WITH_ROOM_INFO = "UPDATE_STATE_WITH_ROOM_INFO"
 export const EDIT_FORM_INPUTS = "EDIT_FORM_INPUTS"
 export const UPDATE_STATE_WITH_SEARCH_INPUT = "UPDATE_STATE_WITH_SEARCH_INPUT"
 export const UPDATE_STATE_WITH_FILTERED_ROOM = "UPDATE_STATE_WITH_FILTERED_ROOM"
+export const UPDATE_STATE_WITH_SEARCH = "UPDATE_STATE_WITH_SEARCH"
 
 
 export const getRoomFormInputs = (values) => {
@@ -77,6 +78,13 @@ export const updateStateWithSearchInput = (values) => {
 export const updateStateWithFilteredRoom = (values) => {
     return{
         type: UPDATE_STATE_WITH_FILTERED_ROOM,
+        values
+    }
+}
+
+export const updateStateWithSearch = (values) => {
+    return{
+        type: UPDATE_STATE_WITH_SEARCH,
         values
     }
 }
