@@ -33,7 +33,6 @@ exports.editRoom = (req, res) => {
     const room = new Room(data)
     room.editRoomById()
     .then((result) => {
-        console.log("TJB", result)
         res.send({message: "Room Edited Successfully"})
     })
     .catch((error) => res.send({message: error}))

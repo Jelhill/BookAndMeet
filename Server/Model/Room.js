@@ -81,6 +81,7 @@ Room.prototype.getRoomById = function() {
 Room.prototype.searchRoomByFilter = function() {
     return new Promise((resolve, reject) => {
         const {type, capacity, searchDate, searchTime} = this.data
+        console.log("<<<<", searchDate, searchTime);
         let newCapacity = capacity === undefined ? "unselected" : capacity
         console.log("capacity", newCapacity)
         let maximum = 0
@@ -104,7 +105,7 @@ Room.prototype.searchRoomByFilter = function() {
                 maximum = 1000
                 break;
             default: 
-                maximum = 0;
+                maximum = 0; 
         }
 
         db.query("SELECT * FROM rooms WHERE type = $1 AND capacity <= $2", [type, maximum])
