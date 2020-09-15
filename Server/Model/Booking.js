@@ -24,7 +24,7 @@ Booking.prototype.validate = async function(){
 Booking.prototype.bookNow = function() {
     return new Promise(async (resolve, reject) => {
         const now = new Date()  
-        const todaysDate = `${now.getDate()}/${now.getMonth() + 1}/${now.getFullYear()}`
+        const todaysDate = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`
         const { checkin, checkout, userId, roomId } = this.data
         
         if(!this.errors.length){

@@ -1,7 +1,7 @@
 const User = require("../Model/User")
 const jwt = require("jsonwebtoken")
 const db = require('../config/db')
-const SECRET = process.env.SECRET
+const SECRET = process.env.JWT_SECRET
 
 
 exports.userSignUp = (req, res) => {
@@ -29,8 +29,11 @@ exports.login = (req, res) => {
             id: response.result.id,
             firstname: response.result.firstname
         }
+
         jwt.sign(payload, SECRET, (err, token) => {
-            // if(err) res.send({message: "Failed"})
+            console.log("token", token)
+            console.log("error", err)
+            if(err) res.send({message: "Failed"})
             res.send({message: "success", token, payload})
         })
 
