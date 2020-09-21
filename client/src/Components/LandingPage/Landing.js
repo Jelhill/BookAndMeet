@@ -13,8 +13,8 @@ import { updateStateWithSearchInput, updateStateWithFilteredRoom } from  "../../
 class Landing extends Component {
 
   filterRoom = () => {
-    // fetch("http://localhost:3001/searchRoom", {
-    fetch("https://bookandmeet.herokuapp.com/searchRoom", {
+    fetch("http://localhost:3001/searchRoom", {
+    // fetch("https://bookandmeet.herokuapp.com/searchRoom", {
       method: "POST", 
       headers: {"Content-type": "application/json"},
       body: JSON.stringify(this.props.signUpFormDetails)
@@ -25,7 +25,6 @@ class Landing extends Component {
         this.props.updateStateWithSearch(jsonResponse.data.data)
         this.props.history.push("/home")
       }
-
     })
     .catch(err => console.log(err))
   }
@@ -138,9 +137,13 @@ this.props.updateStateWithFilteredRoom(filteredRoom)
 const mapStateToProps = (state) => {
   const { userReducer } = state
   const { roomReducer } = state
+<<<<<<< HEAD
     console.log("Rooms", roomReducer.rooms)
     console.log("Filtered ROoms", roomReducer.filteredRoom)
 
+=======
+  console.log(userReducer.signUpFormDetails)
+>>>>>>> development
   return {  
    searchInput: userReducer.searchInput, 
     signUpFormDetails: userReducer.signUpFormDetails,

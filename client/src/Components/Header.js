@@ -18,7 +18,7 @@ const Header = (props) => {
         props.updateStateForHeader(response)
     })
 
-    const {isLoggedIn, firstname} = props
+    const {isLoggedIn} = props
     return (
         <div className="headerPurpleDiv">
             <div className="headerIconDiv">
@@ -30,9 +30,8 @@ const Header = (props) => {
                 {isLoggedIn ?        
                 
                 <ul>
-                    <li><Link to="#">{firstname}</Link></li>
-                    <li><Link to="userHistory">History</Link></li>
-                    <li><Link to="userProfile">My Profile</Link></li>
+                    <li><Link to="/userHistory">History</Link></li>
+                    <li><Link to="/userProfile">My Profile</Link></li>
                     <li><Link to="#" onClick={openLogOutModal}>Logout</Link></li>
                     <Logout />
                 </ul> 
