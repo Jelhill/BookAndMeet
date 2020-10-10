@@ -19,3 +19,10 @@ exports.getBookings = (req, res) => {
     .catch(error => res.send({status: "failed", error}))
 }
 
+
+exports.getBookingsByUserId = (req, res, next) => {
+    const booking = new Booking(req.params.id)
+    booking.getAllUserBookings()
+    .then(data => res.send({status: "success", data}))
+    .catch(error => res.send({status: "error", message: error}))
+}

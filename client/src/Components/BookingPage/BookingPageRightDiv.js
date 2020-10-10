@@ -35,7 +35,6 @@ function BookingPageRightDiv(props) {
           .then((jsonResponse) => {
               console.log(jsonResponse)
               if(jsonResponse.status === "success"){
-                //   props.bookingSuccessMessage("Successful")
                 props.successfulBookingModal(true)   
               }
           })
@@ -72,13 +71,13 @@ function BookingPageRightDiv(props) {
                 <div className="dateTime">
                     <label>Checkout time :</label>
                     <input type="time" name="checkoutTime" onChange={getBookingInputs}/>
-                </div>   
+                    </div>   
             </div>    
             
-            <div className="checkInDiv">
-                <input type="text" name="surname" placeholder="Surname" onChange={getBookingInputs}/>                    
+            {/* <div className="checkInDiv">
                 <input type="text" name="firstname" placeholder="Firstname" onChange={getBookingInputs}/>                     
-            </div>  
+                <input type="text" name="surname" placeholder="Surname" onChange={getBookingInputs}/>                    
+            </div>   */}
             <div className="checkInDiv2">
                 <input type="email" name="email" placeholder="Email" onChange={getBookingInputs}/>
             </div>   
@@ -104,7 +103,6 @@ function BookingPageRightDiv(props) {
     const { userReducer } = state
     const { roomReducer } = state
     const {bookingReducer } = state
-    console.log(userReducer.successfulBookingModal);
     return {
       renderPage: userReducer.renderPage,
       imageurl: roomReducer.currentRoom.imageurl,

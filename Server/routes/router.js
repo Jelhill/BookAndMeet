@@ -17,6 +17,8 @@ router.get("/getRooms", roomController.getRoom)
 router.get("/getRoomDetails/:id", roomController.getRoomDetails)
 router.get("/feedbackComments", userController.feedbackComments);
 router.get('/getBookings', bookingController.getBookings)
+router.get('/user/:id', userController.getUser)
+router.get('/userBookings/:id', bookingController.getBookingsByUserId)
 
 // POST REQUEST
 router.post("/signUp", userController.userSignUp);

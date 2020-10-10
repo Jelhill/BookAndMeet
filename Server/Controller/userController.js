@@ -25,19 +25,19 @@ exports.userSignUp = (req, res) => {
 exports.login = (req, res) => {
     const user = new User(req.body)
     user.authenticateUser().then((response) => {
+        console.log(response)
         const payload = {
             id: response.result.id,
             firstname: response.result.firstname
         }
 
-        jwt.sign(payload, SECRET, (err, token) => {
-            console.log("token", token)
-            console.log("error", err)
+        jwt.sign(response.result, SECRET, (err, token) => {
             if(err) res.send({message: "Failed"})
-            res.send({message: "success", token, payload})
+            res.send({message: "success", token, payload, response: response.result})
         })
 
     }).catch((err) => {
+        console.log(err);
         res.send({message: err})
     })
 }
@@ -52,4 +52,11 @@ exports.feedbackComments = async(req,res,next)=>{
     catch(err){
         return next(err);
     }
+}
+
+exports.getUser = (req, res, next) => {
+    const user = new User(req.params.id)
+    user.getUserById()
+    .then(data => res.send({status: "success", data}))
+    .catch(error => res.send({status: "error", message: error}))
 }

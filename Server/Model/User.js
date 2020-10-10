@@ -10,7 +10,6 @@ function User(data) {
 
 User.prototype.validate = async function(){    
     const cleanData = validate(this.data,dataSchema)
-
     if(!cleanData.valid) {       
         const err = cleanData.errors.map(err => err.stack)
         this.errors = err
@@ -48,7 +47,6 @@ User.prototype.signUp = function() {
                 resolve("Successfully Updated")
             }           
         }else{
-            console.log("This Errors", this.errors)
             reject(this.errors)
         }        
     })
@@ -57,21 +55,37 @@ User.prototype.signUp = function() {
 User.prototype.authenticateUser = function() {
     return new Promise((resolve, reject) => {
         const {email, password} = this.data
-            db.query("SELECT * FROM users WHERE email = $1", [email])
-            .then((result) => {
-                if(result && bcrypt.compareSync(password, result.rows[0].password)){
-                    this.data = result
-                    resolve({message: "Successful", result: result.rows[0]})
-                }
-                else{
-                    reject("username/password mismatch")
-                }
-            })
-            .catch((err) => {
-                reject(err)
-            })
+        if(!email) this.errors.push("Email is required")
+        if(!password) this.errors.push("Password is required")
+        if(this.errors.length) {
+            reject(this.errors)
+            return
+        }
+        db.query("SELECT * FROM users WHERE email = $1", [email])
+        .then((result) => {
+            if(!result.rows.length) {
+                reject("Username/password mismatch")
+                return
+            }
+            if(result && bcrypt.compareSync(password, result.rows[0].password)){
+                this.data = result
+                resolve({message: "Successful", result: result.rows[0]})
+            }
+        })
+        .catch((err) => {
+            reject(err)
+        })
     })
 }
 
-
+User.prototype.getUserById = function() {
+    return new Promise((resolve, reject) => {
+        db.query("SELECT * FROM users WHERE id = $1", [this.data])
+        .then(response => {
+            console.log(response.rows[0]);
+            resolve(response.rows[0])
+        })
+        .catch(error => reject(error))
+    })
+}
 module.exports = User
