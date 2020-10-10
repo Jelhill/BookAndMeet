@@ -50,4 +50,20 @@ Booking.prototype.fetchBookings = function() {
         .catch(err => reject(err))
     })
 }
+
+
+Booking.prototype.getAllUserBookings = function() {
+    return new Promise(async (resolve, reject) => {
+        db.query("SELECT * FROM booking WHERE userid = $1", [this.data])
+        .then(response => {
+            if(response.rows.length > 0) {
+                resolve(response.rows)
+            }else{
+                reject("No data to fetch")
+            }
+        })
+        .catch(err => reject(err))
+    })
+}
+
 module.exports = Booking

@@ -258,6 +258,7 @@ label {
   display: none;
   line-height: 70px;
   cursor: pointer;
+  margin-right: 20px;
 
 }
 #login{
@@ -277,13 +278,13 @@ label {
   color: navy;
   margin-right: 20px;
   border-radius: 5px;
+  
   cursor: pointer;
   
 }
 
 #login:hover {
-  color: var(--mainWhite);
-  background-color: var(--mainPurple);
+  opacity: 0.7;
 }
 .noDecoration {
   text-decoration: none;
@@ -743,13 +744,32 @@ padding:5px;
   border-radius: 5px;
   border: none;
   margin-right: 5px;
-  width: 165px;
+  width: 200px;
   padding-left: 10px;
   font-size: 15px;
   color: gray;
   font-weight: bold;
 }
 
+.seeAllRoom{
+  background-color: var(--mainGreen);
+  color: var(--mainWhite);
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  margin-left: 5px;
+  width: 200px;
+  /* padding-left: 10px; */
+  font-size: 0.9em;
+  letter-spacing: 0.5px;
+  font-family: var(--Roboto);
+  /* font-weight: bold; */
+
+}
+
+.seeAllRoom:hover {
+  opacity: 0.7;
+}
 .filterDateTime{
   height: 40px;
   border-radius: 3px;
@@ -757,7 +777,7 @@ padding:5px;
   margin-right: 5px;
   width: 200px;
   padding-left: 10px;
-  color: gray;
+  color: var(--mainWhite);
   font-weight: bold;
 }
 
@@ -777,7 +797,9 @@ padding:5px;
   border: none;
   color: #FFF;
   width: 130px;
-  font-size: 18px;
+  font-size: 0.9em;
+  letter-spacing: 0.5px;
+  font-family: var(--Roboto);
 }
 
 .filterButton:hover{
@@ -864,7 +886,7 @@ body {
   }
 
   .landingBody input, .landingBody select, .landingBody button {
-    width: 19%;
+    width: 24%;
   }
   .LoginLeft,
   .signUpLeft {
@@ -2383,12 +2405,12 @@ font-size: 20px;
   }
 
   .landingBody input, .landingBody select{
-    width: 23%;
+    width: 40%;
   }
 
   .landingBody button {
     width: 40%;
-    margin-top: 10px;
+    /* margin-top: 10px; */
   }
 
   .header{
@@ -2401,7 +2423,6 @@ font-size: 20px;
   #checkBtn{
     display: block;
   }
-
 
   .loginSignupWrapper {
     padding-top: 50%;
@@ -3703,6 +3724,14 @@ text-align: center;
   font-family: var(--Roboto);
 }
 
+.errorMessageDiv {
+  background-color: #fce4e4;
+  width: 80%;
+  margin: auto;
+  height: 40px;
+  padding: 5px;
+  text-align: center;
+}
 .modal-style {
   height: 200px;
 }
@@ -3738,6 +3767,11 @@ color: #373F41;
   border:1px solid var(--mainPurple);
   border-radius: 4px;
   padding:0px;
+  margin-left: 10px;
+}
+
+.successfullbookingLink:hover {
+  opacity: 0.7;
 }
 .exclaim{
   font-size:80px;
@@ -3745,14 +3779,15 @@ color: #373F41;
   margin-top:20px;
 }
 .shownotificationWrapper{
-/* position: absolute; */
-top:100px;
-right:0px;
-left:200px;
-margin:0 auto;
-height:343px;
+  top: 100px;
+  height:350px; 
 }
 
 .timerDiv {
   display: flex;
+}
+
+.linkSignup {
+  cursor: pointer;
+  margin-left: 10px;
 }
